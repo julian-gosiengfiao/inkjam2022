@@ -37,7 +37,7 @@ In the distance, you see a peaceful country town.
 -> BehindHutNextDay
 
 + [Go to town] You go to town.
-->OutsideHutNextDay //TODO: LINK TO TOWN PROPERLY
+->Town
 
 =BehindHutNextDay
 
