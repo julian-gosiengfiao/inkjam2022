@@ -38,6 +38,8 @@ It roars in delight.
 
 + {item_staff_of_power} [Give Staff of Power to Eldra] You give the Staff of Power to Eldra.
 
+~item_staff_of_power = 0
+
 Yolene attempts to grab at the staff, but Eldra swats her away easily.
 
 "Now, Gorgon Eye, prepare to feel the might of the most powerful witch in the land!"
@@ -56,7 +58,7 @@ Satisfied, Eldra says "Let's go back to bed now."
 
 + + + + [Okay.] You go to bed.
 
--> NextDay
+-> NextDay //NextDay.ink
 
 + {listened_to_bickering} [Go to the hut] You walk the twenty steps back to the hut where you live.
 
@@ -86,13 +88,6 @@ Outside, you continue to hear the sounds of common folk dodging magical fire, mi
 ...
 
 ->StartSequence
-
-
-
-=NextDay //NextDay.ink
-
-
-
 
 
 -> END
