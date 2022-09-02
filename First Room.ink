@@ -1,4 +1,5 @@
-VAR looked_at_monster = false
+VAR looked_at_monster = 0
+VAR listened_to_bickering = 0
 
 =StartSequence
 You are on a country road.
@@ -9,9 +10,9 @@ Beside you, your two sisters are bickering.
 
 + Look at the monster
 
-~looked_at_monster = true
+~looked_at_monster++
 
-The Gorgon Eye is raking white-hot lasers across the hapless townfolk, incinerating the odd cow or two.
+The Gorgon Eye is raking white-hot lasers across the helpless town, incinerating the odd cow or two.
 
 It roars in delight.
 
@@ -21,10 +22,46 @@ It roars in delight.
 
 ->StartSequence
 
-* Listen to their bickering
++ Listen to their bickering
 
-"I'm the eldest sister, so I shouldn't fetch the magical wand.", 
+~listened_to_bickering++
 
+"I'm the eldest sister, so I shouldn't have to fetch the magical wand," says Eldra.
 
+"It's not fair just 'cause I'm the youngest! And the hut is so FAR!" says Yolene.
+
++ + [Sigh.] You dream of stuffing their mouths full of clay.
+
+...
+
+-> StartSequence
+
++ {listened_to_bickering} [Go to the hut] You walk the twenty steps back to the hut where you live.
+
+...
+
+->Hut
+
+VAR item_staff_of_power = 0
+
+=Hut
+
+The hut you share with your two sisters is modest, but comfortable.
+
+Outside, you continue to hear the sounds of common folk dodging magical fire, mixed in with Eldra and Yolene's argu-whining.
+
+{not item_staff_of_power: The Staff of Power sits neatly on the mantle above the fireplace.}
+
++ [Take the Staff of Power] You take the Staff of Power.
+~item_staff_of_power = 1
+...
+-> Hut
++ [Leave the hut] You leave the hut.
+
+...
+
+-> Hut
+
+->StartSequence
 
 -> END
