@@ -16,7 +16,7 @@ The Gorgon Eye is raking white-hot lasers across the helpless town, incinerating
 
 It roars in delight.
 
-+ + [Okay.]
++ + [{&Okay.|Great.}]
 
 ...
 
@@ -36,6 +36,28 @@ It roars in delight.
 
 -> StartSequence
 
++ {item_staff_of_power} [Give Staff of Power to Eldra] You give the Staff of Power to Eldra.
+
+Yolene attempts to grab at the staff, but Eldra swats her away easily.
+
+"Now, Gorgon Eye, prepare to feel the might of the most powerful witch in the land!"
+
++ + [Put on your sunglasses] You put on your sunglasses. At night.
+
+Eldra recites a brief incantation, then a beam with the force of an exploding star erupts from her staff.
+
+It obliterates the Gorgon Eye wholly.
+
++ + + [Take your sunglasses off] You slide your sunglasses back in your pocket.
+
+Yolene sulks.
+
+Satisfied, Eldra says "Let's go back to bed now."
+
++ + + + [Okay.] You go to bed.
+
+-> NextDay
+
 + {listened_to_bickering} [Go to the hut] You walk the twenty steps back to the hut where you live.
 
 ...
@@ -46,22 +68,31 @@ VAR item_staff_of_power = 0
 
 =Hut
 
-The hut you share with your two sisters is modest, but comfortable.
+{(Hut > 1 || item_staff_of_power): You are in the hut you share with your two sisters.}
+{(Hut <= 1 || not item_staff_of_power): The hut you share with your two sisters is modest, but comfortable.}
 
 Outside, you continue to hear the sounds of common folk dodging magical fire, mixed in with Eldra and Yolene's argu-whining.
 
 {not item_staff_of_power: The Staff of Power sits neatly on the mantle above the fireplace.}
+{item_staff_of_power: There's an empty space above the mantle where the Staff of Power usually sits.}
 
-+ [Take the Staff of Power] You take the Staff of Power.
++ {not item_staff_of_power} [Take the Staff of Power] You take the Staff of Power.
 ~item_staff_of_power = 1
 ...
 -> Hut
+
 + [Leave the hut] You leave the hut.
 
 ...
 
--> Hut
-
 ->StartSequence
+
+
+
+=NextDay //NextDay.ink
+
+
+
+
 
 -> END
