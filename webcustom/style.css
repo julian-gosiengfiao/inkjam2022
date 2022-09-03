@@ -1,22 +1,28 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Marck+Script:400|Freckle+Face:400|Rubik+Wet+Paint:400|Josefin+Sans:400|Quattrocento:700|Azeret+Mono|Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Splash:400|IM+Fell+English+SC:400|Marck+Script:400|Freckle+Face:400|Rubik+Wet+Paint:400|Josefin+Sans:400|Quattrocento:700|Azeret+Mono|Permanent+Marker');
 
 .inventory {
+    font-family: 'Open Sans', sans-serif;
     color: rgb(74, 122, 74);
 }
 .hero {
+    font-family: 'Open Sans', sans-serif;
     color: rgb(202, 146, 146);
     text-align: right;
 }
 .bigsis {
+    font-family: 'Open Sans', sans-serif;
     color: rgb(219, 75, 255);
 }
 .littlesis {
+    font-family: 'Open Sans', sans-serif;
     color: rgb(243, 255, 132);
 }
 .redtext {
+    font-family: 'Open Sans', sans-serif;
     color: rgb(255, 0, 0);
 }
 .gorgoneye {
+    font-family: 'Open Sans', sans-serif;
     color: rgb(179, 49, 103);
     animation: bounce 1s infinite;
     text-align: center;
@@ -71,13 +77,23 @@
     color: rgb(207, 100, 0);
 }
 .magic {
-    color: rgb(255, 206, 101);
+    color: #ff88ff;
     text-align: center;
-    font-style: italic;
+    /*font-style: italic;*/
+    font-size: 20pt;
+    font-family: 'IM Fell English SC';
+  text-shadow:
+    0 0 5px #ff66ff,
+    0 0 10px #ff66ff,
+    0 0 20px #ff66ff,
+    0 0 80px #ff66ff,
+    0 0 90px #ff66ff;
 }
+
 .necromancer {
-    color: rgb(47, 0, 255);
+    color: #00cc00;
     font-style: bold;
+    font-family: 'Freckle Face';
 }
 
 
@@ -215,7 +231,7 @@ h2 {
     position: fixed;
     display: block;
     width: 100%;
-    background: white;
+    background: black;
     transition: color 0.6s, background 0.6s;
     margin: 0;
     padding-top: 6px;
@@ -258,7 +274,7 @@ h2 {
     margin: 0 auto;
     padding: 20px;
     padding-top: 4em;
-    background: white;
+    background: black;
 }
 
 .switched .container {
@@ -316,6 +332,7 @@ img {
   (Will always appear inside <p> element by default.)
 */
 .choice {
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
     line-height: 1.7em;
 }
@@ -331,6 +348,7 @@ img {
   Class applied to choice links
 */
 .choice a {
+    font-family: 'Open Sans', sans-serif;
     font-size: 15pt;
 }
 
@@ -339,6 +357,7 @@ img {
     The End # CLASS: end
 */
 .end {
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
     font-weight: bold;
     color: black;
@@ -355,7 +374,7 @@ img {
     right: 14px;
     top: 4px;
     user-select: none;
-    background: white;
+    background: black;
     transition: color 0.6s, background 0.6s;
 }
 
@@ -423,3 +442,5 @@ body.dark {
 .dark #controls {
     background: black;
 }
+
+
