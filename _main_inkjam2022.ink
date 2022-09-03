@@ -5,7 +5,7 @@ INCLUDE Act1Town.ink
 INCLUDE Mine.ink
 INCLUDE Endgame_Spells.ink
 INCLUDE ManDog_Puzzle.ink
-
+INCLUDE scene.ink
 
 ///DEBUG MENU - DELETE THIS WHEN SHOWING TO PEOPLE!
 Debug Menu - delete this when showing to people!
@@ -29,3 +29,4 @@ Debug Menu - delete this when showing to people!
 
 ///This should be the first line of code that's run.
 -> StartSequence
+
