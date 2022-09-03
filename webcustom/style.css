@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Quattrocento:700|Azeret+Mono|Permanent+Marker');
 
 .inventory {
-    color: rgb(0, 78, 0);
+    color: rgb(74, 122, 74);
 }
 .hero {
     color: rgb(202, 146, 146);
@@ -42,6 +42,9 @@
 }
 .foreman {
     color: rgb(207, 100, 0);
+}
+.magic {
+    color: rgb(255, 206, 101);
 }
 
 /* Old Bekant1 Stuff here.
