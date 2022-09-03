@@ -13,9 +13,35 @@ You and your sister are standing in front of quite a small, feeble horse. It is 
 "We'll never both fit on here!" #CLASS: littlesis
 "And it'll be far too slow even if we do!" #CLASS: hero
 "We won't make it back in time! The town is doomed!" #CLASS: littlesis
+->choices
 
-+ Check your inventory for something that might help
+=choices
+* Panic
+->panic ->choices
+* Tell Yolene to stay behind
+->staybehind ->choices
+* Search the sky for giant eagles
+->eagles
++ Check your inventory 
 ->emergencyinventory
+
+=panic
+You hyperventilate for a minute.
+It does not help that Yolene is watching you hyperventilate, and telling you that everyone is depending on you.
++ Ahh!
+->->
+
+=staybehind
+"No way! And anyway, even if I did, that horse has far too few muscles to carry you all the way home!" #CLASS: littlesis
++ Ahh!
+->->
+
+=eagles
+It's too late in the evening for eagles.
++ Bats, then!
+It's too early for bats.
++ + Ugh, <i> dusk </i>.
+->choices
 
 =emergencyinventory
 
@@ -29,18 +55,28 @@ But what spell could you possibly use to get home quickly? You never had a brain
 
 =spell1race
 What spell could you chant?
-+ Chant the Cleaning Clothes spell
+* Chant the Cleaning Clothes spell
 ->wrongspell ->spell1race
 + Chant the Muscular Cow spell
 ->fasthorse
-+ Chant the Sleeping spell
-->wrongspell ->spell1race
 
 
 =wrongspell
-No! That spell isn't going to help here! And you're running out of time!
+{&No! That spell isn't going to help here! And you're running out of time! | No! That spell isn't going to help here! And you're running out of time! |No! That spell isn't going to help here! And you're running out of time! |No! That spell isn't going to help here! And you're running out of time! |No! That spell isn't going to help here! And you're running out of time! | ->gameover }
 ...
 ->->
+
+=gameover
+Unfortunately, you ran out of time. The town, Eldra, Bessie the cow... they are all doomed. 
+
+GAME OVER
+
+Restart from the Red Warning Flare? 
++ YES
+->endgamespellsstart
++ NO 
+->theend
+
 
 =fasthorse
 Ahem... I hope this works... #CLASS: hero
@@ -54,9 +90,15 @@ The horse grows and grows into A MIGHTY WARHORSE, with a broad back and calves t
 
 =racehome
 
-Your borrowed mighty warhorse gallops back through [insert place] and past [insert place], and gets to the toll bridge. Rather than stopping, it mightily LEAPS over the troll's head!
+Your borrowed mighty warhorse gallops back through [insert place] and past [insert place], and gets to the toll bridge. 
+The troll is standing there, looking scared but blocking the bridge.
++ [LEAP over the troll's head!]
+You do the "Hyah!" thing with the reins, and the warhorse speeds up and LEAPS over the trolls head!
 "I'm too scared to do anything! Go save our town!" #CLASS: troll
-+ You charge through town and out the other side, heading for the border wall.
++ + Charge through town
+and out the other side,
++ + + head for the border wall.
+"Hyah!" #CLASS: hero
 
 ->villainarrives
 
@@ -74,28 +116,25 @@ And riding a young red dragon over their heads,
 + + is..
 
 INGRID EVIL, GOBLIN NECROMANCER!! (or BOOBERGHANT, I haven't decided)
++ + + <i> who? </i>
+<i> (OK, this was never really explained. She's a goblin necromancer. She's evil and hates you. Don't worry about it) </i>
 
-+ + + She casts a spell to amplify her voice, and it booms through the town:
++ + + + She casts a spell to amplify her voice, and it booms through the town:
 
 "BWAHAHAHAHAHAHA! THERE IS NOTHING YOU CAN DO TO STOP ME NOW, FEEBLE WITCHES!" #CLASS: necromancer 
 
-+ + + + "Oh yeah? Well we beg to differ!" #CLASS: hero
++ + + + + "Oh yeah? Well we beg to differ!" #CLASS: hero
 ->canthear
-+ + + + "This Staff of Power says otherwise!" #CLASS: hero
++ + + + + "Yeah? Well, you're a stinky poo-face and no one likes you!" #CLASS: hero
 ->canthear
-+ + + + "Yeah? Well, you're a stinky poo-face and no one likes you!" #CLASS: hero
-->canthear
-+ + + + "Yolene? I can't think of a comeback. Can you?" #CLASS: hero
-->canthear
-+ + + + "Ahhhhh! Oh noooo!!! We're dooooooomed! Someone save us!" #CLASS: hero
++ + + + + "Yolene? I can't think of a comeback. Can you?" #CLASS: hero
 ->canthear
 
 
 =canthear
 
 "I CAN'T HEAR YOU, SILLY YOUNGER WITCHES! BUT EVEN BETTER; YOU WON'T EVEN SEE YOUR END COMING! BWAHAHAHAHAHAHA!!! #CLASS: necromancer 
-
-And with that, Ingrid Evil raises her Wand of Wickedness over her head, and chants a spell:
+Having finished her evil laugh, Ingrid Evil raises her Wand of Wickedness over her head, and chants a spell:
 
 "They think their bite's worse than their bark #CLASS: magic
 Let them suffer IN THE DARK!" #CLASS: magic
@@ -105,18 +144,18 @@ Let them suffer IN THE DARK!" #CLASS: magic
 
 =spell2dark
 What should you do? You can hear the army getting closer!
-+ Fumble for your white sock!
+* Fumble for your white sock!
 ->droppedit ->spell2dark
-+ Chant the Troll Spell!
+* Chant the Troll Spell!
 ->wrongspell ->spell2dark
-+ Chant the Man and Dog spell!
+* Chant the Man and Dog spell!
 ->wrongspell ->spell2dark
 + Chant the Barrel Man Spell!
 ->lightdispell
 
 =droppedit
-Oh no! It must have fallen out of your inventory when you were riding the horse so fast!
-Single socks always get lost in the end.
+You pull out the sock, and a little of the darkness that surrounds you flees from the sock... 
++ but not enough. You need something stronger.
 ->->
 
 
@@ -129,8 +168,6 @@ And with a burst of golden light, the magical darkness is instantly dispelled!
 
 "WHAT?? HOW DID YOU DO THAT??" #CLASS: necromancer 
 + "You're not the only one with magical powers!"
-->canthear2
-+ "HaHA! We've been training to defeat you!"
 ->canthear2
 + "Honestly, it's a really lucky break! It's a coincidence!"
 ->canthear2
@@ -152,9 +189,9 @@ Standing in the dust and rubble of the gateway, gibblets high and defiant, is a 
 What can you do to help?
 + Chant the Troll spell.
 ->megaturkey
-+  Chant the Disco spell.
+*  Chant the Disco spell.
 ->wrongspell ->spell3defence
-+ Chant the Muscle Cow Spell.
+* Chant the No Alcohol Spell.
 ->wrongspell ->spell3defence
 
 =megaturkey
@@ -173,6 +210,9 @@ As you finish the spell, you see that brave little turkey get bigger...
 "WHAAAATT? MY ARMY? HOW COULD YOU?" #CLASS: necromancer 
 + + + + say nothing
 ->canthear3
++ + + + "Ahhhhh! Oh noooo!!! We're dooooooomed! Someone save us!" #CLASS: hero
+->canthear3
+
 
 =canthear3
 "I'M SURE YOU'RE RESPONDING, BUT IT'S VERY WINDY UP HERE!"
@@ -185,11 +225,11 @@ And they do! Bursting through the wall uphill of MegaTurkey Eldra, spectral gobl
 
 =spell4spirits
 Could a spell save you yet again?
-+ Chant the Sleeping spell
+* Chant the Sleeping spell
 ->wrongspell ->spell4spirits
 +  Chant the Tavern spell
 ->spiritsbegone
-+  Chant the Body Swap spell
+*  Chant the Body Swap spell
 ->wrongspell ->spell4spirits
 
 =spiritsbegone
@@ -229,6 +269,8 @@ She winks at you with a big grin on her face, and then looks pointedly at the St
 ->spell5sleep
 *  Chant a spell about how you wish we could all just get along
 ->wrongspell ->spell5sleep
+* Channel all your magical energy into the tip of the Staff...
+->spell5sleep
 + Chant the Sleep Spell your sisters accidentally invented last night!
 ->defeat
 
@@ -236,9 +278,9 @@ She winks at you with a big grin on her face, and then looks pointedly at the St
 “You ALWAYS think that you know best! #CLASS: magic
 For goodness’ sake, give it a REST!” #CLASS: magic
 
-+ PYEWWWWWWWHWHWHWHW!
++ PYEWWWWWWWHWHWHWHW! #CLASS: magic
 
-A beam of blinding light shoots out of the Staff of Power, knocking the Goblin Necromancer flying through the sky, and landing with a thud on your cabbage patch.
+<b> A beam of blinding light </b> shoots  out of the Staff of Power, knocking the Goblin Necromancer flying through the sky, and landing with a thud on your cabbage patch.
 ...
 + + ...
 ...
@@ -261,7 +303,7 @@ The giant turkey Eldra thuds over to you, and looks down at you appreciately.
 "But I do! I've studied for years, and I have the experience, and I can return everything to normal. I just... can't hold the Staff like this!" #CLASS: bigsis
 + Yolene nudges you again [.]
 "You can do this. And you can trust Eldra. She really is looking out for us, after all." #CLASS: littlesis
-+ + Chant one last spell... the Man Dog Spell...
++ + Chant one last spell... the Man/Dog Spell...
 ->switch
 
 =switch
@@ -279,13 +321,17 @@ And "Yolene" reaches forward to take the Staff into her hands
 ... and all the way to a distant hill where a man and dog are happily playing together...
 + + + and just like that... [] your sisters are back in their bodies...
 ... and reaching forward to pull you into a warm hug.
-->theend
+->thegoodend
 
-=theend
+=thegoodend
 
 # CLASS: end
 The End
 CONGRATULATIONS!
+
+->theend
+
+=theend
 
 THANK YOU FOR PLAYING
 + Go to Credits 
@@ -311,7 +357,5 @@ Still to Find!
 =restart
 BACK TO BEGINNING
 ->DONE
-
-
 
 
