@@ -4,6 +4,8 @@
 ~item_sunglasses++
 } //In case we skip our way here
 
+On the other side of the bridge, the terrain is hilly and uneven.
+
 You walk for a while, and eventually the mountains in the distance get closer and closer.
 
 At the base of a mountain, you see a pillar of light shoot into the sky.

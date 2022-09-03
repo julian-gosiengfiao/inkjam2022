@@ -328,13 +328,14 @@ The troll takes the glass.
 "You're now free to cross the bridge. But, just so you know, if you want to cross BACK again... it's another toll."
 "What?"
 "So I recommend you do everything you want to do in town before you cross."
-+ Go ahead and cross
++ [Go ahead and cross] You go ahead and cross the bridge.
 ->ACT2
-+ Stay in town a bit longer
++ [Stay in town a bit longer] You decide to stay in town a bit longer.
+...
 ->tollbridge
 
 =ACT2
 
-START OF ACT 2
+...
 
 -> TransitionToMineArea
