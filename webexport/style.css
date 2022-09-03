@@ -184,9 +184,6 @@ body {
     overflow: hidden;
 }
 
-body.switched {
-    transition: color 0.6s, background-color 0.6s;
-}
 
 h1,
 h2 {
