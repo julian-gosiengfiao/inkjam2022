@@ -1,63 +1,29 @@
-
 =outsidetown
 
-You are standing outside the home you share with your sisters. Ahead is the centre of town, where you know your sister has gone.
-A little off to the side there is a puzzled-looking man, standing next to a cow. 
+{not townsquare} You step out of the front door of your house, and look forward towards the town. With any luck, your sister will still be there. You hear a "moo" sound off to one side. <br> <br> A frankly enormous cow is moving towards the front door of your house, followed by an anxious cowman. It reaches your front door, and thunks down in front of the doorway, and begins to chew on your begonias.
+->cowhouse
 
-+ Go back to your hut
-->hutAct1
-+ Go into town
-->townsquare
-+ {not cowscene} Approach the man with the cow
-->cowscene
+=cowhouse
 
-=hutAct1
+{not townsquare} You are standing outside the home you share with your sisters. Ahead is the centre of town, where you know your sister has gone.
 
-You're in front of the hut. 
-Your Turkey Sister is here. 
-
-
-+ Talk to Turkey Sister
-->turkeytalk
-+ Go into hut.
-->insidehutAct1
-+ Head back towards town
-->outsidetown
-
-
-=turkeytalk
- 
- Conversation occurs. I'm not writing that (yet). 
- + Leave Conversation
- ->hutAct1
-
-=insidehutAct1
-
-This is full of the same stuff as before. For now. 
-Perhaps hint to the player that there's nothing to do here, and that they should move on. 
-{nomilk: Turns out that all the coins you thought you had? Your little sister stole them. I guess you can't pay the toll with coins.} 
-+ Go back outside
-->hutAct1
-
-=cowscene
-In front of you stands a cowman and his cow. That is no ordinary cow. It is huge and muscular.
-The cowman next to it looks really puzzled.
+The cowman looks at you, and shrugs his shoulders. 
+The cow looks at you, and chews on your flowers. It is huge and muscular.
 + Talk to cowman
 ->cowman
 + Look at cow {whatacow: again}
 ->whatacow
-+ Head back to the road to town
-...
-->outsidetown
++ Go into town
+->townsquare
 + {failedudders} Try to work out a solution to the overly sturdy udders
 ->uddersolutions
-* {tongs and pintglass} "I've got some blacksmith's tongs to squeeze the udders with! And a pintglass to squeeze the udder into!" #CLASS: hero
+* {tongs and pintglass} "I've got some blacksmith's tongs to squeeze the udders with! And a pintglass to squeeze the milk into!" #CLASS: hero
 ->squeeze
 
 =whatacow
 What. A. Cow.
 (insert cow picture here)
-+ Talk to milkman
++ Talk to cowman
 ->cowman
 + Head back to the road to town
 ...
@@ -80,7 +46,7 @@ Able to withstand injury! #CLASS: magic
 =failedudders
 The cowman takes both hands and squeezes squeezes squeezes Bessie's udder teats, but not a drop of milk comes out.
 ...
--> cowscene
+-> cowhouse
 
 =uddersolutions
 + {pintglass and not tongs} "I've got a pint glass to put the milk in!" #CLASS: hero
@@ -138,6 +104,10 @@ You are in the town square. There is a dazed villager.
 + Actually, maybe don't talk to the villager just now.
 ...
 ->townsquare
+* {failedudders or milkrequest} Take a pint glass.
+->pintglass
+
+
 
 =chatdazedwhat
 "It was your little sister! She came through here with the Staff of Power and changed a whole bunch of stuff! Oooh, the magic! The surprise! I didn't know what to do! I still don't! #CLASS: dazedvillager
@@ -204,8 +174,6 @@ You steal the tongs.
 In the tavern, everything is very cold. There is a light dusting of snow on the floor.
 There is a shivering barman (later, I'll write barman dialogue).
 There is a magical cold box.
-* {cowscene or milkrequest} Take a pint glass.
-->pintglass
 * {hotmilk} You cool the hot cow's milk down in the magical cold box.
 ->coldmilk
 + Leave
@@ -311,6 +279,8 @@ The troll takes the glass.
 
 
 =ACT2
+
+START OF ACT 2
 
 -> TransitionToMineArea
 
