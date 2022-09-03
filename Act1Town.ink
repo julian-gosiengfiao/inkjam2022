@@ -111,10 +111,10 @@ You wave goodbye to the cowman.
 =townsquare
 
 You are in the town square. There is a dazed villager. 
-* Look around
-->looktownsquare
 + Talk to dazed villager
 ->dazedvillager
+* Look around
+->looktownsquare
 + {looktownsquare} [Leave the town square (but which way?)] You decide to leave the town square.
 ->townsquarewhere
 
@@ -141,8 +141,8 @@ You are in the town square. There is a dazed villager.
 ->townsquare
 
 =chatdazedwhere
-"She went to the toll bridge, transformed the tollman, and then crossed the bridge and headed towards the Fairy Forest! #CLASS: dazedvillager
-"Ugh, I hate the Fairy Forest." #CLASS: hero
+"She went to the toll bridge, transformed the tollman, and then crossed the bridge and headed towards the mountains! #CLASS: dazedvillager
+"Ugh, I hate climbing." #CLASS: hero
 + "And what happened here?" #CLASS: hero
 ->chatdazedwhat
 + You leave the villager to his dazedness[.] 

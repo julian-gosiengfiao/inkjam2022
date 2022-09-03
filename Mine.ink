@@ -83,7 +83,7 @@ A short, stocky bearded man in his birthday suit goes rolling out of the barrel.
 
 "YOU CRAZY SWAMP-WATER-DRINKING LOON! GET AWAY FROM ME!" #CLASS: barrelman
 
-He climbs back in the barrel and slams the lid tightly shut.
+He clambers back into the barrel and slams the lid tightly shut.
 
 + + + Oops.
 ...
@@ -121,6 +121,10 @@ There's a sizable crack in the wall next to the foreman.
 ...
 ->TunnelDarkSection
 
++ [Exit the mine] You exit the mine.
+...
+->OutsideMine
+
 + [Check inventory]
 ->Inventory ->MineRoom1
 
@@ -150,14 +154,16 @@ Text
 
 =TunnelDarkSection
 Text
-+ Okay.
++ [Go towards the entrance] You go back out towards the entrance.
+...
 ->MineRoom1
 + [Check inventory]
 ->Inventory ->TunnelDarkSection
 
 =MoleRoom
 Text
-+ Okay.
++ [Go back through the crack] You squeeze through the crack again.
+...
 ->MineRoom1
 + [Check inventory]
 ->Inventory ->MoleRoom
