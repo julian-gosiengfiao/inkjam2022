@@ -8,7 +8,7 @@ In the distance, {looked_at_monster: a Gorgon Eye} {not looked_at_monster: a mon
 
 Beside you, your two sisters are bickering.
 
-+ Look at the monster
++ [Look at the monster] You look at the monster.
 
 ~looked_at_monster++
 
@@ -57,7 +57,9 @@ Yolene sulks.
 Satisfied, Eldra says "Let's go back to bed now."
 
 + + + + [Okay.] You go to bed.
-
+...
++ + + + + Zzz...
+...
 -> NextDay //NextDay.ink
 
 + {listened_to_bickering} [Go to the hut] You walk the twenty steps back to the hut where you live.
