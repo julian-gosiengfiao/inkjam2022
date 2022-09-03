@@ -87,14 +87,16 @@ It wobbles to its feet and shakes off its feathers.
 
 ->NextDayExplanation
 
-+ + [Walk away]
++ + {walked_away == 0} [Walk away]
 
 ~walked_away++
 "GENERICA, DON'T YOU DARE TURN YOUR BACK ON YOUR SISTER LIKE THAT!" #CLASS: bigsis
-
 ...Yes, this turkey is definitely Eldra.
-
 ->WalkAwayOrHelp
+
++ + {walked_away>0} [Walk away for real] You walk away, the turkey's screams reaching fever pitch.
+
+->WalkedAway
 
 =NextDayExplanation
 
@@ -157,6 +159,21 @@ You go to the front of the hut.
 
 + [Check inventory]
 -> Inventory ->BehindHutNoScreaming
+
+=WalkedAway
+Yolene has obviously stolen the Staff of Power and turned Eldra into a turkey.
+
+This might be a nice lesson for Eldra not to be so bossy, but you need to bring both Yolene and the staff back.
+
++ [What happens if I don't?] You think about what happens if you don't.
+
+The image of a Gorgon Eye laughing with delight fills your mind. #CLASS: gorgoneye
+
+Between that and what you know of Yolene's ability to control magic, you're not sure which is worse.
+
++ + There's only one way she could have gone, and that's to town.
+
+->outsidetownfirstentry
 
 =blockedoutsidetown
 You are on the road to town.
