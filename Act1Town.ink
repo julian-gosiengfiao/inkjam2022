@@ -22,7 +22,7 @@ The cow looks at you, and chews on your flowers. It is huge and muscular.
 ->squeeze
 
 =whatacow
-What. A. Cow.
+<b> What. A. Cow. </b>
 #IMAGE: images/cow.png
 + Talk to cowman
 ->cowman
@@ -183,8 +183,6 @@ There is a shivering barman, standing next to a mysterious box that is spitting 
 ->barman
 +Examine the mysterious box
 ->icebox
-* {hotmilk} You cool the hot cow's milk down in the magical cold box.
-->coldmilk
 + Leave
 ->townsquare
 
@@ -206,7 +204,13 @@ you don't need spirits to be cool!" #CLASS: magic
 
 
 =icebox
-
+You look at this mysterious box. It looks like your little sister magicked it into existence? It's very cold, it has a door, and there's nothing inside but cold air and bits of frosted ice on the sides.
++ "I wonder if this might be a new way of keeping things cold all the time?" #class: hero
+"We could call it a 'freezer'!" #class: barman
+...
+->tavern
+* {hotmilk} You cool the hot cow's milk down in the magical 'freezer'.
+->coldmilk
 ->DONE
 
 =pintglass
