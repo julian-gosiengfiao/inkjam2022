@@ -42,13 +42,43 @@ Yolene attempts to grab at the staff, but Eldra swats her away easily.
 
 "Now, Gorgon Eye, prepare to feel the might of the most powerful witch in the land!"#CLASS:bigsis
 
-+ + [Put on your sunglasses] It is nighttime, but you put on your sunglasses anyway.
+{item_sunglasses: ->GorgonEyeObliterationSunglasses}
+{not item_sunglasses: ->GorgonEyeObliterationNoSunglasses}
+
++ {listened_to_bickering} [Go to the hut] You walk the twenty steps back to the hut where you live.
+...
+->Hut
+
++ [Check inventory] #CLASS: inventory
+-> Inventory ->StartSequence
+
+=GorgonEyeObliterationSunglasses
+
++ {item_sunglasses} [Put on your sunglasses] It is night, but you put on your sunglasses.
 
 Eldra recites a brief incantation, then a beam with the force of an exploding star erupts from her staff.
 
 It obliterates the Gorgon Eye wholly.#CLASS: redtext
 
-+ + + [Take your sunglasses off] You slide your sunglasses back in your pocket.
++ + [Take your sunglasses off] Having saved your vision, you slide your sunglasses back in your pocket.
+->GorgonEyeAfterObliteration
+
+=GorgonEyeObliterationNoSunglasses
+
++ {not item_sunglasses} [Here it comes.]
+
+Eldra recites a brief incantation, then a beam with the force of an exploding star erupts from her staff.
+
+It obliterates the Gorgon Eye wholly.#CLASS: redtext
+
+The blast is totally blinding.
+
++ + [Try to shield your face]
+
+"AAAARRRRGHHH," you loudly curse. #CLASS: hero
+-> GorgonEyeAfterObliteration
+
+=GorgonEyeAfterObliteration
 
 Yolene sulks.
 
@@ -60,37 +90,39 @@ Satisfied, Eldra says "Let's go back to bed now." #CLASS: bigsis
 ...
 -> NextDay //NextDay.ink
 
-+ {listened_to_bickering} [Go to the hut] You walk the twenty steps back to the hut where you live.
-...
-->Hut
-
-+ [Check inventory] #CLASS: inventory
--> Inventory ->StartSequence
-
 
 
 VAR item_staff_of_power = 0
+VAR item_sunglasses = 0
 
 =Hut
 
 {(Hut > 1 || item_staff_of_power): You are in the hut you share with your two sisters.}
 {(Hut <= 1 || not item_staff_of_power): The hut you share with your two sisters is modest, but comfortable.}
 
-Outside, you continue to hear the sounds of common folk dodging magical fire, mixed in with Eldra and Yolene's argu-whining.
+{(Hut <= 1 || not item_staff_of_power): Outside, you continue to hear the sounds of common folk dodging magical fire, mixed in with Eldra and Yolene's argu-whining.}
 
 {not item_staff_of_power: The Staff of Power sits neatly on the mantle above the fireplace.}
 {item_staff_of_power: There's an empty space above the mantle where the Staff of Power usually sits.}
+
+{(item_staff_of_power && not item_sunglasses): You notice your favorite pair of sunglasses lying on the kitchen table.}
 
 + {not item_staff_of_power} [Take the Staff of Power] You take the Staff of Power.
 ~item_staff_of_power = 1
 ...
 -> Hut
 
++ {(item_staff_of_power && not item_sunglasses)} [Take sunglasses] You take your sunglasses.
+~item_sunglasses ++
+...
+-> Hut
+
 + [Leave the hut] You leave the hut.
 
 ...
-
 ->StartSequence
 
++ [Check inventory]
+-> Inventory ->Hut
 
 -> END

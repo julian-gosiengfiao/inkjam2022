@@ -39,6 +39,9 @@ In the distance, you see a peaceful country town.
 + [Go to town] You go to town.
 ->Town
 
++ [Check inventory]
+-> Inventory ->HutNextDay
+
 =BehindHutNextDay
 
 {BehindHutNextDay > 1: ->BehindHutNoScreaming}
@@ -135,5 +138,7 @@ You go to the front of the hut.
 ...
 -> OutsideHutNextDay
 
++ [Check inventory]
+-> Inventory ->BehindHutNoScreaming
 
 ->END
