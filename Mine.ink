@@ -75,7 +75,7 @@ A short, stocky bearded man in his birthday suit goes rolling out of the barrel.
 
 + + "Have you seen my sister?" #CLASS: hero
 
-"YOU CRAZY GOAT-DRINKING LOON! GET AWAY FROM ME!" #CLASS: foreman
+"YOU CRAZY SWAMP-WATER-DRINKING LOON! GET AWAY FROM ME!" #CLASS: foreman
 
 He climbs back in the barrel and slams the lid tightly shut.
 

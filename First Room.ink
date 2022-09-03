@@ -17,9 +17,7 @@ The Gorgon Eye is raking white-hot lasers across the helpless town, incinerating
 It roars in delight. #CLASS: gorgoneye
 
 + + [{&Okay.|Great.}]
-
 ...
-
 ->StartSequence
 
 + Listen to their bickering
