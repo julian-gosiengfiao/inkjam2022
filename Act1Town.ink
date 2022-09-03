@@ -1,63 +1,30 @@
 
 =outsidetown
 
-You are standing outside the home you share with your sisters. Ahead is the centre of town, where you know your sister has gone.
-A little off to the side there is a puzzled-looking man, standing next to a cow. 
+{not townsquare} You step out of the front door of your house, and look forward towards the town. With any luck, your sister will still be there. You hear a "moo" sound off to one side. <br> <br> A frankly enormous cow is moving towards the front door of your house, followed by an anxious cowman. It reaches your front door, and thunks down in front of the doorway, and begins to chew on your begonias.
+->cowhouse
 
-+ Go back to your hut
-->hutAct1
-+ Go into town
-->townsquare
-+ {not cowscene} Approach the man with the cow
-->cowscene
+=cowhouse
 
-=hutAct1
+{not townsquare} You are standing outside the home you share with your sisters. Ahead is the centre of town, where you know your sister has gone.
 
-You're in front of the hut. 
-Your Turkey Sister is here. 
-
-
-+ Talk to Turkey Sister
-->turkeytalk
-+ Go into hut.
-->insidehutAct1
-+ Head back towards town
-->outsidetown
-
-
-=turkeytalk
- 
- Conversation occurs. I'm not writing that (yet). 
- + Leave Conversation
- ->hutAct1
-
-=insidehutAct1
-
-This is full of the same stuff as before. For now. 
-Perhaps hint to the player that there's nothing to do here, and that they should move on. 
-{nomilk: Turns out that all the coins you thought you had? Your little sister stole them. I guess you can't pay the toll with coins.} 
-+ Go back outside
-->hutAct1
-
-=cowscene
-In front of you stands a cowman and his cow. That is no ordinary cow. It is huge and muscular.
-The cowman next to it looks really puzzled.
+The cowman looks at you, and shrugs his shoulders. 
+The cow looks at you, and chews on your flowers. It is huge and muscular.
 + Talk to cowman
 ->cowman
 + Look at cow {whatacow: again}
 ->whatacow
-+ Head back to the road to town
-...
-->outsidetown
++ Go into town
+->townsquare
 + {failedudders} Try to work out a solution to the overly sturdy udders
 ->uddersolutions
-* {tongs and pintglass} "I've got some blacksmith's tongs to squeeze the udders with! And a pintglass to squeeze the udder into!" #CLASS: hero
+* {tongs and pintglass} "I've got some blacksmith's tongs to squeeze the udders with! And a pintglass to squeeze the milk into!" #CLASS: hero
 ->squeeze
 
 =whatacow
 What. A. Cow.
-(insert cow picture here)
-+ Talk to milkman
+#IMAGE: images/cow.png
++ Talk to cowman
 ->cowman
 + Head back to the road to town
 ...
@@ -69,10 +36,10 @@ What. A. Cow.
 "And then your sister showed up and offered to help!" #CLASS: cowman
 + + "Oh no!" #CLASS: hero
 "And she said: #CLASS: cowman
-
+<br>
 I wish, I wish, the cow would be #CLASS: magic
 Able to withstand injury! #CLASS: magic
-
+<br>
 "And now, Bessie is so big and sturdy, I can't even squeeze her udders! Look!
 + + + look
 ->failedudders
@@ -80,14 +47,15 @@ Able to withstand injury! #CLASS: magic
 =failedudders
 The cowman takes both hands and squeezes squeezes squeezes Bessie's udder teats, but not a drop of milk comes out.
 ...
--> cowscene
+-> cowhouse
 
 =uddersolutions
 + {pintglass and not tongs} "I've got a pint glass to put the milk in!" #CLASS: hero
 ->notongs
 + {tongs and not pintglass} "I've got some blacksmith's tongs! Maybe we can squeeze the udders with this!" #CLASS: hero 
 ->noglass
-
++ {milkrequest} "There´s a big strong troll the other side of town. I bet he could squeeze those udders!"#CLASS: hero
+->cownomove
 + "I guess I'll walk around, see if I can find some solutions." #CLASS: hero
 ... 
 ->outsidetown
@@ -99,10 +67,14 @@ The cowman takes both hands and squeezes squeezes squeezes Bessie's udder teats,
 
 =noglass
 "Oh, amazing! That MIGHT work... my bucket is a bit dirty though, do you have something we can squirt some milk into?" #CLASS: cowman
-+ "No... but I can go look for something!" 
++ "No... but I can go look for something!"  #CLASS: hero
 ...
 ->outsidetown
 
+=cownomove
+"That's great and all, but I can't make Bessie move when she's this big, and she just loves your begonias. I'm afraid we can't move." #CLASS: cowman
++ "Hmmm... maybe we can get something stronger than our hands to squeeze the teats." #CLASS: hero
+->cowhouse
 
 =squeeze
 You and the cowman each hold one of the handles of the blacksmith's tongs, and aim at an udder teat, which is positioned carefully above your empty pint glass.
@@ -138,6 +110,10 @@ You are in the town square. There is a dazed villager.
 + Actually, maybe don't talk to the villager just now.
 ...
 ->townsquare
+* {failedudders or milkrequest} Take a pint glass.
+->pintglass
+
+
 
 =chatdazedwhat
 "It was your little sister! She came through here with the Staff of Power and changed a whole bunch of stuff! Oooh, the magic! The surprise! I didn't know what to do! I still don't! #CLASS: dazedvillager
@@ -202,20 +178,41 @@ You steal the tongs.
 =tavern 
 
 In the tavern, everything is very cold. There is a light dusting of snow on the floor.
-There is a shivering barman (later, I'll write barman dialogue).
-There is a magical cold box.
-* {cowscene or milkrequest} Take a pint glass.
-->pintglass
+There is a shivering barman, standing next to a mysterious box that is spitting out snow. 
++ Talk to the barman.
+->barman
++Examine the mysterious box
+->icebox
 * {hotmilk} You cool the hot cow's milk down in the magical cold box.
 ->coldmilk
 + Leave
 ->townsquare
 
+=barman
+"H-H-H-Hello! I-I-I'm afraid I don't have any d-d-d-drinks today!" #class: barman
++ "Why not?" #class: hero
+"Well, your si-si-sister has never liked all the dr-dr-drunks, and sh-she came in here and s-s-said a spell: #class: barman
+<br>
+"I wish these people knew this rule: #CLASS: magic
+you don't need spirits to be cool!" #CLASS: magic
+<br>
++ + "And did it make the people cool?" #class: hero
+"No, it froze them! Some of them, I had to pour water over their hands to defrost them from the bar!" 
++ + + "So you don't have anything left?" #class: hero
+"Nothing! Not even my tankards and pint glasses survived - unless they were outside when the spell went off..." #class: barman
++ + + + "Yikes! I'm sorry. When I get that Staff back to Eldra, we'll fix this, I promise!" #class: hero
+...
+->tavern
+
+
+=icebox
+
+->DONE
 
 =pintglass
 You now have a pint glass in your inventory. It is empty.
 ->tavern
-->DONE
+
 
 =coldmilk
 You now have a pint glass of cold cow's milk in your inventory.
@@ -229,14 +226,15 @@ At the toll bridge, you see a big troll. He won't let you pass.
 There's some clanking metal noises coming from the <b>blacksmith's forge</b>, next to the toll bridge. 
 + Talk to the troll
 ->troll
-+ {milkrequest and hotmilk and not coldmilk} You offer the fresh milk you just got to the troll.
-->wrongmilk
--+ {milkrequest and coldmilk and not trollmilkget} You offer the big pint glass of cold milk to the troll.
-->trollmilkget
 + Enter the blacksmith's
 ->smith
 + Go back to the town square
 ->townsquare
++ {milkrequest and hotmilk and not coldmilk} You offer the fresh milk you just got to the troll.
+->wrongmilk
+-+ {milkrequest and coldmilk and not trollmilkget} You offer the big pint glass of cold milk to the troll.
+->trollmilkget
+
 
 
 =troll
@@ -258,6 +256,8 @@ There's some clanking metal noises coming from the <b>blacksmith's forge</b>, ne
 "Now that I'm a troll, I have a real craving for goat's milk. But I guess I could settle for a <b>big pint glass of cold COW'S milk!</b>" #class: troll
 + "But I don't have a glass of milk. Can't you just let me past and let me go after my sister?" #CLASS: hero
 ->nomilk
++ {failedudders} "There's a big strong cow at the other side of town. If you go there, you can squeeze the teats and get as much milk as you'd like!" #CLASS: hero
+->trollstayshere
 + {hotmilk and not coldmilk} You offer the fresh milk you just got to the troll.
 ->wrongmilk
 + {coldmilk and not trollmilkget} You offer the big pint glass of cold milk to the troll.
@@ -268,7 +268,10 @@ There's some clanking metal noises coming from the <b>blacksmith's forge</b>, ne
 ...
 ->townsquare
 
-
+=trollstayshere
+"Hah! You think you can trick me to leave my post? I'm honestly thinking of LIVING UNDER this bridge now! <br> And anyway, that milk wouldn't be <b> cold!</b>" #class: troll
+...
+->tollbridge
 
 =nomilk
 "Nope! Your sister taught me to stand up for myself, so I am insisting on a toll. Ahem... YOUUUUU SHALL-NOT.... PASSSSS!!! without paying first."
@@ -309,9 +312,8 @@ The troll takes the glass.
 + Stay in town a bit longer
 ->tollbridge
 
-
 =ACT2
 
--> TransitionToMineArea
+START OF ACT 2
 
-->END
+-> TransitionToMineArea
