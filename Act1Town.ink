@@ -26,6 +26,7 @@ You are standing on the road between your hut and the town, next to a cowman and
 The cowman looks at you, and shrugs his shoulders. 
 The cow looks at an imperceptible point in the far distance, and chews on some flowers. It is huge and muscular.
 + Look at cow {whatacow: again}
+#CLEAR
 ->whatacow
 + Talk to cowman
 ->cowman

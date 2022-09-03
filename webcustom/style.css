@@ -45,6 +45,8 @@
 }
 .magic {
     color: rgb(255, 206, 101);
+    text-align: center;
+    font-style: italic;
 }
 
 /* Old Bekant1 Stuff here.

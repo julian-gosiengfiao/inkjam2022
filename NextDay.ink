@@ -57,7 +57,7 @@ In the distance, you see a peaceful country town.
 ->outsidetownfirstentry
 
 + [Check inventory]
--> Inventory ->HutNextDay
+-> Inventory ->OutsideHutNextDay
 
 =BehindHutNextDay
 
