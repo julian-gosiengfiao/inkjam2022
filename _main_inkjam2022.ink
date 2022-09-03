@@ -3,6 +3,7 @@ INCLUDE NextDay.ink
 INCLUDE Inventory.ink
 INCLUDE Act1Town.ink
 INCLUDE Mine.ink
+INCLUDE Endgame_Spells.ink
 
 
 ///DEBUG MENU - DELETE THIS WHEN SHOWING TO PEOPLE!
@@ -19,6 +20,9 @@ Debug Menu - delete this when showing to people!
 + Start game from Mine
 #CLEAR
 -> TransitionToMineArea
++ Start game from endgame
+#CLEAR
+-> endgamespellsstart
 
 ///This should be the first line of code that's run.
 -> StartSequence

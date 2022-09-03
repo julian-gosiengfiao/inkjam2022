@@ -102,7 +102,14 @@ The man looks at you suspiciously.
 ~barrel_reset++
 } //If you kicked the man over and went in here, he'll come out because he's ready to talk to you now.
 
-This is room 1. I'll figure something out here.
+You are in the well-lit entry hall of the mine shaft.
+
+It's surprsingly roomy in here.
+
+A well-dressed man is leaning on a wall
+
++ [Check inventory]
+->Inventory ->MineRoom1
 
 ->END
 
