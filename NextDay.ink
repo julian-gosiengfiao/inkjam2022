@@ -41,6 +41,8 @@ In the distance, you see a peaceful country town.
 
 =BehindHutNextDay
 
+{BehindHutNextDay > 1: ->BehindHutTemp}
+
 You are standing behind the hut.
 
 There is a pile of wet laundry on top of what appears to be a screaming turkey.
@@ -59,20 +61,20 @@ VAR walked_away = 0
 
 =WalkAwayOrHelp
 
-+ + [Walk away]
-
-~walked_away++
-"GENERICA, DON'T YOU DARE TURN YOUR BACK ON YOUR SISTER LIKE THAT!"
-
-...Yes, this turkey is definitely your older sister Eldra.
-
-->WalkAwayOrHelp
-
 + + [Help {walked_away > 0: Eldra} {walked_away == 0: the turkey}] You lift the pile of wet laundry off the struggling bird.
 
 It wobbles to its feet and shakes off its feathers.
 
 ->NextDayExplanation
+
++ + [Walk away]
+
+~walked_away++
+"GENERICA, DON'T YOU DARE TURN YOUR BACK ON YOUR SISTER LIKE THAT!"
+
+...Yes, this turkey is definitely Eldra.
+
+->WalkAwayOrHelp
 
 =NextDayExplanation
 
@@ -93,7 +95,7 @@ Eldra continues, "And she's turned me into a turkey!"
 ->NextDayExplanation2
 
 + + "That's hilarious."
-Eldra simply gives you a look as severe a turkey could possibly give.
+Eldra simply gives you a cold look. (A cold turkey look?)
 
 ->NextDayExplanation2
 
@@ -104,7 +106,7 @@ Eldra simply gives you a look as severe a turkey could possibly give.
 
 Eldra continues, "But she's not old enough to harness the power of the staff!"
 
-+ + "I'm going to town."
++ + "I'm going to town to find her."
 
 "Good luck, Generica!"
 
@@ -124,6 +126,7 @@ There is a pile of wet laundry on the ground.
 
 + [Talk to Eldra] You talk to Eldra.
 "There's no time to lose! Find your sister before she hurts herself, or someone else!"
++ + ["Don't get your feathers in a bunch."] "Don't get your feathers in a bunch." you reply.
 ...
 ->BehindHutTemp
 
