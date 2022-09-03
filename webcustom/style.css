@@ -33,7 +33,10 @@
     color: rgb(59, 165, 179);
 }
 .getitem {
-    color: coral;
+    color: rgb(0, 255, 255);
+}
+.giveitem {
+    color: rgb(0, 163, 163);
 }
 
 /* Old Bekant1 Stuff here.

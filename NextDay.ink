@@ -14,11 +14,25 @@ It is morning, and the sun is shining.
 
 There's an empty space above the mantle where the Staff of Power usually sits.
 
+{not item_sunglasses: Your favorite pair of sunglasses are lying on the kitchen table.}
 {BehindHutNextDay == 0: There is the sound of a screaming turkey coming from outside.}
 
-+ [Go outside] You go outside.
++ {not item_sunglasses} [Pick up your sunglasses] You pick up your sunglasses. #CLASS: getitem
+~item_sunglasses++
+...
+->HutNextDay
+
++ {not item_sunglasses} [Go outside] You start to leave the hut.
+But you regret forgetting your sunglasses the last time you did this.
+...
+->HutNextDay
+
++ {item_sunglasses} [Go outside] You go outside.
 ...
 ->OutsideHutNextDay
+
++ [Check Inventory]
+->Inventory ->HutNextDay
 
 =OutsideHutNextDay
 

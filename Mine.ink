@@ -44,7 +44,23 @@ It wiggles.
 
 You're pretty sure there's something in it.
 
-->MineRoom1
++ [Tap it with your foot] You tap it with your foot.
+
+"EH?! WHO'S THERE?!" A voice erupts from the barrel. #CLASS: foreman
+
++ [Kick it over] You kick the barrel over.
+
+"AAAAAARGH!!!" #CLASS: foreman
+
+A short, stocky bearded man in his birthday suit goes rolling out of the barrel.
+
+->BarrelKicked
+
+
+
+=BarrelKicked
++ [Oh my!]
+
 
 
 =MineRoom1

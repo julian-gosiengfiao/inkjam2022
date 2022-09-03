@@ -34,13 +34,13 @@ It roars in delight. #CLASS: gorgoneye
 ...
 -> StartSequence
 
-+ {item_staff_of_power} [Give Staff of Power to Eldra] You give the Staff of Power to Eldra.
++ {item_staff_of_power} [Give Staff of Power to Eldra] You give the Staff of Power to Eldra.#CLASS: giveitem
 
 ~item_staff_of_power = 0
 
 Yolene attempts to grab at the staff, but Eldra swats her away easily.
 
-"Now, Gorgon Eye, prepare to feel the might of the most powerful witch in the land!"#CLASS:bigsis
+"Now, Gorgon Eye, prepare to feel the might of the most powerful witch in the land!"#CLASS: bigsis
 
 {item_sunglasses: ->GorgonEyeObliterationSunglasses}
 {not item_sunglasses: ->GorgonEyeObliterationNoSunglasses}
@@ -107,7 +107,7 @@ VAR item_sunglasses = 0
 
 {(item_staff_of_power && not item_sunglasses): You notice your favorite pair of sunglasses lying on the kitchen table.}
 
-+ {not item_staff_of_power} [Take the Staff of Power] You take the Staff of Power.
++ {not item_staff_of_power} [Take the Staff of Power] You take the Staff of Power. #CLASS: getitem
 ~item_staff_of_power = 1
 ...
 -> Hut
