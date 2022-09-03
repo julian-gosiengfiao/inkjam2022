@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Quattrocento:700|Azeret+Mono|Permanent+Marker');
-#dark
 
 .inventory {
     color: rgb(0, 78, 0);
@@ -32,6 +31,9 @@
 }
 .barman {
     color: rgb(59, 165, 179);
+}
+.getitem {
+    color: coral;
 }
 
 /* Old Bekant1 Stuff here.

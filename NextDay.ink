@@ -36,8 +36,8 @@ In the distance, you see a peaceful country town.
 ...
 -> BehindHutNextDay
 
-+ [Go to town] You go to town.
-->Town
++ [Go towards town] You go towards town.
+->outsidetown
 
 + [Check inventory]
 -> Inventory ->HutNextDay
