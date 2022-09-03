@@ -86,6 +86,7 @@ Satisfied, Eldra says "Let's go back to bed now." #CLASS: bigsis
 ...
 + + + + + Zzz... #CLASS: hero
 ...
+#CLEAR
 -> NextDay //NextDay.ink
 
 

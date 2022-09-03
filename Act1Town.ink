@@ -204,26 +204,26 @@ There is a shivering barman, standing next to a mysterious box that is spitting 
 ->townsquare
 
 =barman
-"H-H-H-Hello! I-I-I'm afraid I don't have any d-d-d-drinks today!" #class: barman
-+ "Why not?" #class: hero
-"Well, your si-si-sister has never liked all the dr-dr-drunks, and sh-she came in here and s-s-said a spell: #class: barman
+"H-H-H-Hello! I-I-I'm afraid I don't have any d-d-d-drinks today!" #CLASS: barman
++ "Why not?" #CLASS: hero
+"Well, your si-si-sister has never liked all the dr-dr-drunks, and sh-she came in here and s-s-said a spell: #CLASS: barman
 <br>
 "I wish these people knew this rule: #CLASS: magic
 you don't need spirits to be cool!" #CLASS: magic
 <br>
-+ + "And did it make the people cool?" #class: hero
++ + "And did it make the people cool?" #CLASS: hero
 "No, it froze them! Some of them, I had to pour water over their hands to defrost them from the bar!" 
-+ + + "So you don't have anything left?" #class: hero
-"Nothing! Not even my tankards and pint glasses survived - unless they were outside when the spell went off..." #class: barman
-+ + + + "Yikes! I'm sorry. When I get that Staff back to Eldra, we'll fix this, I promise!" #class: hero
++ + + "So you don't have anything left?" #CLASS: hero
+"Nothing! Not even my tankards and pint glasses survived - unless they were outside when the spell went off..." #CLASS: barman
++ + + + "Yikes! I'm sorry. When I get that Staff back to Eldra, we'll fix this, I promise!" #CLASS: hero
 ...
 ->tavern
 
 
 =icebox
 You look at this mysterious box. It looks like your little sister magicked it into existence? It's very cold, it has a door, and there's nothing inside but cold air and bits of frosted ice on the sides.
-+ "I wonder if this might be a new way of keeping things cold all the time?" #class: hero
-"We could call it a 'freezer'!" #class: barman
++ "I wonder if this might be a new way of keeping things cold all the time?" #CLASS: hero
+"We could call it a 'freezer'!" #CLASS: barman
 ...
 ->tavern
 * {hotmilk} You cool the hot cow's milk down in the magical 'freezer'.
@@ -243,7 +243,7 @@ You now have a pint glass of cold cow's milk in your inventory. #CLASS: getitem
 =tollbridge
 
 At the toll bridge, you see a big troll. He won't let you pass. 
-{milkrequest: "Hey! Did you get me a big pint glass of cold cow's milk yet?" } #class: troll
+{milkrequest: "Hey! Did you get me a big pint glass of cold cow's milk yet?" } #CLASS: troll
 There's some clanking metal noises coming from the <b>blacksmith's forge</b>, next to the toll bridge. 
 + Talk to the troll
 ->troll
@@ -259,7 +259,7 @@ There's some clanking metal noises coming from the <b>blacksmith's forge</b>, ne
 
 
 =troll
-"I complained to your sister that no one was taking me seriously, and no one paid the toll. So she turned me into a troll." #class: troll
+"I complained to your sister that no one was taking me seriously, and no one paid the toll. So she turned me into a troll." #CLASS: troll
 + "And how does that make you feel?" #CLASS: hero
 ->trollfeelings
 + "Can you let me past?" #CLASS: hero
@@ -267,14 +267,14 @@ There's some clanking metal noises coming from the <b>blacksmith's forge</b>, ne
 
 =trollfeelings
 
-"Honestly? I kind of like it." #class: troll
+"Honestly? I kind of like it." #CLASS: troll
 + "You do?" #CLASS: hero
-"Yeah. Before, everyone would push me around, and barge past without paying. Even the goats would just charge me off the bridge. Now I'm a figure of authority." #class: troll
+"Yeah. Before, everyone would push me around, and barge past without paying. Even the goats would just charge me off the bridge. Now I'm a figure of authority." #CLASS: troll
 ...
 ->tollbridge
 
 =milkrequest
-"Now that I'm a troll, I have a real craving for goat's milk. But I guess I could settle for a <b>big pint glass of cold COW'S milk!</b>" #class: troll
+"Now that I'm a troll, I have a real craving for goat's milk. But I guess I could settle for a <b>big pint glass of cold COW'S milk!</b>" #CLASS: troll
 + "But I don't have a glass of milk. Can't you just let me past and let me go after my sister?" #CLASS: hero
 ->nomilk
 + {failedudders} "There's a big strong cow at the other side of town. If you go there, you can squeeze the teats and get as much milk as you'd like!" #CLASS: hero
@@ -290,14 +290,14 @@ There's some clanking metal noises coming from the <b>blacksmith's forge</b>, ne
 ->townsquare
 
 =trollstayshere
-"Hah! You think you can trick me to leave my post? I'm honestly thinking of LIVING UNDER this bridge now! <br> And anyway, that milk wouldn't be <b> cold!</b>" #class: troll
+"Hah! You think you can trick me to leave my post? I'm honestly thinking of LIVING UNDER this bridge now! <br> And anyway, that milk wouldn't be <b> cold!</b>" #CLASS: troll
 ...
 ->tollbridge
 
 =nomilk
 "Nope! Your sister taught me to stand up for myself, so I am insisting on a toll. Ahem... YOUUUUU SHALL-NOT.... PASSSSS!!! without paying first."
 "Can't I pay coins?"#CLASS: hero
-"Do you have coins?" #class: troll
+"Do you have coins?" #CLASS: troll
 + "No." #CLASS: hero
 ->nocoins
 + "Yes."#CLASS: hero
@@ -317,7 +317,7 @@ There's some clanking metal noises coming from the <b>blacksmith's forge</b>, ne
 
 =wrongmilk
 The troll takes the glass.
-"Ugh! This milk is warm! Can't you cool it down first?" #class: troll
+"Ugh! This milk is warm! Can't you cool it down first?" #CLASS: troll
 He hands it back.
 ->tollbridge
 
