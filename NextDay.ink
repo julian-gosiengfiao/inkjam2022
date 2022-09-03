@@ -50,8 +50,11 @@ In the distance, you see a peaceful country town.
 ...
 -> BehindHutNextDay
 
-+ [Go towards town] You go towards town.
-->outsidetown
++ {BehindHutNextDay == 0}[Go towards town] You go towards town.
+->blockedoutsidetown
+
++ {BehindHutNextDay} [Go towards town] You go towards town.
+->outsidetownfirstentry
 
 + [Check inventory]
 -> Inventory ->HutNextDay
@@ -154,5 +157,21 @@ You go to the front of the hut.
 
 + [Check inventory]
 -> Inventory ->BehindHutNoScreaming
+
+=blockedoutsidetown
+You are on the road to town.
+
+The road is blocked by the most muscular cow you have ever seen.
+
+Somewhere behind you, a turkey is still screaming.
+
++ [Try to get around the cow] You try to get around the cow.
+But you cannot fathom the enormity of the situation. Or of the cow. And you fail.
+...
+->blockedoutsidetown
+
++ [Go to the hut] You throw your hands up in the air and return to the hut.
+...
+->OutsideHutNextDay
 
 ->END

@@ -15,7 +15,7 @@ Debug Menu - delete this when showing to people!
 -> NextDay
 + Start game from Act1Town
 #CLEAR
--> outsidetown
+-> outsidetownfirstentry
 + Start game from Mine
 #CLEAR
 -> TransitionToMineArea

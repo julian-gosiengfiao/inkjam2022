@@ -1,19 +1,34 @@
 
-=outsidetown
+=outsidetownfirstentry
 
-{not townsquare} You step out of the front door of your house, and look forward towards the town. With any luck, your sister will still be there. You hear a "moo" sound off to one side. <br> <br> A frankly enormous cow is moving towards the front door of your house, followed by an anxious cowman. It reaches your front door, and thunks down in front of the doorway, and begins to chew on your begonias.
-->cowhouse
+You start down the road towards the town. With any luck, your sister will still be there.
 
-=cowhouse
+You hear a moo sound behind you.
 
-{not townsquare} You are standing outside the home you share with your sisters. Ahead is the centre of town, where you know your sister has gone.
++ That sounded like an exceptionally deep moo.
+
+A frankly enormous cow has shuffled into the middle of the path, followed by an anxious cowman.
+
+It stops right there in the middle, blocking all traffic.
+
++ + That's fine, you didn't leave anything back at home anyway.
+
+Anything important, that is.
+...
+->cowencounter
+
+
+
+=cowencounter
+
+You are standing on the road between your hut and the town, next to a cowman and a cow.
 
 The cowman looks at you, and shrugs his shoulders. 
-The cow looks at you, and chews on your flowers. It is huge and muscular.
-+ Talk to cowman
-->cowman
+The cow looks at an imperceptible point in the far distance, and chews on some flowers. It is huge and muscular.
 + Look at cow {whatacow: again}
 ->whatacow
++ Talk to cowman
+->cowman
 + Go into town
 ->townsquare
 + {failedudders} Try to work out a solution to the overly sturdy udders
@@ -28,7 +43,7 @@ The cow looks at you, and chews on your flowers. It is huge and muscular.
 ->cowman
 + Head back to the road to town
 ...
-->outsidetown
+->cowencounter
 
 =cowman
 "Hi there! So, I was worried that Big Beautiful Bessie here was going to get stomped on in future monster attacks..." #CLASS: cowman
@@ -41,13 +56,13 @@ I wish, I wish, the cow would be #CLASS: magic
 Able to withstand injury! #CLASS: magic
 <br>
 "And now, Bessie is so big and sturdy, I can't even squeeze her udders! Look!
-+ + + look
++ + + [Look]
 ->failedudders
 
 =failedudders
 The cowman takes both hands and squeezes squeezes squeezes Bessie's udder teats, but not a drop of milk comes out.
 ...
--> cowhouse
+-> cowencounter
 
 =uddersolutions
 + {pintglass and not tongs} "I've got a pint glass to put the milk in!" #CLASS: hero
@@ -58,7 +73,7 @@ The cowman takes both hands and squeezes squeezes squeezes Bessie's udder teats,
 ->cownomove
 + "I guess I'll walk around, see if I can find some solutions." #CLASS: hero
 ... 
-->outsidetown
+->cowencounter
 
 =notongs
 "That's great that you've got a place to take some milk, but I still don't know how to extract any milk from Bessie!"  #CLASS: cowman
@@ -69,12 +84,12 @@ The cowman takes both hands and squeezes squeezes squeezes Bessie's udder teats,
 "Oh, amazing! That MIGHT work... my bucket is a bit dirty though, do you have something we can squirt some milk into?" #CLASS: cowman
 + "No... but I can go look for something!"  #CLASS: hero
 ...
-->outsidetown
+->cowencounter
 
 =cownomove
 "That's great and all, but I can't make Bessie move when she's this big, and she just loves your begonias. I'm afraid we can't move." #CLASS: cowman
 + "Hmmm... maybe we can get something stronger than our hands to squeeze the teats." #CLASS: hero
-->cowhouse
+->cowencounter
 
 =squeeze
 You and the cowman each hold one of the handles of the blacksmith's tongs, and aim at an udder teat, which is positioned carefully above your empty pint glass.
@@ -89,7 +104,7 @@ You both squeeze together, and a stream of lilac-coloured milk comes out.
 You now have some very warm cow's milk in a pint glass. It's lilac-coloured, but that's probably fine.
 You wave goodbye to the cowman.
 ...
-->outsidetown
+->cowencounter
 
 =townsquare
 
@@ -145,7 +160,7 @@ And there's a road back to the <b>edge of town</b>.
 
 =townsquarewhere
 + Back to the cow fields, towards your home
-->outsidetown
+->cowencounter
 + Forward towards the toll bridge and blacksmith's
 ->tollbridge
 + Into the Tavern
