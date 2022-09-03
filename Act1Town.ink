@@ -187,7 +187,7 @@ There is a blacksmith to talk to (add dialogue later)
 He looks over there. 
 You steal the tongs. 
 
-+ You now have some tongs in your inventory.
++ You now have some tongs in your inventory. #CLASS: getitem
 ->smith
 
 
@@ -235,7 +235,7 @@ You now have a pint glass in your inventory. It is empty.
 
 
 =coldmilk
-You now have a pint glass of cold cow's milk in your inventory.
+You now have a pint glass of cold cow's milk in your inventory. #CLASS: getitem
 ->tavern
 
 

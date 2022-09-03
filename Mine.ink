@@ -6,7 +6,7 @@
 
 You walk for a while, and eventually the mountains in the distance get closer and closer.
 
-At the base of one mountain, you see a pillar of light shoot into the sky.
+At the base of a mountain, you see a pillar of light shoot into the sky.
 
 This can't be good.
 
