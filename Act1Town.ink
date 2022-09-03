@@ -317,4 +317,3 @@ START OF ACT 2
 
 -> TransitionToMineArea
 
-->END
