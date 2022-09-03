@@ -31,9 +31,7 @@ It roars in delight.
 "It's not fair just 'cause I'm the youngest! And the hut is so FAR!" says Yolene.
 
 + + [Sigh.] You dream of stuffing their mouths full of clay.
-
 ...
-
 -> StartSequence
 
 + {item_staff_of_power} [Give Staff of Power to Eldra] You give the Staff of Power to Eldra.
@@ -63,10 +61,13 @@ Satisfied, Eldra says "Let's go back to bed now."
 -> NextDay //NextDay.ink
 
 + {listened_to_bickering} [Go to the hut] You walk the twenty steps back to the hut where you live.
-
 ...
-
 ->Hut
+
++ [Check inventory] #CLASS: inventory
+-> Inventory ->StartSequence
+
+
 
 VAR item_staff_of_power = 0
 

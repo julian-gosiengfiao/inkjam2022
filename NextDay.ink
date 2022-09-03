@@ -41,7 +41,7 @@ In the distance, you see a peaceful country town.
 
 =BehindHutNextDay
 
-{BehindHutNextDay > 1: ->BehindHutTemp}
+{BehindHutNextDay > 1: ->BehindHutNoScreaming}
 
 You are standing behind the hut.
 
@@ -114,9 +114,9 @@ Eldra continues, "But she's not old enough to harness the power of the staff!"
 
 //TODO: FLESH OUT ASPIRATIONS/INTENTIONS IN THIS DIALOGUE, MAKE IT MORE INTERESTING I GUESS. I DON'T SUPER-LIKE IT.
 
-->BehindHutTemp
+->BehindHutNoScreaming
 
-=BehindHutTemp
+=BehindHutNoScreaming
 
 You are standing behind the hut.
 
@@ -128,7 +128,7 @@ There is a pile of wet laundry on the ground.
 "There's no time to lose! Find our sister before she hurts herself, or someone else!"
 + + ["Don't get your feathers in a bunch."] "Don't get your feathers in a bunch." you reply.
 ...
-->BehindHutTemp
+->BehindHutNoScreaming
 
 + [Go to the front of the hut]
 You go to the front of the hut.
