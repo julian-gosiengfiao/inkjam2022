@@ -102,7 +102,7 @@ The man looks at you suspiciously.
 ~barrel_reset++
 } //If you kicked the man over and went in here, he'll come out because he's ready to talk to you now.
 
-You are in the well-lit entry hall of the mine shaft.
+You are in the well-lit entry hall of the mine tunnel.
 
 It's surprsingly roomy in here.
 
