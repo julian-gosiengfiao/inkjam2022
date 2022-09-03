@@ -1,7 +1,4 @@
 
-
-->outsidetown
-
 =outsidetown
 
 You are standing outside the home you share with your sisters. Ahead is the centre of town, where you know your sister has gone.
@@ -315,6 +312,6 @@ The troll takes the glass.
 
 =ACT2
 
-START OF ACT 2
+-> TransitionToMineArea
 
 ->END

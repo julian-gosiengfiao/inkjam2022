@@ -1,5 +1,3 @@
--> TransitionToMineArea
-
 =TransitionToMineArea
 
 You walk for a while, and eventually the mountains in the distance get closer and closer.
@@ -46,7 +44,7 @@ It wiggles.
 
 You're pretty sure there's something in it.
 
-
+->MineRoom1
 
 
 =MineRoom1
