@@ -6,12 +6,19 @@
 }
 .hero {
     color: rgb(202, 146, 146);
+    text-align: right;
 }
 .bigsis {
-    color: rgb(204, 0, 255);
+    color: rgb(219, 75, 255);
 }
 .littlesis {
-    color: rgb(238, 255, 89);
+    color: rgb(243, 255, 132);
+}
+.redtext {
+    color: rgb(255, 0, 0);
+}
+.gorgoneye {
+    color: rgb(179, 49, 103);
 }
 .cowman {
     color: rgb(35, 129, 74);

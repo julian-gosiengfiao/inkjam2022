@@ -14,7 +14,7 @@ Beside you, your two sisters are bickering.
 
 The Gorgon Eye is raking white-hot lasers across the helpless town, incinerating the odd cow or two.
 
-It roars in delight.
+It roars in delight. #CLASS: gorgoneye
 
 + + [{&Okay.|Great.}]
 
@@ -26,9 +26,9 @@ It roars in delight.
 
 ~listened_to_bickering++
 
-"I'm the eldest sister, so I shouldn't have to fetch the magical wand," says Eldra.
+"I'm the eldest sister, so I shouldn't have to fetch the magical wand," says Eldra.#CLASS: bigsis
 
-"It's not fair just 'cause I'm the youngest! And the hut is so FAR!" says Yolene.
+"It's not fair just 'cause I'm the youngest! And the hut is so FAR!" says Yolene.#CLASS: littlesis
 
 + + [Sigh.] You dream of stuffing their mouths full of clay.
 ...
@@ -40,23 +40,23 @@ It roars in delight.
 
 Yolene attempts to grab at the staff, but Eldra swats her away easily.
 
-"Now, Gorgon Eye, prepare to feel the might of the most powerful witch in the land!"
+"Now, Gorgon Eye, prepare to feel the might of the most powerful witch in the land!"#CLASS:bigsis
 
-+ + [Put on your sunglasses] You put on your sunglasses. At night.
++ + [Put on your sunglasses] It is nighttime, but you put on your sunglasses anyway.
 
 Eldra recites a brief incantation, then a beam with the force of an exploding star erupts from her staff.
 
-It obliterates the Gorgon Eye wholly.
+It obliterates the Gorgon Eye wholly.#CLASS: redtext
 
 + + + [Take your sunglasses off] You slide your sunglasses back in your pocket.
 
 Yolene sulks.
 
-Satisfied, Eldra says "Let's go back to bed now."
+Satisfied, Eldra says "Let's go back to bed now." #CLASS: bigsis
 
 + + + + [Okay.] You go to bed.
 ...
-+ + + + + Zzz...
++ + + + + Zzz... #CLASS: hero
 ...
 -> NextDay //NextDay.ink
 

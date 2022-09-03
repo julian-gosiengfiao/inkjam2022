@@ -47,11 +47,11 @@ You are standing behind the hut.
 
 There is a pile of wet laundry on top of what appears to be a screaming turkey.
 
-<i>"GENERICAAAAAAAAAAAA!!!"</i>
+<i>"GENERICAAAAAAAAAAAA!!!"</i> #CLASS: bigsis
 
 + [Did that turkey just say my name?!] You approach the turkey.
 
-"Generica, get me out of this pile of wet laundry!"
+"Generica, get me out of this pile of wet laundry!" #CLASS: bigsis
 
 You have never seen a turkey speak with such a mix of authority and desperation.
 
@@ -70,7 +70,7 @@ It wobbles to its feet and shakes off its feathers.
 + + [Walk away]
 
 ~walked_away++
-"GENERICA, DON'T YOU DARE TURN YOUR BACK ON YOUR SISTER LIKE THAT!"
+"GENERICA, DON'T YOU DARE TURN YOUR BACK ON YOUR SISTER LIKE THAT!" #CLASS: bigsis
 
 ...Yes, this turkey is definitely Eldra.
 
@@ -78,37 +78,37 @@ It wobbles to its feet and shakes off its feathers.
 
 =NextDayExplanation
 
-+ ["What happened?"] "What happened?" you ask.
++ ["What happened?"] "What happened?" you ask. #CLASS: hero
 
-"Yolene has taken the Staff of Power and fled."
+"Yolene has taken the Staff of Power and fled." #CLASS: bigsis
 
-Eldra continues, "And she's turned me into a turkey!"
+Eldra continues, "And she's turned me into a turkey!" #CLASS: bigsis
 
-+ + "Well, you've not been very kind to her."
++ + "Well, you've not been very kind to her." #CLASS: hero
 
-"I suppose I haven't been the best sister." Eldra replies.
+"I suppose I haven't been the best sister." Eldra replies.#CLASS: bigsis
 ->NextDayExplanation2
 
-+ + "That's terrible!"
++ + "That's terrible!" #CLASS: hero
 
-"It is." Eldra replies.
+"It is." Eldra replies. #CLASS: bigsis
 ->NextDayExplanation2
 
-+ + "That's hilarious."
-Eldra simply gives you a cold look. (A cold turkey look?)
++ + "That's hilarious." #CLASS: hero
+Eldra simply gives you a cold look... A cold turkey look.
 
 ->NextDayExplanation2
 
 =NextDayExplanation2
-+ ["Where did she go?"] "Where did she go?" you ask.
++ ["Where did she go?"] "Where did she go?" you ask. #CLASS: hero
 
-"She ran off towards the town, proclaiming that she would be a much better witch than I was."
+"She ran off towards the town, proclaiming that she would be a much better witch than I was." #CLASS: bigsis
 
-Eldra continues, "But she's not old enough to harness the power of the staff!"
+Eldra continues, "But she's not old enough to harness the power of the staff!" #CLASS: bigsis
 
-+ + "I'm going to town to find her."
++ + "I'm going to town to find her." #CLASS: hero
 
-"Good luck, Generica!"
+"Good luck, Generica!" #CLASS: bigsis
 
 ...
 
@@ -125,8 +125,8 @@ Your older sister Eldra is here, in the form of a turkey.
 There is a pile of wet laundry on the ground.
 
 + [Talk to Eldra] You talk to Eldra.
-"There's no time to lose! Find our sister before she hurts herself, or someone else!"
-+ + ["Don't get your feathers in a bunch."] "Don't get your feathers in a bunch." you reply.
+"There's no time to lose! Find our sister before she hurts herself, or someone else!" #CLASS: bigsis
++ + ["Don't get your feathers in a bunch."] "Don't get your feathers in a bunch." you reply. #CLASS: hero
 ...
 ->BehindHutNoScreaming
 

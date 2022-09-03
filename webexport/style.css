@@ -2,12 +2,36 @@
 #dark
 
 .inventory {
-    color: green;
-    text-align: left;
+    color: rgb(0, 78, 0);
 }
-.narrator {
-    color: rgb(232, 255, 232);
-    text-align: left;
+.hero {
+    color: rgb(202, 146, 146);
+    text-align: right;
+}
+.bigsis {
+    color: rgb(219, 75, 255);
+}
+.littlesis {
+    color: rgb(243, 255, 132);
+}
+.redtext {
+    color: rgb(255, 0, 0);
+}
+.gorgoneye {
+    color: rgb(179, 49, 103);
+}
+.cowman {
+    color: rgb(35, 129, 74);
+}
+.dazedvillager {
+    color: rgb(114, 156, 35);
+}
+.troll {
+    color: rgb(0, 255, 106);
+    font-size: 15pt;
+}
+.barman {
+    color: rgb(59, 165, 179);
 }
 
 /* Old Bekant1 Stuff here.
