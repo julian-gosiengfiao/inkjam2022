@@ -1,3 +1,7 @@
+
+
+->outsidetown
+
 =outsidetown
 
 You are standing outside the home you share with your sisters. Ahead is the centre of town, where you know your sister has gone.
@@ -158,9 +162,8 @@ You are in the town square. There is a dazed villager.
 = looktownsquare
 
 You look around the town square.
-There's the local <b>tavern</b>, the Embarrassing Cucumber, which appears to have icicles in the windows. 
-There's a path onwards, towards the <b>toll bridge</b>. 
-There's some clanking metal noises coming from the <b>blacksmith's forge</b>. 
+There's the local <b>tavern</b>, the Embarrassing Cucumber, which appears to have icicles on the inside of the windows. 
+There's a path onwards, towards the <b>toll bridge</b>, and you know the <b>blacksmith's</b> is that way, too. 
 And there's a road back to the <b>edge of town</b>. 
 
 + Seems like there's lots of places to go.
@@ -170,9 +173,7 @@ And there's a road back to the <b>edge of town</b>.
 =townsquarewhere
 + Back to the cow fields, towards your home
 ->outsidetown
-+ Into the Blacksmith's
-->smith
-+ Forward towards the toll bridge
++ Forward towards the toll bridge and blacksmith's
 ->tollbridge
 + Into the Tavern
 ->tavern
@@ -184,11 +185,12 @@ And there's a road back to the <b>edge of town</b>.
 
 In the smithy.
 There is a blacksmith to talk to (add dialogue later)
-He is using these just beautiful tongs, and he's holding them in his hand.
-* Steal the tongs
+{not tongs: He is using these just beautiful tongs, and he's holding them in his hand.}
+* Distract the blacksmith so you can steal the tongs
 ->tongs
 + Leave
-->townsquare
+...
+->tollbridge
 
 =tongs
 
@@ -202,8 +204,8 @@ You steal the tongs.
 
 =tavern 
 
-In the tavern, everything is very cold. 
-There is a barman (later, I'll write barman dialogue).
+In the tavern, everything is very cold. There is a light dusting of snow on the floor.
+There is a shivering barman (later, I'll write barman dialogue).
 There is a magical cold box.
 * {cowscene or milkrequest} Take a pint glass.
 ->pintglass
@@ -226,23 +228,37 @@ You now have a pint glass of cold cow's milk in your inventory.
 =tollbridge
 
 At the toll bridge, you see a big troll. He won't let you pass. 
-+ Talk to troll
+{milkrequest: "Hey! Did you get me a big pint glass of cold cow's milk yet?" } #class: troll
+There's some clanking metal noises coming from the <b>blacksmith's forge</b>, next to the toll bridge. 
++ Talk to the troll
 ->troll
++ {milkrequest and hotmilk and not coldmilk} You offer the fresh milk you just got to the troll.
 ->wrongmilk
-+ {coldmilk and not trollmilkget} You offer the big pint glass of cold milk to the troll.
+-+ {milkrequest and coldmilk and not trollmilkget} You offer the big pint glass of cold milk to the troll.
 ->trollmilkget
++ Enter the blacksmith's
+->smith
 + Go back to the town square
 ->townsquare
 
 
 =troll
 "I complained to your sister that no one was taking me seriously, and no one paid the toll. So she turned me into a troll." #class: troll
++ "And how does that make you feel?" #CLASS: hero
+->trollfeelings
 + "Can you let me past?" #CLASS: hero
 ->milkrequest
 
+=trollfeelings
+
+"Honestly? I kind of like it." #class: troll
++ "You do?" #CLASS: hero
+"Yeah. Before, everyone would push me around, and barge past without paying. Even the goats would just charge me off the bridge. Now I'm a figure of authority." #class: troll
+...
+->tollbridge
 
 =milkrequest
-"Now that I'm a troll, I have a real craving for goat's milk. But I guess I could settle for a big pint glass of cold COW'S milk!" #class: troll
+"Now that I'm a troll, I have a real craving for goat's milk. But I guess I could settle for a <b>big pint glass of cold COW'S milk!</b>" #class: troll
 + "But I don't have a glass of milk. Can't you just let me past and let me go after my sister?" #CLASS: hero
 ->nomilk
 + {hotmilk and not coldmilk} You offer the fresh milk you just got to the troll.
@@ -252,6 +268,7 @@ At the toll bridge, you see a big troll. He won't let you pass.
 + {trollmilkget} Having done everything you want to do in town, you cross the bridge.
 ->ACT2
 + Go back to the Town Square
+...
 ->townsquare
 
 
