@@ -125,7 +125,7 @@ Your older sister Eldra is here, in the form of a turkey.
 There is a pile of wet laundry on the ground.
 
 + [Talk to Eldra] You talk to Eldra.
-"There's no time to lose! Find your sister before she hurts herself, or someone else!"
+"There's no time to lose! Find our sister before she hurts herself, or someone else!"
 + + ["Don't get your feathers in a bunch."] "Don't get your feathers in a bunch." you reply.
 ...
 ->BehindHutTemp
