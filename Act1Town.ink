@@ -13,7 +13,7 @@ It stops right there in the middle, blocking all traffic.
 
 + + That's fine, you didn't leave anything back at home anyway.
 
-Anything important, that is.
+{not WalkedAway: Anything <i>important</i>, that is.}
 ...
 ->cowencounter
 
@@ -30,12 +30,13 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 ->whatacow
 + Talk to cowman
 ->cowman
-+ Go into town
-->townsquare
 + {failedudders} Try to work out a solution to the overly sturdy udders
 ->uddersolutions
 * {tongs and pintglass} "I've got some blacksmith's tongs to squeeze the udders with! And a pintglass to squeeze the milk into!" #CLASS: hero
 ->squeeze
++ [Go into town] You go into town.
+...
+->townsquare
 
 =whatacow
 <b> What. A. Cow. </b>

@@ -106,3 +106,11 @@ This is room 1. I'll figure something out here.
 
 ->END
 
+/*
+Laundry room and come back to barrel man
+Glowing sock for dark room
+Mole who wants something from dancers
+dancers who block the way, but teach you moves or something for mole
+mole gives you key to laundry which has all the soap
+put soap into the smoke machine
+*/
