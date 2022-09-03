@@ -21,6 +21,7 @@ Before long, you arrive at your destination.
 
 
 VAR item_laundry_room_key = 0
+VAR barrel_reset = 0
 
 =OutsideMine
 
@@ -30,15 +31,25 @@ There is a single building out here, with intense light pouring out of every ope
 
 You notice a wiggling barrel next to the building.
 
-+ Enter the building
++ [Enter the building] You try to enter the building.
 {not item_laundry_room_key:
     It's locked, and you don't have a key.
     ...
     ->OutsideMine
 }
 
-+ [Inspect the barrel] You walk up to the barrel.
++ {not BarrelKicked} [Inspect the barrel] You walk up to the barrel.
+It wiggles.
+You're pretty sure there's something in it.
 -> BarrelSequence
+
++ {BarrelKicked && not barrel_reset} [Inspect the barrel] The lid's shut tight.
+Maybe you should let him cool off for a bit.
+...
+->OutsideMine
+
++ {barrel_reset} [Talk to the man in the barrel]
+->BarrelTalk
 
 + [Enter the mine] You enter the mine.
 -> MineRoom1
@@ -50,25 +61,19 @@ You notice a wiggling barrel next to the building.
 
 
 =BarrelSequence
-It wiggles.
+* [Tap it with your foot] You tap it with your foot.
 
-You're pretty sure there's something in it.
+You hear some indistinct noises inside the barrel.
 
-+ [Tap it with your foot] You tap it with your foot.
-
-"EH?! WHO'S THERE?!" A voice erupts from the barrel. #CLASS: foreman
-
-->BarrelTapped
+->BarrelSequence
 
 + [Kick it over] You kick the barrel over.
-
 "AAAAAARGH!!!" #CLASS: foreman
-
 A short, stocky bearded man in his birthday suit goes rolling out of the barrel.
-
 ->BarrelKicked
 
-
++ [Leave it alone] You leave it alone.
+-> OutsideMine
 
 =BarrelKicked
 + [Oh my!] He immediately tries to get back into the barrel, while spewing a stream of profanities.
@@ -80,23 +85,23 @@ A short, stocky bearded man in his birthday suit goes rolling out of the barrel.
 He climbs back in the barrel and slams the lid tightly shut.
 
 + + + Oops.
-
+...
 -> OutsideMine
 
 
-=BarrelTapped
+=BarrelTalk
+The man looks at you suspiciously.
 
-+ "I'm Generica. Who are you?" #CLASS: hero
-
-A stocky bearded man pops his head out from the barrel, looking slightly sheepish.
-
-"Er... hello, I'm the foreman Kallax. What do you want?"
-
-+ + He also looks slightly naked.
 
 ->END
 
+
+
 =MineRoom1
+{BarrelKicked:
+~barrel_reset++
+} //If you kicked the man over and went in here, he'll come out because he's ready to talk to you now.
+
 This is room 1. I'll figure something out here.
 
 ->END

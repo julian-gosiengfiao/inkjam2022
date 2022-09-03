@@ -24,7 +24,7 @@ It roars in delight. #CLASS: gorgoneye
 
 ~listened_to_bickering++
 
-"I'm the eldest sister, so I shouldn't have to fetch the magical wand," says Eldra.#CLASS: bigsis
+"I'm the eldest sister, so I shouldn't have to fetch the staff," says Eldra.#CLASS: bigsis
 
 "It's not fair just 'cause I'm the youngest! And the hut is so FAR!" says Yolene.#CLASS: littlesis
 
@@ -67,7 +67,7 @@ It obliterates the Gorgon Eye wholly.#CLASS: redtext
 
 Eldra recites a brief incantation, then a beam with the force of an exploding star erupts from her staff.
 
-It obliterates the Gorgon Eye wholly.#CLASS: redtext
+<b>It obliterates the Gorgon Eye wholly.</b> #CLASS: redtext
 
 The blast is totally blinding.
 
