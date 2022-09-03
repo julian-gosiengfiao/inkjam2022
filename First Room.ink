@@ -2,11 +2,11 @@ VAR looked_at_monster = 0
 VAR listened_to_bickering = 0
 
 =StartSequence
-You are on a country road.
+You are on a country road.#CLASS: narrator
 
 In the distance, {looked_at_monster: a Gorgon Eye} {not looked_at_monster: a monster} is terrorizing the town.
 
-Beside you, your two sisters are bickering.
+Beside you, your two sisters are bickering.#CLASS: narrator
 
 + [Look at the monster] You look at the monster.
 
