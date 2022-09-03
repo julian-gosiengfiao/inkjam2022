@@ -52,6 +52,7 @@ Maybe you should let him cool off for a bit.
 ->BarrelTalk
 
 + [Enter the mine] You enter the mine.
+...
 -> MineRoom1
 
 + [Check your inventory]
@@ -68,7 +69,7 @@ You hear some indistinct noises inside the barrel.
 ->BarrelSequence
 
 + [Kick it over] You kick the barrel over.
-"AAAAAARGH!!!" #CLASS: foreman
+"AAAAAARGH!!!" #CLASS: barrelman
 A short, stocky bearded man in his birthday suit goes rolling out of the barrel.
 ->BarrelKicked
 
@@ -80,7 +81,7 @@ A short, stocky bearded man in his birthday suit goes rolling out of the barrel.
 
 + + "Have you seen my sister?" #CLASS: hero
 
-"YOU CRAZY SWAMP-WATER-DRINKING LOON! GET AWAY FROM ME!" #CLASS: foreman
+"YOU CRAZY SWAMP-WATER-DRINKING LOON! GET AWAY FROM ME!" #CLASS: barrelman
 
 He climbs back in the barrel and slams the lid tightly shut.
 
@@ -104,12 +105,62 @@ The man looks at you suspiciously.
 
 You are in the well-lit entry hall of the mine tunnel.
 
-It's surprsingly roomy in here.
+An exhausted foreman is leaning against a wall.
 
-A well-dressed man is leaning on a wall
+The tunnel goes on into the darkness.
+
+There's a sizable crack in the wall next to the foreman.
+
++ [Talk to the foreman]
+-> TalkToForeman
+
++ [Examine the crack] You examine the crack in the wall.
+->ExamineCrack
+
++ [Go deeper into the tunnel] You go deeper into the tunnel.
+...
+->TunnelDarkSection
 
 + [Check inventory]
 ->Inventory ->MineRoom1
+
+=ExamineCrack
+It's quite a large crack.
+
+It looks like it goes pretty deep, and you might be able to fit through it.
+
++ [Try to squeeze through] You try to squeeze through the crack.
+...
++ + It's a tight fit...
+...
++ + + ...
+...
++ + + + You emerge through the other end.
+...
+-> MoleRoom
+
++ [Leave it alone]
+-> MineRoom1
+
+
+=TalkToForeman
+Text
++ Okay.
+->MineRoom1
+
+=TunnelDarkSection
+Text
++ Okay.
+->MineRoom1
++ [Check inventory]
+->Inventory ->TunnelDarkSection
+
+=MoleRoom
+Text
++ Okay.
+->MineRoom1
++ [Check inventory]
+->Inventory ->MoleRoom
 
 ->END
 
