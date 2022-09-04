@@ -100,6 +100,16 @@
     color: #ffe6c6;
 }
 
+.mole{
+    font-family: 'Open Sans', sans-serif;
+    color: #775e3e;
+}
+
+.mole2{
+    font-family: 'Open Sans', sans-serif;
+    color: #61773e;
+}
+
 /* Old Bekant1 Stuff here.
 
 .brian {
@@ -287,7 +297,7 @@ p {
     line-height: 1.7em;
     font-weight: lighter;
     text-align: left;
-    font-family: monospace; removing Bekant1's text style 
+    /*font-family: monospace; removing Bekant1's text style */
 }
 
 a {
