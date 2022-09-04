@@ -121,12 +121,12 @@ You've made Yolene too sad. She bursts into a flood of tears.
 
 =caringyolene1
 "You... you were worried about me?" #CLASS: littlesis
-+  "Of course!" 
++  "Of course!" #CLASS: hero
 ->worktogether
 
 =caringyolene2
  "So... I did help people with my Blessings? #CLASS: littlesis
-+ "Some of them, yes".
++ "Some of them, yes". #CLASS: hero
 ->worktogether
 
 
@@ -155,55 +155,55 @@ Yolene looks cheerier now. She stands up, and dusts herself off.
 
 
 =planwithyolene
-"How can I help?" #class: littlesis
+"How can I help?" #CLASS: littlesis
 + {talkdog} "So, where's the Staff of Power, Yolene?" #CLASS: hero
-"Oh. The dog took it. Well, the man, with the dog's mind. I'll explain." #class: littlesis
+"Oh. The dog took it. Well, the man, with the dog's mind. I'll explain." #CLASS: littlesis
 + + "Go on." #CLASS: hero
-"So, that poor dog was all tied up it couldn't get free, and the man didn't seem to care that he was barking and barking. He was probably thirsty too, and there was no water." #class: littlesis
+"So, that poor dog was all tied up it couldn't get free, and the man didn't seem to care that he was barking and barking. He was probably thirsty too, and there was no water." #CLASS: littlesis
 + + + "So you did another Blessing?" #CLASS: hero
-"So I did another Blessing. This one was: #class: littlesis
+"So I did another Blessing. This one was: #CLASS: littlesis
 <br>
 I wish you’d learn to empathise #CLASS: magic
 See the world through another’s eyes! #CLASS: magic
 <br>
-+ + + + "And then what happened?"
-"Well, the dog mind was happy to be free, but he thought I was playing fetch! He grabbed the Staff of Power and ran off into the woods! I chased him, but I got lost, and it took me ages to get back. When I got back, the dog mind was already back, but he won't lead me back to the Staff!"
-+ + + + + {not treats} "Right. So we need to get the dog mind on our side."
++ + + + "And then what happened?" #CLASS: hero
+"Well, the dog mind was happy to be free, but he thought I was playing fetch! He grabbed the Staff of Power and ran off into the woods! I chased him, but I got lost, and it took me ages to get back. When I got back, the dog mind was already back... <br> but he won't lead me back to the Staff!" #CLASS: littlesis
++ + + + + {not treats} "Right. So we need to get the dog mind on our side." #CLASS: hero
 ->->
-+ + + + + {pocketkey} "But even when the dog mind trusts us... he doesn't know where he dropped it."
-"Oh no! I guess he usually remembers his way by smell?"
-+ + + + + + "Maybe..."
++ + + + + {pocketkey} "But even when the dog mind trusts us... he doesn't know where he dropped it." #CLASS: hero
+"Oh no! I guess he usually remembers his way by smell?" #CLASS: littlesis 
++ + + + + + "Maybe..." #CLASS: hero
 ->->
-+ {not cutrope} "How can I get the "dog" free?" #class: hero
-"The rope is way too tight at this point. You'll have to cut that rope."
-+ + "Do you have anything sharp?"
-"No, nothing. Maybe there's a knife in the house?"
++ {not cutrope} "How can I get the "dog" free?" #CLASS: hero
+"The rope is way too tight at this point. You'll have to cut that rope." #CLASS: littlesis
++ + "Do you have anything sharp?" #CLASS: hero
+"No, nothing. Maybe there's a knife in the house?" #CLASS: littlesis
 ->->
-+ {doorlocked and not pocketkey} "How do I get into the house?"
-"It's too solid a door to knock down. You'll have to find a key. Though I have no idea where."
++ {doorlocked and not pocketkey} "How do I get into the house?" #CLASS: hero
+"It's too solid a door to knock down. You'll have to find a key. Though I have no idea where." #CLASS: littlesis
 ->->
-+ "Never mind, I'll figure it out myself."
++ "Never mind, I'll figure it out myself." #CLASS: hero
 ->->
 
 
 =talkdog
-"Ah, yes. You've understood. I am the one speaking. In this doggy body. I do apologise for my nudity."
-+ {worktogether} "Yes, my sister explained. She switched your minds?"
+"Ah, yes. You've understood. I am the one speaking. In this doggy body. I <i>do</i> apologise for my nudity." #CLASS: manbraindog
++ {worktogether} "Yes, my sister explained. She switched your minds?" #CLASS: hero
 ->dogspell
-+ {not worktogether} "You're... was this my younger sister? With a big magical staff?"
++ {not worktogether} "You're... was this my younger sister? With a big magical staff?" #CLASS: hero
 ->dogspell
 
 =dogspell
-"That is it, in a nutshell, yes, you've understood. She didn't take kindly to my dog being tied up here, and cast a magical enchantment upon us both. I believe the words she used were:"
+"That is it, in a nutshell, yes, you've understood. She didn't take kindly to my dog being tied up here, and cast a magical enchantment upon us both. I believe the words she used were:" #CLASS: manbraindog
 <br>
 I wish you’d learn to empathise #CLASS: magic
 See the world through another’s eyes! #CLASS: magic
 <br>
-+ "Wow. She's done so many spells today."
-"After which, my body, possessed by my pet, stole the aforementioned Staff, and ran away. Your sister endeavoured to give chase, but alas, without success. I'm sure she can explain further."
++ "Wow. She's done so many spells today." #CLASS: hero
+"After which, my body, possessed by my pet, stole the aforementioned Staff, and ran away. Your sister endeavoured to give chase, but alas, without success. I'm sure she can explain further."#CLASS: manbraindog
 + + "..."
-"Now, if it is not too much trouble... could you free me from this tree?"
-+ + + "I can try."
+"Now, if it is not too much trouble... could you free me from this tree?" #CLASS: manbraindog
++ + + "I can try." #CLASS: hero
 ->dogtreeprocess
 
 
@@ -228,7 +228,7 @@ There is a "dog" and a "human".
 ->cantclimb 
 * {worktogether and learntreats} Get Yolene to help you reach the roof
 ->treats
-+ {not cutrope} Untie the tight knots tying up the dog
+* {not cutrope} Untie the tight knots tying up the dog
 ->cantuntie
 * {houseknife} Use the knife to cut the rope that's tying the dog to the tree
 ->cutrope
@@ -238,7 +238,7 @@ There is a "dog" and a "human".
 ->doglost
 *{cutrope} Get the "dog" to lead you to where the Staff is hidden
 ->staffburied
-+ {not treats} Persuade the "human" to come to you see if there are any clues
+* {not treats} Persuade the "human" to come to you see if there are any clues
 ->humanignores
 
 =mansludgenotrust
@@ -413,9 +413,9 @@ The "dog" leads the way, sniffing, to a pool of sludge. Floating on the surface 
 
 =takestaff
 You take the Staff of Power!
-"Finally! With this, I'm sure Eldra can undo all the Blessings you've cast today!" #class: hero
-"All of them? Even the ones that made people happy?" #class: littlesis
-"Yes. Sorry. Even them. Best to do these things slowly and carefully, I think." #class: hero
+"Finally! With this, I'm sure Eldra can undo all the Blessings you've cast today!" #CLASS: hero
+"All of them? Even the ones that made people happy?" #CLASS: littlesis
+"Yes. Sorry. Even them. Best to do these things slowly and carefully, I think." #CLASS: hero
 "Midelle! Look over there!"
 Yolene points to the horizon.
 + [Look (while holding onto the Staff tightly)]
