@@ -116,8 +116,17 @@ There is a {not building_is_laundry: single building out} {building_is_laundry: 
         ->BlindedDressup
         
     + {item_radiant_sock} [Talk to barrel-man] "I'll never complain about doing my laundry again." #CLASS: barrelman
-    
-        "I'm sure you won't." #CLASS: hero 
+
+        + + "Do you recall the spell my little sister used?" #CLASS: hero
+            "Believe it or not, I can recite it word-for-word." #CLASS: barrelman
+            + + + "Let's hear it, then." #CLASS: hero
+            Why must this idiot be so whiny? #CLASS: magic
+            Let everything be clean and shiny! #CLASS: magic
+            + + + + "Ooh, cutting." #CLASS: hero
+            "You're telling me!" #CLASS: barrelman
+            ...
+            -> OutsideMine
+        + + [Leave] "I'm sure you won't. #CLASS: hero
         ...
         ->OutsideMine
         

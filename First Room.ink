@@ -40,7 +40,7 @@ She takes it from you, and begins an incantation.
 
 Even Yolene steps back from the most powerful witch in the land.
 
-+ + Now, here comes the incantation.
++ + [Yes, now here comes the incantation.]
 
 Monster, cower before my might #CLASS: magic
 I’ll blast your eyeball out of sight! #CLASS: magic
@@ -57,7 +57,7 @@ I’ll blast your eyeball out of sight! #CLASS: magic
 
 =GorgonEyeObliterationSunglasses
 
-+ {item_sunglasses} [Yes. And now you put on your sunglasses.] It is night, but you put your sunglasses on.
++ {item_sunglasses} [Yes. And now you put on your sunglasses.] It is nighttime, but you put your sunglasses on.
 
 Eldra finishes her brief incantation, and a beam with the force of an exploding star erupts from her staff.
 
@@ -79,7 +79,6 @@ The blast is totally blinding.
 + + [Try to shield your face]
 
 "AAAARRRRGHHH," you loudly curse. #CLASS: hero
-...
 -> GorgonEyeAfterObliteration
 
 =GorgonEyeAfterObliteration
