@@ -68,7 +68,7 @@ It obliterates the Gorgon Eye wholly.#CLASS: redtext
 
 =GorgonEyeObliterationNoSunglasses
 
-+ {not item_sunglasses} You think you forgot something.
++ {not item_sunglasses} [You forgot something...] You think you may have forgotten something, but you're not quite sure.
 
 Eldra finishes her brief incantation, and a beam with the force of an exploding star erupts from her staff.
 
@@ -79,6 +79,7 @@ The blast is totally blinding.
 + + [Try to shield your face]
 
 "AAAARRRRGHHH," you loudly curse. #CLASS: hero
+...
 -> GorgonEyeAfterObliteration
 
 =GorgonEyeAfterObliteration
@@ -123,10 +124,8 @@ VAR item_sunglasses = 0
 ...
 -> Hut
 
-+ {(item_staff_of_power && not item_sunglasses)} [Take sunglasses] You take your sunglasses.
-~item_sunglasses ++
-...
--> Hut
++ {(item_staff_of_power && not item_sunglasses)} [Take sunglasses]
+->TakeSunglasses ->Hut
 
 + [Leave the hut] You leave the hut.
 
@@ -135,5 +134,14 @@ VAR item_sunglasses = 0
 
 + [Check inventory]
 -> Inventory ->Hut
+
+=TakeSunglasses
+#CLEAR
+#IMAGE: images/sunglasses.jpeg
+You pick up your sunglasses. #CLASS: getitem
+~item_sunglasses++
++ Essential.
+...
+->->
 
 -> END
