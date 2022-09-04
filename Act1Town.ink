@@ -51,8 +51,8 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 + + "Oh no!" #CLASS: hero
 "And she chanted: #CLASS: cowman
 <br>
-“I wish this beast that eats a flower #CLASS: magic
-Would gain a most tremendous power!” #CLASS: magic
+I wish this beast that eats a flower #CLASS: magic
+Would gain a most tremendous power! #CLASS: magic
 <br>
 "And now, Bessie is so big and sturdy, I can't even squeeze her udders! Look!
 + + + [Look]
@@ -217,8 +217,8 @@ There is a shivering barman, standing next to a mysterious box that is spitting 
 + "Why not?" #CLASS: hero
 "Well, your si-si-sister has never liked all the dr-dr-drunks, and sh-she came in here and s-s-said a spell: #CLASS: barman
 <br>
-"I wish these people knew this rule: #CLASS: magic
-you don't need spirits to be cool!" #CLASS: magic
+I wish these people knew this rule: #CLASS: magic
+you don't need spirits to be cool! #CLASS: magic
 <br>
 + + "And did it make the people cool?" #CLASS: hero
 "No, it froze them! Some of them, I had to pour water over their hands to defrost them from the bar!" 
