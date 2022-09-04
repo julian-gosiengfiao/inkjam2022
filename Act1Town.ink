@@ -84,8 +84,10 @@ You and the cowman each hold one of the handles of the blacksmith's tongs, and a
 ->hotmilk
 
 =hotmilk
+#CLEAR 
 You both squeeze together, and a stream of lilac-coloured milk comes out, straight into the waiting bucket. 
 "You did it! Please, feel free to take that bucketful as payment. I'll just go get my other bucket!" #CLASS: cowman
+#IMAGE: images/bucket.jpeg
 + "Thanks!" #CLASS: hero
 You now have some very warm cow's milk in a milking pail. It's lilac-coloured, but that's probably fine.
 You wave goodbye to the cowman.
@@ -129,7 +131,7 @@ You are in the town square. There is a dazed villager.
 ->townsquare
 
 = looktownsquare
-#IMAGE: magicalVillage.png 
+#IMAGE: images/magicalVillage.png 
 You look around the town square.
 There's the local <b>tavern</b>, the Embarrassing Cucumber, which appears to have icicles on the inside of the windows. 
 There's a path onwards, towards the <b>toll bridge</b>, and you know the <b>blacksmith's</b> is that way, too. 
@@ -334,15 +336,17 @@ He hands it back.
 ->tollbridge
 
 =trollmilkget
-The troll takes the bucket.
+#CLEAR 
+#IMAGE: images/bucket.jpeg
++ You hand the bucket to the troll.
 "Hmmm, I love the colour! And it's nice and cold! Thank you!"
 "You're... welcome, I guess?"
 "You're now free to cross the bridge. But, just so you know, if you want to cross BACK again... it's another toll."
 "What?"
 "So I recommend you do everything you want to do in town before you cross."
-+ [Go ahead and cross] You go ahead and cross the bridge.
++ + [Go ahead and cross] You go ahead and cross the bridge.
 ->ACT2
-+ [Stay in town a bit longer] You decide to stay in town a bit longer.
++ + [Stay in town a bit longer] You decide to stay in town a bit longer.
 ...
 ->tollbridge
 
