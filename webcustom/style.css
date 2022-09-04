@@ -24,8 +24,8 @@
 .gorgoneye {
     font-family: 'Open Sans', sans-serif;
     color: rgb(179, 49, 103);
-    animation: bounce 1s infinite;
-    text-align: center;
+    /*animation: bounce 1s infinite;*/
+    /*text-align: center;*/
 
 }
 @keyframes bounce {
