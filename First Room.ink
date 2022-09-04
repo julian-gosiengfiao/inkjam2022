@@ -20,7 +20,7 @@ It roars in delight. #CLASS: gorgoneye
 ...
 ->StartSequence
 
-* Listen to their bickering
++ Listen to their bickering
 
 ~listened_to_bickering++
 
