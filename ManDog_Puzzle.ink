@@ -1,4 +1,3 @@
-
 =mandogpuzzlestart
 The sun is starting to set. It's been a long day.
 You continue down the path. In the distance, you hear a girl crying.
@@ -31,7 +30,8 @@ There is <b>a muddy-looking man</b> who is running circles around the tree and o
 
 =dogtree_first
 #CLEAR
-#CLASS: images/HouseInTheForest.png
+
+#CLASS: /images/HouseInTheForest.png
 ->dogtree
 
 =lookdog
@@ -147,33 +147,31 @@ See the world through another’s eyes! #CLASS: magic
 
 
 =dogtreeprocess
+...
 There is a "dog" and a "human".
-{not worktogether: there is a crying sound behind the house.}
-{worktogether: Yolene is here, looking at you expectantly.}
-{not cutrope: The "dog" is tightly tied to the tree.}
-{cutrope: The "dog" is free.}
-{pocketkey: The "human" trusts you, and will come if you offer a treat.}
-{not pocketkey: The "human" is running around like crazy, and staying away from you.}
-{houseknife: The house is unlocked, but you don't need to go inside for anything else.}
-{doorlocked and not houseknife: The house is locked.}
+{not cutrope: The "dog" is <b>tightly tied</b> to the tree.}
+{cutrope: The "dog" is <b>free</b>.}
+{not pocketkey: The "human" is running around like crazy, and <b>staying away from you</b>.}
+{pocketkey: The "human" trusts you, and <b>will come</b> if you offer a treat.}
+{not worktogether: there is a <b>crying sound</b> behind the house.}
+{worktogether: <b>Yolene</b> is here, looking at you expectantly.}
+{houseknife: The house is <b>unlocked</b>, but you don't need to go inside for anything else.}
+{doorlocked and not houseknife: The house is <b>locked</b>.}
 
++ Talking to someone might help.
+->talkscreen
 * {not worktogether} Go investigate the crying sound
 ->crying
 * {houseknife} Use the knife to cut the rope that's tying the dog to the tree
 ->cutrope
-*{cutrope} Get the "dog" to lead you to where the Staff is buried
-->staffburied
 * {worktogether and learntreats} Get Yolene to help you reach the roof
 ->treats
 + {treats} Lure the "human" to you with the treats
 ->pocketkey
-+ {worktogether} Talk some more to Yolene
-->planwithyolene ->dogtreeprocess
-+ Talk more with the dog.
-->dogplan
+
 + Go into the house.
 ->doorlocked
-+ {learntreats} Climb to roof.
++ {learntreats and not treats} Climb to roof.
 ->cantclimb
 + {not cutrope} Untie the tight knots tying up the dog
 ->cantuntie
@@ -181,6 +179,8 @@ There is a "dog" and a "human".
 ->humanignores
 + {pocketkey} Get the "human" to lead you where he buried the Staff.
 ->doglost
+*{cutrope} Get the "dog" to lead you to where the Staff is buried
+->staffburied
 
 =cantuntie
 You pull and pull at the rope, but it's already been pulled way too tight.
@@ -194,30 +194,49 @@ The "Dog" tells you that the only way to get it undone now will be to cut it.
 + + "How annoying."
 ->dogtreeprocess
 
+=talkscreen
++ Learn more about this situation from the "dog".
+->dogplan
++ {worktogether} Talk some more to Yolene
+->planwithyolene ->dogtreeprocess
++ {not treats} Talk to the "human".
+->humanignores
+
+
 =humanignores
 The "human" ignores you.
 "Dog" tells you he'll only come with treats.
-+ "Where are the treats?"
+* "Where are the treats?"
 ->learntreats
-+ + "How annoying."
-->dogtreeprocess
 + Follow the "human" wherever it wants to go
 ->doglost
++ "How annoying."
+->dogtreeprocess
+
 
 =dogplan
 
-Here you learn that the "dog" can smell all sorts of things you've interacted with earlier in the day... wet laundry, a turkey, milk, etc.
+Here you learn that <b>the "dog" can smell all sorts of things</b> you've interacted with earlier in the day... wet laundry, a turkey, milk, etc.
 + That keen sense of smell might be useful.
-Here you also ask about how to calm down the over-excited "human" and/or get his attention.... 
-+ + with dog treats...
++ + Here you also ask about how to calm down the over-excited "human" and/or get his attention....  with dog treats...
 ->learntreats
-+ + {doglost} You can ask the "dog" if he knows of anywhere where there is strong-smelling black sludge near here.
-He doesn't know where, but wow, that smell is strong to his dog nose. If he were free, he could lead you to it, for sure.
++ + {doglost and not cutrope} You can ask the "dog" if he knows of anywhere where there is <b>strong-smelling black sludge</b> near here.
+He doesn't know where, but wow, that smell is strong to his <b>dog nose</b>. If he were free, he could lead you to it, for sure.
 + + + "OK, I'll have to get you free then.
+->dogtreeprocess
++ + "What else can you tell me that's helpful, here?"
+->doghelp
+
+
+=doghelp
+"Perhaps, yes, it would be wise of me to lay out all of the pieces here, for you."
+"My foolish dog, in my body, has stolen your Staff of Power, and hidden it goodness knows where in these woods."
+{not cutrope} "I am tied up, and that rope may very well be too tight to untie."
+{not pocketkey} "My dog usually responds to doggy treats. However, I keep the doggy treats out of reach, on the roof, and I usually get them with a ladder. Unfortunately, the ladder is in my house, and my house is locked, and the only key I have... is in the pockets of the trousers of my body... who will not listen to you without treats! QUITE THE PREDICAMENT INDEED!" 
+"Thank you for keeping track of the problems." #class: hero
 ->dogtreeprocess
 
 
-->DONE
 = learntreats
 You learn that the dog treats are on the roof.
 + "Don't you have a ladder?"
@@ -232,14 +251,14 @@ You learn that the dog treats are on the roof.
 
 =doorlocked
 What is it with countryside people and locking their houses? Are they so afraid of adventurers taking stuff?
-+ Look under the doormat
-->notthere ->doorlocked
-+ Look in the bushes
-->notthere ->doorlocked
-+ "Maybe the "dog" can tell me where to find a key."  
-->dogtreeprocess
 * {pocketkey} Unlock and enter the house.
 ->houseknife
++ {not pocketkey} Look under the doormat
+->notthere ->doorlocked
++ {not pocketkey} Look in the bushes
+->notthere ->doorlocked
++ {not pocketkey} "Maybe the "dog" can tell me where to find a key."  
+->dogtreeprocess
 
 =notthere
 It's not there.
@@ -259,7 +278,6 @@ You cut the rope. The dog is free!
 
 =cantclimb
 {not treats: You can't climb. Too difficult. You need a way of getting higher up.}
-{treats: You already have enough doggy treats, there's no reason to climb up again.}
 + "Hmmmm."
 ->dogtreeprocess
 
