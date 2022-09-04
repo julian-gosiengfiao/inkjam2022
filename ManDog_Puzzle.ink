@@ -124,14 +124,13 @@ She has tears in her eyes, still.
 
 
 =talkdog
-Here the dog talks to you, and you learn the spell that Yolene used to switch the minds of the man and the dog.
-
+Here the dog talks to you, and you learn the spell that Yolene used to switch the minds of the man and the dog_
+<br>
 I wish you’d learn to empathise #CLASS: magic
 See the world through another’s eyes! #CLASS: magic
-
+<br>
 "Dog" also wants to be untied.
-+ Once you've learnt this, you go to the Stage 2 Puzzle Hub
-You also learn at this point that the "human" stole the Staff, and he ran off and Yolene chased him.
++ You also learn at this point that the "human" stole the Staff, and he ran off and Yolene chased him, but the dog doesn't know what happened next.
 ->dogtreeprocess
 
 
@@ -263,3 +262,4 @@ She gets the doggy treats, and hands them to you.
 You, the "dog", Yolene and the "human" head through the woods. The "dog" leads the way, sniffing, to a pool of sludge. Floating on the surface is the Staff of Power!
 + Take the Staff
 ->endgamespellsstart
+
