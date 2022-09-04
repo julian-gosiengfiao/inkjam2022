@@ -25,6 +25,7 @@ Before long, you arrive at your destination.
 VAR item_laundry_room_key = 0
 VAR barrel_reset = 0
 VAR building_is_laundry = 0
+VAR entered_laundry_with_shades = 0
 
 =OutsideMine
 
@@ -33,17 +34,28 @@ You are outside the entrance to a mine.
 There is a {not building_is_laundry: single building out} {building_is_laundry: laundry building} here, with intense light pouring out of every opening.
 
 {not barrel_reset: You notice a wiggling barrel next to the building.}
-{barrel_reset: There is a man in a barrel, eyeing you from beneath the lid.}
+{barrel_reset && not item_laundry_room_key: There is a man in a barrel, eyeing you from beneath the lid.}
+{kicked_for_key: There is a barrel with a man inside here.}
+{got_key_nicely: Barrelman is chilling in his barrel here.}
 
 
-+ [Enter the building] You try to enter the {building_is_laundry: laundry} building.
-{not item_laundry_room_key:
++ {not item_laundry_room_key} [Enter the building] You try to enter the {building_is_laundry: laundry} building.
     It's locked, and you don't have a key.
     {not building_is_laundry: You note it says: "LAUNDRY STATION" in big letters on the door.}
     ~building_is_laundry++
     ...
     ->OutsideMine
-}
+
++ {item_laundry_room_key} [Enter the building] You try to enter the {building_is_laundry: laundry} building.
+    {item_laundry_room_key: The laundry room key unlocks the door.}
+    The radiant light floods out of the door and blinds you!
+    + + [Get me outta here!] You quickly shut the door and it locks with a click.
+    ...
+    ->OutsideMine
+    + + [Check inventory] In a single, effortless motion, you slide your hand into your inventory, pull your sunglasses out, and sit them on your glorious face.
+    + + + [Enter the laundry building] You enter the incandescent laundry building.
+    ...
+    ->LaundryBuilding
 
 + {not BarrelKicked} [Inspect the barrel] You walk up to the barrel.
 It wiggles.
@@ -55,8 +67,17 @@ Maybe you should let him cool off for a bit.
 ...
 ->OutsideMine
 
-+ {barrel_reset} [Talk to the man in the barrel]
++ {barrel_reset && not item_laundry_room_key} [Talk to the man in the barrel]
 ->BarrelTalk
+
++ {kicked_for_key} [Inspect the barrel] You find it very hard to blame your sister for this particular situation, but you still feel you should make it right.
+...
+-> OutsideMine
+
++ {got_key_nicely} [Talk to barrelman] "Just you wait, I'll protect your modesty, barrelman." #CLASS: hero
+"Awfully kind of you, thanks." #CLASS: barrelman
+...
+->OutsideMine
 
 + [Enter the mine] You enter the mine.
 ...
@@ -96,6 +117,12 @@ He clambers back into the barrel and slams the lid tightly shut.
 ...
 -> OutsideMine
 
++ "HAVE YOU SEEN MY SISTER?!" #CLASS: hero
+The man immediately pops back into the barrel, snapping the lid shut.
+~barrel_reset--
++ + Oops.
+...
+->OutsideMine
 
 =BarrelTalk
 The man looks at you suspiciously.
@@ -104,21 +131,47 @@ The man looks at you suspiciously.
 "That's alright," The man in the barrel eyes you. #CLASS: barrelman
 + + "Is a witch resposible for this?" #CLASS: hero
 The barrelman sighs, "Yes. She came through here claiming she could fix everything. And now look at me!"
-+ + + "What did you tell her, exactly?"
++ + + "What did you tell her, exactly?" #CLASS: hero
 The barrel man regards you for a moment.
-"I'm just so sick of doing endless amounts of 
+"Life is just a never-ending series of chores," #CLASS: barrelman
++ + + + [Nod] You suddenly feel a kinship for barrel-man, but you don't show it on the outside.
+"And day in, day out, I'm just washing black soot out of my work uniform." #CLASS: barrelman
+"So I said to her, I wish that it was LITERALLY IMPOSSIBLE for my uniform to pick up EVEN THE SMALLEST speck of dirt, and that it would ALWAYS shine RADIANTLY FOR ALL TO SEE!" #CLASS: barrelman
++ + + + + [Look at the building] You both look at the glowing {building_is_laundry: laundry} building, with radiant light erupting from every window and crack.
+You both look back at each other.
++ + + + + + [Show polite concern] You notice your jaw is hanging completely open and you are just staring at the barrelman.
+->BarrelTalk2
++ + + + + + [Show empathy] Your hand moves of its own volition and slaps your forehead loudly, echoing for miles across the quiet mountain valley.
+->BarrelTalk2
 
-->OutsideMine
+VAR kicked_for_key = 0
+VAR got_key_nicely = 0
 
-+ "HAVE YOU SEEN MY SISTER?!" #CLASS: hero
-The man immediately pops back into the barrel, snapping the lid shut.
-~barrel_reset--
-+ + Oops.
+=BarrelTalk2
+"I'll give you a key to the laundry room if you help me get something to wear," he says. #CLASS: barrelman
+"But be carefeful - it's so bright you could be blinded! No one else can go near, for we are miners and we need our vision, especially in the dark." #CLASS: barrelman
++ "Alright." #CLASS: hero
+He gives you the key to the laundry. #CLASS: getitem
+
+~item_laundry_room_key++
 ...
 ->OutsideMine
 
++ [Kick the barrel over] You kick the barrel over, and the naked man tumbles out.
+"AAAAAAAARGHHH!!!" #CLASS: barrelman
+He scrambles back into the barrel, profanities flying left and right, and snaps the lid shut.
++ + You realize you have a terrible need to work on your self-control.
+At least he left the key outside the barrel, though.
++ + + Pick up the key
+~item_laundry_room_key++
+...
+->OutsideMine
 
-->END
+=LaundryBuilding
+Text
++ [Leave the building] You leave the laundry building.
+...
+->OutsideMine
 
 
 

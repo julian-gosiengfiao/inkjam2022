@@ -1,4 +1,3 @@
-
 =outsidetownfirstentry
 
 You start down the road towards the town. With any luck, your sister will still be there.
@@ -17,8 +16,6 @@ It stops right there in the middle, blocking all traffic.
 ...
 ->cowencounter
 
-
-
 =cowencounter
 
 You are standing on the road between your hut and the town, next to a cowman and a cow.
@@ -32,7 +29,7 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 ->cowman
 + {failedudders} Try to work out a solution to the overly sturdy udders
 ->uddersolutions
-* {tongs and pintglass} "I've got some blacksmith's tongs to squeeze the udders with! And a pintglass to squeeze the milk into!" #CLASS: hero
+* {tongs} "I've got some blacksmith's tongs to squeeze the udders with!" #CLASS: hero
 ->squeeze
 + [Go into town] You go into town.
 ...
@@ -50,9 +47,9 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 =cowman
 "Hi there! So, I was worried that Big Beautiful Bessie here was going to get stomped on in future monster attacks..." #CLASS: cowman
 + "I see..." #CLASS: hero
-"And then your sister showed up and offered to help!" #CLASS: cowman
+"And then your sister showed up and offered to help me with a Blessing!" #CLASS: cowman
 + + "Oh no!" #CLASS: hero
-"And she said: #CLASS: cowman
+"And she chanted: #CLASS: cowman
 <br>
 I wish, I wish, the cow would be #CLASS: magic
 Able to withstand injury! #CLASS: magic
@@ -67,25 +64,12 @@ The cowman takes both hands and squeezes squeezes squeezes Bessie's udder teats,
 -> cowencounter
 
 =uddersolutions
-+ {pintglass and not tongs} "I've got a pint glass to put the milk in!" #CLASS: hero
-->notongs
-+ {tongs and not pintglass} "I've got some blacksmith's tongs! Maybe we can squeeze the udders with this!" #CLASS: hero 
-->noglass
-+ {milkrequest} "There´s a big strong troll the other side of town. I bet he could squeeze those udders!"#CLASS: hero
++ {tongs} "I've got some blacksmith's tongs! Maybe we can squeeze the udders with this!" #CLASS: hero 
+->squeeze
++ {tollbridge} "There´s a big strong troll the other side of town. I bet he could squeeze those udders!"#CLASS: hero
 ->cownomove
 + "I guess I'll walk around, see if I can find some solutions." #CLASS: hero
 ... 
-->cowencounter
-
-=notongs
-"That's great that you've got a place to take some milk, but I still don't know how to extract any milk from Bessie!"  #CLASS: cowman
-+ "Hmmmmmmm..." #CLASS: hero
-->uddersolutions
-
-=noglass
-"Oh, amazing! That MIGHT work... my bucket is a bit dirty though, do you have something we can squirt some milk into?" #CLASS: cowman
-+ "No... but I can go look for something!"  #CLASS: hero
-...
 ->cowencounter
 
 =cownomove
@@ -94,16 +78,16 @@ The cowman takes both hands and squeezes squeezes squeezes Bessie's udder teats,
 ->cowencounter
 
 =squeeze
-You and the cowman each hold one of the handles of the blacksmith's tongs, and aim at an udder teat, which is positioned carefully above your empty pint glass.
+You and the cowman each hold one of the handles of the blacksmith's tongs, and aim at an udder teat, which is positioned carefully above the cowman's bucket.
 "Ready?" #CLASS: cowman
 + "Ready!" #CLASS: hero
 ->hotmilk
 
 =hotmilk
-You both squeeze together, and a stream of lilac-coloured milk comes out. 
-"You did it! Please, feel free to take that glass. I'll clean my bucket and get to milking the rest myself!" #CLASS: cowman
+You both squeeze together, and a stream of lilac-coloured milk comes out, straight into the waiting bucket. 
+"You did it! Please, feel free to take that bucketful as payment. I'll just go get my other bucket!" #CLASS: cowman
 + "Thanks!" #CLASS: hero
-You now have some very warm cow's milk in a pint glass. It's lilac-coloured, but that's probably fine.
+You now have some very warm cow's milk in a milking pail. It's lilac-coloured, but that's probably fine.
 You wave goodbye to the cowman.
 ...
 ->cowencounter
@@ -127,10 +111,6 @@ You are in the town square. There is a dazed villager.
 + Actually, maybe don't talk to the villager just now.
 ...
 ->townsquare
-* {failedudders or milkrequest} Take a pint glass.
-->pintglass
-
-
 
 =chatdazedwhat
 "It was your little sister! She came through here with the Staff of Power and changed a whole bunch of stuff! Oooh, the magic! The surprise! I didn't know what to do! I still don't! #CLASS: dazedvillager
@@ -214,36 +194,34 @@ you don't need spirits to be cool!" #CLASS: magic
 + + "And did it make the people cool?" #CLASS: hero
 "No, it froze them! Some of them, I had to pour water over their hands to defrost them from the bar!" 
 + + + "So you don't have anything left?" #CLASS: hero
-"Nothing! Not even my tankards and pint glasses survived - unless they were outside when the spell went off..." #CLASS: barman
+"Nothing! Even though the spell just said "spirits", my beer, wine, ale and mead all vanished!" #CLASS: barman
 + + + + "Yikes! I'm sorry. When I get that Staff back to Eldra, we'll fix this, I promise!" #CLASS: hero
 ...
 ->tavern
 
 
 =icebox
-You look at this mysterious box. It looks like your little sister magicked it into existence? It's very cold, it has a door, and there's nothing inside but cold air and bits of frosted ice on the sides.
-+ "I wonder if this might be a new way of keeping things cold all the time?" #CLASS: hero
+You look at this mysterious box. It looks like your little sister magicked it into existence? It's a tall white container, very cold, it has a door in the side, and there's nothing inside but cold air and bits of frosted ice on the sides.
+* "I wonder if this might be a new way of keeping things cold all the time?" #CLASS: hero
 "We could call it a 'freezer'!" #CLASS: barman
 ...
 ->tavern
 * {hotmilk} You cool the hot cow's milk down in the magical 'freezer'.
 ->coldmilk
-->DONE
-
-=pintglass
-You now have a pint glass in your inventory. It is empty.
++ "Hmmmmmm... Cold." #CLASS: hero
 ->tavern
 
 
+
 =coldmilk
-You now have a pint glass of cold cow's milk in your inventory. #CLASS: getitem
+You now have a bucketful of cold cow's milk in your inventory. #CLASS: getitem
 ->tavern
 
 
 =tollbridge
 
 At the toll bridge, you see a big troll. He won't let you pass. 
-{milkrequest: "Hey! Did you get me a big pint glass of cold cow's milk yet?" } #CLASS: troll
+{milkrequest: "Hey! Did you get me a huge glass of cold cow's milk yet?" } #CLASS: troll
 There's some clanking metal noises coming from the <b>blacksmith's forge</b>, next to the toll bridge. 
 + Talk to the troll
 ->troll
@@ -251,37 +229,44 @@ There's some clanking metal noises coming from the <b>blacksmith's forge</b>, ne
 ->smith
 + Go back to the town square
 ->townsquare
-+ {milkrequest and hotmilk and not coldmilk} You offer the fresh milk you just got to the troll.
++ {milkrequest and hotmilk and not coldmilk} You offer the warm bucket of fresh milk you just got to the troll.
 ->wrongmilk
--+ {milkrequest and coldmilk and not trollmilkget} You offer the big pint glass of cold milk to the troll.
+-+ {milkrequest and coldmilk and not trollmilkget} You offer the big bucket of cold milk to the troll.
 ->trollmilkget
 
 
 
 =troll
-"I complained to your sister that no one was taking me seriously, and no one paid the toll. So she turned me into a troll." #CLASS: troll
-+ "And how does that make you feel?" #CLASS: hero
+"I complained to your sister that no one was taking me seriously, and no one paid the toll... #CLASS: troll
++ "Oh no, I see where this is going..." #CLASS: hero
+"...So she gave me a Blessing: #CLASS: troll
+<br>
+They mean to pass but not to pay  #CLASS: magic
+They can’t with you standing in their way! #CLASS: magic
+<br>
+...But it went wrong, and turned me into a troll." #CLASS: troll
++ + "And how does that make you feel?" #CLASS: hero
 ->trollfeelings
-+ "Can you let me past?" #CLASS: hero
++ + "Can you let me past?" #CLASS: hero
 ->milkrequest
 
 =trollfeelings
 
 "Honestly? I kind of like it." #CLASS: troll
 + "You do?" #CLASS: hero
-"Yeah. Before, everyone would push me around, and barge past without paying. Even the goats would just charge me off the bridge. Now I'm a figure of authority." #CLASS: troll
+"Yeah. Before, everyone would push me around, and barge past without paying. Even the goats would just charge me off the bridge. Now I'm a Figure of Authority." #CLASS: troll
 ...
 ->tollbridge
 
 =milkrequest
-"Now that I'm a troll, I have a real craving for goat's milk. But I guess I could settle for a <b>big pint glass of cold COW'S milk!</b>" #CLASS: troll
+"Now that I'm a troll, I have a real craving for goat's milk. But I guess I could settle for a <b>huge glass of cold COW'S milk!</b>" #CLASS: troll
 + "But I don't have a glass of milk. Can't you just let me past and let me go after my sister?" #CLASS: hero
 ->nomilk
 + {failedudders} "There's a big strong cow at the other side of town. If you go there, you can squeeze the teats and get as much milk as you'd like!" #CLASS: hero
 ->trollstayshere
-+ {hotmilk and not coldmilk} You offer the fresh milk you just got to the troll.
++ {hotmilk and not coldmilk} You offer the warm bucket of fresh milk you just got to the troll.
 ->wrongmilk
-+ {coldmilk and not trollmilkget} You offer the big pint glass of cold milk to the troll.
++ {coldmilk and not trollmilkget} You offer the big bucket of cold milk to the troll.
 ->trollmilkget
 + {trollmilkget} Having done everything you want to do in town, you cross the bridge.
 ->ACT2
@@ -295,7 +280,7 @@ There's some clanking metal noises coming from the <b>blacksmith's forge</b>, ne
 ->tollbridge
 
 =nomilk
-"Nope! Your sister taught me to stand up for myself, so I am insisting on a toll. Ahem... YOUUUUU SHALL-NOT.... PASSSSS!!! without paying first."
+"Nope! Your sister taught me to stand up for myself, so I am insisting on a toll. Ahem... YOUUUUU... SHALL-NOT.... PASSSSS!!! without paying first."
 "Can't I pay coins?"#CLASS: hero
 "Do you have coins?" #CLASS: troll
 + "No." #CLASS: hero
@@ -304,7 +289,7 @@ There's some clanking metal noises coming from the <b>blacksmith's forge</b>, ne
 ->yescoins
 
 =nocoins
-"Then no, you can't cross. A big pint glass of cold milk, please!"
+"Then no, you can't cross. A huge glass of cold milk, please!"
 ->tollbridge
 
 =yescoins
@@ -316,13 +301,13 @@ There's some clanking metal noises coming from the <b>blacksmith's forge</b>, ne
 
 
 =wrongmilk
-The troll takes the glass.
+The troll takes the bucket.
 "Ugh! This milk is warm! Can't you cool it down first?" #CLASS: troll
 He hands it back.
 ->tollbridge
 
 =trollmilkget
-The troll takes the glass.
+The troll takes the bucket.
 "Hmmm, I love the colour! And it's nice and cold! Thank you!"
 "You're... welcome, I guess?"
 "You're now free to cross the bridge. But, just so you know, if you want to cross BACK again... it's another toll."
