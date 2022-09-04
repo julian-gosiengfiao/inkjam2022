@@ -638,11 +638,12 @@ You are in a room full of {looked_at_junk: useless} junk.
 
 There are three giant moles sitting in the middle of the junk.
 
-{looked_at_junk: One of the pieces of junk seems out of place.}
+{looked_at_junk && not asked_about_strange_junk: One of the pieces of junk seems out of place.}
+{asked_about_strange_junk && not item_supplies_key: A key to some kind of "...CUPBOARD" seems out of place.}
 
 + {not talked_to_moles} [Talk to the moles?] "Hello?" #CLASS: hero
     The moles sniff the air.
-    The largest one turns in your general direction.
+    The smallest one turns in your general direction.
     "HELLO FROM MOLE." #CLASS: mole
     + + [It speaks!] "You can speak!" #CLASS:hero
     "YES. I AM MOLE." #CLASS: mole
@@ -651,15 +652,19 @@ There are three giant moles sitting in the middle of the junk.
     ~talked_to_moles++
     -> MoleOptions
     
-+ {talked_to_moles} [Talk to the moles] "Hello, moles." #CLASS: hero
++ {talked_to_moles && not item_supplies_key} [Talk to the moles] "Hello, moles." #CLASS: hero
     "HELLO FROM MOLE." #CLASS: mole
     ->MoleOptions
+
++ {talked_to_moles && item_supplies_key} [Talk to the moles] "Hello, moles." #CLASS: hero
+    "HELLO FROM MOLE." #CLASS: mole
+    ->MoleRoom
     
 + {not talked_to_moles} [Look at junk] You try to look at the junk strewn across the room, but you are totally distracted by these gigantic moles.
     ...
     ->MoleRoom
 
-+ {talked_to_moles} [Look at the junk] You cast your eye over the junk and point a random piece out.
++ {talked_to_moles && not item_supplies_key} [Look at the junk] You cast your eye over the junk and point a random piece out.
     "What's this?" #CLASS: hero
     {&"FROM A SHOE, SOLE. EXAMPLE OBJECT SACRED FOR MOLE."|"ANCIENT STORIED SCROLL. EXAMPLE OBJECT SACRED FOR MOLE."|"VERY NARROW POLE. EXAMPLE OBJECT SACRED FOR MOLE."|"NICE OLD COAL. EXAMPLE OBJECT SACRED FOR MOLE."|"DISCARDED BEDROLL. EXAMPLE OBJECT SACRED FOR MOLE."|"MOST ORNATE BOWL. EXAMPLE OBJECT SACRED FOR MOLE."}
     
