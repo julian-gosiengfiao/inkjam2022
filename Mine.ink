@@ -367,9 +367,9 @@ The foreman looks up as you approach.
     
     "As it happens, I have shockingly accurate recall. She said:" #CLASS: foreman
     
-    "Working hard, for all the day," #CLASS: magic
+    Working hard, for all the day, #CLASS: magic
     
-    "Let's turn it around, and into play!" #CLASS: magic
+    Let's turn it around, and into play! #CLASS: magic
     
     + + + "That doesn't sound too bad." #CLASS: hero
     
@@ -387,9 +387,9 @@ VAR asked_about_crack = 0
 
 "As it happens, I have shockingly accurate recall. She said:" #CLASS: foreman
 
-"Working hard, for all the day," #CLASS: magic
+Working hard, for all the day, #CLASS: magic
 
-"Let's turn it around, and into play!" #CLASS: magic
+Let's turn it around, and into play! #CLASS: magic
 
 + + "...And now your miners no longer have to work so hard, because the mine is a disco. Got it." #CLASS: hero
 ...

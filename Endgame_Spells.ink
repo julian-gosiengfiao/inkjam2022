@@ -81,8 +81,8 @@ Restart from the Red Warning Flare?
 
 =fasthorse
 Ahem... I hope this works... #CLASS: hero
-“I wish this beast that eats a flower #CLASS: magic
-Would gain a most tremendous power!” #CLASS: magic
+I wish this beast that eats a flower #CLASS: magic
+Would gain a most tremendous power! #CLASS: magic
 
 The horse grows and grows into A MIGHTY WARHORSE, with a broad back and calves to die for.
 
@@ -137,8 +137,8 @@ INGRID EVIL, GOBLIN NECROMANCER!! (or BOOBERGHANT, I haven't decided)
 "I CAN'T HEAR YOU, SILLY YOUNGER WITCHES! BUT EVEN BETTER; YOU WON'T EVEN SEE YOUR END COMING! BWAHAHAHAHAHAHA!!! #CLASS: necromancer 
 Having finished her evil laugh, Ingrid Evil raises her Wand of Wickedness over her head, and chants a spell:
 
-"They think their bite's worse than their bark #CLASS: magic
-Let them suffer IN THE DARK!" #CLASS: magic
+They think their bite's worse than their bark #CLASS: magic
+Let them suffer IN THE DARK! #CLASS: magic
 
 + And suddenly, the whole world is pitch black!
 ->spell2dark 
@@ -198,8 +198,8 @@ What can you do to help?
 =megaturkey
 "I mean... you're already under ONE spell, so..." #CLASS: hero
 
-"They mean to pass but not to pay, #CLASS: magic
-They can’t with you standing in their way!" #CLASS: magic
+They mean to pass but not to pay, #CLASS: magic
+They can’t with you standing in their way! #CLASS: magic
 
 As you finish the spell, you see that brave little turkey get bigger...
 + ... and bigger...
@@ -276,8 +276,8 @@ She winks at you with a big grin on her face, and then looks pointedly at the St
 ->defeat
 
 =defeat
-“You ALWAYS think that you know best! #CLASS: magic
-For goodness’ sake, give it a REST!” #CLASS: magic
+You ALWAYS think that you know best! #CLASS: magic
+For goodness’ sake, give it a REST! #CLASS: magic
 
 + PYEWWWWWWWHWHWHWHW! #CLASS: magic
 
