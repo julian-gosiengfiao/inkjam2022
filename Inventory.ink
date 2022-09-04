@@ -10,6 +10,7 @@ You have...#CLASS: inventory
 {tongs and not hotmilk: some blacksmith's tongs,} #CLASS: inventory
 {hotmilk and not coldmilk: a bucket of warm and lilac-coloured milk,} #CLASS: inventory
 {coldmilk and not trollmilkget: a bucket of very cold, lilac-coloured milk,} #CLASS: inventory
+{item_laundry_room_key: a key to the laundry building,}#CLASS: inventory
 + ...and that's all.#CLASS: inventory
 
 ...
