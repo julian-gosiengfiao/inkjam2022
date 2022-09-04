@@ -136,11 +136,18 @@ Eldra continues, "But she's not old enough to harness the power of the staff!" #
 
 "Good luck, Midelle!" #CLASS: bigsis
 
-...
++ + + "Thanks." #CLASS: hero
+->CoverSequence ->BehindHutNoScreaming
 
 //TODO: FLESH OUT ASPIRATIONS/INTENTIONS IN THIS DIALOGUE, MAKE IT MORE INTERESTING I GUESS. I DON'T SUPER-LIKE IT.
 
-->BehindHutNoScreaming
+
+=CoverSequence
+#CLEAR
+#IMAGE: images/cover.jpg
++ You'll make things right.
+...
+->->
 
 =BehindHutNoScreaming
 
@@ -177,7 +184,7 @@ Between that and what you know of Yolene's ability to control magic, you're not 
 
 + + There's only one way she could have gone, and that's to town.
 
-->outsidetownfirstentry
+->CoverSequence ->outsidetownfirstentry
 
 =blockedoutsidetown
 You are on the road to town.

@@ -8,17 +8,8 @@ In the distance, {looked_at_monster: a Gorgon Eye} {not looked_at_monster: a mon
 
 Beside you, your two sisters are bickering.
 
-+ [Look at the monster] You look at the monster.
-
-~looked_at_monster++
-
-The Gorgon Eye is raking white-hot lasers across the helpless town, incinerating the odd cow or two.
-
-It roars in delight. #CLASS: gorgoneye
-
-+ + [{&Okay.|Great.}]
-...
-->StartSequence
++ [Look at the monster]
+->GorgonEyeLookAt ->StartSequence
 
 + Listen to their bickering
 
@@ -40,7 +31,7 @@ She takes it from you, and begins an incantation.
 
 Even Yolene steps back from the most powerful witch in the land.
 
-+ + [Yes, now here comes the incantation.]
++ + [Yes, and now here comes the incantation.]
 
 Monster, cower before my might #CLASS: magic
 I’ll blast your eyeball out of sight! #CLASS: magic
@@ -57,7 +48,7 @@ I’ll blast your eyeball out of sight! #CLASS: magic
 
 =GorgonEyeObliterationSunglasses
 
-+ {item_sunglasses} [Yes. And now you put on your sunglasses.] It is nighttime, but you put your sunglasses on.
++ {item_sunglasses} [Yes, wonderful. And now to put on sunglasses.] It is nighttime, but you put your sunglasses on.
 
 Eldra finishes her brief incantation, and a beam with the force of an exploding star erupts from her staff.
 
@@ -88,19 +79,26 @@ Satisfied, Eldra says "Let's go back to bed now." #CLASS: bigsis
 + + + + [Okay.] You go to bed.
 ...
 + + + + + Zzz... #CLASS: hero
-#CLEAR
-#IMAGE: images/Staffexplode.png
-+ + + + + + You dream of a Gorgon Eye being obliterated wholly.
 ...
-
-Zzz... #CLASS: hero
-...
-+ + + + + + + And not much else.
++ + + + + + + And you sleep.
 
 #CLEAR
 -> NextDay //NextDay.ink
 
+=GorgonEyeLookAt
+#CLEAR
+#IMAGE: images/gorgoneye.jpeg
++ I say.
 
+~looked_at_monster++
+
+The Gorgon Eye is raking white-hot lasers across the helpless town, incinerating the odd cow or two.
+
+It roars in delight. #CLASS: gorgoneye
+
++ + [{&Okay.|Great.}]
+...
+->->
 
 VAR item_staff_of_power = 0
 VAR item_sunglasses = 0
@@ -118,10 +116,8 @@ VAR item_sunglasses = 0
 
 {(item_staff_of_power && not item_sunglasses): You notice your favorite pair of sunglasses lying on the kitchen table.}
 
-+ {not item_staff_of_power} [Take the Staff of Power] You take the Staff of Power. #CLASS: getitem
-~item_staff_of_power = 1
-...
--> Hut
++ {not item_staff_of_power} [Take the Staff of Power]
+->TakeStaffOfPower -> Hut
 
 + {(item_staff_of_power && not item_sunglasses)} [Take sunglasses]
 ->TakeSunglasses ->Hut
@@ -133,6 +129,15 @@ VAR item_sunglasses = 0
 
 + [Check inventory]
 -> Inventory ->Hut
+
+=TakeStaffOfPower
+#CLEAR
+#IMAGE: images/Staffexplode.png
+You take the Staff of Power. #CLASS: getitem
+~item_staff_of_power = 1
++ It's just a bit much.
+...
+->->
 
 =TakeSunglasses
 #CLEAR
