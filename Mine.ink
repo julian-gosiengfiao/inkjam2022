@@ -258,12 +258,12 @@ In the center of the room is a pile of clean laundry, atop which sits clean clot
     ...
     -> LaundryBuilding
 
-+ {not item_supplies_key} [Grab some laundry supplies] You try to open the door marked "LAUNDRY SUPPLIES" but it's locked.
++ {not item_supplies_key} [Grab some laundry supplies] You try to open the door marked "DETERGENT CUPBOARD" but it's locked.
     + + These people sure are protective of their laundry.
     ...
     -> LaundryBuilding
 
-+ {item_supplies_key && not item_detergent} [Grab some laundry supplies] You use the key to unlock the door marked "LAUNDRY SUPPLIES".
++ {item_supplies_key && not item_detergent} [Grab some laundry supplies] You use the key to unlock the door marked "DETERGENT CUPBOARD".
 
     You get yourself a box of <i>RADIANT SHINE Extra-Foamy Premium Laundry Detergent</i>. #CLASS: getitem
     
@@ -301,8 +301,13 @@ The tunnel goes on into the darkness.
 {not TalkToForeman: -> TalkToForeman}
 {TalkToForeman: The foreman looks up at you. ->TalkToForeman2}
 
-+ {asked_about_crack} [Examine the crack] You examine the crack in the wall.
++ {asked_about_crack && not crack_travelled} [Examine the crack] You examine the crack in the wall.
 ->ExamineCrack
+
++ {crack_travelled} [Go into the {not mole_hole_dub: crack}{mole_hole_dub: MOLE HOLE}] You squeeze through the crack {mole_hole_dub: into the MOLE HOLE}.
+...
+->MoleRoom
+
 
 + {not dark_section_solved} [Go deeper into the tunnel] You go deeper into the tunnel.
 ...
@@ -320,6 +325,8 @@ The tunnel goes on into the darkness.
 + [Check inventory]
 ->Inventory ->MineRoom1
 
+VAR crack_travelled = 0
+
 =ExamineCrack
 It's quite a large crack.
 
@@ -333,6 +340,7 @@ It looks like it goes pretty deep, and you might be able to fit through it.
     ...
     + + + + You emerge through the other end.
     ...
+    ~crack_travelled++
     -> MoleRoom
     
 + [Leave it alone]
@@ -471,6 +479,7 @@ Near the other end of the room is a solid writhing mass of partying miners.
 {disco_squeeze_attempted: A disco dancer has noticed you and is half-turned towards you, dancing away.}
 
 + {disco_squeeze_attempted} [Approach the dancer] You walk up to the dancer.
+    He is wearing a very tight tanktop that says "SOUL".
     He already doesn't seem very impressed with you.
     + + ["How do I get through here?"] "___ __ _ ___ _____ ___?" #CLASS: hero
     The dancer turns his nose up at you.
@@ -555,13 +564,96 @@ You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!
 ...
 ->MineDisco
 
+VAR talked_to_moles = 0
+VAR looked_at_junk = 0
+VAR asked_about_strange_junk = 0
+
 =MoleRoom
-Text
+You are in a room full of {looked_at_junk: useless} junk.
+
+There are three giant moles sitting in the middle of the junk.
+
+{looked_at_junk: One of the pieces seems out of place.}
+
++ {not talked_to_moles} [Talk to the moles?] "Hello?" #CLASS: hero
+    The moles sniff the air.
+    The largest one turns in your general direction.
+    "HELLO FROM MOLE." #CLASS: mole
+    + + [It speaks!] "You can speak!" #CLASS:hero
+    "YES. I AM MOLE." #CLASS: mole
+    ...
+    
+    ~talked_to_moles++
+    -> MoleOptions
+    
++ {talked_to_moles} [Talk to the moles] "Hello, moles." #CLASS: hero
+    "HELLO FROM MOLE." #CLASS: mole
+    ->MoleOptions
+    
++ {not talked_to_moles} [Look at junk] You try to look at the junk strewn across the room, but you are totally distracted by these gigantic moles.
+    ...
+    ->MoleRoom
+
++ {talked_to_moles} [Look at the junk] You cast your eye over the junk and point a random piece out.
+    "What's this?" #CLASS: hero
+    {&"FROM A SHOE, A SOLE. WHOEVER WORE IT IS NO LONGER A FOAL."|"AN ANCIENT SCROLL. IT TELLS A STORY WHOLE."|"A VERY NARROW POLE. WE FOUND IT UPON AN ATOLL."|"A PIECE OF COAL. BE CAREFUL, FOR IT MAY ROLL."|"A DISCARDED BEDROLL. DISCOVERED DURING PATROL".|"THE MOST ORNATE BOWL. UPSIDE DOWN, IT MAKES A KNOLL."}
+    ...
+
+    ~looked_at_junk++
+    ->MoleRoom
+
++ {looked_at_junk && not asked_about_strange_junk} [Ask about out-of-place junk] "This doesn't seem to fit in." #CLASS: hero
+    You point at a key with a comically large label that reads "...CUPBOARD". You can't make it all out from where you are.
+    + + The moles look uncomfortable.
+    "YES... WE THOUGHT IT A GREAT CAJOLE." #CLASS: mole
+    Another mole stirs.
+    "PERSONALLY, I THINK IT'S OUT OF CONTROL." #CLASS: mole2
+    + + + "Can I have it?" #CLASS: hero
+    The moles sniff for a moment.
+    "A TRADE WILL MAKE US WHOLE." #CLASS: mole
+    "BRING US AN OBJECT SACRED FOR MOLE." #CLASS: mole2
+    "IF YOU DESIRE THIS, YOU WILL ENROLL." #CLASS: mole
+    + + + + "Fair enough." #CLASS: hero
+    ...
+    ->MoleRoom
+    
++ {asked_about_strange_junk} [Ask about cupboard key] "Can I have this?" #CLASS: hero
+    "A TRADE WILL MAKE US WHOLE." #CLASS: mole
+    "BRING US AN OBJECT SACRED FOR MOLE." #CLASS: mole2
+    "IF YOU DESIRE THIS, YOU WILL ENROLL." #CLASS: mole
+    + + "Fair enough." #CLASS: hero
+    ...
+    ->MoleRoom
+
+
+
 + [Go back through the crack] You squeeze through the crack again.
 ...
 ->MineRoom1
 + [Check inventory]
 ->Inventory ->MoleRoom
+
+VAR mole_hole_dub = 0
+
+=MoleOptions
++ "Have you seen a witch around here?"#CLASS: hero
+    "NO. NONE OF SUCH ROLE."#CLASS: mole
+    ...
+    ->MoleOptions
++ "What's all this junk?"#CLASS: hero
+    "WE COLLECT OBJECTS GOOD FOR MOLE."#CLASS: mole
+    "SACRED OBJECTS: THAT IS GOAL."#CLASS: mole
+    ->MoleOptions
++ "What are you doing here?" #CLASS: hero
+    "WE SIT HERE IN HOLE."#CLASS: mole
+
+    ~mole_hole_dub++
+    ->MoleOptions
++ "Okay, thanks, moles." #CLASS: hero
+    "HAVE A NICE STROLL." #CLASS: mole
+    ...
+    ->MoleRoom
+    
 
 ->END
 
@@ -575,6 +667,13 @@ put soap into the smoke machine
 
 MOLE HOLE?
 Use BOLDS. USE THEM!
+
+pole
+foal
+bowl
+stol
+moll
+
 
 barrelman offers sister information before you help him?
 
