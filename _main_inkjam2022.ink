@@ -26,6 +26,9 @@ Debug Menu - delete this when showing to people!
 + Start game from endgame
 #CLEAR
 -> endgamespellsstart
++ Start game from faeryForest
+#CLEAR
+-> ForestFearyEntrance
 
 ///This should be the first line of code that's run.
 -> StartSequence
