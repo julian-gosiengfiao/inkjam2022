@@ -229,7 +229,7 @@ VAR got_key_nicely = 0
     He scrambles back into the barrel, profanities flying left and right, and snaps the lid shut.
     + + You realize you have a terrible need to work on your self-control.
     At least he left the key outside the barrel, though.
-    + + + Pick up the key
+    + + + [Pick up the key] You pick up the key to the laundry. #CLASS: getitem
     ~item_laundry_room_key++
     ...
     ->OutsideMine
@@ -463,6 +463,8 @@ It's really dark in here, and you can't see where you're going.
 
     ...
     You put your sock and sunglasses away, and emerge in a huge chamber in the middle of the mine.
+    + + + + + + + + + [Look around]
+    ...
     ->MineDisco
 
 
@@ -470,35 +472,60 @@ VAR disco_squeeze_attempted = 0
 
 =MineDisco
 
-You are standing in what seems to be a literal disco.
+You are {disco_listened_counter == 0:standing}{disco_listened_counter == 1: slightly bobbing your head}{disco_listened_counter == 2: swaying awkwardly}{disco_listened_counter == 3: shaking half a butt}{disco_listened_counter == 4: aggressively two-stepping} in what seems to be a literal disco.
 
-A pumping dance beat pounds through your body, and a smoke machine billows clouds into the air.
+A pumping dance beat shakes your insides, and a smoke machine billows clouds into the air.
 
 Near the other end of the room is a solid writhing mass of partying miners.
 
-{disco_squeeze_attempted: A disco dancer has noticed you and is half-turned towards you, dancing away.}
+{disco_squeeze_attempted && not event_wowed_dancer: A disco dancer has noticed you and is half-turned towards you, dancing away.}
 
-+ {disco_squeeze_attempted} [Approach the dancer] You walk up to the dancer.
++ {disco_squeeze_attempted && not event_wowed_dancer} [Approach the dancer] You walk up to the dancer.
     He is wearing a very tight white tanktop that says "SOUL".
     He already doesn't seem very impressed with you.
     + + ["How do I get through here?"] "___ __ _ ___ _____ ___?" #CLASS: hero
     The dancer turns his nose up at you.
     "____ ____ __ ___ _____, ____." #CLASS: dancer
     + + + You can't hear a damn thing.
-    He {~grapevines|sashay|step ball-changes|rock steps|jazz squares|moonwalks} away.
+    He {~grapevines|sashays|step ball-changes|rock steps|jazz squares|moonwalks} away.
     ...
     -> MineDisco
     
-    + + Dance
-        You try your absolute hardest to dance to the beat.
+    + + [Dance]
+        {disco_listened_counter <= 0:
         Not only do you look like an ocean mollusc making sudden contact with a desert, you are completely off-beat.
-        ...
-        
-    
-    -> MineDisco
+        The dancer looks horrified and quickly turns away.
+        + + + You tried. ->PostDanceBreak
+        }
+        {disco_listened_counter == 1:
+        You are a mess of flailing limbs and jerky movements, and there are maybe one or two moments when you don't look like a human blender.
+        The dancer looks displeased and resumes his dancing.
+        + + + At least you showed up. ->PostDanceBreak
+        }
+        {disco_listened_counter == 2:
+        You somehow move in a way that accentuates all the worst parts of your physique, but it's almost enchanting, and somewhat on beat.
+        The dancer looks intrigued, but turns away.
+        + + + It's something. ->PostDanceBreak
+        }
+        {disco_listened_counter == 3:
+        You move with the practiced elegance of a freshly birthed elephant, seamlessly chaining swinging elbows to flailing kicks. If it weren't for the fact that you couldn't dance, it would almost look like a new dance style.
+        The dancer looks impressed, then averts his attention elsewhere.
+        + + + You are a hotdog. ->PostDanceBreak
+        }
+        {disco_listened_counter >= 4:
+        Your rage at your lack of coordination shines through in some sort of interpretive masterpiece, every aimless flail making sweet lyrical love to each grunt, default-drum-sample-clap and looped synth note.
+        You are the very image of a dancer's struggle.
+        The dancer has stopped dancing and is in tears.
+        + + + You would be crying too. <br> ->WowedDancer
+        }
 
-+ {disco_squeeze_attempted} [Listen to the music]
++ {disco_squeeze_attempted && not event_wowed_dancer} [Listen to the music]
 ->DiscoListenMain
+
++ {event_wowed_dancer} [Check out the smoke machine]
+    {not CheckOutSmokeMachine: You notice the smoke machine that was behind the dancer.}
+    {CheckOutSmokeMachine: You check out the smoke machine.}
+    ->CheckOutSmokeMachine
 
 + [Squeeze past the disco-dancing miners] You try to squeeze past the packed dance floor to get to the other exit.
     But it's impossible, the writhing mass of miners is just too solid!
@@ -513,6 +540,44 @@ Near the other end of the room is a solid writhing mass of partying miners.
     -> MineRoom1
 + [Check inventory]
     -> Inventory -> MineDisco
+
+=PostDanceBreak
+<br>
+...
+->MineDisco
+
+=CheckOutSmokeMachine
+Looks industrial-grade.
+There's a slot in the top to put cartridges (or something else?) into.
++ [Okay.]
+...
+-> MineDisco
+
+
+
+VAR item_soul_tanktop = 0
+VAR event_wowed_dancer = 0
+
+=WowedDancer
+...
+He screams something unintelligible over the intestinal bass guitar booming over the speakers, and strips off his tight white tanktop with "SOUL" emblazoned on the front.
+
+He throws it down at your feet, tears streaming down his face, and drops to his knees.
+
++ [Then you watch him grovel.] You watch him literally grovel at your feet.
+
+When he finishes, he gets up, turns around, and disappears into the heaving mass of dancing disco-miners.
+
++ + [Pick up the SOUL tanktop.] You pick up the tiny white tanktop with SOUL written in giant letters on the front. #getitem
+
+~item_soul_tanktop++
+~event_wowed_dancer++
+
++ + + It's sweaty.
+
+...
+
+->MineDisco
 
 
 VAR disco_listened_counter = 0
