@@ -573,7 +573,7 @@ The smoke machine starts billowing out beautiful bubbles of FOAM!
 
 + + It's a FOAM PARTY!
 
-Shrieks of delight ring out across the disco as foam desends on the dancers, covering everything in a slippery, slippery, slippery cloak of foam.
+Shrieks of delight ring out across the disco as foam descends on the dancers, covering everything in a slippery, slippery, slippery cloak of foam.
 ...
 ->MineDisco
 
