@@ -37,7 +37,7 @@ There is <b>a muddy-looking man</b> who is running circles around the tree and o
 
 =lookdog
 The dog is tied to the tree with a thick rope. The knots look incredibly tight, possibly pulled tighter by the dog. 
-"As you can see, I'm in quite the predicament." #CLASS: dogbrainman
+"As you can see, I'm in quite the predicament." #CLASS: manbraindog
 + Where did that voice come from?
 ->lookforvoice
 + Was that the DOG talking?
@@ -53,7 +53,7 @@ The dog is tied to the tree with a thick rope. The knots look incredibly tight, 
 "WOOF!!" #CLASS: dogbrainman
 Did my sister make you unable to talk? #CLASS: hero
 "WOOF! WOOF!" #CLASS: dogbrainman
-"It's actually a modicum more complex than that, I'm afraid." #CLASS: dogbrainman
+"It's actually a modicum more complex than that, I'm afraid." #CLASS: manbraindog
 + Where did that voice come from?
 ->lookforvoice
 + Was that the DOG talking?
@@ -268,62 +268,60 @@ This is quite a puzzle. Perhaps you're missing some key information, or someone 
 
 =humanignores
 The "human" ignores you.
-The "man" is clearly very muddy, but he doesn't trust you, and won't come close enough to inspect.
-+ "I'll have to gain his trust."
+The "human" is clearly very muddy, but he doesn't trust you, and won't come close enough to inspect.
+"WOOF!" #CLASS: dogbrainman
++ "I'll have to gain his trust." #CLASS: hero
 ->dogtreeprocess
 
 
 
 =dogplan
 {not dogplan: "You wish to speak with me? I apologise for the gruff tone, I am unused to these vocal chords."} #CLASS: manbraindog
-{dogplan: "Goodness, this nose is powerful. Have you... interacted with a wet turkey today?"}
-+ {doorlocked} "How can I enter the house? 
-"Yes, please do not try to force the door open. <b>A key</b> will do the trick.
+{dogplan: "Goodness, this nose is powerful. Have you... interacted with a wet turkey today?"} #CLASS: manbraindog
++ {doorlocked} "How can I enter the house?"  
+"Yes, please do not try to force the door open. <b>A key</b> will do the trick." #CLASS: manbraindog
 + + "And where can I find a key?"
-"Where did I put the key? OH! The key is in "my" pocket. The <b>human body pocket</b>."
+"Where did I put the key? OH! The key is in "my" pocket. The <b>human body pocket</b>." #CLASS: manbraindog
 + + + "How annoying."
 ->dogtreeprocess
 + {humanignores} "How can I get that dog-brain to trust me and come closer?"
-"I admit, he is poorly trained. My apologies. And having my body has made him... quite excitable. However, a judicious application of <b> doggy treats</b> will have him, literally and figuratively, eating out of your hand, as it were."
+"I admit, he is poorly trained. My apologies. And having my body has made him... quite excitable. However, a judicious application of <b> doggy treats</b> will have him, literally and figuratively, eating out of your hand, as it were." #CLASS: manbraindog
 * * "Where are the treats?"
 ->learntreats
-+ + {learntreats} And remind me where the treats are?
++ + {learntreats} "And remind me where the treats are?" #CLASS: hero
 ->learntreats
-//NOTE: Still need more fixing here. 
-+ + {doglost} "Do you know where I can find a <b>strong-smelling black sludge</b> near here?
-+ + + {cutrope} ->leadtheway
++ {doglost} "Do you know where I can find a <b>strong-smelling black sludge</b> near here?" #CLASS: hero
++ + {cutrope} ->leadtheway
 He doesn't know where, but wow, that smell is strong to his <b>dog nose</b>. If he were free, he could lead you to it, for sure.
-+ + + "OK, I'll have to get you free then.
++ + "OK, I'll have to get you free then." #CLASS: hero
 ->dogtreeprocess
-
-
-Here you learn that <b>the "dog" can smell all sorts of things</b> you've interacted with earlier in the day... wet laundry, a turkey, milk, etc.
-+ That keen sense of smell might be useful.
-+ + "What else can you tell me that's helpful, here?"
++ "What else can you tell me that's helpful, here?" #CLASS: hero
 ->doghelp
 
 
 =doghelp
-"Perhaps, yes, it would be wise of me to lay out all of the pieces here, for you."
-"Your wilful younger sister has switched my mind and that of my dog, perhaps as punishment for keeping the poor hound tied up."
-"My foolish dog, in my body, has stolen your Staff of Power, and hidden it goodness knows where in these woods."
-{not cutrope: "I am tied up, and that rope may very well be too tight to untie."}
+"Perhaps, yes, it would be wise of me to lay out all of the pieces here, for you." #CLASS: manbraindog
+"I apologise if I ramble on a little..." #CLASS: manbraindog
++ Brace yourself
+"Your wilful younger sister has switched my mind and that of my dog, perhaps as punishment for keeping the poor hound tied up." #CLASS: manbraindog
+"My foolish dog, in my body, has stolen your Staff of Power, and hidden it goodness knows where in these woods." #CLASS: manbraindog
+{not cutrope: "I am tied up, and that rope may very well be too tight to untie."} #CLASS: manbraindog
 {doorlocked and not pocketkey: "My dog usually responds to doggy treats. However, I keep the doggy treats out of reach, on the roof, and I usually get them with a ladder. Unfortunately, the ladder is in my house, and my house is locked, and the only key I have... is in the pockets of the trousers of my body... who will not listen to you without treats! QUITE THE PREDICAMENT INDEED!"} #CLASS: manbraindog 
-"Thank you for keeping track of the problems. #CLASS: hero
++ + "Thank you for keeping track of the problems. #CLASS: hero
 ->dogtreeprocess
 
 
 = learntreats
-"Ahh, yes. Well you see, my dog... This dog body is quite large. And everywhere I put the treats, my dog would find and eat them."
-+"Clever boy."
-"Indeed. Until I hit upon the marvellous solution of secreting them on the roof. Ingenious, no?"
-+ + "But how do you reach the roof?"
-"With a ladder that I keep in the house."
-+ + + {doorlocked} "The house is locked."
-"Where did I put the key? OH! The key is in "my" pocket. The <b>human body pocket</b>."
-+ + + + "How annoying."
+"Ahh, yes. Well you see, my dog... This dog body is quite large. And everywhere I put the treats, my dog would find and eat them." #CLASS: manbraindog
++"Clever boy." #CLASS: hero
+"Indeed. Until I hit upon the marvellous solution of secreting them on the roof. Ingenious, no?" #CLASS: manbraindog
++ + "But how do you reach the roof?" #CLASS: hero
+"With a ladder that I keep in the house." #CLASS: manbraindog
++ + + {doorlocked} "The house is locked." #CLASS: hero
+"Where did I put the key? OH! The key is in "my" pocket. The <b>human body pocket</b>." #CLASS: manbraindog
++ + + + "How annoying." #CLASS: hero
 ->dogtreeprocess
-+ + + "How annoying."
++ + + "How annoying." #CLASS: hero
 ->dogtreeprocess
 
 
@@ -335,12 +333,12 @@ What is it with countryside people and locking their houses? Are they so afraid 
 ->notthere ->doorlocked
 + {not pocketkey} Look in the bushes
 ->notthere ->doorlocked
-+ {not pocketkey} "Maybe the "dog" can tell me where to find a key."  
++ {not pocketkey} "Maybe the "dog" can tell me where to find a key." #CLASS: hero
 ->dogtreeprocess
 
 =notthere
 It's not there.
-+"Hmmm."
++"Hmmm." #CLASS: hero
 ->->
 
 =houseknife
@@ -350,8 +348,8 @@ Just inside the house, on the kitchen table, is <b>a knife</b> that looks like i
 
 =cutrope
 You cut the rope. The dog is free!
-"Hooray!"
-+ "Hooray!"
+"Hooray!" #CLASS: manbraindog
++ "Hooray!" #CLASS: hero
 ->dogtreeprocess
 
 =cantclimb
@@ -391,10 +389,10 @@ She gets the doggy treats, and hands them to you.
 ->dogtreeprocess
 
 =leadtheway
-"Why, not by using my mind, good lady witch, no. BUT, if I follow this little dog NOSE, I can lead you there immediately. Shall we?"
-+ "Yes."
+"Why, not by using my mind, good lady witch, no. BUT, if I follow this little dog NOSE, I can lead you there immediately. Shall we?" #CLASS: manbraindog
++ "Yes." #CLASS: hero
 ->darker
-+ "Not yet."
++ "Not yet." #CLASS: hero
 ->dogtreeprocess 
 
 
@@ -416,7 +414,7 @@ You take the Staff of Power!
 "Finally! With this, I'm sure Eldra can undo all the Blessings you've cast today!" #CLASS: hero
 "All of them? Even the ones that made people happy?" #CLASS: littlesis
 "Yes. Sorry. Even them. Best to do these things slowly and carefully, I think." #CLASS: hero
-"Midelle! Look over there!"
+"Midelle! Look over there!" #CLASS: littlesis
 Yolene points to the horizon.
 + [Look (while holding onto the Staff tightly)]
 ->endgamespellsstart
