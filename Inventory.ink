@@ -15,9 +15,11 @@ You have...#CLASS: inventory
 {item_detergent: a box of <i>RADIANT SHINE</i> Extra-Foamy Premium Laundry Detergent,} #CLASS: inventory
 {item_radiant_sock: a blindingly radiant sock,} #CLASS: inventory
 {item_supplies_key: a key to a SUPPLIES CUPBOARD,} #CLASS: inventory
-{item_soul_tanktop: a tiny white tanktop that reads "SOUL",} #CLASS: inventory
+{item_soul_tanktop: a tight white tanktop that reads "SOUL",} #CLASS: inventory
 {treats: plenty of doggy treats (which are probably also delicious for humans),} #CLASS: inventory
 {houseknife: a perfectly functional knife,} #CLASS: inventory
+
+/*
 Debug Options: GET RID OF THESE ON PUBLISH
 + Get staff of power
 ~item_staff_of_power++
@@ -46,6 +48,7 @@ Debug Options: GET RID OF THESE ON PUBLISH
 + Get radiant sock
 ~item_radiant_sock++
 ->->
+*/
 
 + ...and that's all.#CLASS: inventory
 ...
