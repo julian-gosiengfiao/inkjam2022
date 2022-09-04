@@ -9,10 +9,6 @@
     color: rgb(202, 146, 146);
     text-align: right;
 }
-.mole{
-    font-family: 'Open Sans', sans-serif;
-    color: #C78A38;
-}
 .bigsis {
     font-family: 'Open Sans', sans-serif;
     color: rgb(219, 75, 255);
@@ -285,13 +281,18 @@ h2 {
     transition: background-color 0.6s;
 }
 
+.mole{
+    font-family: 'Open Sans', sans-serif;
+    color: #C78A38;
+}
+
 p {
     font-size: 13pt;
     color: #888;
     line-height: 1.7em;
     font-weight: lighter;
     text-align: left;
-    font-family: monospace; removing Bekant1's text style 
+    /*font-family: monospace; removing Bekant1's text style */
 }
 
 a {
