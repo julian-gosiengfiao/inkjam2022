@@ -31,7 +31,7 @@ There is <b>a muddy-looking man</b> who is running circles around the tree and o
 
 =dogtree_first
 #CLEAR
-#CLASS: images/HouseintheForest.png
+#CLASS: images/HouseInTheForest.png
 ->dogtree
 
 =lookdog
