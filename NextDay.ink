@@ -8,7 +8,7 @@ You wake up to the sound of a screaming turkey.
 
 =HutNextDay
 
-You groggily wake up in your bed, in the cottage you share with your two sisters.
+{not OutsideHutNextDay: You groggily wake up in your bed,}{OutsideHutNextDay: You are} in the hut (but really, cottage) you share with your two sisters.
 
 It is morning, and the sun is shining.
 
@@ -22,7 +22,7 @@ There's an empty space above the mantle where the Staff of Power usually sits.
 ...
 ->HutNextDay
 
-+ {not item_sunglasses} [Go outside] You start to leave the cottage.
++ {not item_sunglasses} [Go outside] You start to leave the hut.
 But you regret forgetting your sunglasses the last time you did this.
 ...
 ->HutNextDay
@@ -40,13 +40,13 @@ You are on a country road.
 
 In the distance, you see a peaceful country town.
 
-{BehindHutNextDay == 0: There is what sounds like a screaming turkey coming from behind the cottage.}
+{BehindHutNextDay == 0: There is what sounds like a screaming turkey coming from behind the hut.}
 
-+ [Go back into the cottage] You go back into the cottage.
++ [Go back into the hut] You go back into the hut.
 ...
 ->HutNextDay
 
-+ [Go behind the cottage] You go behind the cottage.
++ [Go behind the hut] You go behind the hut.
 ...
 -> BehindHutNextDay
 
@@ -63,7 +63,7 @@ In the distance, you see a peaceful country town.
 
 {BehindHutNextDay > 1: ->BehindHutNoScreaming}
 
-You are standing behind the cottage, by the washing lines.
+You are standing behind the hut.
 
 There is a pile of wet laundry on top of what appears to be a screaming turkey.
 
@@ -83,7 +83,7 @@ VAR walked_away = 0
 
 + + [Help {walked_away > 0: Eldra} {walked_away == 0: the turkey}] You lift the pile of wet laundry off the struggling bird.
 
-It wobbles to its feet and shakes off its feathers.
+She wobbles to her feet and shakes off her feathers.
 
 ->NextDayExplanation
 
@@ -140,7 +140,7 @@ Eldra continues, "But she's not old enough to harness the power of the staff!" #
 
 =BehindHutNoScreaming
 
-You are standing behind the cottage.
+You are standing behind the hut.
 
 Your older sister Eldra is here, in the form of a turkey.
 
@@ -152,8 +152,8 @@ There is a pile of wet laundry on the ground.
 ...
 ->BehindHutNoScreaming
 
-+ [Go to the front of the cottage]
-You go to the front of the cottage.
++ [Go to the front of the hut]
+You go to the front of the hut.
 ...
 -> OutsideHutNextDay
 
