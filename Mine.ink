@@ -507,7 +507,8 @@ VAR disco_listened_counter = 0
 {disco_listened_counter == 0: ->DiscoListen1}
 {disco_listened_counter == 1: ->DiscoListen2}
 {disco_listened_counter == 2: ->DiscoListen3}
-{disco_listened_counter <= 3: ->DiscoListen4}
+{disco_listened_counter == 3: ->DiscoListen4}
+{disco_listened_counter == 4: ->DiscoListen5}
 
 
 =DiscoListen1
@@ -521,7 +522,7 @@ Besides being percussively incessant, it's pumping away at a manic pace that wou
 =DiscoListen2
 The music is unrelenting, and it continues to fill your head.
 The bassline is so over-tuned it actually sounds gastric. And it runs all over the beat, like a snorting possum fallen out of a chimney into the middle of your living room.
-+ Yeuuuughhh.
++ Like a possum! A snorting one!
 ~disco_listened_counter++
 ...
 ->MineDisco
@@ -536,12 +537,18 @@ This song sounds like someone took a synth keyboard to the recording session and
 
 =DiscoListen4
 Your dysfunctional relationship with the music continues.
-There are 
-+ Text
+WHY IS THERE GRUNTING IN THIS SONG? The song lacks lyrics, but there are still "vocals" if you could call them that, which just consist of a man grunting into the microphone.
++ Against all odds, this part of the song sounds gastric, too.
+~disco_listened_counter++
 ...
 ->MineDisco
 
-
+=DiscoListen5
+You are a connoisseur of cacophony.
+You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!) this song has to offer.
++ This song would be like a fine wine if wine were made from garbage.
+...
+->MineDisco
 
 =MoleRoom
 Text
