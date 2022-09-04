@@ -479,7 +479,7 @@ Near the other end of the room is a solid writhing mass of partying miners.
 {disco_squeeze_attempted: A disco dancer has noticed you and is half-turned towards you, dancing away.}
 
 + {disco_squeeze_attempted} [Approach the dancer] You walk up to the dancer.
-    He is wearing a very tight tanktop that says "SOUL".
+    He is wearing a very tight white tanktop that says "SOUL".
     He already doesn't seem very impressed with you.
     + + ["How do I get through here?"] "___ __ _ ___ _____ ___?" #CLASS: hero
     The dancer turns his nose up at you.
@@ -522,7 +522,7 @@ VAR disco_listened_counter = 0
 {disco_listened_counter == 1: ->DiscoListen2}
 {disco_listened_counter == 2: ->DiscoListen3}
 {disco_listened_counter == 3: ->DiscoListen4}
-{disco_listened_counter == 4: ->DiscoListen5}
+{disco_listened_counter <= 4: ->DiscoListen5}
 
 
 =DiscoListen1
@@ -573,7 +573,7 @@ You are in a room full of {looked_at_junk: useless} junk.
 
 There are three giant moles sitting in the middle of the junk.
 
-{looked_at_junk: One of the pieces seems out of place.}
+{looked_at_junk: One of the pieces of junk seems out of place.}
 
 + {not talked_to_moles} [Talk to the moles?] "Hello?" #CLASS: hero
     The moles sniff the air.
