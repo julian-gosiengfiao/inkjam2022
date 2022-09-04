@@ -31,11 +31,13 @@ There is <b>a muddy-looking man</b> who is running circles around the tree and o
 =dogtree_first
 #CLEAR
 
-#CLASS: /images/HouseInTheForest.png
-+Pretty.
+#IMAGE: images/houseInTheForest.png
++ Pretty.
 ->dogtree
 
 =lookdog
+#CLEAR
+#IMAGE: images/dog.png
 The dog is tied to the tree with a thick rope. The knots look incredibly tight, possibly pulled tighter by the dog. 
 "As you can see, I'm in quite the predicament." #CLASS: manbraindog
 + Where did that voice come from?
@@ -234,7 +236,7 @@ There is a "dog" and a "human".
 ->cutrope
 * {treats} Lure the "human" to you with the treats
 ->pocketkey
-+ {pocketkey} Try to get the "human" to lead you to wherever he's hidden the Staff.
++ {pocketkey} Try to get the "human" to lead you to wherever he's hidden the Staff
 ->doglost
 *{cutrope} Get the "dog" to lead you to where the Staff is hidden
 ->staffburied
@@ -273,45 +275,53 @@ The "human" is clearly very muddy, but he doesn't trust you, and won't come clos
 + "I'll have to gain his trust." #CLASS: hero
 ->dogtreeprocess
 
-
-
 =dogplan
+#CLEAR
+#IMAGE: images/dog.png
++ You approach the dog once more.
 {not dogplan: "You wish to speak with me? I apologise for the gruff tone, I am unused to these vocal chords."} #CLASS: manbraindog
 {dogplan: "Goodness, this nose is powerful. Have you... interacted with a wet turkey today?"} #CLASS: manbraindog
-+ {doorlocked} "How can I enter the house?"  
++ + {doorlocked} "How can I enter the house?"  
 "Yes, please do not try to force the door open. <b>A key</b> will do the trick." #CLASS: manbraindog
-+ + "And where can I find a key?"
++ + + "And where can I find a key?"
 "Where did I put the key? OH! The key is in "my" pocket. The <b>human body pocket</b>." #CLASS: manbraindog
-+ + + "How annoying."
++ + + + "How annoying."
 ->dogtreeprocess
-+ {humanignores} "How can I get that dog-brain to trust me and come closer?"
++ + {humanignores} "How can I get that dog-brain to trust me and come closer?"
 "I admit, he is poorly trained. My apologies. And having my body has made him... quite excitable. However, a judicious application of <b> doggy treats</b> will have him, literally and figuratively, eating out of your hand, as it were." #CLASS: manbraindog
-* * "Where are the treats?"
-->learntreats
-+ + {learntreats} "And remind me where the treats are?" #CLASS: hero
-->learntreats
-+ {doglost} "Do you know where I can find a <b>strong-smelling black sludge</b> near here?" #CLASS: hero
-+ + {cutrope} ->leadtheway
+* * * "Where are the treats?"
+->learntreats ->treattalk
++ + + {learntreats} "And remind me where the treats are?" #CLASS: hero
+->learntreats ->treattalk
++ + {doglost} "Do you know where I can find a <b>strong-smelling black sludge</b> near here?" #CLASS: hero
++ + + {cutrope} ->leadtheway
 He doesn't know where, but wow, that smell is strong to his <b>dog nose</b>. If he were free, he could lead you to it, for sure.
-+ + "OK, I'll have to get you free then." #CLASS: hero
++ + + "OK, I'll have to get you free then." #CLASS: hero
 ->dogtreeprocess
-+ "What else can you tell me that's helpful, here?" #CLASS: hero
++ + "What else can you tell me that's helpful, here?" #CLASS: hero
 ->doghelp
 
 
 =doghelp
 "Perhaps, yes, it would be wise of me to lay out all of the pieces here, for you." #CLASS: manbraindog
 "I apologise if I ramble on a little..." #CLASS: manbraindog
-+ Brace yourself
++ [Brace yourself]
 "Your wilful younger sister has switched my mind and that of my dog, perhaps as punishment for keeping the poor hound tied up." #CLASS: manbraindog
 "My foolish dog, in my body, has stolen your Staff of Power, and hidden it goodness knows where in these woods." #CLASS: manbraindog
 {not cutrope: "I am tied up, and that rope may very well be too tight to untie."} #CLASS: manbraindog
-{doorlocked and not pocketkey: "My dog usually responds to doggy treats. However, I keep the doggy treats out of reach, on the roof, and I usually get them with a ladder. Unfortunately, the ladder is in my house, and my house is locked, and the only key I have... is in the pockets of the trousers of my body... who will not listen to you without treats! QUITE THE PREDICAMENT INDEED!"} #CLASS: manbraindog 
-+ + "Thank you for keeping track of the problems. #CLASS: hero
+{doorlocked: ->learntreats ->bigspeech}
+->dogtreeprocess
+
+=bigspeech
+"My dog usually responds to doggy treats. However, I keep the doggy treats out of reach, on the roof, and I usually get them with a ladder. Unfortunately, the ladder is in my house and my house is locked, and the only key I have... is in the pockets of the trousers of my body... who will not listen to you without treats! QUITE THE PREDICAMENT INDEED!" #CLASS: manbraindog 
++ "Thank you for keeping track of the problems. #CLASS: hero
 ->dogtreeprocess
 
 
 = learntreats
+->->
+
+=treattalk
 "Ahh, yes. Well you see, my dog... This dog body is quite large. And everywhere I put the treats, my dog would find and eat them." #CLASS: manbraindog
 +"Clever boy." #CLASS: hero
 "Indeed. Until I hit upon the marvellous solution of secreting them on the roof. Ingenious, no?" #CLASS: manbraindog
@@ -399,7 +409,7 @@ She gets the doggy treats, and hands them to you.
 =staffburied
 ...
 With the "dog" freed, he assures you that he can follow the trail of the black sludge smell to wherever the "human" has been, and hopefully therefore, to the Staff of Power.
-+ Follow the dog through the woods.
++ [Follow the "dog" through the woods]
 ->darker
 
 =darker
@@ -410,7 +420,7 @@ The "dog" leads the way, sniffing, to a pool of sludge. Floating on the surface 
 ->takestaff
 
 =takestaff
-You take the Staff of Power!
+You take the Staff of Power! #CLASS: magic
 "Finally! With this, I'm sure Eldra can undo all the Blessings you've cast today!" #CLASS: hero
 "All of them? Even the ones that made people happy?" #CLASS: littlesis
 "Yes. Sorry. Even them. Best to do these things slowly and carefully, I think." #CLASS: hero
@@ -418,3 +428,4 @@ You take the Staff of Power!
 Yolene points to the horizon.
 + [Look (while holding onto the Staff tightly)]
 ->endgamespellsstart
+
