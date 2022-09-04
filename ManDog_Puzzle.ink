@@ -275,8 +275,8 @@ The "man" is clearly very muddy, but he doesn't trust you, and won't come close 
 
 
 =dogplan
-"You wish to speak with me? I apologise for the gruff tone, I am unused to these vocal chords." #CLASS: manbraindog
-
+{not dogplan: "You wish to speak with me? I apologise for the gruff tone, I am unused to these vocal chords."} #CLASS: manbraindog
+{dogplan: "Goodness, this nose is powerful. Have you... interacted with a wet turkey today?"}
 + {doorlocked} "How can I enter the house? 
 "Yes, please do not try to force the door open. <b>A key</b> will do the trick.
 + + "And where can I find a key?"
