@@ -156,8 +156,6 @@ The man looks at you suspiciously.
 VAR kicked_for_key = 0
 VAR got_key_nicely = 0
 
-//TODO: Inventory hook for key
-//TODO: css for barrelman
 
 =BarrelTalk2
 "I'll give you a key to the laundry room if you help me get something to wear," he says. #CLASS: barrelman
@@ -179,11 +177,37 @@ VAR got_key_nicely = 0
     ...
     ->OutsideMine
 
+VAR item_clean_laundry = 0
+VAR supplies_key = 0
+VAR item_detergent = 0
+
 =LaundryBuilding
-Text
-+ [Leave the building] You leave the laundry building.
-...
-->OutsideMine
+You are standing inside a room with laundry supplies and various implements for doing laundry.
+
+In the center of the room is a pile of clean laundry, atop which sits an object of utter radiance.
+
++ [Grab some clean laundry] You grab some non-radiant clean laundry. #CLASS: getitem
+
+    ~item_clean_laundry++
+    
+    ...
+    ->LaundryBuilding
+
++ {not supplies_key} [Grab some laundry supplies] You try to open the door marked "LAUNDRY SUPPLIES" but it's locked. These people sure are protective of their laundry.
+    ...
+    -> LaundryBuilding
+
++ {supplies_key && not item_detergent} [Grab some laundry supplies] You use the key to unlock the door marked "LAUNDRY SUPPLIES".
+
+    You get yourself a box of <i>RADIANT SHINE</i> Extra-Foamy Premium laundry Detergent. #CLASS: getitem
+    ...
+    -> LaundryBuilding
+
+
+
++ [Leave the building] You leave the radiant laundry building.
+    ...
+    ->OutsideMine
 
 
 

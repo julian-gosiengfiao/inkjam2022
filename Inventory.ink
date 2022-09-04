@@ -11,7 +11,32 @@ You have...#CLASS: inventory
 {hotmilk and not coldmilk: a bucket of warm and lilac-coloured milk,} #CLASS: inventory
 {coldmilk and not trollmilkget: a bucket of very cold, lilac-coloured milk,} #CLASS: inventory
 {item_laundry_room_key: a key to the laundry building,}#CLASS: inventory
-+ ...and that's all.#CLASS: inventory
+{item_clean_laundry: a bundle of clean laundry,} #CLASS: inventory
+{item_detergent: a box of <i>RADIANT SHINE</i> Extra-Foamy Premium Laundry Detergent,} #CLASS: inventory
 
+Debug Options: GET RID OF THESE ON PUBLISH
++ Get staff of power
+~item_staff_of_power++
+->->
++ Get sunglasses
+~item_sunglasses++
+->->
++ Get tongs (not supported)
+->->
++ Get hotmilk (not supported)
+->->
++ Get coldmilk (not supported)
+->->
++ Get laundry room key
+~item_laundry_room_key++
+->->
++ Get clean laundry
+~item_clean_laundry++
+->->
++ Get detergent
+~item_detergent++
+->->
+
++ ...and that's all.#CLASS: inventory
 ...
 ->->
