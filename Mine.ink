@@ -154,7 +154,7 @@ VAR item_radiant_sock = 0
     ->OutsideMine    
 
 =BarrelImage
-#IMAGE images/barrel.png
+#IMAGE: images/barrel.png
 You walk up to the barrel.
 It wiggles.
 You're pretty sure there's something in it.
