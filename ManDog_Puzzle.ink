@@ -120,12 +120,12 @@ You've made Yolene too sad. She bursts into a flood of tears.
 ->waitaminute
 
 =caringyolene1
-"You... you were worried about me?"
+"You... you were worried about me?" #CLASS: littlesis
 +  "Of course!" 
 ->worktogether
 
 =caringyolene2
- "So... I did help people with my Blessings?
+ "So... I did help people with my Blessings? #CLASS: littlesis
 + "Some of them, yes".
 ->worktogether
 
@@ -134,17 +134,17 @@ You've made Yolene too sad. She bursts into a flood of tears.
 ...
 + ...
 "(sniff)" #CLASS: littlesis
-+ + wait a little longer
++ + wait a little longer 
 ->waitaminute
-+ + "I'm sorry I was mean to you. Are you OK?"
-"(sniff) Yeah. I'm fine. (sniff)
-* * * "Eldra and I were worried about you."
-"About me? Or about the Staff?"
-+ + + + "You, of course!"
++ + "I'm sorry I was mean to you. Are you OK?" #CLASS: hero
+"(sniff) Yeah. I'm fine. (sniff) #CLASS: littlesis
+* * * "Eldra and I were worried about you." #CLASS: hero
+"About me? Or about the Staff?" #CLASS: littlesis
++ + + + "You, of course!" #CLASS: hero
 ->worktogether
-+ + + + "Mostly the Staff."
++ + + + "Mostly the Staff." #CLASS: hero
 ->floodsoftears
-+ + + "You really did some great magic today."
++ + + "You really did some great magic today." #CLASS: hero
 ->caringyolene2
 
 =worktogether
@@ -155,24 +155,24 @@ Yolene looks cheerier now. She stands up, and dusts herself off.
 
 
 =planwithyolene
-"Yolene, I need your help." #class: hero
-+ {talkdog} "So, where's the Staff of Power, Yolene?"
-"Oh. The dog took it. Well, the man, with the dog's mind. I'll explain."
-+ + "Go on."
-"So, that poor dog was all tied up it couldn't get free, and the man didn't seem to care that he was barking and barking. He was probably thirsty too, and there was no water."
-"So you did another Blessing?"
-"So I did another Blessing. This one was:
+"How can I help?" #class: littlesis
++ {talkdog} "So, where's the Staff of Power, Yolene?" #CLASS: hero
+"Oh. The dog took it. Well, the man, with the dog's mind. I'll explain." #class: littlesis
++ + "Go on." #CLASS: hero
+"So, that poor dog was all tied up it couldn't get free, and the man didn't seem to care that he was barking and barking. He was probably thirsty too, and there was no water." #class: littlesis
++ + + "So you did another Blessing?" #CLASS: hero
+"So I did another Blessing. This one was: #class: littlesis
 <br>
 I wish you’d learn to empathise #CLASS: magic
 See the world through another’s eyes! #CLASS: magic
 <br>
-+ + + "And then what happened?"
++ + + + "And then what happened?"
 "Well, the dog mind was happy to be free, but he thought I was playing fetch! He grabbed the Staff of Power and ran off into the woods! I chased him, but I got lost, and it took me ages to get back. When I got back, the dog mind was already back, but he won't lead me back to the Staff!"
-+ + + + {not treats} "Right. So we need to get the dog mind on our side."
++ + + + + {not treats} "Right. So we need to get the dog mind on our side."
 ->->
-+ + + + {pocketkey} "But even when the dog mind trusts us... he doesn't know where he dropped it."
++ + + + + {pocketkey} "But even when the dog mind trusts us... he doesn't know where he dropped it."
 "Oh no! I guess he usually remembers his way by smell?"
-+ + + + + "Maybe..."
++ + + + + + "Maybe..."
 ->->
 + {not cutrope} "How can I get the "dog" free?" #class: hero
 "The rope is way too tight at this point. You'll have to cut that rope."
@@ -187,13 +187,23 @@ See the world through another’s eyes! #CLASS: magic
 
 
 =talkdog
-Here the dog talks to you, and you learn the spell that Yolene used to switch the minds of the man and the dog_
+"Ah, yes. You've understood. I am the one speaking. In this doggy body. I do apologise for my nudity."
++ {worktogether} "Yes, my sister explained. She switched your minds?"
+->dogspell
++ {not worktogether} "You're... was this my younger sister? With a big magical staff?"
+->dogspell
+
+=dogspell
+"That is it, in a nutshell, yes, you've understood. She didn't take kindly to my dog being tied up here, and cast a magical enchantment upon us both. I believe the words she used were:"
 <br>
 I wish you’d learn to empathise #CLASS: magic
 See the world through another’s eyes! #CLASS: magic
 <br>
-"Dog" also wants to be untied.
-+ You also learn at this point that the "human" stole the Staff, and he ran off and Yolene chased him, but the dog doesn't know what happened next.
++ "Wow. She's done so many spells today."
+"After which, my body, possessed by my pet, stole the aforementioned Staff, and ran away. Your sister endeavoured to give chase, but alas, without success. I'm sure she can explain further."
++ + "..."
+"Now, if it is not too much trouble... could you free me from this tree?"
++ + + "I can try."
 ->dogtreeprocess
 
 
@@ -208,30 +218,28 @@ There is a "dog" and a "human".
 {worktogether: <b>Yolene</b> is here, looking at you expectantly.}
 {houseknife: The house is <b>unlocked</b>, but you don't need to go inside for anything else.}
 {doorlocked and not houseknife: The house is <b>locked</b>.}
-
 + Talking to someone might help.
 ->talkscreen
-* {not worktogether} Go investigate the crying sound
-->treats
-+ Go into the house.
-->doorlocked
-+ {learntreats and not treats} Climb up to the roof
+* {not worktogether} Go and investigate the crying sound
 ->crying
++ Go into the house
+->doorlocked
++ {learntreats and not treats} Climb up to the roof to get the doggy treats
+->cantclimb 
 * {worktogether and learntreats} Get Yolene to help you reach the roof
-
-->cantclimb
+->treats
 + {not cutrope} Untie the tight knots tying up the dog
 ->cantuntie
 * {houseknife} Use the knife to cut the rope that's tying the dog to the tree
 ->cutrope
-+ {pocketkey} Try to make the "human" lead you wherever he's hidden the Staff.
+* {treats} Lure the "human" to you with the treats
+->pocketkey
++ {pocketkey} Try to get the "human" to lead you to wherever he's hidden the Staff.
 ->doglost
 *{cutrope} Get the "dog" to lead you to where the Staff is hidden
 ->staffburied
 + {not treats} Persuade the "human" to come to you see if there are any clues
 ->humanignores
-+ {treats} Lure the "human" to you with the treats
-->pocketkey
 
 =mansludgenotrust
 ->dogtreeprocess
@@ -357,10 +365,9 @@ You give the human a doggy treat.
 + You get <b>the house key</b> out of the "human"'s pocket. 
 ->dogtreeprocess
 
-
 =doglost
-The "human" comes over to you for a treat, and sits on the floor. 
-You give the human a doggy treat, and it runs off to play.
+The "human" comes over to you for a treat, and seems to want you to follow it. 
++ [Give the "human" a doggy treat] You give the "human" a doggy treat, and it runs off to play.
 The "human" leads you through the woods, but he clearly is just playing, and doesn't seem to be leading you to where he hid the Staff.
 ->mansludge
 
