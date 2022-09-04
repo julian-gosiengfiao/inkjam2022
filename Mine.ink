@@ -375,7 +375,7 @@ The foreman looks up as you approach.
     
     "Have you ever seen a mine that's been transformed into a non-stop disco?" #CLASS: foreman
     
-    + + + + "I get the feeling I'm going to have to." #CLASS: hero
+    + + + + "I get the feeling I'll have to." #CLASS: hero
     ...
     ->MineRoom1
 
