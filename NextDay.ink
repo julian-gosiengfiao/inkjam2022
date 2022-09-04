@@ -96,7 +96,7 @@ VAR walked_away = 0
 
 =TurkeyImage
 #IMAGE: images/turkey.png
-You lift the pile of wet laundry off the struggling bird!
+You lift the pile of wet laundry off the struggling bird.
 
 + [Help her up] You help her up and she shakes off her feathers.
 

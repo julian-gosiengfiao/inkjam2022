@@ -88,8 +88,6 @@ Satisfied, Eldra says "Let's go back to bed now." #CLASS: bigsis
 =GorgonEyeLookAt
 #CLEAR
 #IMAGE: images/gorgoneye.jpeg
-+ I say.
-
 ~looked_at_monster++
 
 The Gorgon Eye is raking white-hot lasers across the helpless town, incinerating the odd cow or two.
