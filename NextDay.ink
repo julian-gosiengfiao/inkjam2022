@@ -81,11 +81,9 @@ VAR walked_away = 0
 
 =WalkAwayOrHelp
 
-+ + [Help {walked_away > 0: Eldra} {walked_away == 0: the turkey}] You lift the pile of wet laundry off the struggling bird.
-
-She wobbles to her feet and shakes off her feathers.
-
-->NextDayExplanation
++ + [Help {walked_away > 0: Eldra} {walked_away == 0: the turkey}]
+    #CLEAR
+    ->TurkeyImage
 
 + + {walked_away == 0} [Walk away]
 
@@ -97,6 +95,14 @@ She wobbles to her feet and shakes off her feathers.
 + + {walked_away>0} [Walk away for real] You walk away, the turkey's screams reaching fever pitch.
 
 ->WalkedAway
+
+=TurkeyImage
+#IMAGE: images/turkey.png
+You lift the pile of wet laundry off the struggling bird!
+
++ [Help her up] You help her up and she shakes off her feathers.
+
+->NextDayExplanation
 
 =NextDayExplanation
 
