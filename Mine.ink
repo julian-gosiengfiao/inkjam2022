@@ -60,10 +60,10 @@ There is a {not building_is_laundry: single building out} {building_is_laundry: 
     ...
     ->LaundryBuilding
 
-+ {not BarrelKicked} [Inspect the barrel] You walk up to the barrel.
-It wiggles.
-You're pretty sure there's something in it.
--> BarrelSequence
++ {not BarrelKicked} [Inspect the barrel]
+#CLEAR
+-> BarrelImage
+
 
 + {BarrelKicked && not barrel_reset} [Inspect the barrel] The lid's shut tight.
 Maybe you should let him cool off for a bit.
@@ -90,7 +90,12 @@ Maybe you should let him cool off for a bit.
 ->Inventory -> OutsideMine
 
 
-
+=BarrelImage
+#IMAGE images/barrel.png
+You walk up to the barrel.
+It wiggles.
+You're pretty sure there's something in it.
+->BarrelSequence
 
 =BarrelSequence
 + [Tap it with your foot] You tap it with your foot.
