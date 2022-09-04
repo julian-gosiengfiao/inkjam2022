@@ -130,7 +130,7 @@ Eldra continues, "But she's not old enough to harness the power of the staff!" #
 
 + + "I'm going to town to find her." #CLASS: hero
 
-"Good luck, Generica!" #CLASS: bigsis
+"Good luck, Midelle!" #CLASS: bigsis
 
 ...
 
