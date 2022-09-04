@@ -307,9 +307,9 @@ Here you learn that <b>the "dog" can smell all sorts of things</b> you've intera
 "Perhaps, yes, it would be wise of me to lay out all of the pieces here, for you."
 "Your wilful younger sister has switched my mind and that of my dog, perhaps as punishment for keeping the poor hound tied up."
 "My foolish dog, in my body, has stolen your Staff of Power, and hidden it goodness knows where in these woods."
-{not cutrope} "I am tied up, and that rope may very well be too tight to untie."
-{doorlocked and not pocketkey} "My dog usually responds to doggy treats. However, I keep the doggy treats out of reach, on the roof, and I usually get them with a ladder. Unfortunately, the ladder is in my house, and my house is locked, and the only key I have... is in the pockets of the trousers of my body... who will not listen to you without treats! QUITE THE PREDICAMENT INDEED!" 
-"Thank you for keeping track of the problems." #class: hero
+{not cutrope: "I am tied up, and that rope may very well be too tight to untie."}
+{doorlocked and not pocketkey: "My dog usually responds to doggy treats. However, I keep the doggy treats out of reach, on the roof, and I usually get them with a ladder. Unfortunately, the ladder is in my house, and my house is locked, and the only key I have... is in the pockets of the trousers of my body... who will not listen to you without treats! QUITE THE PREDICAMENT INDEED!"} #CLASS: manbraindog 
+"Thank you for keeping track of the problems. #CLASS: hero
 ->dogtreeprocess
 
 
