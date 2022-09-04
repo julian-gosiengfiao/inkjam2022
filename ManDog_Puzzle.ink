@@ -92,31 +92,85 @@ She's sitting on a rock, starting at the muddy ground, and weeping.
 At the sound of your voice, she looks up.
 "Midelle! You're here! How did you find me?" #CLASS: littlesis
 + "Never mind that now! You've got some explaining to do!" #CLASS: hero
-She has tears in her eyes, still.
-"I just wanted to prove I could do it. And I COULD! I turned Eldra into a turkey!"
-+ + "I saw."
-"And I helped the farmer, and I stopped all the drinking in the tavern, and I-"
-+ + + "I know, I know! I've been everywhere you've been!"
-->worktogether
+->sadyolene
++ "I came after you! I was worried... and maybe Eldra was too?" #CLASS: hero
+->caringyolene
 + "I just followed the trail of chaos you left behind you." #CLASS: hero
-"Chaos? Other than Eldra... and I guess the tavern... I didn't cause any chaos!"
-+ + "Yes, you did! Everything's messed up!"
+"Chaos? Other than Eldra... and I guess the tavern... I didn't cause any chaos!" #CLASS: littlesis
++ + "Yes, you did! Everything's messed up!" #CLASS: hero
+->sadyolene
++ + "You might THINK you were helping those people, but really you were making a LOT of problems." #CLASS: hero
+->sadyolene
+
+=sadyolene
+She has tears in her eyes, still.
+"I just wanted to prove I could do it. And I COULD! I turned Eldra into a turkey!" #CLASS: littlesis
++ + "I saw." #CLASS: hero
+"And I helped the farmer, and I stopped all the drinking in the tavern, and I-" #CLASS: littlesis
++ + + "I know, I know! I've been everywhere you've been!" #CLASS: hero
+"Oh. And it's chaos?" #CLASS: littlesis
++ + + + "I... guess it's not that bad. Some people are happy." #CLASS: hero 
+->caringyolene
++ + + + "Total chaos. Now - give me the Staff back so I can fix everything." #CLASS: hero
+->floodsoftears
+
+=floodsoftears
+You've made Yolene too sad. She bursts into a flood of tears.
++ You might have to give her a minute.
+->waitaminute
+
+=caringyolene
+{not sadyolene} "You... you were worried about me?"
++ {not sadyolene} "Of course! 
 ->worktogether
+{sadyolene} "So... I did help people with my Blessings?
++ {sadyolene} "Some of them, yes".
+->worktogether
+
+
+=waitaminute
+...
++ ...
+"(sniff)" #CLASS: littlesis
++ + wait a little longer
+->waitaminute
++ + "I'm sorry I was mean to you. Are you OK?"
+"(sniff) Yeah. I'm fine. (sniff)
+* * * "Eldra and I were worried about you."
+"About me? Or about the Staff?"
++ + + + "You, of course!"
+->worktogether
++ + + + "Mostly the Staff."
+->floodsoftears
++ + + "You really did some great magic today."
+->caringyolene
 
 =worktogether
-
-+ Later, I will write this scene better so that you have choices that lead to collaboration. 
-+ + There needs to be a "where's the Staff?" question here, but maybe she's too upset to talk properly right now. 
-+ + + For now, let's just skip to, Yolene is going to work with you.
-+ + + + Back to the front of the house.
+Yolene looks cheerier now. She stands up, and dusts herself off.
++ She'll probably be a bit more helpful, now.
 {not dogtreeprocess: ->dogtree}
 {dogtreeprocess: ->dogtreeprocess}
 
 
 =planwithyolene
 "Yolene, I need your help." #class: hero
-+ {talkdog} "Where is the Staff?" 
-She explains that the "human" grabbed it in his mouth and ran off. She chased him, but she lost him in the woods, and it took her ages to find her way back here. After an hour of trying and failing to persuade the dog to lead her back there, she's given up.
++ {talkdog} "So, where's the Staff of Power, Yolene?"
+"Oh. The dog took it. Well, the man, with the dog's mind. I'll explain."
++ + "Go on."
+"So, that poor dog was all tied up it couldn't get free, and the man didn't seem to care that he was barking and barking. He was probably thirsty too, and there was no water."
+"So you did another Blessing?"
+"So I did another Blessing. This one was:
+<br>
+I wish you’d learn to empathise #CLASS: magic
+See the world through another’s eyes! #CLASS: magic
+<br>
++ + + "And then what happened?"
+"Well, the dog mind was happy to be free, but he thought I was playing fetch! He grabbed the Staff of Power and ran off into the woods! I chased him, but I got lost, and it took me ages to get back. When I got back, the dog mind was already back, but he won't lead me back to the Staff!"
++ + + + {not treats} "Right. So we need to get the dog mind on our side."
+->->
++ + + + {pocketkey} "But even when the dog mind trusts us... he doesn't know where he dropped it."
+"Oh no! I guess he usually remembers his way by smell?"
++ + + + + "Maybe..."
 ->->
 + {not cutrope} "How can I get the "dog" free?" #class: hero
 "The rope is way too tight at this point. You'll have to cut that rope."
