@@ -1,4 +1,3 @@
-
 =mandogpuzzlestart
 The sun is starting to set. It's been a long day.
 You continue down the path. In the distance, you hear a girl crying.
@@ -114,7 +113,9 @@ She has tears in her eyes, still.
 + + There needs to be a "where's the Staff?" question here, but maybe she's too upset to talk properly right now. 
 + + + For now, let's just skip to, Yolene is going to work with you.
 + + + + Back to the front of the house.
-->dogtree
+{not dogtreeprocess: ->dogtree}
+{dogtreeprocess: ->dogtreeprocess}
+
 
 =planwithyolene
 {talkdog: Here you can ask Yolene what happened when she raced off after the dog. She explains that she lost the DogMan, and it took her ages to find her way back here, and after trying and failing to persuade the dog to lead her back there, she's given up.}
@@ -169,9 +170,9 @@ There is a "dog" and a "human".
 You pull and pull at the rope, but it's already been pulled way too tight.
 The "Dog" tells you that the only way to get it undone now will be to cut it.
 + "I don't have anything to cut it."
-"There's a knife just inside the house.
+"There's <b>a knife</b> just inside the house.
 + + {doorlocked} "The house is locked."
-"The key is in "my" pocket. The human body pocket."
+"Where did I put the key? OH! The key is in "my" pocket. The <b>human body pocket</b>."
 + + + "How annoying."
 ->dogtreeprocess
 + + "How annoying."
@@ -206,7 +207,7 @@ You learn that the dog treats are on the roof.
 + "Don't you have a ladder?"
 "The ladder is inside the house."
 + + {doorlocked} "The house is locked."
-"The key is in "my" pocket. The human body pocket."
+"Where did I put the key? OH! The key is in "my" pocket. The <b>human body pocket</b>."
 + + + "How annoying."
 ->dogtreeprocess
 + +"How annoying."
@@ -221,7 +222,7 @@ What is it with countryside people and locking their houses? Are they so afraid 
 ->houseknife
 
 =houseknife
-Just inside the house, on the kitchen table, is a knife that looks like it would be good at cutting ropes.
+Just inside the house, on the kitchen table, is <b>a knife</b> that looks like it would be good at cutting ropes.
 + Take the knife and leave
 ->dogtreeprocess
 
@@ -231,8 +232,6 @@ You cut the rope. The dog is free!
 + "Hooray!"
 ->dogtreeprocess
 
-
-
 =cantclimb
 {not treats: You can't climb. Too difficult. You need a way of getting higher up.}
 {treats: You already have enough doggy treats, there's no reason to climb up again.}
@@ -240,23 +239,27 @@ You cut the rope. The dog is free!
 ->dogtreeprocess
 
 =pocketkey
-+ You get the key out of the "human"'s pocket. 
+The "human" comes over to you for a treat, and sits on the floor. 
+You give the human a doggy treat.
++ You get <b>the house key</b> out of the "human"'s pocket. 
 ->dogtreeprocess
 
 
 =doglost
-
+The "human" comes over to you for a treat, and sits on the floor. 
+You give the human a doggy treat, and it runs off to play.
 The "human" leads you through the woods, but he clearly is just playing, and doesn't seem to be leading you to where the Staff is buried.
-He wants to play "shake" with you, and his hands are covered in a strong-smelling black sludge, but you don't see any pools of black sludge anywhere.
+He wants to play "shake" with you, and his hands are covered in <b>a strong-smelling black sludge</b>, but you don't see any pools of black sludge anywhere.
 ->dogtreeprocess
 ->DONE
 
 =treats
-You have the doggy treats
+You get Yolene to climb on your back, and stand up tall so she can reach the roof.
+She gets the doggy treats, and hands them to you.
++ You have the doggy treats!
 ->dogtreeprocess
 
 =staffburied
 You, the "dog", Yolene and the "human" head through the woods. The "dog" leads the way, sniffing, to a pool of sludge. Floating on the surface is the Staff of Power!
 + Take the Staff
 ->endgamespellsstart
-->END
