@@ -50,7 +50,7 @@ There is a {not building_is_laundry: single building out} {building_is_laundry: 
     ...
     ->OutsideMine
 
-+ {item_laundry_room_key} [Enter the building] You try to enter the {building_is_laundry: laundry} building.
++ {item_laundry_room_key && not LaundryBuilding} [Enter the building] You try to enter the {building_is_laundry: laundry} building.
     {item_laundry_room_key: The laundry room key unlocks the door.}
     The radiant light floods out of the door and blinds you!
     + + [Get me outta here!] You quickly shut the door and it locks with a click.
@@ -58,6 +58,10 @@ There is a {not building_is_laundry: single building out} {building_is_laundry: 
     ->OutsideMine
     + + [Check inventory] In a single, effortless motion, you slide your hand into your inventory, pull your sunglasses out, and sit them on your glorious face.
     + + + [Enter the laundry building] You enter the incandescent laundry building.
+    ...
+    ->LaundryBuilding
+
++ {LaundryBuilding} [Enter the laundry building] You slip your sunglasses on and enter the laundry building.
     ...
     ->LaundryBuilding
 
@@ -190,7 +194,7 @@ The man looks at you suspiciously.
 + "I'm sorry about earlier!" #CLASS: hero
     "That's alright," The man in the barrel eyes you. #CLASS: barrelman
     + + "Is a witch resposible for this?" #CLASS: hero
-    He sighs, "Yes. She came through here claiming she could fix everything. And now look at me!"
+    He sighs, "Yes. She came through here claiming she could fix everything. And now look at me!"#CLASS: barrelman
     + + + "What did you tell her, exactly?" #CLASS: hero
     The man in the barrel pauses.
     "Life is just a never-ending series of chores," #CLASS: barrelman
@@ -254,12 +258,12 @@ In the center of the room is a pile of clean laundry, atop which sits clean clot
     ...
     ->LaundryBuilding
 
-+ {item_clean_laundry || item_radiant_sock} [Grab some clean laundry] You've already got some clean laundry.
++ {item_clean_laundry && not item_radiant_sock} [Grab some clean laundry] You've already got some clean laundry.
     + + Barrel-man is naked, but he's not <i>that</i> naked.
     ...or is he?
     ...
     -> LaundryBuilding
-
+    
 + {not item_supplies_key} [Grab some laundry supplies] You try to open the door marked "DETERGENT CUPBOARD" but it's locked.
     + + These people sure are protective of their laundry.
     ...
@@ -278,7 +282,7 @@ In the center of the room is a pile of clean laundry, atop which sits clean clot
     ...
     -> LaundryBuilding
 
-+ [Leave the building] You leave the radiant laundry building.
++ [Leave the building] You leave the radiant laundry building and slip your sunglasses off.
     ...
     ->OutsideMine
 
@@ -299,9 +303,8 @@ There's a sizable crack in the wall next to the foreman.
 
 The tunnel goes on into the darkness.
 
-+ [Talk to the foreman]
-{not TalkToForeman: -> TalkToForeman}
-{TalkToForeman: The foreman looks up at you. ->TalkToForeman2}
++ {not TalkToForeman} [Talk to the foreman] ->TalkToForeman
++ {TalkToForeman} [Talk to the foreman again] The foreman looks up at you. ->TalkToForeman2
 
 + {asked_about_crack && not crack_travelled} [Examine the crack] You examine the crack in the wall.
 ->ExamineCrack
@@ -474,7 +477,7 @@ VAR disco_squeeze_attempted = 0
 
 =MineDisco
 
-You are {disco_listened_counter == 0:standing}{disco_listened_counter == 1: slightly bobbing your head}{disco_listened_counter == 2: swaying awkwardly}{disco_listened_counter == 3: shaking half a butt}{disco_listened_counter == 4: aggressively two-stepping} in what seems to be a literal disco.
+You are {disco_listened_counter == 0:standing}{disco_listened_counter == 1: slightly bobbing your head}{disco_listened_counter == 2: swaying awkwardly}{disco_listened_counter == 3: shaking half a butt}{disco_listened_counter <= 4: aggressively two-stepping} in what seems to be a literal disco.
 
 A pumping dance beat shakes your insides, and a {not event_detergent_used: smoke machine billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
 
@@ -654,11 +657,11 @@ VAR looked_at_junk = 0
 VAR asked_about_strange_junk = 0
 
 =MoleRoom
-You are in a room full of {looked_at_junk: useless} junk.
+You are in a room full of {looked_at_junk: useless} stuff.
 
-There are three giant moles sitting in the middle of the junk.
+There are three giant moles sitting in the middle of all the junk.
 
-{looked_at_junk && not asked_about_strange_junk: One of the pieces of junk seems out of place.}
+{looked_at_junk && not asked_about_strange_junk: One of the items in here seems out of place.}
 {asked_about_strange_junk && not item_supplies_key: A key to some kind of "...CUPBOARD" seems out of place.}
 
 + {not talked_to_moles} [Talk to the moles?] "Hello?" #CLASS: hero
@@ -684,7 +687,7 @@ There are three giant moles sitting in the middle of the junk.
     ...
     ->MoleRoom
 
-+ {talked_to_moles && not item_supplies_key} [Look at the junk] You cast your eye over the junk and point a random piece out.
++ {talked_to_moles && not item_supplies_key} [Look at junk] You cast your eye over the junk and point a random piece out.
     "What's this?" #CLASS: hero
     {&"FROM A SHOE, SOLE. EXAMPLE OBJECT SACRED FOR MOLE."|"ANCIENT STORIED SCROLL. EXAMPLE OBJECT SACRED FOR MOLE."|"VERY NARROW POLE. EXAMPLE OBJECT SACRED FOR MOLE."|"NICE OLD COAL. EXAMPLE OBJECT SACRED FOR MOLE."|"DISCARDED BEDROLL. EXAMPLE OBJECT SACRED FOR MOLE."|"MOST ORNATE BOWL. EXAMPLE OBJECT SACRED FOR MOLE."}
     
@@ -713,7 +716,7 @@ There are three giant moles sitting in the middle of the junk.
     ->MoleRoom
 
     + + + + {MineDisco} You may have seen something that might fit the bill...
-    Something tiny and white.
+    Something white. And <b>tight</b>.
     ...
     ~asked_about_strange_junk++
     ->MoleRoom
@@ -727,21 +730,21 @@ There are three giant moles sitting in the middle of the junk.
     ...
     ->MoleRoom
     + + {MineDisco} You may have seen something that might fit the bill...
-    Something tiny and white.
+    Something white. And <b>tight</b>
     ...
     ->MoleRoom
 
-+ {item_soul_tanktop && not item_supplies_key} [Present the "SOUL" tanktop to the moles] You present the tiny, sweaty tanktop that reads "SOUL" to the moles.
++ {item_soul_tanktop && not item_supplies_key && not asked_about_strange_junk} [Present the "SOUL" tanktop to the moles] You present the tiny, sweaty tanktop that reads "SOUL" to the moles.
     The moles all react differently.
     "IS THIS AN OBJECT BEFITTING MOLE?!" #CLASS: mole2
     "IT READS SO ON FRONT; 'SOUL!'" #CLASS: mole
     "THIS IS JOKE, VIOLATION OF PAROLE!" #CLASS: mole2
     The third, largest mole stirs.
-    "IF I DON'T GET IT, YOU THAT YOU WILL CONSOLE" #CLASS: mole3
+    "IF I DON'T GET IT, YOU MUST CONSOLE" #CLASS: mole3
     + + ["Uh..."]
-    Before you can speak, the third mole reaches over, and takes the tiny, sweaty tanktop from you.
-    It places it atop the grand pile of junk, and then gives you the key.
-    "THIS ITEM, FOR YOU, DOLE." #CLASS: mole3
+    Before you can speak, the third mole reaches over, and takes the tiny, sweaty tanktop from you.#CLASS: giveitem
+    It places it atop the grand pile of stuff, and then gives you the key.
+    "THIS ITEM, FOR YOU I DOLE." #CLASS: mole3
     You get the key marked SUPPLIES CUPBOARD! It has a picture of detergent on it. #CLASS: getitem
     
     ~item_supplies_key++
@@ -773,7 +776,7 @@ VAR mole_hole_dub = 0
     ~mole_hole_dub++
     ->MoleOptions
 + "Okay, thanks, moles." #CLASS: hero
-    "HAVE A NICE STROLL." #CLASS: mole
+    "HAVE NICE STROLL." #CLASS: mole
     ...
     ->MoleRoom
     
