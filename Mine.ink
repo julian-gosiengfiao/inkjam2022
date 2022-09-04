@@ -4,19 +4,17 @@
 ~item_sunglasses++
 } //In case we skip our way here
 
-On the other side of the bridge, the terrain is hilly and uneven.
+The bridge is long, and overlooks craggy cliffs.
 
-You walk for a while, and eventually the mountains in the distance get closer and closer.
++ [Walk to the end] You walk to the end.
+#CLEAR
 
-At the base of a mountain, you see a pillar of light shoot into the sky.
+#IMAGE: images/theMine.png
+You walk to the end.
 
-This can't be good.
+You see the mine-pass not far ahead, the only safe way through the mountains.
 
-+ [Make your way to the pillar] You make your way to the pillar of light.
-
-Before long, you arrive at your destination.
-
-+ + It is the mine-pass, the only safe way through these mountains.
++ + [Approach the mine] You approach the mine.
 
 ...
 ->OutsideMine
@@ -466,7 +464,7 @@ VAR disco_squeeze_attempted = 0
 
 You are standing in what seems to be a literal disco.
 
-A pumping dance beat vibrates through your body, and a smoke machine billows clouds into the air.
+A pumping dance beat pounds through your body, and a smoke machine billows clouds into the air.
 
 Near the other end of the room is a solid writhing mass of partying miners.
 
@@ -484,8 +482,9 @@ Near the other end of the room is a solid writhing mass of partying miners.
     
     + + Dance
         You try your absolute hardest to dance to the beat.
-        Not only do you look like a sea mollusc suddenly making contact with a desert, you are completely off-beat.
+        Not only do you look like an ocean mollusc making sudden contact with a desert, you are completely off-beat.
         ...
+        
     
     -> MineDisco
 
@@ -503,6 +502,9 @@ Near the other end of the room is a solid writhing mass of partying miners.
 + [Go back to the mine entrance] You go back through the dark tunnel using your sunglasses and your sock.
     ...
     -> MineRoom1
++ [Check inventory]
+    -> Inventory -> MineDisco
+
 
 VAR disco_listened_counter = 0
 
@@ -572,8 +574,6 @@ mole gives you key to laundry which has all the soap
 put soap into the smoke machine
 
 MOLE HOLE?
-Utter radiance want to get in the laundry
-Ability to get laundry twice.
 Use BOLDS. USE THEM!
 
 barrelman offers sister information before you help him?
