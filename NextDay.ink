@@ -8,7 +8,7 @@ You wake up to the sound of a screaming turkey.
 
 =HutNextDay
 
-You are in the hut you share with your two sisters.
+You groggily wake up in your bed, in the cottage you share with your two sisters.
 
 It is morning, and the sun is shining.
 
@@ -22,7 +22,7 @@ There's an empty space above the mantle where the Staff of Power usually sits.
 ...
 ->HutNextDay
 
-+ {not item_sunglasses} [Go outside] You start to leave the hut.
++ {not item_sunglasses} [Go outside] You start to leave the cottage.
 But you regret forgetting your sunglasses the last time you did this.
 ...
 ->HutNextDay
@@ -40,13 +40,13 @@ You are on a country road.
 
 In the distance, you see a peaceful country town.
 
-{BehindHutNextDay == 0: There is what sounds like a screaming turkey coming from behind the house.}
+{BehindHutNextDay == 0: There is what sounds like a screaming turkey coming from behind the cottage.}
 
-+ [Go into hut] You go into the hut.
++ [Go back into the cottage] You go back into the cottage.
 ...
 ->HutNextDay
 
-+ [Go behind hut] You go behind the hut.
++ [Go behind the cottage] You go behind the cottage.
 ...
 -> BehindHutNextDay
 
@@ -63,7 +63,7 @@ In the distance, you see a peaceful country town.
 
 {BehindHutNextDay > 1: ->BehindHutNoScreaming}
 
-You are standing behind the hut.
+You are standing behind the cottage, by the washing lines.
 
 There is a pile of wet laundry on top of what appears to be a screaming turkey.
 
@@ -140,7 +140,7 @@ Eldra continues, "But she's not old enough to harness the power of the staff!" #
 
 =BehindHutNoScreaming
 
-You are standing behind the hut.
+You are standing behind the cottage.
 
 Your older sister Eldra is here, in the form of a turkey.
 
@@ -152,8 +152,8 @@ There is a pile of wet laundry on the ground.
 ...
 ->BehindHutNoScreaming
 
-+ [Go to the front of the hut]
-You go to the front of the hut.
++ [Go to the front of the cottage]
+You go to the front of the cottage.
 ...
 -> OutsideHutNextDay
 
@@ -187,7 +187,7 @@ But you cannot fathom the enormity of the situation. Or of the cow. And you fail
 ...
 ->blockedoutsidetown
 
-+ [Go to the hut] You throw your hands up in the air and return to the hut.
++ [Go back to the cottage] You throw your hands up in the air and return to the cottage.
 ...
 ->OutsideHutNextDay
 
