@@ -474,9 +474,9 @@ VAR disco_squeeze_attempted = 0
 
 You are {disco_listened_counter == 0:standing}{disco_listened_counter == 1: slightly bobbing your head}{disco_listened_counter == 2: swaying awkwardly}{disco_listened_counter == 3: shaking half a butt}{disco_listened_counter == 4: aggressively two-stepping} in what seems to be a literal disco.
 
-A pumping dance beat shakes your insides, and a smoke machine billows clouds into the air.
+A pumping dance beat shakes your insides, and a {not event_detergent_used: smoke machine billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
 
-Near the other end of the room is a solid writhing mass of partying miners.
+Near the other end of the room is a solid writhing mass of partying miners{event_detergent_used: covered in FOAM!}{not event_detergent_used:.}
 
 {disco_squeeze_attempted && not event_wowed_dancer: A disco dancer has noticed you and is half-turned towards you, dancing away.}
 
@@ -527,7 +527,7 @@ Near the other end of the room is a solid writhing mass of partying miners.
     {CheckOutSmokeMachine: You check out the smoke machine.}
     ->CheckOutSmokeMachine
 
-+ [Squeeze past the disco-dancing miners] You try to squeeze past the packed dance floor to get to the other exit.
++ {not event_detergent_used} [Squeeze past the disco-dancing miners] You try to squeeze past the packed dance floor to get to the other exit.
     But it's impossible, the writhing mass of miners is just too solid!
     
     ~disco_squeeze_attempted++
@@ -535,6 +535,11 @@ Near the other end of the room is a solid writhing mass of partying miners.
     + + You bounce right back off it.
     ...
     -> MineDisco
+
++ {event_detergent_used} [Squeeze past the foamy disco-dancing miners] You try to squeeze past the packed dance floor to get to the other exit.
+    It's a tight fit, but you slip and you slide your way through the heaving mass, and successfully emerge out the other side!
+    ->ToManDogTransition
+    
 + [Go back to the mine entrance] You go back through the dark tunnel using your sunglasses and your sock.
     ...
     -> MineRoom1
@@ -546,13 +551,26 @@ Near the other end of the room is a solid writhing mass of partying miners.
 ...
 ->MineDisco
 
+VAR event_detergent_used = 0
+
 =CheckOutSmokeMachine
 Looks industrial-grade.
-There's a slot in the top to put cartridges (or something else?) into.
+There's a slot in the top to put smoke fluid (or something else?) into.
 + [Okay.]
 ...
 -> MineDisco
 
++ {item_detergent}[Pour detergent into the smoke machine] You pour detergent into the smoke machine.
+You no longer have detergent. #CLASS: giveitem
+~item_detergent--
+~event_detergent_used++
+The smoke machine starts billowing out beautiful bubbles of FOAM!
+
++ + It's a FOAM PARTY!
+
+Shrieks of delight ring out across the disco as foam desends on the dancers, covering everything in a slippery, slippery, slippery cloak of foam.
+...
+->MineDisco
 
 
 VAR item_soul_tanktop = 0
@@ -757,6 +775,13 @@ VAR mole_hole_dub = 0
     ...
     ->MoleRoom
     
+=ToManDogTransition
++ You did it!!!
+The rest of the tunnel continues to the other side of the mountains, where Yolene has gone.
++ + Let's go get her.
+You continue until you exit the mines and are greeted by the outside world.
++ + + [Leave the mines behind you]
+->mandogpuzzlestart
 
 ->END
 
