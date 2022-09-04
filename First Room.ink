@@ -106,7 +106,7 @@ Eldra is shouting objections at you as Yolene catches the staff, laughs with joy
 
 {EldraStaff:
 Yolene rushes up to you, clearly annoyed.
-"Mideline, <i> why </i> did you give it to <i>her</i>? I've been practising my magic so much! <i>I</i> should have had a chance!" #CLASS: littlesis
+"Midelle, <i> why </i> did you give it to <i>her</i>? I've been practising my magic so much! <i>I</i> should have had a chance!" #CLASS: littlesis
 "You are still not ready for the powers of this Staff, little one." #CLASS: bigsis
 Yolene lets out a yell of frustration, and lunges to grab the Staff out of her sister's hands. 
 "UGGGGH! Just let me SHOW YOU WHAT I CAN DO!" #CLASS: littlesis
@@ -114,7 +114,7 @@ Yolene lets out a yell of frustration, and lunges to grab the Staff out of her s
 {YoleneStaff: 
 "HaHAAAA! I DID IT! I knew I could!" #CLASS: littlesis
 Eldra walks up to you both, looking stern.
-"And yet the creature still lives, and could return. Really, Mideline, our little sister is not ready for such tasks." #CLASS: bigsis
+"And yet the creature still lives, and could return. Really, Midelle, our little sister is not ready for such tasks." #CLASS: bigsis
 Eldra tries to pull the Staff out of Yolene's hands, and Yolene pulls back.
 }
 + Uh oh. 

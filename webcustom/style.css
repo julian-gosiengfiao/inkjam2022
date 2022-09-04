@@ -100,6 +100,16 @@
     color: #ffe6c6;
 }
 
+.mole{
+    font-family: 'Open Sans', sans-serif;
+    color: #775e3e;
+}
+
+.mole2{
+    font-family: 'Open Sans', sans-serif;
+    color: #61773e;
+}
+
 /* Old Bekant1 Stuff here.
 
 .brian {
@@ -279,11 +289,6 @@ h2 {
 
 .switched .container {
     transition: background-color 0.6s;
-}
-
-.mole{
-    font-family: 'Open Sans', sans-serif;
-    color: #C78A38;
 }
 
 p {

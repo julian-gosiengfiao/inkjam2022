@@ -67,11 +67,11 @@ You are standing behind the cottage, by the washing lines.
 
 There is a pile of wet laundry on top of what appears to be a screaming turkey.
 
-<i>"MIDELIIIIIIIIINE!!!"</i> #CLASS: bigsis
+<i>"MIDEEEEEEEEELLE!!!"</i> #CLASS: bigsis
 
 + [Did that turkey just say my name?!] You approach the turkey.
 
-"Mideline, get me out of this pile of wet laundry!" #CLASS: bigsis
+"Midelle, get me out of this pile of wet laundry!" #CLASS: bigsis
 
 You have never seen a turkey speak with such a mix of authority and desperation.
 
@@ -90,7 +90,7 @@ It wobbles to its feet and shakes off its feathers.
 + + {walked_away == 0} [Walk away]
 
 ~walked_away++
-"MIDELINE, DON'T YOU DARE TURN YOUR BACK ON YOUR SISTER LIKE THAT!" #CLASS: bigsis
+"MIDELLE, DON'T YOU DARE TURN YOUR BACK ON YOUR SISTER LIKE THAT!" #CLASS: bigsis
 ...Yes, this turkey is definitely Eldra.
 ->WalkAwayOrHelp
 
