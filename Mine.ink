@@ -178,7 +178,7 @@ VAR got_key_nicely = 0
     ->OutsideMine
 
 VAR item_clean_laundry = 0
-VAR supplies_key = 0
+VAR item_supplies_key = 0
 VAR item_detergent = 0
 
 =LaundryBuilding
@@ -186,29 +186,42 @@ You are standing inside a room with laundry supplies and various implements for 
 
 In the center of the room is a pile of clean laundry, atop which sits an object of utter radiance.
 
-+ [Grab some clean laundry] You grab some non-radiant clean laundry. #CLASS: getitem
++ {not item_clean_laundry} [Grab some clean laundry] You grab some non-radiant clean laundry. #CLASS: getitem
 
     ~item_clean_laundry++
     
     ...
     ->LaundryBuilding
 
-+ {not supplies_key} [Grab some laundry supplies] You try to open the door marked "LAUNDRY SUPPLIES" but it's locked. These people sure are protective of their laundry.
++ {item_clean_laundry} [Grab some clean laundry] You've already got some clean laundry.
+    + + Barrel-man is naked, but he's not <i>that</i> naked.
+    ...or is he?
     ...
     -> LaundryBuilding
 
-+ {supplies_key && not item_detergent} [Grab some laundry supplies] You use the key to unlock the door marked "LAUNDRY SUPPLIES".
-
-    You get yourself a box of <i>RADIANT SHINE</i> Extra-Foamy Premium laundry Detergent. #CLASS: getitem
++ {not item_supplies_key} [Grab some laundry supplies] You try to open the door marked "LAUNDRY SUPPLIES" but it's locked. These people sure are protective of their laundry.
     ...
     -> LaundryBuilding
 
++ {item_supplies_key && not item_detergent} [Grab some laundry supplies] You use the key to unlock the door marked "LAUNDRY SUPPLIES".
 
+    You get yourself a box of <i>RADIANT SHINE Extra-Foamy Premium Laundry Detergent</i>. #CLASS: getitem
+    
+    ~item_detergent++
+    
+    ...
+    -> LaundryBuilding
+
++ {item_supplies_key && item_detergent} [Grab some laundry supplies] You've already got some overpriced detergent.
+    ...
+    -> LaundryBuilding
 
 + [Leave the building] You leave the radiant laundry building.
     ...
     ->OutsideMine
 
++ [Check your inventory]
+    ->Inventory ->LaundryBuilding
 
 
 =MineRoom1

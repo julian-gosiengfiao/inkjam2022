@@ -36,6 +36,9 @@ Debug Options: GET RID OF THESE ON PUBLISH
 + Get detergent
 ~item_detergent++
 ->->
++ Get laundry supply key
+~item_supplies_key++
+->->
 
 + ...and that's all.#CLASS: inventory
 ...
