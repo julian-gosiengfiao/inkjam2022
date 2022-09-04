@@ -36,13 +36,16 @@ There is a {not building_is_laundry: single building out} {building_is_laundry: 
 {not barrel_reset: You notice a wiggling barrel next to the building.}
 {barrel_reset && not item_laundry_room_key: There is a man in a barrel, eyeing you from beneath the lid.}
 {kicked_for_key: There is a barrel with a man inside here.}
-{got_key_nicely: Barrelman is chilling in his barrel here.}
+{got_key_nicely: Barrel-man is chilling in his barrel here.}
 
 
 + {not item_laundry_room_key} [Enter the building] You try to enter the {building_is_laundry: laundry} building.
     It's locked, and you don't have a key.
-    {not building_is_laundry: You note it says: "LAUNDRY STATION" in big letters on the door.}
+    + + {not building_is_laundry} You note it says: "LAUNDRY STATION" in big letters on the door.
     ~building_is_laundry++
+    ...
+    ->OutsideMine
+    + + Darn.
     ...
     ->OutsideMine
 
@@ -70,7 +73,7 @@ Maybe you should let him cool off for a bit.
 + {barrel_reset && not item_laundry_room_key} [Talk to the man in the barrel]
 ->BarrelTalk
 
-+ {kicked_for_key} [Inspect the barrel] You find it very hard to blame your sister for this particular situation, but you still feel you should make it right.
++ {kicked_for_key} [Inspect the barrel] You find it very hard to blame your sister for this particular situation, but you still feel you should solve this man's problem.
 ...
 -> OutsideMine
 
@@ -117,55 +120,59 @@ He clambers back into the barrel and slams the lid tightly shut.
 ...
 -> OutsideMine
 
-+ "HAVE YOU SEEN MY SISTER?!" #CLASS: hero
-The man immediately pops back into the barrel, snapping the lid shut.
-~barrel_reset--
-+ + Oops.
-...
-->OutsideMine
-
 =BarrelTalk
 The man looks at you suspiciously.
 
 + "I'm sorry about earlier!" #CLASS: hero
-"That's alright," The man in the barrel eyes you. #CLASS: barrelman
-+ + "Is a witch resposible for this?" #CLASS: hero
-The barrelman sighs, "Yes. She came through here claiming she could fix everything. And now look at me!"
-+ + + "What did you tell her, exactly?" #CLASS: hero
-The barrel man regards you for a moment.
-"Life is just a never-ending series of chores," #CLASS: barrelman
-+ + + + [Nod] You suddenly feel a kinship for barrel-man, but you don't show it on the outside.
-"And day in, day out, I'm just washing black soot out of my work uniform." #CLASS: barrelman
-"So I said to her, I wish that it was LITERALLY IMPOSSIBLE for my uniform to pick up EVEN THE SMALLEST speck of dirt, and that it would ALWAYS shine RADIANTLY FOR ALL TO SEE!" #CLASS: barrelman
-+ + + + + [Look at the building] You both look at the glowing {building_is_laundry: laundry} building, with radiant light erupting from every window and crack.
-You both look back at each other.
-+ + + + + + [Show polite concern] You notice your jaw is hanging completely open and you are just staring at the barrelman.
-->BarrelTalk2
-+ + + + + + [Show empathy] Your hand moves of its own volition and slaps your forehead loudly, echoing for miles across the quiet mountain valley.
-->BarrelTalk2
+    "That's alright," The man in the barrel eyes you. #CLASS: barrelman
+    + + "Is a witch resposible for this?" #CLASS: hero
+    He sighs, "Yes. She came through here claiming she could fix everything. And now look at me!"
+    + + + "What did you tell her, exactly?" #CLASS: hero
+    The man in the barrel pauses.
+    "Life is just a never-ending series of chores," #CLASS: barrelman
+    + + + + [Nod] You suddenly feel a kinship with the barrel-man, but you don't show it on the outside.
+    "And day in, day out, I'm just washing black soot out of my work uniform." #CLASS: barrelman
+    + + + + + "Uh, huh..." #CLASS: hero
+    "So I said to her, I wish that it was LITERALLY IMPOSSIBLE for my uniform to pick up EVEN THE SMALLEST speck of dirt, and that it would ALWAYS shine RADIANTLY FOR ALL TO SEE!" #CLASS: barrelman
+    + + + + + + [Look at the building] You both look at the glowing {building_is_laundry: laundry} building, with radiant light erupting from every window and crack.
+    You both look back at each other.
+    + + + + + + + [Show polite concern] You notice your jaw is hanging completely open and you are just staring at barrel-man.
+    ->BarrelTalk2
+    + + + + + + + [Show empathy] You raise your hand to shrug, but it moves of its own volition and slaps your forehead loudly.
+    ->BarrelTalk2
+    
++ "HAVE YOU SEEN MY SISTER?!" #CLASS: hero
+    The man immediately pops back into the barrel, snapping the lid shut.
+    ~barrel_reset--
+    + + Oops.
+    ...
+    ->OutsideMine
 
 VAR kicked_for_key = 0
 VAR got_key_nicely = 0
 
+//TODO: Inventory hook for key
+//TODO: css for barrelman
+
 =BarrelTalk2
 "I'll give you a key to the laundry room if you help me get something to wear," he says. #CLASS: barrelman
-"But be carefeful - it's so bright you could be blinded! No one else can go near, for we are miners and we need our vision, especially in the dark." #CLASS: barrelman
+"But be careful - it's so bright you could be blinded! No one else can go near, for we are miners and we need our vision, especially in the dark." #CLASS: barrelman
 + "Alright." #CLASS: hero
-He gives you the key to the laundry. #CLASS: getitem
+    He gives you the key to the laundry. #CLASS: getitem
+    
+    ~item_laundry_room_key++
+    ...
+    ->OutsideMine
 
-~item_laundry_room_key++
-...
-->OutsideMine
-
-+ [Kick the barrel over] You kick the barrel over, and the naked man tumbles out.
-"AAAAAAAARGHHH!!!" #CLASS: barrelman
-He scrambles back into the barrel, profanities flying left and right, and snaps the lid shut.
-+ + You realize you have a terrible need to work on your self-control.
-At least he left the key outside the barrel, though.
-+ + + Pick up the key
-~item_laundry_room_key++
-...
-->OutsideMine
+    + [Kick the barrel over] You kick the barrel over, and the naked man tumbles out.
+    "AAAAAAAARGHHH!!!" #CLASS: barrelman
+    He scrambles back into the barrel, profanities flying left and right, and snaps the lid shut.
+    + + You realize you have a terrible need to work on your self-control.
+    At least he left the key outside the barrel, though.
+    + + + Pick up the key
+    ~item_laundry_room_key++
+    ...
+    ->OutsideMine
 
 =LaundryBuilding
 Text
@@ -184,9 +191,9 @@ You are in the well-lit entry hall of the mine tunnel.
 
 An exhausted foreman is leaning against a wall.
 
-The tunnel goes on into the darkness.
-
 There's a sizable crack in the wall next to the foreman.
+
+The tunnel goes on into the darkness.
 
 + [Talk to the foreman]
 {not TalkToForeman: -> TalkToForeman}
@@ -199,7 +206,7 @@ There's a sizable crack in the wall next to the foreman.
 ...
 ->TunnelDarkSection
 
-+ [Exit the mine] You exit the mine.
++ [Exit the mine] You go back out the way you came.
 ...
 ->OutsideMine
 
@@ -212,15 +219,15 @@ It's quite a large crack.
 It looks like it goes pretty deep, and you might be able to fit through it.
 
 + [Try to squeeze through] You try to squeeze through the crack.
-...
-+ + It's a tight fit...
-...
-+ + + ...
-...
-+ + + + You emerge through the other end.
-...
--> MoleRoom
-
+    ...
+    + + It's a tight fit...
+    ...
+    + + + ...
+    ...
+    + + + + You emerge through the other end.
+    ...
+    -> MoleRoom
+    
 + [Leave it alone]
 -> MineRoom1
 
@@ -232,25 +239,25 @@ The foreman looks up as you approach.
 
 + "I see you've met my little sister." #CLASS: hero
 
-"So you do know her! She came in, claiming to be some powerful witch who could fix everything."#CLASS: foreman
-
-"All I wanted was for my men not to have to work so hard in these mines."#CLASS: foreman
-
-+ + "Uh-oh. What happened?"
-
-"As it happens, I have shockingly accurate recall. She said:" #CLASS: foreman
-
-"Working hard, for all the day," #CLASS: magic
-
-"Let's turn it around, and into play!" #CLASS: magic
-
-+ + + "That doesn't sound too bad."
-
-"Have you ever seen a mine that's been transformed into a non-stop disco?" #CLASS: foreman
-
-+ + + + "I get the feeling I'm going to have to." #CLASS: hero
-...
-->MineRoom1
+    "So you do know her! She came in, claiming to be some powerful witch who could fix everything."#CLASS: foreman
+    
+    "All I wanted was for my men not to have to work so hard in these mines."#CLASS: foreman
+    
+    + + "Uh-oh. What happened?"
+    
+    "As it happens, I have shockingly accurate recall. She said:" #CLASS: foreman
+    
+    "Working hard, for all the day," #CLASS: magic
+    
+    "Let's turn it around, and into play!" #CLASS: magic
+    
+    + + + "That doesn't sound too bad." #CLASS: hero
+    
+    "Have you ever seen a mine that's been transformed into a non-stop disco?" #CLASS: foreman
+    
+    + + + + "I get the feeling I'm going to have to." #CLASS: hero
+    ...
+    ->MineRoom1
 
 
 VAR asked_about_crack = 0
@@ -273,6 +280,7 @@ VAR asked_about_crack = 0
 "Moles." #CLASS: foreman
 
 + + "Moles?" #CLASS: hero
+
 ~asked_about_crack++
 
 "Moles." #CLASS: foreman
@@ -283,13 +291,30 @@ The foreman looks back down at his business.
 ...
 ->MineRoom1
 
+VAR dark_section_sunglasses = 0
+
 =TunnelDarkSection
-Text
-+ [Go towards the entrance] You go back out towards the entrance.
-...
-->MineRoom1
-+ [Check inventory]
-->Inventory ->TunnelDarkSection
+It's really dark in here, and you can't see where you're going.
++ [Keep going] You keep going.
+    You bang into something.
+    {~"Oof!"|"Ow!"|"Ack!"|"Eep!"|"Ouch!"} #CLASS: hero
+    + + It's really painful!
+    ...
+    -> TunnelDarkSection
+    
++ [Go towards the entrance] You go back out towards the entrance {dark_section_sunglasses: and put your sunglasses away}.
+    
+    ~dark_section_sunglasses = 0
+    ...
+    -> MineRoom1
+
++ {not dark_section_sunglasses} [Check inventory] You put your sunglasses on and make it even worse.
+
+    ~dark_section_sunglasses++
+    ...
+    ->TunnelDarkSection
+
+
 
 =MoleRoom
 Text
@@ -308,4 +333,8 @@ Mole who wants something from dancers
 dancers who block the way, but teach you moves or something for mole
 mole gives you key to laundry which has all the soap
 put soap into the smoke machine
+
+MOLE HOLE?
+Exit the mine back out
+
 */
