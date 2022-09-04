@@ -1,3 +1,4 @@
+
 =mandogpuzzlestart
 The sun is starting to set. It's been a long day.
 You continue down the path. In the distance, you hear a girl crying.
@@ -118,8 +119,19 @@ She has tears in her eyes, still.
 
 
 =planwithyolene
-{talkdog: Here you can ask Yolene what happened when she raced off after the dog. She explains that she lost the DogMan, and it took her ages to find her way back here, and after trying and failing to persuade the dog to lead her back there, she's given up.}
-+ Conversation with Yolene should help you puzzle out the puzzles. She thinks from end-to-front on the puzzles, i.e., need staff, so what? 
+"Yolene, I need your help." #class: hero
++ {talkdog} "Where is the Staff?" 
+She explains that the "human" grabbed it in his mouth and ran off. She chased him, but she lost him in the woods, and it took her ages to find her way back here. After an hour of trying and failing to persuade the dog to lead her back there, she's given up.
+->->
++ {not cutrope} "How can I get the "dog" free?" #class: hero
+"The rope is way too tight at this point. You'll have to cut that rope."
++ + "Do you have anything sharp?"
+"No, nothing. Maybe there's a knife in the house?"
+->->
++ {doorlocked and not pocketkey} "How do I get into the house?"
+"It's too solid a door to knock down. You'll have to find a key. Though I have no idea where."
+->->
++ "Never mind, I'll figure it out myself."
 ->->
 
 
@@ -136,19 +148,24 @@ See the world through another’s eyes! #CLASS: magic
 
 =dogtreeprocess
 There is a "dog" and a "human".
+{not worktogether: there is a crying sound behind the house.}
 {worktogether: Yolene is here, looking at you expectantly.}
 {not cutrope: The "dog" is tightly tied to the tree.}
 {cutrope: The "dog" is free.}
 {pocketkey: The "human" trusts you, and will come if you offer a treat.}
-{not pocketkey: The "human" is running around like crazy, and staying away from you."}
+{not pocketkey: The "human" is running around like crazy, and staying away from you.}
+{houseknife: The house is unlocked, but you don't need to go inside for anything else.}
+{doorlocked and not houseknife: The house is locked.}
 
-* {houseknife} Use the knife to cut the rope that's tying the dog to the tree.
+* {not worktogether} Go investigate the crying sound
+->crying
+* {houseknife} Use the knife to cut the rope that's tying the dog to the tree
 ->cutrope
-*{cutrope} Get the "dog" to lead you to where the Staff is buried.
+*{cutrope} Get the "dog" to lead you to where the Staff is buried
 ->staffburied
-* {worktogether and learntreats} Get Yolene to help you reach the roof.
+* {worktogether and learntreats} Get Yolene to help you reach the roof
 ->treats
-+ {treats} Lure the "human" to you with the treats.
++ {treats} Lure the "human" to you with the treats
 ->pocketkey
 + {worktogether} Talk some more to Yolene
 ->planwithyolene ->dogtreeprocess
@@ -215,10 +232,19 @@ You learn that the dog treats are on the roof.
 
 =doorlocked
 What is it with countryside people and locking their houses? Are they so afraid of adventurers taking stuff?
-+ Think some more
++ Look under the doormat
+->notthere ->doorlocked
++ Look in the bushes
+->notthere ->doorlocked
++ "Maybe the "dog" can tell me where to find a key."  
 ->dogtreeprocess
 * {pocketkey} Unlock and enter the house.
 ->houseknife
+
+=notthere
+It's not there.
++"Hmmm."
+->->
 
 =houseknife
 Just inside the house, on the kitchen table, is <b>a knife</b> that looks like it would be good at cutting ropes.
@@ -262,4 +288,3 @@ She gets the doggy treats, and hands them to you.
 You, the "dog", Yolene and the "human" head through the woods. The "dog" leads the way, sniffing, to a pool of sludge. Floating on the surface is the Staff of Power!
 + Take the Staff
 ->endgamespellsstart
-
