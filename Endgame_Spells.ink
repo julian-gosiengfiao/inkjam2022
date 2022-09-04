@@ -1,4 +1,3 @@
-
 =endgamespellsstart
 
 You see a red signal flare in the sky!
@@ -278,9 +277,10 @@ She winks at you with a big grin on her face, and then looks pointedly at the St
 ->defeat
 
 =defeat
+#CLEAR
 “You ALWAYS think that you know best! #CLASS: magic
 For goodness’ sake, give it a REST!” #CLASS: magic
-
+#image: images/Staffexplode.png
 + PYEWWWWWWWHWHWHWHW! #CLASS: magic
 
 <b> A beam of blinding light </b> shoots  out of the Staff of Power, knocking the Goblin Necromancer flying through the sky, and landing with a <b>THUD</b> on your cabbage patch.
