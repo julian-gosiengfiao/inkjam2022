@@ -88,6 +88,8 @@ There is a {not building_is_laundry: single building out} {building_is_laundry: 
     + {item_clean_laundry} [Give barrel-man some clothes] You pass the bundle of laundry to barrel-man, who quickly opens it up.
     
         ~item_clean_laundry--
+        
+        You lose the clean laundry. #CLASS: giveitem
     
         Immediately, incandescent rays shoot out from inside the bundle.
     
@@ -786,21 +788,6 @@ You continue until you exit the mines and are greeted by the outside world.
 ->END
 
 /*
-Laundry room and come back to barrel man
-Glowing sock for dark room
-Mole who wants something from dancers
-dancers who block the way, but teach you moves or something for mole
-mole gives you key to laundry which has all the soap
-put soap into the smoke machine
-
-MOLE HOLE?
-Use BOLDS. USE THEM!
-
-pole
-foal
-bowl
-stol
-moll
 
 
 barrelman offers sister information before you help him?
