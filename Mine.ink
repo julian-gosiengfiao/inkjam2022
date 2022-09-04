@@ -304,9 +304,14 @@ The tunnel goes on into the darkness.
 + {asked_about_crack} [Examine the crack] You examine the crack in the wall.
 ->ExamineCrack
 
-+ [Go deeper into the tunnel] You go deeper into the tunnel.
++ {not dark_section_solved} [Go deeper into the tunnel] You go deeper into the tunnel.
 ...
 ->TunnelDarkSection
+
++ {dark_section_solved} [Go deeper into the tunnel] You traverse the darkness with your sunglasses and your sock.
+    ...
+    ->MineDisco
+
 
 + [Exit the mine] You go back out the way you came.
 ...
@@ -446,19 +451,97 @@ It's really dark in here, and you can't see where you're going.
     You begin to realize the music is terrible.
     And made up almost completely up of a bass drum and a hi-hat.
     + + + + + + + + [You're there!]
+    ~dark_section_solved++
+
     ...
+    You put your sock and sunglasses away, and emerge in a huge chamber in the middle of the mine.
     ->MineDisco
 
 
+VAR disco_squeeze_attempted = 0
+
 =MineDisco
-You put your sock and sunglasses away, and emerge in a huge chamber in the middle of the mine.
 
-A pumping dance beat shakes through your body, and a smoke machine billows clouds into the air.
+You are standing in what seems to be a literal disco.
 
-At the end of the room is a solid writhing mass of disco-partying miners.
+A pumping dance beat vibrates through your body, and a smoke machine billows clouds into the air.
 
-+ Go back
--> MineRoom1
+Near the other end of the room is a solid writhing mass of partying miners.
+
+{disco_squeeze_attempted: A disco dancer has noticed you and is half-turned towards you, dancing away.}
+
++ {disco_squeeze_attempted} [Approach the dancer] You walk up to the dancer.
+    He already doesn't seem very impressed with you.
+    + + ["How do I get through here?"] "___ __ _ ___ _____ ___?" #CLASS: hero
+    The dancer turns his nose up at you.
+    "____ ____ __ ___ _____, ____." #CLASS: dancer
+    + + + You can't hear a damn thing.
+    He {~grapevines|sashay|step ball-changes|rock steps|jazz squares|moonwalks} away.
+    ...
+    -> MineDisco
+    
+    + + Dance
+        You try your absolute hardest to dance to the beat.
+        You look like a fish sucking its last gasps of waterless air.
+    
+    -> MineDisco
+
++ {disco_squeeze_attempted} [Listen to the music]
+->DiscoListenMain
+
++ [Squeeze past the disco-dancing miners] You try to squeeze past the packed dance floor to get to the other exit.
+    But it's impossible, the writhing mass of miners is just too solid!
+    
+    ~disco_squeeze_attempted++
+    
+    + + You bounce right back off it.
+    ...
+    -> MineDisco
++ [Go back to the mine entrance] You go back through the dark tunnel using your sunglasses and your sock.
+    ...
+    -> MineRoom1
+
+VAR disco_listened_counter = 0
+
+=DiscoListenMain
+{disco_listened_counter == 0: ->DiscoListen1}
+{disco_listened_counter == 1: ->DiscoListen2}
+{disco_listened_counter == 2: ->DiscoListen3}
+{disco_listened_counter <= 3: ->DiscoListen4}
+
+
+=DiscoListen1
+You are actively resisting it, but you listen to the music anyway.
+Besides being percussively incessant, it's pumping away at a manic pace that would give anyone a heart attack.
++ Why would anyone listen to this stuff?!
+~disco_listened_counter++
+...
+->MineDisco
+
+=DiscoListen2
+The music is unrelenting, and it continues to fill your head.
+The bassline is so over-tuned it actually sounds gastric. And it runs all over the beat, like a snorting possum fallen out of a chimney into the middle of your living room.
++ Yeuuuughhh.
+~disco_listened_counter++
+...
+->MineDisco
+
+=DiscoListen3
+The music is just impossible to ignore.
+This song sounds like someone took a synth keyboard to the recording session and then used it as a brawl weapon with the power switched on.
++ ...against their bandmates, who were also simultaneously recording this song.
+~disco_listened_counter++
+...
+->MineDisco
+
+=DiscoListen4
+Your dysfunctional relationship with the music continues.
+There are 
++ Text
+...
+->MineDisco
+
+
 
 =MoleRoom
 Text
