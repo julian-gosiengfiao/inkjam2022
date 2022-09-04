@@ -1,3 +1,4 @@
+VAR giant_leaf = 0
 
 =ForestFearyEntrance
 
@@ -24,6 +25,10 @@ Hellooooooooo beautifuuuuul ladyyyyyyy. I'm Småsporre, the Feary guardian of th
 
 
 + Well, ok. I just want to escape this forest, where is the exit please?
+    ->PrisonForest
+
+
+=PrisonForest
     The wall Trees trunk start to enlarge en form walls around you.
 + +     sorry I didn't wanted to hurt you... you beautiful forest
         -> NormalForestHub    
@@ -46,6 +51,7 @@ Flying high on top of the trees are glowing faeries. There is a giant tree stand
 
 * Talk to the Faery guardian
 * Talk to the Giant tree
+    -> GiantTreeDiscussion
 * Inspect the stone
 * Take a flower
     -> GiantFlowerForest
@@ -55,7 +61,38 @@ Flying high on top of the trees are glowing faeries. There is a giant tree stand
 =GiantFlowerForest
 As soon as you cut a flower, all the flowers of the forest start to grow and grow.. Instead of trees it's now giant terrifying flowers around you.
 
-How do you dare killing one of ours? #giantflower
+How do you dare killing one of ours? #CLASS: giantflower
+
++ inspect the dead flower
+    The dead flower has also become giant and is now dead on the floor. One of its leaf is broken.
+    + Take the giant leaf
+        ~item_radiant_sock++
+        You grab the giant leaf, might be useful.
+        
+        Wait, not only you kill one of ours but you grab some parts of its body? #CLASS: giantflower
+        
+        + And what will you do? You can't even move, you stupid flower #CLASS: hero
+            -> PrisonForest
+        + Put on your sunglasses
+            You put on your sun glasses with no real reason. But the giant flowers seem impressed by it.
+            
+            Oh, sorry, we didn't recognized who you were. Now you have thes galsses we can tell you are a very important person. #CLASS: Giant flowers
+            
+            The flowers start to get lower and lower.
+            ->NormalForestHub
+    
++ talk to the giant tree
+    ->GiantTreeDiscussion
+    
+=GiantTreeDiscussion
+You approach the giant tree.
+
++ Hello, hum, giant tree, how are you?
+    I'm good thank you.
++ What's up dude, this forest is weird isn't it?
+    This forest is who we are, as we are, you should accept it as it.
+- Yay
+
 
 #Cut a flower to transform the Forest as a Giant Monstrous Flowers
 #    => Leaf of a Giant Flower becomes a boat for the Ocean Forest
