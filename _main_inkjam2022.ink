@@ -4,6 +4,7 @@ INCLUDE Inventory.ink
 INCLUDE Act1Town.ink
 INCLUDE Mine.ink
 INCLUDE Endgame_Spells.ink
+INCLUDE ManDog_Puzzle.ink
 
 
 ///DEBUG MENU - DELETE THIS WHEN SHOWING TO PEOPLE!

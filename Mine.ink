@@ -133,7 +133,7 @@ VAR item_radiant_sock = 0
         
         -> BlindedDressup
 
-+ [Pick up the radiant sock] You pick up the radiant sock and put it away.
++ [Pick up the radiant sock] You pick up the radiant sock and put it away. #CLASS: getitem
 
     ~item_radiant_sock++
 
@@ -394,6 +394,7 @@ The foreman looks back down at his business.
 ->MineRoom1
 
 VAR dark_section_sunglasses = 0
+VAR dark_section_solved = 0
 
 =TunnelDarkSection
 It's really dark in here, and you can't see where you're going.
@@ -410,12 +411,54 @@ It's really dark in here, and you can't see where you're going.
     ...
     -> MineRoom1
 
-+ {not dark_section_sunglasses} [Check inventory] You put your sunglasses on and make it even worse.
++ {not dark_section_sunglasses && not item_radiant_sock} [Check inventory] You put your sunglasses on and make it even worse.
 
     ~dark_section_sunglasses++
     ...
     ->TunnelDarkSection
 
++ {item_radiant_sock} [Check inventory] You put your sunglasses on, and hold up the radiant sock.
+
+    The radiant light from just this sock doesn't go THAT far, but at least you can see!
+    
+    + + [Keep going] You keep going.
+    ...
+    This tunnel goes on and on.
+    
+    + + + [Keep going] You keep going.
+    ...
+    You can hear some faint pulsing in the distance.
+
+    + + + + [Keep going]
+    ...
+    The pulsing gets louder - it is a thumping bass beat.
+    
+    + + + + + [Keep going]
+    ...
+    As you get closer, you can hear the music.
+    
+    + + + + + + [Keep going...]
+    ...
+    The closer and closer you get, the clearer and clearer the music is.
+    
+    + + + + + + + [Keep going...!]
+    ...
+    You begin to realize the music is terrible.
+    And made up almost completely up of a bass drum and a hi-hat.
+    + + + + + + + + [You're there!]
+    ...
+    ->MineDisco
+
+
+=MineDisco
+You put your sock and sunglasses away, and emerge in a huge chamber in the middle of the mine.
+
+A pumping dance beat shakes through your body, and a smoke machine billows clouds into the air.
+
+At the end of the room is a solid writhing mass of disco-partying miners.
+
++ Go back
+-> MineRoom1
 
 =MoleRoom
 Text
