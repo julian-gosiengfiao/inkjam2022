@@ -13,6 +13,7 @@ You have...#CLASS: inventory
 {item_laundry_room_key: a key to the laundry building,}#CLASS: inventory
 {item_clean_laundry: a bundle of clean laundry,} #CLASS: inventory
 {item_detergent: a box of <i>RADIANT SHINE</i> Extra-Foamy Premium Laundry Detergent,} #CLASS: inventory
+{item_radiant_sock: a blindingly radiant sock,} #CLASS: inventory
 
 Debug Options: GET RID OF THESE ON PUBLISH
 + Get staff of power
@@ -38,6 +39,9 @@ Debug Options: GET RID OF THESE ON PUBLISH
 ->->
 + Get laundry supply key
 ~item_supplies_key++
+->->
++ Get radiant sock
+~item_radiant_sock++
 ->->
 
 + ...and that's all.#CLASS: inventory

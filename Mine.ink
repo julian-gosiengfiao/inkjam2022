@@ -48,7 +48,7 @@ There is a {not building_is_laundry: single building out} {building_is_laundry: 
     ~building_is_laundry++
     ...
     ->OutsideMine
-    + + Darn.
+    + + {building_is_laundry} Darn.
     ...
     ->OutsideMine
 
@@ -82,10 +82,10 @@ There is a {not building_is_laundry: single building out} {building_is_laundry: 
     ...
     -> OutsideMine
     
-    + {got_key_nicely} [Talk to barrel-man] "Just you wait, I'll protect your modesty, barrelman." #CLASS: hero
-    "Awfully kind of you, thanks." #CLASS: barrelman
-    ...
-    ->OutsideMine
+    + {got_key_nicely} [Talk to barrel-man] "Just you wait, I'll protect your modesty." #CLASS: hero
+        "Awfully kind of you, thanks." #CLASS: barrelman
+        ...
+        ->OutsideMine
     
     + {item_clean_laundry} [Give barrel-man some clothes] You pass the bundle of laundry to barrel-man, who quickly opens it up.
     
@@ -243,16 +243,18 @@ VAR item_detergent = 0
 =LaundryBuilding
 You are standing inside a room with laundry supplies and various implements for doing laundry.
 
-In the center of the room is a pile of clean laundry, atop which sits an object of utter radiance.
+In the center of the room is a pile of clean laundry, atop which sits clean clothes of utter radiance.
 
-+ {not item_clean_laundry} [Grab some clean laundry] You grab some non-radiant clean laundry. #CLASS: getitem
++ {not item_clean_laundry && not item_radiant_sock} [Grab some clean laundry] You're momentarily tempted to grab the blindingly radiant laundry, but you like being able to see.
+
+    You grab some non-radiant clean laundry. #CLASS: getitem
 
     ~item_clean_laundry++
     
     ...
     ->LaundryBuilding
 
-+ {item_clean_laundry} [Grab some clean laundry] You've already got some clean laundry.
++ {item_clean_laundry || item_radiant_sock} [Grab some clean laundry] You've already got some clean laundry.
     + + Barrel-man is naked, but he's not <i>that</i> naked.
     ...or is he?
     ...
@@ -482,7 +484,8 @@ Near the other end of the room is a solid writhing mass of partying miners.
     
     + + Dance
         You try your absolute hardest to dance to the beat.
-        You look like a fish sucking its last gasps of waterless air.
+        Not only do you look like a sea mollusc suddenly making contact with a desert, you are completely off-beat.
+        ...
     
     -> MineDisco
 
@@ -569,6 +572,10 @@ mole gives you key to laundry which has all the soap
 put soap into the smoke machine
 
 MOLE HOLE?
-Exit the mine back out
+Utter radiance want to get in the laundry
+Ability to get laundry twice.
+Use BOLDS. USE THEM!
+
+barrelman offers sister information before you help him?
 
 */
