@@ -183,10 +183,10 @@ There is a "dog" and a "human".
 ->staffburied
 
 =cantuntie
-You pull and pull at the rope, but it's already been pulled way too tight.
-The "Dog" tells you that the only way to get it undone now will be to cut it.
+You pull and pull at the tightly tied rope, but it's already been pulled way too tight.
+"Ahh, I was afraid of this. I strongly recommend you cease that endeavour, and instead venture to <b>cut the rope with a knife.</b> 
 + "I don't have anything to cut it."
-"There's <b>a knife</b> just inside the house.
+"I have any number of perfectly serviceable knives in my house. Indeed, there is <b>a knife</b> just beyond the threshold.
 + + {doorlocked} "The house is locked."
 "Where did I put the key? OH! The key is in "my" pocket. The <b>human body pocket</b>."
 + + + "How annoying."
@@ -195,11 +195,12 @@ The "Dog" tells you that the only way to get it undone now will be to cut it.
 ->dogtreeprocess
 
 =talkscreen
+This is quite a puzzle. Perhaps you're missing some key information, or someone intelligent might be able to help.
 + Learn more about this situation from the "dog".
 ->dogplan
 + {worktogether} Talk some more to Yolene
 ->planwithyolene ->dogtreeprocess
-+ {not treats} Talk to the "human".
++ {not treats} Talk to the "human"
 ->humanignores
 
 
@@ -306,3 +307,4 @@ She gets the doggy treats, and hands them to you.
 You, the "dog", Yolene and the "human" head through the woods. The "dog" leads the way, sniffing, to a pool of sludge. Floating on the surface is the Staff of Power!
 + Take the Staff
 ->endgamespellsstart
+
