@@ -14,6 +14,8 @@ You have...#CLASS: inventory
 {item_clean_laundry: a bundle of clean laundry,} #CLASS: inventory
 {item_detergent: a box of <i>RADIANT SHINE</i> Extra-Foamy Premium Laundry Detergent,} #CLASS: inventory
 {item_radiant_sock: a blindingly radiant sock,} #CLASS: inventory
+{item_supplies_key: a key to a SUPPLIES CUPBOARD,}
+{item_soul_tanktop: a tiny white tanktop that reads "SOUL",}
 
 Debug Options: GET RID OF THESE ON PUBLISH
 + Get staff of power

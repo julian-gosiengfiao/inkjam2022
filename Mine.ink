@@ -661,7 +661,10 @@ There are three giant moles sitting in the middle of the junk.
 
 + {talked_to_moles} [Look at the junk] You cast your eye over the junk and point a random piece out.
     "What's this?" #CLASS: hero
-    {&"FROM A SHOE, A SOLE. WHOEVER WORE IT IS NO LONGER A FOAL."|"AN ANCIENT SCROLL. IT TELLS A STORY WHOLE."|"A VERY NARROW POLE. WE FOUND IT UPON AN ATOLL."|"A PIECE OF COAL. BE CAREFUL, FOR IT MAY ROLL."|"A DISCARDED BEDROLL. DISCOVERED DURING PATROL".|"THE MOST ORNATE BOWL. UPSIDE DOWN, IT MAKES A KNOLL."}
+    {&"FROM A SHOE, SOLE. EXAMPLE OBJECT SACRED FOR MOLE."|"ANCIENT STORIED SCROLL. EXAMPLE OBJECT SACRED FOR MOLE."|"VERY NARROW POLE. EXAMPLE OBJECT SACRED FOR MOLE."|"NICE OLD COAL. EXAMPLE OBJECT SACRED FOR MOLE."|"DISCARDED BEDROLL. EXAMPLE OBJECT SACRED FOR MOLE."|"MOST ORNATE BOWL. EXAMPLE OBJECT SACRED FOR MOLE."}
+    
+    
+/*    {&"FROM A SHOE, A SOLE. WHOEVER WORE IT IS NO LONGER A FOAL."|"AN ANCIENT SCROLL. IT TELLS A STORY WHOLE."|"A VERY NARROW POLE. WE FOUND IT UPON AN ATOLL."|"A PIECE OF COAL. BE CAREFUL, FOR IT MAY ROLL."|"A DISCARDED BEDROLL. DISCOVERED DURING PATROL".|"THE MOST ORNATE BOWL. UPSIDE DOWN, IT MAKES A KNOLL."}*/
     ...
 
     ~looked_at_junk++
@@ -670,27 +673,57 @@ There are three giant moles sitting in the middle of the junk.
 + {looked_at_junk && not asked_about_strange_junk} [Ask about out-of-place junk] "This doesn't seem to fit in." #CLASS: hero
     You point at a key with a comically large label that reads "...CUPBOARD". You can't make it all out from where you are.
     + + The moles look uncomfortable.
-    "YES... WE THOUGHT IT A GREAT CAJOLE." #CLASS: mole
+    "YES... WE THOUGHT GREAT CAJOLE." #CLASS: mole
     Another mole stirs.
-    "PERSONALLY, I THINK IT'S OUT OF CONTROL." #CLASS: mole2
+    "PERHAPS OUT OF CONTROL." #CLASS: mole2
     + + + "Can I have it?" #CLASS: hero
     The moles sniff for a moment.
-    "A TRADE WILL MAKE US WHOLE." #CLASS: mole
-    "BRING US AN OBJECT SACRED FOR MOLE." #CLASS: mole2
-    "IF YOU DESIRE THIS, YOU WILL ENROLL." #CLASS: mole
-    + + + + "Fair enough." #CLASS: hero
+    "TRADE MAKE US WHOLE." #CLASS: mole
+    "BRING US OBJECT SACRED FOR MOLE." #CLASS: mole2
+    "IF YOU DESIRE, YOU ENROLL." #CLASS: mole
+    + + + + {not MineDisco} You don't think you've seen anything the moles would want so far...
+    Maybe keep an eye out for later.
     ...
+    ~asked_about_strange_junk++
+    ->MoleRoom
+
+    + + + + {MineDisco} You may have seen something that might fit the bill...
+    Something tiny and white.
+    ...
+    ~asked_about_strange_junk++
     ->MoleRoom
     
-+ {asked_about_strange_junk} [Ask about cupboard key] "Can I have this?" #CLASS: hero
-    "A TRADE WILL MAKE US WHOLE." #CLASS: mole
-    "BRING US AN OBJECT SACRED FOR MOLE." #CLASS: mole2
-    "IF YOU DESIRE THIS, YOU WILL ENROLL." #CLASS: mole
-    + + "Fair enough." #CLASS: hero
++ {asked_about_strange_junk && not event_wowed_dancer} [Ask about key] "Can I have this?" #CLASS: hero
+    "TRADE MAKE US WHOLE." #CLASS: mole
+    "BRING US OBJECT SACRED FOR MOLE." #CLASS: mole2
+    "IF YOU DESIRE, YOU ENROLL." #CLASS: mole
+    + + {not MineDisco} You don't think you've seen anything anything the moles would want so far...
+    Maybe keep an eye out for later.
+    ...
+    ->MoleRoom
+    + + {MineDisco} You may have seen something that might fit the bill...
+    Something tiny and white.
     ...
     ->MoleRoom
 
-
++ {item_soul_tanktop && not item_supplies_key} [Present the "SOUL" tanktop to the moles] You present the tiny, sweaty tanktop that reads "SOUL" to the moles.
+    The moles all react differently.
+    "IS THIS AN OBJECT BEFITTING MOLE?!" #CLASS: mole2
+    "IT READS SO ON FRONT; 'SOUL!'" #CLASS: mole
+    "THIS IS JOKE, VIOLATION OF PAROLE!" #CLASS: mole2
+    The third, largest mole stirs.
+    "IF I DON'T GET IT, YOU THAT YOU WILL CONSOLE" #CLASS: mole3
+    + + ["Uh..."]
+    Before you can speak, the third mole reaches over, and takes the tiny, sweaty tanktop from you.
+    It places it atop the grand pile of junk, and then gives you the key.
+    "THIS ITEM, FOR YOU, DOLE." #CLASS: mole3
+    You get the key marked SUPPLIES CUPBOARD! It has a picture of detergent on it. #CLASS: getitem
+    
+    ~item_supplies_key++
+    ~item_soul_tanktop--
+    + + + "Thanks!" #CLASS: hero
+    ...
+    ->MoleRoom
 
 + [Go back through the crack] You squeeze through the crack again.
 ...
