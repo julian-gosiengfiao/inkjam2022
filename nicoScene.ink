@@ -1,18 +1,48 @@
 
-=Sequence2
+=ForestFearyEntrance
 
-This is a test
+You enter the faery forest. Wherever you look you can see shining trees and spot of light flying. On the floor you see flowers all over the place, they seem to dance at the rythm of a very repetitive song. Just in front of you a tree way bigger and taller than others. Each tree seem connected by a web of small cords on which sometimes is   #CLASS: narrator
 
-You arrive inside the magic elevator. #CLASS: narrator
-This is one of our elevators, instead of using this brillant counterweight system to allow people to go up, here we have elevator made of rock from the highest mountain of the doomed mountain cursed 2000 years ago by the great feary. #CLASS: hero
-And you know what? No ones but me uses elevator here, they all prefer to fly... # CLASS: hero
+* [Brr, I hate faeries...] -> ForestFearyHate -> FaeryForestHubStart
+* [Oh I love fearies!] -> ForestFearyLove -> FaeryForestHubStart
 
-The magic elevator has mirror on three of the sides. Instead of a line of buttons there is a coat hanger with an umbrella hanged on it. On one of the wall is hanged a giand grid
+=ForestFearyLove
 
-* Inspect The elevator room 
-    plop ->Sequence2
-* Look at the magic umbrella
-    plop2 ->Sequence2
+As soon as you say this words, the whole forest become Yellow and shines. ->-> #CLASS: narrator
 
+=ForestFearyHate
+As soon as you say this words, the whole forest become red. ->-> #CLASS: narrator
+
+=FaeryForestHubStart
+
+
+A Faery approches you. #CLASS: narrator
+
+Hellooooooooo beautifuuuuul ladyyyyyyy. I'm Småsporre, the Feary guardian of this foreeeeest. I noticed your presence when the Forest changed color! This forest is very sensitive, be very careful while you are here.
+
+* Well, ok. I just want to escape this forest, where is the exit please?
+    The wall Trees trunk start to enlarge en form walls around you.
 
 -> END
+
+
+Cut a flower to transform the Forest as a Giant Monstrous Flowers
+    => Leaf of a Giant Flower becomes a boat for the Ocean Forest
+Make the tree cry to transform the Forest as an Ocean Forest, make him happy to dry the forest
+    => Use the leaf as a boat to access the the glowing fearies and capture one of them in The Glass Mug
+Capture the glowing faery makes all the forest dark with red eyes. Can open the stone with the glowing faery
+
+XXXXXXACTIONXXXXX Creates an Glass Forest where we can grab a magical ice mug (doesn't melt)
+
+
+
+
+
+Talking tree
+Faery Guardian
+Flowers
+Magic standing stone
+Glowing Fairies
+Small river
+
+
