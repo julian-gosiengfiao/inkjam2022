@@ -24,9 +24,9 @@
 .gorgoneye {
     font-family: 'Open Sans', sans-serif;
     color: rgb(179, 49, 103);
-/*    animation: bounce 1s infinite;
-    text-align: center;
-*/
+    /*animation: bounce 1s infinite;*/
+    /*text-align: center;*/
+
 }
 @keyframes bounce {
   0% {
@@ -96,6 +96,9 @@
     font-family: 'Freckle Face';
 }
 
+.barrelman {
+    color: #ffe6c6;
+}
 
 /* Old Bekant1 Stuff here.
 
