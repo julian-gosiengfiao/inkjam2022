@@ -31,7 +31,9 @@ You are outside the entrance to a mine.
 
 There is a single building out here, with intense light pouring out of every opening.
 
-You notice a wiggling barrel next to the building.
+{not barrel_reset: You notice a wiggling barrel next to the building.}
+{barrel_reset: There is a man in a barrel, eyeing you from beneath the lid.}
+
 
 + [Enter the building] You try to enter the building.
 {not item_laundry_room_key:
@@ -95,6 +97,12 @@ He clambers back into the barrel and slams the lid tightly shut.
 =BarrelTalk
 The man looks at you suspiciously.
 
++ "I'm sorry about earlier!"
+->OutsideMine
+
++ "HAVE YOU SEEN MY SISTER?!"
+->OutsideMine
+
 
 ->END
 
@@ -114,9 +122,10 @@ The tunnel goes on into the darkness.
 There's a sizable crack in the wall next to the foreman.
 
 + [Talk to the foreman]
--> TalkToForeman
+{not TalkToForeman: -> TalkToForeman}
+{TalkToForeman: The foreman looks up at you. ->TalkToForeman2}
 
-+ [Examine the crack] You examine the crack in the wall.
++ {asked_about_crack} [Examine the crack] You examine the crack in the wall.
 ->ExamineCrack
 
 + [Go deeper into the tunnel] You go deeper into the tunnel.
@@ -150,8 +159,60 @@ It looks like it goes pretty deep, and you might be able to fit through it.
 
 
 =TalkToForeman
-Text
-+ Okay.
+The foreman looks up as you approach.
+
+"Not another one of you." #CLASS: foreman
+
++ "I see you've met my little sister." #CLASS: hero
+
+"So you do know her! She came in, claiming to be some powerful witch who could fix everything."#CLASS: foreman
+
+"All I wanted was for my men not to have to work so hard in these mines."#CLASS: foreman
+
++ + "Uh-oh. What happened?"
+
+"As it happens, I have shockingly accurate recall. She said:" #CLASS: foreman
+
+"Working hard, for all the day," #CLASS: magic
+
+"Let's turn it around, and into play!" #CLASS: magic
+
++ + + "That doesn't sound too bad."
+
+"Have you ever seen a mine that's been transformed into a non-stop disco?" #CLASS: foreman
+
++ + + + "I get the feeling I'm going to have to." #CLASS: hero
+...
+->MineRoom1
+
+VAR asked_about_crack = 0
+
+=TalkToForeman2
++ "Can you tell me what my sister said again?" #CLASS: hero
+
+"As it happens, I have shockingly accurate recall. She said:" #CLASS: foreman
+
+"Working hard, for all the day," #CLASS: magic
+
+"Let's turn it around, and into play!" #CLASS: magic
+
++ + "Cool beans." #CLASS: hero
+...
+->TalkToForeman2
+
++ "What's with this crack in the wall?" #CLASS: hero
+
+"Moles." #CLASS: foreman
+
++ + "Moles?" #CLASS: hero
+~asked_about_crack++
+
+"Yep." #CLASS: foreman
+->TalkToForeman2
+
++ "See ya." #CLASS: hero
+The foreman looks back down at his business.
+...
 ->MineRoom1
 
 =TunnelDarkSection
