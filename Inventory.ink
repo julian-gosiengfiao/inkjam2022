@@ -1,23 +1,23 @@
 =Inventory
 
-You check your inventory. #CLASS: inventory
+You check your inventory.
 
-You have...#CLASS: inventory
+You have...
 
-{(not item_staff_of_power && not item_sunglasses): totally empty pockets.}#CLASS: inventory
-{item_staff_of_power: the Staff of Power,}#CLASS: inventory
-{item_sunglasses: a pair of sunglasses,}#CLASS: inventory
-{tongs and not hotmilk: some blacksmith's tongs,} #CLASS: inventory
-{hotmilk and not coldmilk: a bucket of warm and lilac-coloured milk,} #CLASS: inventory
-{coldmilk and not trollmilkget: a bucket of very cold, lilac-coloured milk,} #CLASS: inventory
-{item_laundry_room_key: a key to the laundry building,}#CLASS: inventory
-{item_clean_laundry: a bundle of clean laundry,} #CLASS: inventory
-{item_detergent: a box of <i>RADIANT SHINE</i> Extra-Foamy Premium Laundry Detergent,} #CLASS: inventory
-{item_radiant_sock: a blindingly radiant sock,} #CLASS: inventory
-{item_supplies_key: a key to a SUPPLIES CUPBOARD,} #CLASS: inventory
-{item_soul_tanktop: a tight white tanktop that reads "SOUL",} #CLASS: inventory
-{treats: plenty of doggy treats (which are probably also delicious for humans),} #CLASS: inventory
-{houseknife: a perfectly functional knife,} #CLASS: inventory
+{(not item_staff_of_power && not item_sunglasses): totally empty pockets.}
+{item_staff_of_power: the Staff of Power,}
+{item_sunglasses: a pair of sunglasses,}
+{tongs and not hotmilk: some blacksmith's tongs,}
+{hotmilk and not coldmilk: a bucket of warm and lilac-coloured milk,}
+{coldmilk and not trollmilkget: a bucket of very cold, lilac-coloured milk,} 
+{item_laundry_room_key: a key to the laundry building,}
+{item_clean_laundry: a bundle of clean laundry,} 
+{item_detergent: a box of <i>RADIANT SHINE</i> Extra-Foamy Premium Laundry Detergent,} 
+{item_radiant_sock: a blindingly radiant sock,} 
+{item_supplies_key: a key to a SUPPLIES CUPBOARD,} 
+{item_soul_tanktop: a tight white tanktop that reads "SOUL",} 
+{treats: plenty of doggy treats (which are probably also delicious for humans),} 
+{houseknife: a perfectly functional knife,} 
 
 /*
 Debug Options: GET RID OF THESE ON PUBLISH
@@ -50,6 +50,6 @@ Debug Options: GET RID OF THESE ON PUBLISH
 ->->
 */
 
-+ ...and that's all.#CLASS: inventory
++ ...and that's all.
 ...
 ->->

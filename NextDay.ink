@@ -145,7 +145,7 @@ Eldra continues, "But she's not old enough to harness the power of the staff!" #
 =CoverSequence
 #CLEAR
 #IMAGE: images/cover.jpg
-+ You'll make things right.
++ "I'll make things right." #CLASS: hero
 ...
 ->->
 
