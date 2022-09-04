@@ -45,7 +45,8 @@ It's too early for bats.
 
 =emergencyinventory
 
-The Staff of Power! You hold it in your hands and feel a rush of magical power flowing through you, making your long hair billow in non-existent wind. Your eyes sparkle, and you lightly glow in a rainbow haze.
+The Staff of Power! #CLASS: magic
+You hold it in your hands and feel a rush of magical power flowing through you, making your long hair billow in non-existent wind. Your eyes sparkle, and you lightly glow in a rainbow haze.
 
 + It’s all a bit much. 
 
@@ -90,10 +91,10 @@ The horse grows and grows into A MIGHTY WARHORSE, with a broad back and calves t
 
 =racehome
 
-Your borrowed mighty warhorse gallops back through [insert place] and past [insert place], and gets to the toll bridge. 
-The troll is standing there, looking scared but blocking the bridge.
+Your borrowed mighty warhorse gallops back through the woods, through the foamy mines, past the light-house, and rushes all the way down the road to the toll bridge. 
+The troll is standing there, looking scared but still blocking the bridge.
 + [LEAP over the troll's head!]
-You do the "Hyah!" thing with the reins, and the warhorse speeds up and LEAPS over the trolls head!
+You do the "Hyah!" thing with the reins, and the warhorse speeds up and LEAPS over the troll's head!
 "I'm too scared to do anything! Go save our town!" #CLASS: troll
 + + Charge through town
 and out the other side,
@@ -103,9 +104,9 @@ and out the other side,
 ->villainarrives
 
 =villainarrives
-
+...
 You burst into the clearing behind your home. 
-24 hours ago, a single goblin (or whatever monster) was here, causing chaos.
+24 hours ago, a single Gorgon Eye was here, causing chaos.
 Now it's looking much...
 + ...much...
 worse.
@@ -180,7 +181,7 @@ And with a burst of golden light, the magical darkness is instantly dispelled!
 And the necromancer launches a bolt of dark energy at the town gates, blowing the doors away, and leaving clear passage for her army to enter the town.
 
 + But wait - what's that?
-Standing in the dust and rubble of the gateway, gibblets high and defiant, is a little turkey!
+Standing in the dust and rubble of the gateway, gibblets high and defiant, is a little <b>turkey</b>!
 + + "Eldra!" #CLASS: hero
 "What are you doing, Eldra! It's too dangerous!" #CLASS: littlesis
 ->spell3defence
@@ -217,9 +218,9 @@ As you finish the spell, you see that brave little turkey get bigger...
 =canthear3
 "I'M SURE YOU'RE RESPONDING, BUT IT'S VERY WINDY UP HERE!"
 + Ugh
-"DO YOU THINK YOU'VE STOPPED ME? MY GHOST GOBLIN ARMY CAN GO STRAIGHT THROUGH THE WALLS!" #CLASS: necromancer 
+"DO YOU THINK YOU'VE STOPPED ME? MY SPECTRAL GOBLIN ARMY CAN GO STRAIGHT THROUGH THE WALLS!" #CLASS: necromancer 
 
-And they do! Bursting through the wall uphill of MegaTurkey Eldra, spectral goblins holding spectral flaming torches emerge like smoke and CHARGE towards you! 
+And they do! Bursting through the wall uphill of MegaTurkey Eldra, <b>goblin sprits</b> holding spectral flaming torches emerge like smoke and CHARGE towards you! 
 + + You only have a moment to prepare!
 ->spell4spirits
 
@@ -227,7 +228,7 @@ And they do! Bursting through the wall uphill of MegaTurkey Eldra, spectral gobl
 Could a spell save you yet again?
 * Chant the Sleeping spell
 ->wrongspell ->spell4spirits
-+  Chant the Tavern spell
++  Chant the Frozen Tavern spell
 ->spiritsbegone
 *  Chant the Body Swap spell
 ->wrongspell ->spell4spirits
@@ -235,7 +236,7 @@ Could a spell save you yet again?
 =spiritsbegone
 "I mean, this one takes a bit of creative license..." #CLASS: hero
 I wish these sillies / people knew this rule: #CLASS: magic
-You don’t need spirits to be cool! #CLASS: magic
+You don’t need <b>spirits</b> to be cool! #CLASS: magic
 
 + And with a gust of chilly wind...
 The goblin spirits transform into delicate snowflakes, that flutter gracefully to the floor.
@@ -280,11 +281,11 @@ For goodness’ sake, give it a REST!” #CLASS: magic
 
 + PYEWWWWWWWHWHWHWHW! #CLASS: magic
 
-<b> A beam of blinding light </b> shoots  out of the Staff of Power, knocking the Goblin Necromancer flying through the sky, and landing with a thud on your cabbage patch.
+<b> A beam of blinding light </b> shoots  out of the Staff of Power, knocking the Goblin Necromancer flying through the sky, and landing with a <b>THUD</b> on your cabbage patch.
 ...
 + + ...
 ...
-The young red dragon looks around for a second, and then decides it's done, and flys away.
+The young red dragon looks around for a second, and then decides it's done, and flies away.
 ...
 + + + ...
 The giant turkey Eldra thuds over to you, and looks down at you appreciately.
@@ -317,7 +318,7 @@ And "Yolene" reaches forward to take the Staff into her hands
 + You hand it to her [,] and she sings a beautiful chant. Onward the tune rolls, as the rainbow glow that surrounds her begins to spread like a wave...
 ... a wave that floats over a bulky cow and an icy tavern...
 + + across a lonely bridge...
-...through a glowing house and under the mountain...
+...through a glowing house and under a disco mountain...
 ... and all the way to a distant hill where a man and dog are happily playing together...
 + + + and just like that... [] your sisters are back in their bodies...
 ... and reaching forward to pull you into a warm hug.
@@ -357,5 +358,4 @@ Still to Find!
 =restart
 BACK TO BEGINNING
 ->DONE
-
 
