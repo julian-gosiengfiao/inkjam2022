@@ -1,3 +1,4 @@
+
 =outsidetownfirstentry
 
 You start down the road towards the town. With any luck, your sister will still be there.
@@ -152,19 +153,48 @@ And there's a road back to the <b>edge of town</b>.
 
 
 =smith
-
-In the smithy.
-There is a blacksmith to talk to (add dialogue later)
-{not tongs: He is using these just beautiful tongs, and he's holding them in his hand.}
-* Distract the blacksmith so you can steal the tongs
-->tongs
+...
+You are in the smithy.
+There is a blacksmith here{not tongs:, hard at work.}{tongs:, looking puzzled.} 
+You know from past experience that he is very absent-minded. 
+{not tongs: He is using these just beautiful tongs that he's holding in his hand.}
+{tongs: The blacksmith looks puzzled, and keeps looking on the floor and on shelves.}
++ Talk to the blacksmith
+->talksmith
++ Look around
+->looksmith
 + Leave
 ...
 ->tollbridge
 
-=tongs
+=talksmith
+"Hi Midelle! Good to see you! Everything OK?" #class: smith
++ "Yep, all good! You?" #CLASS: hero
+{tongs: ->tongsgone}
+{not tongs: "Yes, all good here! I hear your little sister has been causing trouble in town, but she never came in here."}
++ + "Those tongs are beautiful." #CLASS: hero
+"Thank you. They're very strong. I'd wager they could squeeze anything." #class: smith
++ + + "...Fascinating." #CLASS: hero
+->smith
++ + {cowman} "Could you come with me? And bring your tongs?" #CLASS: hero
+"No can do! I have SO MUCH forging to do. And I will be using these tongs aaaaaaaallll day." #class: smith
+"I see." #class: hero
+->smith
+* * {cowman} Distract the blacksmith so you can steal the tongs
+->tongs
 
-"LOOK OVER THERE!" #CLASS: hero
+=tongsgone
+"I seem to have misplaced my tongs. You don't think it was your little sister casting spells, do you?" #class: smith
++ "Probably. I'll keep my eye out, see if I can find them for you." #CLASS: hero
+->smith
+
+=looksmith
+{not tongs: Other than those beautiful tongs, there's not much in here to catch your eye.}
+{tongs: Maybe don't linger here too long, or he'll suspect something.}
+->smith
+
+=tongs
+"LOOK OVER THERE!" #class: hero
 He looks over there. 
 You steal the tongs. 
 
