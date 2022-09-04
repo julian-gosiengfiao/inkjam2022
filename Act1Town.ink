@@ -93,7 +93,6 @@ You wave goodbye to the cowman.
 ->cowencounter
 
 =townsquare
-
 You are in the town square. There is a dazed villager. 
 + Talk to dazed villager
 ->dazedvillager
@@ -130,7 +129,7 @@ You are in the town square. There is a dazed villager.
 ->townsquare
 
 = looktownsquare
-
+#IMAGE: magicalVillage.png 
 You look around the town square.
 There's the local <b>tavern</b>, the Embarrassing Cucumber, which appears to have icicles on the inside of the windows. 
 There's a path onwards, towards the <b>toll bridge</b>, and you know the <b>blacksmith's</b> is that way, too. 
@@ -202,12 +201,11 @@ You steal the tongs.
 
 
 =tavern 
-
 In the tavern, everything is very cold. There is a light dusting of snow on the floor.
 There is a shivering barman, standing next to a mysterious box that is spitting out snow. 
 + Talk to the barman.
 ->barman
-+Examine the mysterious box
++ Examine the mysterious box
 ->icebox
 + Leave
 ->townsquare
