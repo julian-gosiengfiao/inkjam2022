@@ -1,17 +1,20 @@
+
 =mandogpuzzlestart
 The sun is starting to set. It's been a long day.
 You continue down the path. In the distance, you hear a girl crying.
 
 Considering your day, it's seems pretty likely your sister passed this way.
-+ Head towards the crying.
++ [Head towards the crying] You head towards the crying.
 ->dogtree
 
 =dogtree
+{not dogtree_first: ->dogtree_first }
 
+{dogtree_first}:
 You are standing in front of a house, next to a big oak tree.
-Tied to the tree is a dog.
-Running circles around the tree is a man who keeps falling over.
-{not worktogether: Behind the house, someone is crying.}
+There is <b>a large dog</b>, tightly tied to the tree.
+There is <b>a muddy-looking man</b> who is running circles around the tree and often falling over.
+{not worktogether: Behind the house, <b>someone is crying</b>.}
 {worktogether: Yolene is looking at you, hoping you'll figure out with a plan.}
 
 + {not talkdog} Look at the dog
@@ -22,7 +25,14 @@ Running circles around the tree is a man who keeps falling over.
 ->crying
 + {worktogether} Talk some more to Yolene
 ->planwithyolene ->dogtree
++ [Admire the view some more]
+->dogtree_first
 
+
+=dogtree_first
+#CLEAR
+(insert Baptiste's House Picture Here)
+->dogtree
 
 =lookdog
 
@@ -85,7 +95,7 @@ She's sitting on a rock, starting at the muddy ground, and weeping.
 
 =yolenetalk
 At the sound of your voice, she looks up.
-"Mideline! You're here! How did you find me?" #CLASS: littlesis
+"Midelle! You're here! How did you find me?" #CLASS: littlesis
 + "Never mind that now! You've got some explaining to do!" #CLASS: hero
 She has tears in her eyes, still.
 "I just wanted to prove I could do it. And I COULD! I turned Eldra into a turkey!"
@@ -100,15 +110,15 @@ She has tears in her eyes, still.
 
 =worktogether
 
-Later, I will write this scene better so that you have choices that lead to collaboration. 
-There needs to be a "where's the Staff?" question here, but maybe she's too upset to talk properly right now. 
-For now, let's just skip to, Yolene is going to work with you.
-+ Back to the front of the house.
++ Later, I will write this scene better so that you have choices that lead to collaboration. 
++ + There needs to be a "where's the Staff?" question here, but maybe she's too upset to talk properly right now. 
++ + + For now, let's just skip to, Yolene is going to work with you.
++ + + + Back to the front of the house.
 ->dogtree
 
 =planwithyolene
 {talkdog: Here you can ask Yolene what happened when she raced off after the dog. She explains that she lost the DogMan, and it took her ages to find her way back here, and after trying and failing to persuade the dog to lead her back there, she's given up.}
-I need more options here.
++ Conversation with Yolene should help you puzzle out the puzzles. She thinks from end-to-front on the puzzles, i.e., need staff, so what? 
 ->->
 
 
@@ -118,14 +128,19 @@ Here the dog talks to you, and you learn the spell that Yolene used to switch th
 I wish you’d learn to empathise #CLASS: magic
 See the world through another’s eyes! #CLASS: magic
 
-
-Once you've learnt this, you go to the Stage 2 Puzzle Hub
+"Dog" also wants to be untied.
++ Once you've learnt this, you go to the Stage 2 Puzzle Hub
 You also learn at this point that the "human" stole the Staff, and he ran off and Yolene chased him.
 ->dogtreeprocess
 
 
 =dogtreeprocess
-This is the space for maybe still learning some things, but it's also the hub for Problem Solving
+There is a "dog" and a "human".
+{worktogether: Yolene is here, looking at you expectantly.}
+{not cutrope: The "dog" is tightly tied to the tree.}
+{cutrope: The "dog" is free.}
+{pocketkey: The "human" trusts you, and will come if you offer a treat.}
+{not pocketkey: The "human" is running around like crazy, and staying away from you."}
 
 * {houseknife} Use the knife to cut the rope that's tying the dog to the tree.
 ->cutrope
@@ -133,7 +148,7 @@ This is the space for maybe still learning some things, but it's also the hub fo
 ->staffburied
 * {worktogether and learntreats} Get Yolene to help you reach the roof.
 ->treats
-+ {treats} Lure the dog to you with the treats.
++ {treats} Lure the "human" to you with the treats.
 ->pocketkey
 + {worktogether} Talk some more to Yolene
 ->planwithyolene ->dogtreeprocess
@@ -143,23 +158,60 @@ This is the space for maybe still learning some things, but it's also the hub fo
 ->doorlocked
 + {learntreats} Climb to roof.
 ->cantclimb
++ {not cutrope} Untie the tight knots tying up the dog
+->cantuntie
++ {not treats} Get the "human" to come to you.
+->humanignores
++ {pocketkey} Get the "human" to lead you where he buried the Staff.
+->doglost
 
+=cantuntie
+You pull and pull at the rope, but it's already been pulled way too tight.
+The "Dog" tells you that the only way to get it undone now will be to cut it.
++ "I don't have anything to cut it."
+"There's a knife just inside the house.
++ + {doorlocked} "The house is locked."
+"The key is in "my" pocket. The human body pocket."
++ + + "How annoying."
+->dogtreeprocess
++ + "How annoying."
+->dogtreeprocess
+
+=humanignores
+The "human" ignores you.
+"Dog" tells you he'll only come with treats.
++ "Where are the treats?"
+->learntreats
++ + "How annoying."
+->dogtreeprocess
++ Follow the "human" wherever it wants to go
+->doglost
 
 =dogplan
 
 Here you learn that the "dog" can smell all sorts of things you've interacted with earlier in the day... wet laundry, a turkey, milk, etc.
-+ Here you also ask about how to calm down the over-excited "human" and/or get his attention 
++ That keen sense of smell might be useful.
+Here you also ask about how to calm down the over-excited "human" and/or get his attention.... 
++ + with dog treats...
 ->learntreats
-+ {doglost} You can ask the "dog" if he knows of anywhere where there is strong-smelling black sludge near here.
++ + {doglost} You can ask the "dog" if he knows of anywhere where there is strong-smelling black sludge near here.
 He doesn't know where, but wow, that smell is strong to his dog nose. If he were free, he could lead you to it, for sure.
-+ + "OK, I'll have to get you free then.
++ + + "OK, I'll have to get you free then.
 ->dogtreeprocess
 
 
 ->DONE
 = learntreats
 You learn that the dog treats are on the roof.
++ "Don't you have a ladder?"
+"The ladder is inside the house."
++ + {doorlocked} "The house is locked."
+"The key is in "my" pocket. The human body pocket."
++ + + "How annoying."
 ->dogtreeprocess
++ +"How annoying."
+->dogtreeprocess
+
 
 =doorlocked
 What is it with countryside people and locking their houses? Are they so afraid of adventurers taking stuff?
@@ -170,24 +222,27 @@ What is it with countryside people and locking their houses? Are they so afraid 
 
 =houseknife
 Just inside the house, on the kitchen table, is a knife that looks like it would be good at cutting ropes.
-+Take the knife and leave
++ Take the knife and leave
 ->dogtreeprocess
 
 =cutrope
 You cut the rope. The dog is free!
+"Hooray!"
++ "Hooray!"
 ->dogtreeprocess
-->DONE
+
 
 
 =cantclimb
-You can't climb. Too difficult. You need a way of getting higher up.
+{not treats: You can't climb. Too difficult. You need a way of getting higher up.}
+{treats: You already have enough doggy treats, there's no reason to climb up again.}
++ "Hmmmm."
 ->dogtreeprocess
 
 =pocketkey
 + You get the key out of the "human"'s pocket. 
 ->dogtreeprocess
-+ Get the "human" to lead you where he buried the Staff.
-->doglost
+
 
 =doglost
 
@@ -204,5 +259,4 @@ You have the doggy treats
 You, the "dog", Yolene and the "human" head through the woods. The "dog" leads the way, sniffing, to a pool of sludge. Floating on the surface is the Staff of Power!
 + Take the Staff
 ->endgamespellsstart
-
 ->END
