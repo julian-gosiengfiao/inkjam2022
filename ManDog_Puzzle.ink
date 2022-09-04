@@ -1,3 +1,4 @@
+
 =mandogpuzzlestart
 The sun is starting to set. It's been a long day.
 You continue down the path. In the distance, you hear a girl crying.
@@ -32,19 +33,20 @@ There is <b>a muddy-looking man</b> who is running circles around the tree and o
 #CLEAR
 
 #CLASS: /images/HouseInTheForest.png
++Pretty.
 ->dogtree
 
 =lookdog
-
 The dog is tied to the tree with a thick rope. The knots look incredibly tight, possibly pulled tighter by the dog. 
 "As you can see, I'm in quite the predicament." #CLASS: dogbrainman
 + Where did that voice come from?
 ->lookforvoice
 + Was that the DOG talking?
 ->talkdog
-+ "Hmmm, what should I do now?" #CLASS: hero
-->dogtree
-
++ {not crying} Investigate the crying sound
+->crying
++ Try talking to the man instead
+->talkman
 
 =talkman
 
@@ -57,12 +59,10 @@ Did my sister make you unable to talk? #CLASS: hero
 ->lookforvoice
 + Was that the DOG talking?
 ->talkdog
-+ {not crying} Investigate the crying sound
++ {not crying} Investigate the crying sound instead
 ->crying
-+ {worktogether} Talk some more to Yolene
-->planwithyolene ->dogtree
-+ "Hmmm, what should I do now?" #CLASS: hero
-->dogtree
++ Look more closely at the dog instead
+->lookdog
 
 
 =lookforvoice
@@ -74,13 +74,9 @@ There is no one in the trees.
 ->talkdog
 + Keep trying to get through to the woofing man
 ->talkman
-+ {not crying} Investigate the crying sound
++ {not crying} Investigate the crying sound instead
 ->crying
-+ {worktogether} Talk some more to Yolene
-->planwithyolene ->dogtree
-+ "Hmmm, what should I do now?" #CLASS: hero
-->dogtree
-->DONE
+
 
 =crying
 
@@ -304,7 +300,21 @@ She gets the doggy treats, and hands them to you.
 ->dogtreeprocess
 
 =staffburied
-You, the "dog", Yolene and the "human" head through the woods. The "dog" leads the way, sniffing, to a pool of sludge. Floating on the surface is the Staff of Power!
-+ Take the Staff
-->endgamespellsstart
+...
+With the "dog" freed, he assures you that he can follow the trail of the black sludge smell to wherever the "human" has been, and hopefully therefore, to the Staff of Power.
++ Follow the dog through the woods.
+It is starting to get darker, as you, the "dog", Yolene and the "human" head through the woods. 
+The "dog" leads the way, sniffing, to a pool of sludge. Floating on the surface is...
++ + "the Staff of Power!"
++ + + Take the Staff
+->takestaff
 
+=takestaff
+You take the Staff of Power!
+"Finally! With this, I'm sure Eldra can undo all the Blessings you've cast today!" #class: hero
+"All of them? Even the ones that made people happy?" #class: littlesis
+"Yes. Sorry. Even them. Best to do these things slowly and carefully, I think." #class: hero
+"Midelle! Look over there!"
+Yolene points to the horizon.
++ Look (while holding onto the Staff tightly)
+->endgamespellsstart
