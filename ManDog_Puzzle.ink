@@ -94,7 +94,7 @@ At the sound of your voice, she looks up.
 + "Never mind that now! You've got some explaining to do!" #CLASS: hero
 ->sadyolene
 + "I came after you! I was worried... and maybe Eldra was too?" #CLASS: hero
-->caringyolene
+->caringyolene1
 + "I just followed the trail of chaos you left behind you." #CLASS: hero
 "Chaos? Other than Eldra... and I guess the tavern... I didn't cause any chaos!" #CLASS: littlesis
 + + "Yes, you did! Everything's messed up!" #CLASS: hero
@@ -110,7 +110,7 @@ She has tears in her eyes, still.
 + + + "I know, I know! I've been everywhere you've been!" #CLASS: hero
 "Oh. And it's chaos?" #CLASS: littlesis
 + + + + "I... guess it's not that bad. Some people are happy." #CLASS: hero 
-->caringyolene
+->caringyolene2
 + + + + "Total chaos. Now - give me the Staff back so I can fix everything." #CLASS: hero
 ->floodsoftears
 
@@ -119,12 +119,14 @@ You've made Yolene too sad. She bursts into a flood of tears.
 + You might have to give her a minute.
 ->waitaminute
 
-=caringyolene
-{not sadyolene} "You... you were worried about me?"
-+ {not sadyolene} "Of course! 
+=caringyolene1
+"You... you were worried about me?"
++  "Of course!" 
 ->worktogether
-{sadyolene} "So... I did help people with my Blessings?
-+ {sadyolene} "Some of them, yes".
+
+=caringyolene2
+ "So... I did help people with my Blessings?
++ "Some of them, yes".
 ->worktogether
 
 
@@ -143,7 +145,7 @@ You've made Yolene too sad. She bursts into a flood of tears.
 + + + + "Mostly the Staff."
 ->floodsoftears
 + + + "You really did some great magic today."
-->caringyolene
+->caringyolene2
 
 =worktogether
 Yolene looks cheerier now. She stands up, and dusts herself off.
