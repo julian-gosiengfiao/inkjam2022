@@ -361,8 +361,11 @@ You cut the rope. The dog is free!
 
 =pocketkey
 The "human" comes over to you for a treat, and sits on the floor. 
-You give the human a doggy treat.
-+ You get <b>the house key</b> out of the "human"'s pocket. 
++ [Give the "human" a doggy treat] You give the human a doggy treat.
+In his excitement at receiving a treat, he spins around with joy. 
+As he does so, a <b>the house key</b> flies out of his trouser pocket.
++ + [Catch it!] 
+You caught it. You now have <b>the house key</b>. 
 ->dogtreeprocess
 
 =doglost
