@@ -1,4 +1,3 @@
-
 =outsidetownfirstentry
 
 You start down the road towards the town. With any luck, your sister will still be there.
@@ -52,8 +51,8 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 + + "Oh no!" #CLASS: hero
 "And she chanted: #CLASS: cowman
 <br>
-I wish, I wish, the cow would be #CLASS: magic
-Able to withstand injury! #CLASS: magic
+“I wish this beast that eats a flower #CLASS: magic
+Would gain a most tremendous power!” #CLASS: magic
 <br>
 "And now, Bessie is so big and sturdy, I can't even squeeze her udders! Look!
 + + + [Look]
@@ -117,7 +116,7 @@ You are in the town square. There is a dazed villager.
 "It was your little sister! She came through here with the Staff of Power and changed a whole bunch of stuff! Oooh, the magic! The surprise! I didn't know what to do! I still don't! #CLASS: dazedvillager
 + "Where did my little sister go?" #CLASS: hero
 ->chatdazedwhere
-+ You leave the villager to his dazedness[.] 
++ You leave the villager to her dazedness[.] 
 ...
 ->townsquare
 
@@ -126,7 +125,7 @@ You are in the town square. There is a dazed villager.
 "Ugh, I hate climbing." #CLASS: hero
 + "And what happened here?" #CLASS: hero
 ->chatdazedwhat
-+ You leave the villager to his dazedness[.] 
++ You leave the villager to her dazedness[.] 
 ...
 ->townsquare
 
@@ -157,7 +156,7 @@ And there's a road back to the <b>edge of town</b>.
 You are in the smithy.
 There is a blacksmith here{not tongs:, hard at work.}{tongs:, looking puzzled.} 
 You know from past experience that he is very absent-minded. 
-{not tongs: He is using these just beautiful tongs that he's holding in his hand.}
+{not tongs: He is using these absolutely beautiful <b>tongs</b> that he's holding in his hand.}
 {tongs: The blacksmith looks puzzled, and keeps looking on the floor and on shelves.}
 + Talk to the blacksmith
 ->talksmith
@@ -172,7 +171,7 @@ You know from past experience that he is very absent-minded.
 + "Yep, all good! You?" #CLASS: hero
 {tongs: ->tongsgone}
 {not tongs: "Yes, all good here! I hear your little sister has been causing trouble in town, but she never came in here."}
-+ + "Those tongs are beautiful." #CLASS: hero
++ + "Those <b>tongs</b> are beautiful." #CLASS: hero
 "Thank you. They're very strong. I'd wager they could squeeze anything." #class: smith
 + + + "...Fascinating." #CLASS: hero
 ->smith
@@ -180,7 +179,7 @@ You know from past experience that he is very absent-minded.
 "No can do! I have SO MUCH forging to do. And I will be using these tongs aaaaaaaallll day." #class: smith
 "I see." #class: hero
 ->smith
-* * {cowman} Distract the blacksmith so you can steal the tongs
+* * {cowman} Distract the blacksmith so you can steal the <b>tongs</b>
 ->tongs
 
 =tongsgone
@@ -189,7 +188,7 @@ You know from past experience that he is very absent-minded.
 ->smith
 
 =looksmith
-{not tongs: Other than those beautiful tongs, there's not much in here to catch your eye.}
+{not tongs: Other than <b>those beautiful tongs</b>, there's not much in here to catch your eye.}
 {tongs: Maybe don't linger here too long, or he'll suspect something.}
 ->smith
 
