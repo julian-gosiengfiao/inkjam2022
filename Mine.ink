@@ -24,20 +24,23 @@ Before long, you arrive at your destination.
 
 VAR item_laundry_room_key = 0
 VAR barrel_reset = 0
+VAR building_is_laundry = 0
 
 =OutsideMine
 
 You are outside the entrance to a mine.
 
-There is a single building out here, with intense light pouring out of every opening.
+There is a {not building_is_laundry: single building out} {building_is_laundry: laundry building} here, with intense light pouring out of every opening.
 
 {not barrel_reset: You notice a wiggling barrel next to the building.}
 {barrel_reset: There is a man in a barrel, eyeing you from beneath the lid.}
 
 
-+ [Enter the building] You try to enter the building.
++ [Enter the building] You try to enter the {building_is_laundry: laundry} building.
 {not item_laundry_room_key:
     It's locked, and you don't have a key.
+    {not building_is_laundry: You note it says: "LAUNDRY STATION" in big letters on the door.}
+    ~building_is_laundry++
     ...
     ->OutsideMine
 }
@@ -66,7 +69,7 @@ Maybe you should let him cool off for a bit.
 
 
 =BarrelSequence
-* [Tap it with your foot] You tap it with your foot.
++ [Tap it with your foot] You tap it with your foot.
 
 You hear some indistinct noises inside the barrel.
 
@@ -74,7 +77,7 @@ You hear some indistinct noises inside the barrel.
 
 + [Kick it over] You kick the barrel over.
 "AAAAAARGH!!!" #CLASS: barrelman
-A short, stocky bearded man in his birthday suit goes rolling out of the barrel.
+A short, stocky, bearded man in his birthday suit goes rolling out of the barrel.
 ->BarrelKicked
 
 + [Leave it alone] You leave it alone.
@@ -97,10 +100,21 @@ He clambers back into the barrel and slams the lid tightly shut.
 =BarrelTalk
 The man looks at you suspiciously.
 
-+ "I'm sorry about earlier!"
++ "I'm sorry about earlier!" #CLASS: hero
+"That's alright," The man in the barrel eyes you. #CLASS: barrelman
++ + "Is a witch resposible for this?" #CLASS: hero
+The barrelman sighs, "Yes. She came through here claiming she could fix everything. And now look at me!"
++ + + "What did you tell her, exactly?"
+The barrel man regards you for a moment.
+"I'm just so sick of doing endless amounts of 
+
 ->OutsideMine
 
-+ "HAVE YOU SEEN MY SISTER?!"
++ "HAVE YOU SEEN MY SISTER?!" #CLASS: hero
+The man immediately pops back into the barrel, snapping the lid shut.
+~barrel_reset--
++ + Oops.
+...
 ->OutsideMine
 
 
@@ -109,7 +123,7 @@ The man looks at you suspiciously.
 
 
 =MineRoom1
-{BarrelKicked:
+{BarrelKicked && barrel_reset == 0:
 ~barrel_reset++
 } //If you kicked the man over and went in here, he'll come out because he's ready to talk to you now.
 
@@ -185,6 +199,7 @@ The foreman looks up as you approach.
 ...
 ->MineRoom1
 
+
 VAR asked_about_crack = 0
 
 =TalkToForeman2
@@ -196,7 +211,7 @@ VAR asked_about_crack = 0
 
 "Let's turn it around, and into play!" #CLASS: magic
 
-+ + "Cool beans." #CLASS: hero
++ + "...And now your miners no longer have to work so hard, because the mine is a disco. Got it." #CLASS: hero
 ...
 ->TalkToForeman2
 
@@ -207,7 +222,7 @@ VAR asked_about_crack = 0
 + + "Moles?" #CLASS: hero
 ~asked_about_crack++
 
-"Yep." #CLASS: foreman
+"Moles." #CLASS: foreman
 ->TalkToForeman2
 
 + "See ya." #CLASS: hero
