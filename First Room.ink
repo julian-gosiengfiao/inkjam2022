@@ -26,9 +26,9 @@ It roars in delight. #CLASS: gorgoneye
 
 "I'm the eldest sister, so I shouldn't have to fetch the staff," says Eldra.#CLASS: bigsis
 
-"It's not fair just 'cause I'm the youngest! And our hut is so FAR!" says Yolene.#CLASS: littlesis
+"It's not fair just 'cause I'm the youngest! And our hut is so FAR AWAY." says Yolene.#CLASS: littlesis
 
-+ + [Sigh.] You dream of stuffing their mouths full of clay.
++ + [Sigh.] You dream of stuffing their mouths full of soft clay.
 ...
 -> StartSequence
 
@@ -36,9 +36,14 @@ It roars in delight. #CLASS: gorgoneye
 
 ~item_staff_of_power = 0
 
-Yolene attempts to grab at the staff, but Eldra swats her away easily.
+She takes it from you, and begins an incantation.
 
-"Now, Gorgon Eye, prepare to feel the might of the most powerful witch in the land!"#CLASS: bigsis
+Even Yolene steps back from the most powerful witch in the land.
+
++ + Now, here comes the incantation.
+
+Monster, cower before my might #CLASS: magic
+I’ll blast your eyeball out of sight! #CLASS: magic
 
 {item_sunglasses: ->GorgonEyeObliterationSunglasses}
 {not item_sunglasses: ->GorgonEyeObliterationNoSunglasses}
@@ -52,9 +57,9 @@ Yolene attempts to grab at the staff, but Eldra swats her away easily.
 
 =GorgonEyeObliterationSunglasses
 
-+ {item_sunglasses} [Put on your sunglasses] It is night, but you put on your sunglasses.
++ {item_sunglasses} [Yes. And now you put on your sunglasses.] It is night, but you put your sunglasses on.
 
-Eldra recites a brief incantation, then a beam with the force of an exploding star erupts from her staff.
+Eldra finishes her brief incantation, and a beam with the force of an exploding star erupts from her staff.
 
 It obliterates the Gorgon Eye wholly.#CLASS: redtext
 
@@ -63,9 +68,9 @@ It obliterates the Gorgon Eye wholly.#CLASS: redtext
 
 =GorgonEyeObliterationNoSunglasses
 
-+ {not item_sunglasses} [Here it comes.]
++ {not item_sunglasses} You think you forgot something.
 
-Eldra recites a brief incantation, then a beam with the force of an exploding star erupts from her staff.
+Eldra finishes her brief incantation, and a beam with the force of an exploding star erupts from her staff.
 
 <b>It obliterates the Gorgon Eye wholly.</b> #CLASS: redtext
 
@@ -78,14 +83,20 @@ The blast is totally blinding.
 
 =GorgonEyeAfterObliteration
 
-Yolene sulks.
-
 Satisfied, Eldra says "Let's go back to bed now." #CLASS: bigsis
 
 + + + + [Okay.] You go to bed.
 ...
 + + + + + Zzz... #CLASS: hero
+#CLEAR
+#IMAGE: images/Staffexplode.png
++ + + + + + You dream of a Gorgon Eye being obliterated wholly.
 ...
+
+Zzz... #CLASS: hero
+...
++ + + + + + + And not much else.
+
 #CLEAR
 -> NextDay //NextDay.ink
 
@@ -93,13 +104,14 @@ Satisfied, Eldra says "Let's go back to bed now." #CLASS: bigsis
 
 VAR item_staff_of_power = 0
 VAR item_sunglasses = 0
+//VAR hut_outside_voice = 0
 
 =Hut
 
-{(Hut > 1 || item_staff_of_power): You are in the hut/cottage you share with your two sisters.}
-{(Hut <= 1 || not item_staff_of_power): The hut you share with your two sisters is modest, but comfortable - it's more of a cottage, really.}
+{Hut > 1 || item_staff_of_power: You are in the hut/cottage you share with your two sisters.}
+{Hut < 2 && not item_staff_of_power: The hut you share with your two sisters is modest, but comfortable - it's more of a cottage, really.}
 
-{(Hut <= 1 || not item_staff_of_power): Outside, you continue to hear the sounds of common folk dodging magical fire, mixed in with Eldra and Yolene's raised voices.}
+{Hut < 2 && not item_staff_of_power: Outside, you continue to hear the sounds of common folk dodging magical fire, mixed in with Eldra and Yolene's raised voices.}
 
 {not item_staff_of_power: The Staff of Power sits neatly on the mantle above the fireplace.}
 {item_staff_of_power: There's an empty space above the mantle where the Staff of Power usually sits.}
