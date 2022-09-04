@@ -35,8 +35,11 @@ There is a {not building_is_laundry: single building out} {building_is_laundry: 
 
 {not barrel_reset: You notice a wiggling barrel next to the building.}
 {barrel_reset && not item_laundry_room_key: There is a man in a barrel, eyeing you from beneath the lid.}
-{kicked_for_key: There is a barrel with a man inside here.}
-{got_key_nicely: Barrel-man is chilling in his barrel here.}
+{kicked_for_key && not item_clean_laundry: There is a barrel with a man inside here.}
+{got_key_nicely && not item_clean_laundry: Barrel-man is chilling in his barrel here.}
+{item_clean_laundry: Barrel-man is excitedly waving at you.}
+{item_clean_laundry: "You've gotten some clean clothes!!! Bring them over here to me!"} #CLASS: barrelman
+{item_radiant_sock: The normally dressed barrel-man is standing here next to a barrel.}
 
 
 + {not item_laundry_room_key} [Enter the building] You try to enter the {building_is_laundry: laundry} building.
@@ -60,28 +63,60 @@ There is a {not building_is_laundry: single building out} {building_is_laundry: 
     ...
     ->LaundryBuilding
 
-+ {not BarrelKicked} [Inspect the barrel]
-#CLEAR
--> BarrelImage
+//BARREL STUFF
 
-
-+ {BarrelKicked && not barrel_reset} [Inspect the barrel] The lid's shut tight.
-Maybe you should let him cool off for a bit.
-...
-->OutsideMine
-
-+ {barrel_reset && not item_laundry_room_key} [Talk to the man in the barrel]
-->BarrelTalk
-
-+ {kicked_for_key} [Inspect the barrel] You find it very hard to blame your sister for this particular situation, but you still feel you should solve this man's problem.
-...
--> OutsideMine
-
-+ {got_key_nicely} [Talk to barrelman] "Just you wait, I'll protect your modesty, barrelman." #CLASS: hero
-"Awfully kind of you, thanks." #CLASS: barrelman
-...
-->OutsideMine
-
+    + {not BarrelKicked} [Inspect the barrel]
+    #CLEAR
+    -> BarrelImage
+    
+    
+    + {BarrelKicked && not barrel_reset} [Inspect the barrel] The lid's shut tight.
+    Maybe you should let him cool off for a bit.
+    ...
+    ->OutsideMine
+    
+    + {barrel_reset && not item_laundry_room_key} [Talk to the man in the barrel]
+    ->BarrelTalk
+    
+    + {kicked_for_key} [Inspect the barrel] You find it very hard to blame your sister for this particular situation, but you still feel you should solve this man's problem.
+    ...
+    -> OutsideMine
+    
+    + {got_key_nicely} [Talk to barrel-man] "Just you wait, I'll protect your modesty, barrelman." #CLASS: hero
+    "Awfully kind of you, thanks." #CLASS: barrelman
+    ...
+    ->OutsideMine
+    
+    + {item_clean_laundry} [Give barrel-man some clothes] You pass the bundle of laundry to barrel-man, who quickly opens it up.
+    
+        ~item_clean_laundry--
+    
+        Immediately, incandescent rays shoot out from inside the bundle.
+    
+        + + "AAAAAAAARGHHH!!!" #CLASS: hero
+        
+        "AAAAAAAARGHHHH!!!" #CLASS: barrelman
+        
+        + + + [Put on your sunglasses] You put on your sunglasses.
+        
+        Barrel-man topples over, and goes flying out of the barrel in his birthday suit, blinded.
+        
+        + + + + Inside the bundle was a radiant sock!
+        
+        "I'm blind, I'm blind!!!" #CLASS: barrelman
+        
+        You look at barrelman trying to get dressed while totally blinded.
+        
+        It's quite impressive.
+        
+        ->BlindedDressup
+        
+    + {item_radiant_sock} [Talk to barrel-man] "I'll never complain about doing my laundry again." #CLASS: barrelman
+    
+        "I'm sure you won't." #CLASS: hero 
+        ...
+        ->OutsideMine
+        
 + [Enter the mine] You enter the mine.
 ...
 -> MineRoom1
@@ -89,6 +124,30 @@ Maybe you should let him cool off for a bit.
 + [Check your inventory]
 ->Inventory -> OutsideMine
 
+VAR item_radiant_sock = 0
+
+=BlindedDressup
++ [Watch him some more] You watch him some more.
+    He's actually quite good at this.
+    + + I guess you have to do that in the mines sometimes.
+        
+        -> BlindedDressup
+
++ [Pick up the radiant sock] You pick up the radiant sock and put it away.
+
+    ~item_radiant_sock++
+
+    Your immediate surroundings stop being mildly incandescent.
+    Barrel-man is now a normally-clothed-man, and he finishes getting dressed.
+    + + [Yes! You fixed this!]
+    "Thank you, traveler! I was getting sick of hiding in that barrel. #CLASS: barrelman
+    + + + You slightly doubt this, but sure.
+    "Your sister said that she was going to the forests beyond the tunnel to finish more good deeds." #CLASS: barrelman
+    "You'll have to get through the mines to get to her." #CLASS: barrelman
+    + + + + ["Thank you."] "Thank you, barrel-man." #CLASS: hero
+    Oops, that last part just came out.
+    ...
+    ->OutsideMine    
 
 =BarrelImage
 #IMAGE images/barrel.png
@@ -141,7 +200,7 @@ The man looks at you suspiciously.
     "So I said to her, I wish that it was LITERALLY IMPOSSIBLE for my uniform to pick up EVEN THE SMALLEST speck of dirt, and that it would ALWAYS shine RADIANTLY FOR ALL TO SEE!" #CLASS: barrelman
     + + + + + + [Look at the building] You both look at the glowing {building_is_laundry: laundry} building, with radiant light erupting from every window and crack.
     You both look back at each other.
-    + + + + + + + [Show polite concern] You notice your jaw is hanging completely open and you are just staring at barrel-man.
+    + + + + + + + [Show polite concern] You try to say something nice, but you notice your jaw is hanging completely open and you are just staring at barrel-man.
     ->BarrelTalk2
     + + + + + + + [Show empathy] You raise your hand to shrug, but it moves of its own volition and slaps your forehead loudly.
     ->BarrelTalk2
@@ -199,7 +258,8 @@ In the center of the room is a pile of clean laundry, atop which sits an object 
     ...
     -> LaundryBuilding
 
-+ {not item_supplies_key} [Grab some laundry supplies] You try to open the door marked "LAUNDRY SUPPLIES" but it's locked. These people sure are protective of their laundry.
++ {not item_supplies_key} [Grab some laundry supplies] You try to open the door marked "LAUNDRY SUPPLIES" but it's locked.
+    + + These people sure are protective of their laundry.
     ...
     -> LaundryBuilding
 
@@ -355,7 +415,6 @@ It's really dark in here, and you can't see where you're going.
     ~dark_section_sunglasses++
     ...
     ->TunnelDarkSection
-
 
 
 =MoleRoom
