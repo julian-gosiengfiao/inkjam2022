@@ -51,8 +51,8 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 + + "Oh no!" #CLASS: hero
 "And she chanted: #CLASS: cowman
 <br>
-I wish, I wish, the cow would be #CLASS: magic
-Able to withstand injury! #CLASS: magic
+“I wish this beast that eats a flower #CLASS: magic
+Would gain a most tremendous power!” #CLASS: magic
 <br>
 "And now, Bessie is so big and sturdy, I can't even squeeze her udders! Look!
 + + + [Look]
