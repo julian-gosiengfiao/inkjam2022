@@ -21,6 +21,8 @@ Debug Menu - delete this when showing to people!
 + Start game from Mine
 #CLEAR
 -> TransitionToMineArea
++ Start game from ManDog Puzzle
+->mandogpuzzlestart
 + Start game from endgame
 #CLEAR
 -> endgamespellsstart

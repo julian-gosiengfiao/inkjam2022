@@ -1,5 +1,3 @@
-->mandogpuzzlestart
-
 =mandogpuzzlestart
 The sun is starting to set. It's been a long day.
 You continue down the path. In the distance, you hear a girl crying.
@@ -207,5 +205,4 @@ You, the "dog", Yolene and the "human" head through the woods. The "dog" leads t
 + Take the Staff
 ->endgamespellsstart
 
-=endgamespellsstart
 ->END
