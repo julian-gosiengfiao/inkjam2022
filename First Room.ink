@@ -87,7 +87,7 @@ Satisfied, Eldra says "Let's go back to bed now." #CLASS: bigsis
 
 =GorgonEyeLookAt
 #CLEAR
-#IMAGE: images/gorgoneye.jpeg
+#IMAGE: images/gorgoneye-small.jpg
 ~looked_at_monster++
 
 The Gorgon Eye is raking white-hot lasers across the helpless town, incinerating the odd cow or two.
@@ -130,7 +130,7 @@ VAR item_sunglasses = 0
 
 =TakeStaffOfPower
 #CLEAR
-#IMAGE: images/Staffexplode.png
+#IMAGE: images/Staffexplode-small.jpg
 You take the Staff of Power. #CLASS: getitem
 ~item_staff_of_power = 1
 + It's just a bit much.
@@ -139,7 +139,7 @@ You take the Staff of Power. #CLASS: getitem
 
 =TakeSunglasses
 #CLEAR
-#IMAGE: images/sunglasses.jpeg
+#IMAGE: images/sunglasses-small.jpg
 You pick up your sunglasses. #CLASS: getitem
 ~item_sunglasses++
 + Essential.
