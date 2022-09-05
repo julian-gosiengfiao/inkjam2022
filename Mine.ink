@@ -202,7 +202,7 @@ The man looks at you suspiciously.
 
 + "I'm sorry about earlier!" #CLASS: hero
     "That's alright," The man in the barrel eyes you. #CLASS: barrelman
-    + + "Is a witch resposible for this?" #CLASS: hero
+    + + "Is a witch responsible for this?" #CLASS: hero
     He sighs, "Yes. She came through here claiming she could fix everything. And now look at me!"#CLASS: barrelman
     + + + "What did you tell her, exactly?" #CLASS: hero
     The man in the barrel pauses.
