@@ -281,7 +281,7 @@ you don't need spirits to be cool! #CLASS: magic
 ->tavern
 
 =icebox
-You look at this mysterious box. It looks like your little sister magicked it into existence? It's a tall white container, very cold, it has a door in the side, and there's nothing inside but cold air and bits of frosted ice on the sides.
+You look at this mysterious box. It looks like your little sister might have magicked it into existence? It's a tall white container, very cold, it has a door in the side, and there's nothing inside but cold air and bits of frosted ice on the sides.
 * "I wonder if this might be a new way of keeping things cold all the time?" #CLASS: hero
 "We could call it a 'freezer'!" #CLASS: barman
 ...
