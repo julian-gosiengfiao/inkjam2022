@@ -220,7 +220,7 @@ There is a "dog" and a "human".
 ->talkscreen
 * {not worktogether} [Go and investigate the crying sound]
 ->crying
-+ {doorlocked and not houseknife} [Go into the house]
++ {not houseknife} [Enter the house]
 ->doorlocked
 + {learntreats and not treats} [Try to climb to the roof to get the doggy treats]
 ->cantclimb 

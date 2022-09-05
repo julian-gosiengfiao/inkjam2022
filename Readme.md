@@ -4,17 +4,19 @@
 - copy index.html, style.css (and erase the created files) from webcustom folder to webexport folder
 - open main.js in webexport and replace the line 
 ```javascript
-storyContainer.style.height = contentBottomEdgeY()+"px";
+    var storyContainer = document.querySelector('#story');
 ```
 by 
 ```javascript
-        setInterval(() => {
-            var needToScroll = (storyContainer.style.height !== contentBottomEdgeY()+"px");
-            storyContainer.style.height = contentBottomEdgeY()+"px";
-            if (needToScroll){
-                scrollDown(contentBottomEdgeY());
-            }
-        }, 2000)
+    var storyContainer = document.querySelector('#story');
+    // Extend height to fit
+    setInterval(() => {
+        var needToScroll = (storyContainer.style.height !== contentBottomEdgeY()+"px");
+        storyContainer.style.height = contentBottomEdgeY()+"px";
+        if (needToScroll){
+            scrollDown(contentBottomEdgeY());
+        }
+    }, 500)
 ```
 
 
