@@ -12,10 +12,10 @@ You wake up to the sound of a screaming turkey.
 
 It is morning, and the sun is shining.
 
-There's an empty space above the mantle where the Staff of Power usually sits.
+There's an <b>empty space</b> above the mantle where the Staff of Power usually sits.
 
-{not item_sunglasses: Your favorite pair of sunglasses are lying on the kitchen table.}
-{BehindHutNextDay == 0: There is the sound of a screaming turkey coming from outside.}
+{not item_sunglasses: Your favorite pair of <b>sunglasses</b> are lying on the kitchen table.}
+{BehindHutNextDay == 0: There is the sound of a <b>screaming turkey</b> coming from outside.}
 
 + {not item_sunglasses} [Pick up your sunglasses]
 ->TakeSunglasses ->HutNextDay
@@ -38,7 +38,7 @@ You are on a country road.
 
 In the distance, you see a peaceful country town.
 
-{BehindHutNextDay == 0: There is what sounds like a screaming turkey coming from behind the hut.}
+{BehindHutNextDay == 0: There is what sounds like a <b>screaming turkey</b> coming from behind the hut.}
 
 + [Go back into the hut] You go back into the hut.
 ...
@@ -153,7 +153,7 @@ Eldra continues, "But she's not old enough to harness the power of the staff!" #
 
 You are standing behind the hut.
 
-Your older sister Eldra is here, in the form of a turkey.
+Your older sister <b>Eldra</b> is here, in the form of a turkey.
 
 There is a pile of wet laundry on the ground.
 
@@ -195,14 +195,14 @@ You are on the road to town.
 
 The road is blocked by the most muscular cow you have ever seen.
 
-Somewhere behind you, a turkey is still screaming.
+Somewhere behind you, a <b>turkey</b> is still screaming.
 
 + [Try to get around the cow] You try to get around the cow.
 But you cannot fathom the enormity of the situation. Or of the cow. And you fail.
 ...
 ->blockedoutsidetown
 
-+ [Go back to the cottage] You throw your hands up in the air and return to the cottage.
++ [Go back to the hut] You throw your hands up in the air and return to the hut.
 ...
 ->OutsideHutNextDay
 
