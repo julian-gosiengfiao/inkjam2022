@@ -60,7 +60,7 @@ I’ll blast your eyeball out of sight! #CLASS: magic
 
 
 =GorgonEyeObliterationGeneric
-Eldra finishes her brief incantation, and a beam with the force of an exploding star erupts from her staff.
+Eldra finishes her incantation, and a beam with the force of an exploding star erupts from her staff.
 
 + [Watch]
 #CLEAR
@@ -91,28 +91,30 @@ Satisfied, Eldra thrusts the Staff of Power out in Yolene's face.
 Yolene pushes it back. "No, YOU carry it back." #CLASS: littlesis
 
 + [Dream of a tropical vacation] You daydream about a tropical vacation, but wonder if you'd look alright with a tan.
++ + [You could make it work.]
 ->GorgonEyeAfterObliteration2
 + [Consider moving out and renting] You consider moving out and renting, but wince at prices these days.
++ + [Pity.]
 ->GorgonEyeAfterObliteration2
 
 =GorgonEyeAfterObliteration2
 
-+ [Observe your sisters] Your sisters continue to struggle with each other.
+Your sisters continue to struggle with each other.
 
 "You ALWAYS think that you know best!" #CLASS: littlesis
 "For goodness’ sake, give it a REST!" #CLASS: bigsis
 
-+ + [Ha, that almost sounded like a made-up spell.]
++ [Ha, that almost sounded like a made-up spell.]
 
 The Staff of Power glows brightly between their hands.
 
-+ + + [Uh-oh.]
++ + [Uh-oh.]
 
 You realize that while fighting, your sisters have managed to somehow angle the staff so it is pointing directly at you.
 
-+ + + + [Duck]
++ + + [Duck]
 ->GorgonEyeAfterObliteration3
-+ + + + [Leap]
++ + + [Leap]
 ->GorgonEyeAfterObliteration3
 
 =GorgonEyeAfterObliteration3
