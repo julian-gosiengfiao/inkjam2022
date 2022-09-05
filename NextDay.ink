@@ -182,7 +182,11 @@ The image of a Gorgon Eye laughing with delight fills your mind. #CLASS: gorgone
 
 Between that and what you know of Yolene's ability to control magic, you're not sure which is worse.
 
-+ + There's only one way she could have gone, and that's to town.
++ + [Time to get cracking.]
+
+There's only one way she could have gone, and that's to town.
+
++ + + Go to town
 
 ->CoverSequence ->outsidetownfirstentry
 
