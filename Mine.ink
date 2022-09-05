@@ -491,7 +491,7 @@ VAR disco_squeeze_attempted = 0
 
 =MineDisco
 
-You are {disco_listened_counter == 0:standing}{disco_listened_counter == 1: slightly bobbing your head}{disco_listened_counter == 2: swaying awkwardly}{disco_listened_counter == 3: shaking half a butt}{disco_listened_counter >= 4: aggressively two-stepping} in what seems to be a literal disco.
+You are <b>{disco_listened_counter == 0:standing}{disco_listened_counter == 1: slightly bobbing your head}{disco_listened_counter == 2: swaying awkwardly}{disco_listened_counter == 3: shaking half a butt}{disco_listened_counter >= 4: aggressively two-stepping}</b> in what seems to be a literal disco.
 
 A pumping dance beat shakes your insides, and {not event_detergent_used: a <b>smoke machine</b> billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
 
@@ -502,14 +502,7 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
 + {disco_squeeze_attempted && not event_wowed_dancer} [Approach the dancer] You walk up to the dancer.
     He is wearing a very tight white <b>tanktop</b> that says "SOUL".
     He already doesn't seem very impressed with you.
-    * * ["How do I get through here?"] "___ __ _ ___ _____ ___?" #CLASS: hero
-    The dancer turns his nose up at you.
-    "____ ____ __ ___ _____, ____." #CLASS: dancer
-    + + + You can't hear a damn thing.
-    He {~grapevines|sashays|step ball-changes|rock steps|jazz squares|moonwalks} away.
-    ...
-    -> MineDisco
-    
+
     + + [Dance]
         {disco_listened_counter <= 0:
         Not only do you look like an ocean mollusc making sudden contact with a desert, you are completely off-beat.
@@ -535,8 +528,16 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
         Your rage at your lack of coordination shines through in some sort of interpretive masterpiece, every aimless flail making sweet lyrical love to each grunt, default-drum-sample-clap and looped synth note.
         You are the very image of a dancer's struggle.
         The dancer has stopped dancing and is in tears.
-        + + + You would be crying too. <br> ->WowedDancer
+        + + + You are crying too. <br> ->WowedDancer
         }
+
+    + + ["How do I get through here?"] "___ __ _ ___ _____ ___?" #CLASS: hero
+    The dancer turns his nose up at you.
+    "____ ____ __ ___ _____, ____." #CLASS: dancer
+    + + + You can't hear a damn thing.
+    He {~grapevines|sashays|step ball-changes|rock steps|jazz squares|moonwalks} away.
+    ...
+    -> MineDisco
 
 + {disco_squeeze_attempted && not event_wowed_dancer} [Listen to the music]
 ->DiscoListenMain
@@ -748,7 +749,7 @@ There are three giant moles sitting in the middle of all the junk.
     ...
     ->MoleRoom
 
-+ {item_soul_tanktop && not item_supplies_key && not asked_about_strange_junk} [Present the "SOUL" tanktop to the moles] You present the tiny, sweaty tanktop that reads "SOUL" to the moles.
++ {item_soul_tanktop && not item_supplies_key && asked_about_strange_junk} [Present the "SOUL" tanktop to the moles] You present the tiny, sweaty tanktop that reads "SOUL" to the moles.
     The moles all react differently.
     "IS THIS AN OBJECT BEFITTING MOLE?!" #CLASS: mole2
     "IT READS SO ON FRONT; 'SOUL!'" #CLASS: mole
