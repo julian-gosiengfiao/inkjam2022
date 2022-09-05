@@ -31,13 +31,13 @@ There is <b>a muddy-looking man</b> who is running circles around the tree and o
 =dogtree_first
 #CLEAR
 
-#IMAGE: images/houseInTheForest.png
+#IMAGE: images/houseInTheForest-small.jpg
 + Pretty.
 ->dogtree
 
 =lookdog
 #CLEAR
-#IMAGE: images/dog.png
+#IMAGE: images/dog-small.jpg
 The dog is tied to the tree with a thick rope. The knots look incredibly tight, possibly pulled tighter by the dog. 
 "As you can see, I'm in quite the predicament." #CLASS: manbraindog
 + Where did that voice come from?
@@ -277,7 +277,7 @@ The "human" is clearly very muddy, but he doesn't trust you, and won't come clos
 
 =dogplan
 #CLEAR
-#IMAGE: images/dog.png
+#IMAGE: images/dog-small.jpg
 + You approach the dog once more.
 {not dogplan: "You wish to speak with me? I apologise for the gruff tone, I am unused to these vocal chords."} #CLASS: manbraindog
 {dogplan: "Goodness, this nose is powerful. Have you... interacted with a wet turkey today?"} #CLASS: manbraindog

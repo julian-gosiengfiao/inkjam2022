@@ -16,3 +16,7 @@ by
             storyContainer.style.height = contentBottomEdgeY()+"px"; if( !firstTime ) scrollDown(previousBottomEdge); 
         }, 700);
 ```
+
+
+1366 x 768
+(html window viewport size)

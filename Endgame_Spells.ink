@@ -86,7 +86,7 @@ Ahem... I hope this works... #CLASS: hero
 Would gain a most tremendous power!” #CLASS: magic
 
 The horse grows and grows into A MIGHTY WARHORSE, with a broad back and calves to die for.
-#IMAGE: images/horse.jpeg
+#IMAGE: images/horse-small.jpg
 +"Let's go!" #CLASS: hero
 ->racehome
 

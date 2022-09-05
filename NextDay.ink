@@ -95,7 +95,7 @@ VAR walked_away = 0
 ->WalkedAway
 
 =TurkeyImage
-#IMAGE: images/turkey.png
+#IMAGE: images/turkey-small.jpg
 You lift the pile of wet laundry off the struggling bird.
 
 + [Help her up] You help her up and she shakes off her feathers.
@@ -144,7 +144,7 @@ Eldra continues, "But she's not old enough to harness the power of the staff!" #
 
 =CoverSequence
 #CLEAR
-#IMAGE: images/cover.jpg
+#IMAGE: images/cover-small.jpg
 + "I'll make things right." #CLASS: hero
 ...
 ->->

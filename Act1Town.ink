@@ -38,7 +38,7 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 
 =whatacow
 <b> What. A. Cow. </b>
-#IMAGE: images/cow.png
+#IMAGE: images/cow-small.jpg
 + Talk to cowman
 ->cowman
 + Head back to the road to town
@@ -88,7 +88,7 @@ You and the cowman each hold one of the handles of the blacksmith's tongs, and a
 #CLEAR 
 You both squeeze together, and a stream of lilac-coloured milk comes out, straight into the waiting bucket. 
 "You did it! Please, feel free to take that bucketful as payment. I'll just go get my other bucket!" #CLASS: cowman
-#IMAGE: images/bucket.jpeg
+#IMAGE: images/bucket-small.jpg
 + "Thanks!" #CLASS: hero
 You now have some very warm cow's milk in a milking pail. It's lilac-coloured, but that's probably fine.
 You wave goodbye to the cowman.
@@ -139,6 +139,7 @@ You are in the town square. There is a dazed villager.
 ->townsquare
 
 = looktownsquare
+#IMAGE: images/magicalVillage-small.jpg
 You look around the town square.
 There's the local <b>tavern</b>, the Embarrassing Cucumber, which appears to have icicles on the inside of the windows. 
 There's a path onwards, towards the <b>toll bridge</b>, and you know the <b>blacksmith's</b> is that way, too. 
@@ -175,23 +176,23 @@ You know from past experience that he is very absent-minded.
 ->tollbridge
 
 =talksmith
-"Hi Midelle! Good to see you! Everything OK?" #class: smith
+"Hi Midelle! Good to see you! Everything OK?" #CLASS: smith
 + "Yep, all good! You?" #CLASS: hero
 {tongs: ->tongsgone}
 {not tongs: "Yes, all good here! I hear your little sister has been causing trouble in town, but she never came in here."}
 + + "Those <b>tongs</b> are beautiful." #CLASS: hero
-"Thank you. They're very strong. I'd wager they could squeeze anything." #class: smith
+"Thank you. They're very strong. I'd wager they could squeeze anything." #CLASS: smith
 + + + "...Fascinating." #CLASS: hero
 ->smith
 + + {cowman} "Could you come with me? And bring your tongs?" #CLASS: hero
-"No can do! I have SO MUCH forging to do. And I will be using these tongs aaaaaaaallll day." #class: smith
-"I see." #class: hero
+"No can do! I have SO MUCH forging to do. And I will be using these tongs aaaaaaaallll day." #CLASS: smith
+"I see." #CLASS: hero
 ->smith
 * * {cowman} Distract the blacksmith so you can steal the <b>tongs</b>
 ->tongs
 
 =tongsgone
-"I seem to have misplaced my tongs. You don't think it was your little sister casting spells, do you?" #class: smith
+"I seem to have misplaced my tongs. You don't think it was your little sister casting spells, do you?" #CLASS: smith
 + "Probably. I'll keep my eye out, see if I can find them for you." #CLASS: hero
 ->smith
 
@@ -201,7 +202,7 @@ You know from past experience that he is very absent-minded.
 ->smith
 
 =tongs
-"LOOK OVER THERE!" #class: hero
+"LOOK OVER THERE!" #CLASS: hero
 He looks over there. 
 You steal the tongs. 
 
@@ -344,7 +345,7 @@ He hands it back.
 
 =trollmilkget
 #CLEAR 
-#IMAGE: images/bucket.jpeg
+#IMAGE: images/bucket-small.jpg
 + You hand the bucket to the troll.
 "Hmmm, I love the colour! And it's nice and cold! Thank you!"
 "You're... welcome, I guess?"

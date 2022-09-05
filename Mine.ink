@@ -9,7 +9,7 @@ The bridge is long, and overlooks craggy cliffs.
 + [Walk to the end] You walk to the end.
 #CLEAR
 
-#IMAGE: images/theMine.png
+#IMAGE: images/theMine-small.jpg
 You walk to the end.
 
 You see the mine-pass not far ahead, the only safe way through the mountains.
@@ -163,7 +163,7 @@ VAR item_radiant_sock = 0
     ->OutsideMine    
 
 =BarrelImage
-#IMAGE: images/barrel.png
+#IMAGE: images/barrel-small.jpg
 You walk up to the barrel.
 It wiggles.
 You're pretty sure there's something in it.
