@@ -11,7 +11,7 @@ Beside you, your two sisters are bickering.
 + [Look at the monster]
 ->GorgonEyeLookAt ->StartSequence
 
-+ Listen to their bickering
++ [Listen to their bickering]
 
 ~listened_to_bickering++
 
@@ -19,7 +19,7 @@ Beside you, your two sisters are bickering.
 
 "It's not fair just 'cause I'm the youngest! And our hut is so FAR AWAY." says Yolene.#CLASS: littlesis
 
-+ + [Sigh.] You dream of stuffing their mouths full of soft clay.
++ + [Sigh.] You dream of stuffing their mouths with soft clay.
 ...
 -> StartSequence
 
@@ -54,7 +54,7 @@ Eldra finishes her brief incantation, and a beam with the force of an exploding 
 
 It obliterates the Gorgon Eye wholly.#CLASS: redtext
 
-+ + [Take your sunglasses off] Having saved your vision, you slide your sunglasses back in your pocket.
++ + [Take your sunglasses off] You slide your sunglasses back in your pocket, vision intact.
 ->GorgonEyeAfterObliteration
 
 =GorgonEyeObliterationNoSunglasses
@@ -72,16 +72,57 @@ The blast is totally blinding.
 "AAAARRRRGHHH," you loudly curse. #CLASS: hero
 -> GorgonEyeAfterObliteration
 
+=PLACEHOLDER
+"You ALWAYS think that you know best!" #CLASS: littlesis
+"For goodness’ sake, give it a REST!" #CLASS: bigsis
+->END
+
+
 =GorgonEyeAfterObliteration
 
-Satisfied, Eldra says "Let's go back to bed now." #CLASS: bigsis
+Satisfied, Eldra thrusts the Staff of Power out in Yolene's face.
 
-+ + + + [Okay.] You go to bed.
-...
-+ + + + + Zzz... #CLASS: hero
-...
-+ + + + + + + And you sleep.
+"Be a good girl, and carry this back to the hut, now." #CLASS: bigsis
 
+Yolene pushes it back. "No, YOU carry it back." #CLASS: littlesis
+
++ [Dream of a tropical vacation] You daydream about a tropical vacation, but wonder if you'd look alright with a tan.
+->GorgonEyeAfterObliteration2
++ [Consider moving out and renting] You consider moving out and renting, but wince at prices these days.
+->GorgonEyeAfterObliteration2
+
+=GorgonEyeAfterObliteration2
+
++ [Observe your sisters] Your sisters continue to struggle with each other.
+
+"You ALWAYS think that you know best!" #CLASS: littlesis
+"For goodness’ sake, give it a REST!" #CLASS: bigsis
+
++ + [Ha, that almost sounded like a made-up spell.]
+
+The Staff of Power glows brightly between their hands.
+
++ + + [Uh-oh.]
+
+You realize that while fighting, your sisters have managed to somehow angle the staff so it is pointing directly at you.
+
++ + + + [Duck]
+->GorgonEyeAfterObliteration3
++ + + + [Leap]
+->GorgonEyeAfterObliteration3
+
+=GorgonEyeAfterObliteration3
+You attempt to both duck and leap at the same time, suspending yourself in mid-air in some kind of awkward squat.
+
++ [Get hit right in the kisser] POW! #CLASS: magic
+
++ + [A sleep spell...!] The next thing you know, you are asleep.
+...
++ + + ...
+...
++ + + + Zzz... #CLASS: hero
+...
++ + + + + Sleep
 #CLEAR
 -> NextDay //NextDay.ink
 
@@ -107,7 +148,7 @@ VAR item_sunglasses = 0
 {Hut > 1 || item_staff_of_power: You are in the hut/cottage you share with your two sisters.}
 {Hut < 2 && not item_staff_of_power: The hut you share with your two sisters is modest, but comfortable - it's more of a cottage, really.}
 
-{Hut < 2 && not item_staff_of_power: Outside, you continue to hear the sounds of common folk dodging magical fire, mixed in with Eldra and Yolene's raised voices.}
+{Hut < 2 && not item_staff_of_power: Outside, you hear the sounds of townfolk dodging monster fire, and Eldra and Yolene's raised voices.}
 
 {not item_staff_of_power: The Staff of Power sits neatly on the mantle above the fireplace.}
 {item_staff_of_power: There's an empty space above the mantle where the Staff of Power usually sits.}
