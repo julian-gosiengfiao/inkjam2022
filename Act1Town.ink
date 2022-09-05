@@ -24,9 +24,8 @@ A frankly enormous cow has shuffled into the middle of the path, followed by an 
 
 It stops right there in the middle, blocking all traffic.
 
-+ + + That's fine, you didn't leave anything back at home anyway.
++ + + That's fine, you didn't leave anything important back at home anyway.
 
-{not WalkedAway: Anything <i>important</i>, that is.}
 ...
 ->cowencounter
 
