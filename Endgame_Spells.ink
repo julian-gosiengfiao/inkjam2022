@@ -378,7 +378,7 @@ Midjourney AI
 {whatacow and architecture and dogtree_first and credits: ADMIRER SUPREME!!}
 
 {tongsgone: SMITH DECEIVER}
-{yescoin: TROLL DECEIVER}
+{yescoins: TROLL DECEIVER}
 {tongsgone and yescoin: MASTER OF DECEPTION!!}
 
 {eagles: "THE EAGLES ARE COMING!"}
@@ -400,7 +400,7 @@ Midjourney AI
 {not credits: Credits Admirer}
 
 {not tongsgone: Smith Deceiver}
-{not yescoin: Troll Deceiver}
+{not yescoins: Troll Deceiver}
 
 {not eagles: "THE EAGLES ARE COMING!"}
 {not nomilk: "BALROGGED"}
