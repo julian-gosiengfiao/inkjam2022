@@ -285,7 +285,7 @@ You look at this mysterious box. It looks like your little sister might have mag
 "We could call it a 'freezer'!" #CLASS: barman
 ...
 ->tavern
-* {hotmilk} You cool the hot cow's milk down in the magical 'freezer'.
+* {hotmilk} [Cool the milk] You cool the hot cow's milk down in the magical 'freezer'.
 ->coldmilk
 + "Hmmmmmm... Cold. Still lilac, but cold." #CLASS: hero
 ->tavern
@@ -391,7 +391,7 @@ They can’t with you standing in their way! #CLASS: magic
 "Do you have coins?" #CLASS: troll
 + "No." #CLASS: hero
 ->nocoins
-+ Lie 
++ [Lie] 
 ->yescoins
 
 =nocoins

@@ -4,9 +4,9 @@ VAR listened_to_bickering = 0
 =StartSequence
 You are on a country road.
 
-In the distance, {looked_at_monster: a Gorgon Eye} {not looked_at_monster: a monster} is terrorizing the town.
+In the distance, <b>{looked_at_monster: a Gorgon Eye} {not looked_at_monster: a monster}</b> is terrorizing the town.
 
-Beside you, your two sisters are bickering.
+Beside you, your two <b>sisters</b> are bickering.
 
 + [Look at the monster]
 ->GorgonEyeLookAt ->StartSequence
@@ -158,10 +158,10 @@ VAR item_sunglasses = 0
 
 {Hut < 2 && not item_staff_of_power: Outside, you hear the sounds of townfolk dodging monster fire, and Eldra and Yolene's raised voices.}
 
-{not item_staff_of_power: The Staff of Power sits neatly on the mantle above the fireplace.}
+{not item_staff_of_power: The <b>Staff of Power</b> sits neatly on the mantle above the fireplace.}
 {item_staff_of_power: There's an empty space above the mantle where the Staff of Power usually sits.}
 
-{(item_staff_of_power && not item_sunglasses): You notice your favorite pair of sunglasses lying on the kitchen table.}
+{(item_staff_of_power && not item_sunglasses): You notice your favorite pair of <b>sunglasses</b> lying on the kitchen table.}
 
 + {not item_staff_of_power} [Take the Staff of Power]
 ->TakeStaffOfPower -> Hut

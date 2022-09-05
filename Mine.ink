@@ -27,7 +27,7 @@ VAR entered_laundry_with_shades = 0
 
 =OutsideMine
 
-You are outside the entrance to a mine.
+You are outside the entrance to a <b>mine</b>.
 
 There is a {not building_is_laundry: single <b>building</b> out} {building_is_laundry: <b>laundry building</b>} here, with intense light pouring out of every opening.
 
@@ -52,13 +52,13 @@ There is a {not building_is_laundry: single <b>building</b> out} {building_is_la
 
 + {item_laundry_room_key && not LaundryBuilding} [Enter the building] You try to enter the {building_is_laundry: <b>laundry</b>} <b>building</b>.
     {item_laundry_room_key: The <b>laundry room key</b> unlocks the door.}
-    The radiant light floods out of the door and blinds you!
+    The radiant light floods out of the door and <b>blinds</b> you!
     + + [Get me outta here!] You quickly shut the door and it locks with a click.
     ...
     ->OutsideMine
     + + [Check inventory] ->LaundrySunglassesOn
 
-+ {LaundryBuilding} [Enter the laundry building] You slip your sunglasses on and enter the <b>laundry building</b>.
++ {LaundryBuilding} [Enter the laundry building] You slip your sunglasses on and enter the laundry building.
     ...
     ->LaundryBuilding
 
@@ -77,11 +77,11 @@ There is a {not building_is_laundry: single <b>building</b> out} {building_is_la
     + {barrel_reset && not item_laundry_room_key} [Talk to the man in the barrel]
     ->BarrelTalk
     
-    + {kicked_for_key} [Inspect the barrel] You find it very hard to blame your sister for this particular situation, but you still feel you should solve this man's problem.
+    + {kicked_for_key && not LaundryBuilding} [Inspect the barrel] You find it very hard to blame your sister for this particular situation, but you still feel you should solve this man's problem.
     ...
     -> OutsideMine
     
-    + {got_key_nicely} [Talk to barrel-man] "Just you wait, I'll protect your modesty." #CLASS: hero
+    + {got_key_nicely && not LaundryBuilding} [Talk to barrel-man] "Just you wait, I'll protect your modesty." #CLASS: hero
         "Awfully kind of you, thanks." #CLASS: barrelman
         ...
         ->OutsideMine
@@ -216,10 +216,10 @@ The man looks at you suspiciously.
     + + + + + "Uh, huh..." #CLASS: hero
     "So I said to her, I wish that it was LITERALLY IMPOSSIBLE for my uniform to pick up EVEN THE SMALLEST speck of dirt, and that it would ALWAYS shine RADIANTLY FOR ALL TO SEE!" #CLASS: barrelman
     + + + + + + [Look at the building] You both look at the glowing {building_is_laundry: laundry} building, with radiant light erupting from every window and crack.
-    You both look back at each other.
-    + + + + + + + [Show polite concern] You try to say something nice, but you notice your jaw is hanging completely open and you are just staring at barrel-man.
+    + + + + + + + [Look at each other] You both look back at each other.
+    + + + + + + + + [Show polite concern] You try to say something nice, but you notice your jaw is hanging completely open and you are just staring at barrel-man.
     ->BarrelTalk2
-    + + + + + + + [Show empathy] You raise your hand to shrug, but it moves of its own volition and slaps your forehead loudly.
+    + + + + + + + + [Show empathy] You raise your hand to shrug, but it moves of its own volition and slaps your forehead loudly.
     ->BarrelTalk2
     
 + "HAVE YOU SEEN MY SISTER?!" #CLASS: hero
@@ -234,11 +234,12 @@ VAR got_key_nicely = 0
 
 
 =BarrelTalk2
-"I'll give you a key to the <b>laundry room</b> if you help me get something to wear from inside," he says. #CLASS: barrelman
-"But be careful - it's so bright you could be blinded! No one else can go near, for we are miners and we need our vision, especially in the dark." #CLASS: barrelman
+"I'll give you a <b>key to the laundry room</b> if you help me get something to wear from inside," he says. #CLASS: barrelman
+"But be careful - it's so bright you could be <b>blinded</b>! No one else can go near, for we are miners and we need our vision, especially in the dark." #CLASS: barrelman
 + "Alright." #CLASS: hero
     He gives you the key to the laundry. #CLASS: getitem
-    
+
+    ~got_key_nicely++
     ~item_laundry_room_key++
     ...
     ->OutsideMine
@@ -674,7 +675,7 @@ VAR asked_about_strange_junk = 0
 =MoleRoom
 You are in a room full of {looked_at_junk: useless} stuff.
 
-There are three giant moles sitting in the middle of all the junk.
+There are three giant </b>moles</b> sitting in the middle of all the junk.
 
 {looked_at_junk && not asked_about_strange_junk: One of the <b>items</b> in here seems out of place.}
 {asked_about_strange_junk && not item_supplies_key: A <b>key</b> to some kind of "...CUPBOARD" seems out of place.}
@@ -801,6 +802,7 @@ The rest of the tunnel continues to the other side of the mountains, where Yolen
 + + Let's go get her.
 You continue until you exit the mines and are greeted by the outside world.
 + + + [Leave the mines behind you]
+...
 ->mandogpuzzlestart
 
 ->END
