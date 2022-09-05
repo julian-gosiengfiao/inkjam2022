@@ -379,7 +379,7 @@ Midjourney AI
 
 {tongsgone: SMITH DECEIVER}
 {yescoins: TROLL DECEIVER}
-{tongsgone and yescoin: MASTER OF DECEPTION!!}
+{tongsgone and yescoins: MASTER OF DECEPTION!!}
 
 {eagles: "THE EAGLES ARE COMING!"}
 {nomilk: "BALROGGED"}
