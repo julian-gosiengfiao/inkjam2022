@@ -292,6 +292,7 @@ You look at this mysterious box. It looks like your little sister might have mag
 
 =coldmilk
 You now have a bucketful of cold cow's milk in your inventory. #CLASS: getitem
+...
 ->tavern
 
 
