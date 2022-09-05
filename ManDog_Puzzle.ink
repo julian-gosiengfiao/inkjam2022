@@ -7,10 +7,7 @@ Considering your day, it's seems pretty likely your sister passed this way.
 ->dogtree
 
 =dogtree
-{not dogtree_first: ->dogtree_first }
-
-{dogtree_first}:
-You are standing in front of a house, next to a big oak tree.
+You are standing in front of a pretty house, next to a big oak tree.
 There is <b>a large dog</b>, tightly tied to the tree.
 There is <b>a muddy-looking man</b> who is running circles around the tree and often falling over.
 {not worktogether: Behind the house, <b>someone is crying</b>.}
@@ -24,20 +21,17 @@ There is <b>a muddy-looking man</b> who is running circles around the tree and o
 ->crying
 + {worktogether} Talk some more to Yolene
 ->planwithyolene ->dogtree
-+ [Admire the view some more]
-->dogtree_first
++ [Admire the view]
+->dogtree_first ->dogtree
 
 
 =dogtree_first
 #CLEAR
-
 #IMAGE: images/houseInTheForest-small.jpg
 + Pretty.
-->dogtree
+->->
 
 =lookdog
-#CLEAR
-#IMAGE: images/dog-small.jpg
 The dog is tied to the tree with a thick rope. The knots look incredibly tight, possibly pulled tighter by the dog. 
 "As you can see, I'm in quite the predicament." #CLASS: manbraindog
 + Where did that voice come from?
@@ -189,6 +183,8 @@ See the world through another’s eyes! #CLASS: magic
 
 
 =talkdog
+#CLEAR
+#IMAGE: images/dog-small.jpg
 "Ah, yes. You've understood. I am the one speaking. In this doggy body. I <i>do</i> apologise for my nudity." #CLASS: manbraindog
 + {worktogether} "Yes, my sister explained. She switched your minds?" #CLASS: hero
 ->dogspell
@@ -202,7 +198,7 @@ I wish you’d learn to empathise #CLASS: magic
 See the world through another’s eyes! #CLASS: magic
 <br>
 + "Wow. She's done so many spells today." #CLASS: hero
-"After which, my body, possessed by my pet, stole the aforementioned Staff, and ran away. Your sister endeavoured to give chase, but alas, without success. I'm sure she can explain further."#CLASS: manbraindog
+"After which, my body, possessed by my pet, stole the aforementioned staff, and ran away. Your sister endeavoured to give chase, but alas, without success. I'm sure she can explain further."#CLASS: manbraindog
 + + "..."
 "Now, if it is not too much trouble... could you free me from this tree?" #CLASS: manbraindog
 + + + "I can try." #CLASS: hero
@@ -220,57 +216,62 @@ There is a "dog" and a "human".
 {worktogether: <b>Yolene</b> is here, looking at you expectantly.}
 {houseknife: The house is <b>unlocked</b>, but you don't need to go inside for anything else.}
 {doorlocked and not houseknife: The house is <b>locked</b>.}
-+ Talking to someone might help.
++ [Talking to someone might help you to learn more]
 ->talkscreen
-* {not worktogether} Go and investigate the crying sound
+* {not worktogether} [Go and investigate the crying sound]
 ->crying
-+ Go into the house
++ {doorlocked and not houseknife} [Go into the house]
 ->doorlocked
-+ {learntreats and not treats} Climb up to the roof to get the doggy treats
++ {learntreats and not treats} [Try to climb to the roof to get the doggy treats]
 ->cantclimb 
-* {worktogether and learntreats} Get Yolene to help you reach the roof
+* {worktogether and learntreats} [Get Yolene to help you reach the roof]
 ->treats
-* {not cutrope} Untie the tight knots tying up the dog
+* {not cutrope} [Untie the tight knots tying up the "dog"]
 ->cantuntie
-* {houseknife} Use the knife to cut the rope that's tying the dog to the tree
+* {houseknife} [Use the knife to cut the rope that's tying the "dog" to the tree]
 ->cutrope
-* {treats} Lure the "human" to you with the treats
+* {treats} [Lure the "human" to you with the treats]
 ->pocketkey
-+ {pocketkey} Try to get the "human" to lead you to wherever he's hidden the Staff
++ {pocketkey} [Try to get the "human" to lead you to wherever he's hidden the Staff]
 ->doglost
-*{cutrope} Get the "dog" to lead you to where the Staff is hidden
+*{cutrope} [Get the "dog" to lead you to where the Staff is hidden]
 ->staffburied
-* {not treats} Persuade the "human" to come to you see if there are any clues
+* {not treats} [Persuade the "human" to come to you see if there are any clues]
 ->humanignores
+* [Admire the view]
+->dogtree_first ->dogtreeprocess
+
 
 =mansludgenotrust
 ->dogtreeprocess
 
 =cantuntie
 You pull and pull at the tightly tied rope, but it's already been pulled way too tight.
-"Ahh, I was afraid of this. I strongly recommend you cease that endeavour, and instead venture to <b>cut the rope with a knife.</b> 
-+ "I don't have anything to cut it."
-"I have any number of perfectly serviceable knives in my house. Indeed, there is <b>a knife</b> just beyond the threshold.
-+ + {doorlocked} "The house is locked."
-"Where did I put the key? OH! The key is in "my" pocket. The <b>human body pocket</b>."
-+ + + "How annoying."
+"Ahh, I was afraid of this. I strongly recommend you cease that endeavour, and instead venture to <b>cut the rope with a knife.</b>" #CLASS: manbraindog
++ "I don't have anything to cut it." #CLASS: hero
+"I have any number of perfectly serviceable knives in my house. Indeed, there is <b>a knife</b> just beyond the threshold. #CLASS: manbraindog
++ + {doorlocked} "The house is locked." #CLASS: hero
+"Where did I put the key? OH! The key is in "my" pocket. The <b>human body pocket</b>." #CLASS: manbraindog
++ + + "Sounds like a bit of a pickle" #CLASS: hero
 ->dogtreeprocess
-+ + "How annoying."
++ + "Good to know." #CLASS: hero
 ->dogtreeprocess
 
 =talkscreen
 This is quite a puzzle. Perhaps you're missing some key information, or someone intelligent might be able to help.
-+ Learn more about this situation from the "dog".
++ {not dogplan} [Learn more about this situation from the "dog"]
 ->dogplan
-+ {worktogether} Talk some more to Yolene
++ {dogplan} [Perhaps, with new information, you can learn MORE from the "dog"?]
+->dogplan
++ {worktogether} [Talk some more to Yolene]
 ->planwithyolene ->dogtreeprocess
-+ {not treats} Talk to the "human"
++ {not treats} [Talk to the "human"]
 ->humanignores
 
 
 =humanignores
-The "human" ignores you.
-The "human" is clearly very muddy, but he doesn't trust you, and won't come close enough to inspect.
+You try to get the attention of the "human", but the "human" ignores you.
+The "human" is clearly <b>very muddy</b>, but he doesn't trust you, and won't come close enough to inspect.
 "WOOF!" #CLASS: dogbrainman
 + "I'll have to gain his trust." #CLASS: hero
 ->dogtreeprocess
@@ -280,12 +281,12 @@ The "human" is clearly very muddy, but he doesn't trust you, and won't come clos
 #IMAGE: images/dog-small.jpg
 + You approach the dog once more.
 {not dogplan: "You wish to speak with me? I apologise for the gruff tone, I am unused to these vocal chords."} #CLASS: manbraindog
-{dogplan: "Goodness, this nose is powerful. Have you... interacted with a wet turkey today?"} #CLASS: manbraindog
+{dogplan: "Goodness, this <b>nose</b> is powerful. Have you... interacted with a wet turkey today?"} #CLASS: manbraindog
 + + {doorlocked} "How can I enter the house?"  
 "Yes, please do not try to force the door open. <b>A key</b> will do the trick." #CLASS: manbraindog
 + + + "And where can I find a key?"
 "Where did I put the key? OH! The key is in "my" pocket. The <b>human body pocket</b>." #CLASS: manbraindog
-+ + + + "How annoying."
++ + + + "This is a fine mess, and no mistake."
 ->dogtreeprocess
 + + {humanignores} "How can I get that dog-brain to trust me and come closer?"
 "I admit, he is poorly trained. My apologies. And having my body has made him... quite excitable. However, a judicious application of <b> doggy treats</b> will have him, literally and figuratively, eating out of your hand, as it were." #CLASS: manbraindog
@@ -329,19 +330,19 @@ He doesn't know where, but wow, that smell is strong to his <b>dog nose</b>. If 
 "With a ladder that I keep in the house." #CLASS: manbraindog
 + + + {doorlocked} "The house is locked." #CLASS: hero
 "Where did I put the key? OH! The key is in "my" pocket. The <b>human body pocket</b>." #CLASS: manbraindog
-+ + + + "How annoying." #CLASS: hero
++ + + + "What a palaver." #CLASS: hero
 ->dogtreeprocess
-+ + + "How annoying." #CLASS: hero
++ + + "OK, Good to know." #CLASS: hero
 ->dogtreeprocess
 
 
 =doorlocked
 What is it with countryside people and locking their houses? Are they so afraid of adventurers taking stuff?
-* {pocketkey} Unlock and enter the house.
+* {pocketkey} [Unlock and enter the house]
 ->houseknife
-+ {not pocketkey} Look under the doormat
++ {not pocketkey} [Look under the doormat]
 ->notthere ->doorlocked
-+ {not pocketkey} Look in the bushes
++ {not pocketkey} [Look in the bushes]
 ->notthere ->doorlocked
 + {not pocketkey} "Maybe the "dog" can tell me where to find a key." #CLASS: hero
 ->dogtreeprocess
@@ -353,11 +354,13 @@ It's not there.
 
 =houseknife
 Just inside the house, on the kitchen table, is <b>a knife</b> that looks like it would be good at cutting ropes.
+The "dog" is watching, and waiting. Maybe let's not go any further in.
 + Take the knife and leave
+You now have the knife! #CLASS: inventory
 ->dogtreeprocess
 
 =cutrope
-You cut the rope. The dog is free!
+You cut the rope. The "dog" is free!
 "Hooray!" #CLASS: manbraindog
 + "Hooray!" #CLASS: hero
 ->dogtreeprocess
@@ -368,12 +371,13 @@ You cut the rope. The dog is free!
 ->dogtreeprocess
 
 =pocketkey
-The "human" comes over to you for a treat, and sits on the floor. 
+The "human" comes over to you for a treat, and sits on the floor. His hands are covered in <b>a strong-smelling black sludge</b>.
 + [Give the "human" a doggy treat] You give the human a doggy treat.
 In his excitement at receiving a treat, he spins around with joy. 
 As he does so, a <b>the house key</b> flies out of his trouser pocket.
 + + [Catch it!] 
-You caught it. You now have <b>the house key</b>. 
+You caught it. 
+You now have <b>the house key</b>. #CLASS: inventory
 ->dogtreeprocess
 
 =doglost
@@ -395,7 +399,7 @@ For all your searching nearby, don't see any pools of black sludge anywhere.
 =treats
 You get Yolene to climb on your back, and stand up tall so she can reach the roof.
 She gets the doggy treats, and hands them to you.
-+ You have the doggy treats!
++ You have the doggy treats! #CLASS: inventory
 ->dogtreeprocess
 
 =leadtheway
@@ -428,4 +432,3 @@ You take the Staff of Power! #CLASS: magic
 Yolene points to the horizon.
 + [Look (while holding onto the Staff tightly)]
 ->endgamespellsstart
-
