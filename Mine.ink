@@ -106,7 +106,7 @@ There is a {not building_is_laundry: single <b>building</b> out} {building_is_la
         
         "I'm blind, I'm blind!!!" #CLASS: barrelman
         
-        You look at barrelman trying to get dressed while totally blinded.
+        You look at barrelman trying to get dressed while totally unable to see.
         
         It's quite impressive.
         
@@ -123,7 +123,7 @@ There is a {not building_is_laundry: single <b>building</b> out} {building_is_la
             "You're telling me!" #CLASS: barrelman
             ...
             -> OutsideMine
-        + + [Leave] "I'm sure you won't. #CLASS: hero
+        + + [Leave] "I'm sure you won't." #CLASS: hero
         ...
         ->OutsideMine
         
@@ -491,7 +491,7 @@ VAR disco_squeeze_attempted = 0
 
 =MineDisco
 
-You are {disco_listened_counter == 0:standing}{disco_listened_counter == 1: slightly bobbing your head}{disco_listened_counter == 2: swaying awkwardly}{disco_listened_counter == 3: shaking half a butt}{disco_listened_counter <= 4: aggressively two-stepping} in what seems to be a literal disco.
+You are {disco_listened_counter == 0:standing}{disco_listened_counter == 1: slightly bobbing your head}{disco_listened_counter == 2: swaying awkwardly}{disco_listened_counter == 3: shaking half a butt}{disco_listened_counter >= 4: aggressively two-stepping} in what seems to be a literal disco.
 
 A pumping dance beat shakes your insides, and {not event_detergent_used: a <b>smoke machine</b> billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
 
