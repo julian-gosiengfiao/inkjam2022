@@ -134,7 +134,7 @@ You are in the town square. There is a dazed villager sitting on the floor, with
 
 =architecture
 #CLEAR
-#IMAGE: images/magicalVillage-small.png 
+#IMAGE: images/magicalVillage-small.jpg 
 + "I'm glad the Gorgon Eye never made it here." 
 ->townsquare
 
