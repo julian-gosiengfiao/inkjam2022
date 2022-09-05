@@ -287,6 +287,8 @@ You look at this mysterious box. It looks like your little sister might have mag
 ->tavern
 * {hotmilk} [Cool the milk] You cool the hot cow's milk down in the magical 'freezer'.
 ->coldmilk
++ "Maybe if we find a way to reverse the spell, you can keep this cold thing?" #CLASS: hero
+->tavern
 
 =coldmilk
 + "Hmmmmmm... Cold. Still lilac, but cold." #CLASS: hero
