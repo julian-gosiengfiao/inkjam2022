@@ -287,10 +287,9 @@ You look at this mysterious box. It looks like your little sister might have mag
 ->tavern
 * {hotmilk} [Cool the milk] You cool the hot cow's milk down in the magical 'freezer'.
 ->coldmilk
-+ "Hmmmmmm... Cold. Still lilac, but cold." #CLASS: hero
-->tavern
 
 =coldmilk
++ "Hmmmmmm... Cold. Still lilac, but cold." #CLASS: hero
 You now have a bucketful of cold cow's milk in your inventory. #CLASS: getitem
 ...
 ->tavern
