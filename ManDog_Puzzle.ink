@@ -13,13 +13,13 @@ There is <b>a muddy-looking man</b> who is running circles around the tree and o
 {not worktogether: Behind the house, <b>someone is crying</b>.}
 {worktogether: Yolene is looking at you, hoping you'll figure out with a plan.}
 
-+ {not talkdog} Look at the dog
++ {not talkdog} [Look at the dog]
 ->lookdog
-+ {not talkdog} Talk to the running man
++ {not talkdog} [Talk to the running man]
 ->talkman
-+ {not crying} Investigate the crying sound
++ {not crying} [Investigate the crying sound]
 ->crying
-+ {worktogether} Talk some more to Yolene
++ {worktogether} [Talk some more to Yolene]
 ->planwithyolene ->dogtree
 + [Admire the view]
 ->dogtree_first ->dogtree
@@ -38,9 +38,9 @@ The dog is tied to the tree with a thick rope. The knots look incredibly tight, 
 ->lookforvoice
 + Was that the DOG talking?
 ->talkdog
-+ {not crying} Investigate the crying sound
++ {not crying} [Investigate the crying sound]
 ->crying
-+ Try talking to the man instead
++ [Try talking to the man instead]
 ->talkman
 
 =talkman
@@ -54,9 +54,9 @@ Did my sister make you unable to talk? #CLASS: hero
 ->lookforvoice
 + Was that the DOG talking?
 ->talkdog
-+ {not crying} Investigate the crying sound instead
++ {not crying} [Investigate the crying sound instead]
 ->crying
-+ Look more closely at the dog instead
++ [Look more closely at the dog instead]
 ->lookdog
 
 
@@ -67,9 +67,9 @@ The tied-up dog is staring at you.
 There is no one in the trees.
 + Was that the DOG talking?
 ->talkdog
-+ Keep trying to get through to the woofing man
++ [Keep trying to get through to the woofing man]
 ->talkman
-+ {not crying} Investigate the crying sound instead
++ {not crying} [Investigate the crying sound instead]
 ->crying
 
 
@@ -130,7 +130,7 @@ You've made Yolene too sad. She bursts into a flood of tears.
 ...
 + ...
 "(sniff)" #CLASS: littlesis
-+ + wait a little longer 
++ + [wait a little longer] 
 ->waitaminute
 + + "I'm sorry I was mean to you. Are you OK?" #CLASS: hero
 "(sniff) Yeah. I'm fine. (sniff) #CLASS: littlesis
