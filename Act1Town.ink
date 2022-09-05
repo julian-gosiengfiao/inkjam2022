@@ -231,7 +231,7 @@ And I will be using these <b>tongs</b> aaaaaaaallll day." #CLASS: smith
 
 =tongsgone
 "I seem to have misplaced my tongs. You don't think it was your little sister casting spells, do you?" #CLASS: smith
-+ Lie
++ [Lie]
 "Probably. I'll keep my eye out, see if I can find them for you." #CLASS: hero
 ->smith
 
