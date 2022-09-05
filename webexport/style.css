@@ -80,7 +80,7 @@
     color: #ff88ff;
     text-align: center;
     /*font-style: italic;*/
-    font-size: 20pt;
+    font-size: 17pt;
     font-family: 'IM Fell English SC';
   text-shadow:
     0 0 5px #ff66ff,
@@ -108,6 +108,22 @@
 .mole2{
     font-family: 'Open Sans', sans-serif;
     color: #61773e;
+}
+.mole3{
+    font-family: 'Open Sans', sans-serif;
+    color: #773e4f;
+}
+.smith{
+    font-family: 'Open Sans', sans-serif;
+    color: #991a1a;
+}
+.manbraindog{
+    font-family: 'Open Sans', sans-serif;
+    color: #86f371;
+}
+.dogbrainman{
+    font-family: 'Open Sans', sans-serif;
+    color: #e4e4e4;
 }
 
 /* Old Bekant1 Stuff here.
