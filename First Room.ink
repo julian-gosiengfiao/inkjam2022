@@ -118,7 +118,9 @@ You realize that while fighting, your sisters have managed to somehow angle the 
 ->GorgonEyeAfterObliteration3
 
 =GorgonEyeAfterObliteration3
-You attempt to both duck and leap at the same time, suspending yourself in mid-air in some kind of awkward squat.
+You attempt to both duck and leap at the same time.
+
+You manage to suspend yourself mid-air in some kind of awkward squat.
 
 + [Get hit right in the kisser] POW! #CLASS: magic
 
