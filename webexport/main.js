@@ -189,15 +189,9 @@
         });
 
         // Extend height to fit
-        // We do this manually so that removing elements and creating new ones doesn't
-        // cause the height (and therefore scroll) to jump backwards temporarily.
-        // Wrapping in a timer function to allow images to load before calculating & scrolling to the bottom of the page 
-        setTimeout(() => { 
-            // Extend height to fit 
-            // We do this manually so that removing elements and creating new ones doesn't 
-            // cause the height (and therefore scroll) to jump backwards temporarily. 
-            storyContainer.style.height = contentBottomEdgeY()+"px"; if( !firstTime ) scrollDown(previousBottomEdge); 
-        }, 1000);
+        setInterval(() => {
+            storyContainer.style.height = contentBottomEdgeY()+"px";
+        }, 2000)
 
         if( !firstTime )
             scrollDown(previousBottomEdge);
