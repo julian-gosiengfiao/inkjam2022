@@ -1,4 +1,3 @@
-
 =outsidetownfirstentry
 
 You start down the road towards the town. With any luck, your little sister will still be there.
@@ -41,11 +40,17 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 + Look at cow {whatacow: again}
 #CLEAR
 ->whatacow
-+ Talk to cowman
++ {not cowman} Talk to cowman
 ->cowman
++ {cowman} Get the cowman to repeat his problem to you
+->cowman
++ {failedudders and not tongs} Watch the cowman fail at squeezing
+->failedudders
 + {failedudders} Try to work out a solution to the overly sturdy udders
 ->uddersolutions
-* {tongs} "I've got some blacksmith's tongs to squeeze the udders with!" #CLASS: hero
+* {tongs and not hotmilk} "I've got some blacksmith's tongs to squeeze the udders with!" #CLASS: hero
+->squeeze
+* {hotmilk} "I want to squeeze the udders again!"
 ->squeeze
 + [Go into town] You go into town.
 ...
@@ -61,7 +66,7 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 ->cowencounter
 
 =cowman
-"Hi there! So, I was worried that Big Beautiful Bessie here was going to get stomped on in future monster attacks..." #CLASS: cowman
+"Hi there Midelle! So, I was worried that Big Beautiful Bessie here was going to get stomped on in future monster attacks..." #CLASS: cowman
 + "I see..." #CLASS: hero
 "And then your sister showed up and offered to help me with a Blessing!" #CLASS: cowman
 + + "Oh no!" #CLASS: hero
@@ -70,12 +75,12 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 I wish this beast that eats a flower #CLASS: magic
 Would gain a most tremendous power! #CLASS: magic
 <br>
-"And now, Bessie is so big and sturdy, I can't even squeeze her udders! Look!
+"And now, Bessie is so big and sturdy, I can't even <b>squeeze her udders!</b> Look!
 + + + [Look]
 ->failedudders
 
 =failedudders
-The cowman takes both hands and squeezes squeezes squeezes Bessie's udder teats, but not a drop of milk comes out.
+The cowman gets the bucket ready, takes both hands and <i>squeezes squeezes squeezes</i> Bessie's udder teats, but not a drop of <b>milk</b> comes out.
 ...
 -> cowencounter
 
@@ -111,8 +116,10 @@ You wave goodbye to the cowman.
 ->cowencounter
 
 =townsquare
-You are in the town square. There is a dazed villager. 
-+ Talk to dazed villager
+You are in the town square. There is a dazed villager sitting on the floor, with frost in her hair. 
++ {not dazedvillager} [Talk to dazed villager]
+->dazedvillager
+{dazedvillager} [Talk to the dazed villager again]
 ->dazedvillager
 * Look around
 ->looktownsquare
@@ -132,12 +139,16 @@ You are in the town square. There is a dazed villager.
 ->chatdazedwhat
 + "Where did my little sister go?" #CLASS: hero
 ->chatdazedwhere
++ "Why is there frost in your hair?" #CLASS: hero
+->chatdazedwhy
 + Actually, maybe don't talk to the villager just now.
 ...
 ->townsquare
 
 =chatdazedwhat
-"It was your little sister! She came through here with the Staff of Power and changed a whole bunch of stuff! Oooh, the magic! The surprise! I didn't know what to do! I still don't! #CLASS: dazedvillager
+"Midelle! It was your little sister! She came through here with the Staff of Power and changed a whole bunch of stuff! Oooh, the magic! The surprise! I didn't know what to do! I still don't! #CLASS: dazedvillager
++ "What did she do?" #CLASS: hero
+->chatdazedwhy
 + "Where did my little sister go?" #CLASS: hero
 ->chatdazedwhere
 + You leave the villager to her dazedness[.] 
@@ -153,10 +164,13 @@ You are in the town square. There is a dazed villager.
 ...
 ->townsquare
 
+=chatdazedwhy
+"I was in the "Embarrassing Cucumber" when your sister barged in, pronounced she was going to make a "Blessing", and then suddenly I got all frozen over! You'll have to ask the barman what happened."
+->dazedvillager
+
 = looktownsquare
-#IMAGE: images/magicalVillage-small.jpg
 You look around the town square.
-There's the local <b>tavern</b>, the Embarrassing Cucumber, which appears to have icicles on the inside of the windows. 
+There's the local <b>tavern</b>, the <i>"Embarrassing Cucumber"</i>, which appears to have icicles on the inside of the windows. 
 There's a path onwards, towards the <b>toll bridge</b>, and you know the <b>blacksmith's</b> is that way, too. 
 And there's a road back to the <b>edge of town</b>. 
 
@@ -186,25 +200,31 @@ You know from past experience that he is very absent-minded.
 ->talksmith
 + Look around
 ->looksmith
+{cowman and talksmith} Distract the blacksmith so you can steal the <b>tongs</b>
+->tongs
 + Leave
 ...
 ->tollbridge
 
 =talksmith
-"Hi Midelle! Good to see you! Everything OK?" #CLASS: smith
-+ "Yep, all good! You?" #CLASS: hero
+He smiles at you, but looks a little confused. Perhaps he's trying to remember your name. 
++ "Hi!"
+"Hi... young lady! Good to see you! Everything OK?" #CLASS: smith
++ + "Yep, all good! You?" #CLASS: hero
 {tongs: ->tongsgone}
-{not tongs: "Yes, all good here! I hear your little sister has been causing trouble in town, but she never came in here."}
-+ + "Those <b>tongs</b> are beautiful." #CLASS: hero
+{not tongs: "Yes, all good here! I hear Y... Y.... Your little sister has been causing trouble in town, but she never came in here."}#CLASS: smith
+->talksmith
++ "Those <b>tongs</b> are beautiful." #CLASS: hero
 "Thank you. They're very strong. I'd wager they could squeeze anything." #CLASS: smith
 + + + "...Fascinating." #CLASS: hero
 ->smith
-+ + {cowman} "Could you come with me? And bring your tongs?" #CLASS: hero
-"No can do! I have SO MUCH forging to do. And I will be using these tongs aaaaaaaallll day." #CLASS: smith
++ {cowman} "Could you come with me? And bring your tongs?" #CLASS: hero
+"No can do! I have SO MUCH forging to do. 
+And I will be using these <b>tongs</b> aaaaaaaallll day." #CLASS: smith
 "I see." #CLASS: hero
+->talksmith
++ [End the conversation] "That's all for now." #CLASS: hero
 ->smith
-* * {cowman} Distract the blacksmith so you can steal the <b>tongs</b>
-->tongs
 
 =tongsgone
 "I seem to have misplaced my tongs. You don't think it was your little sister casting spells, do you?" #CLASS: smith
@@ -220,7 +240,6 @@ You know from past experience that he is very absent-minded.
 "LOOK OVER THERE!" #CLASS: hero
 He looks over there. 
 You steal the tongs. 
-
 + You now have some tongs in your inventory. #CLASS: getitem
 ->smith
 
