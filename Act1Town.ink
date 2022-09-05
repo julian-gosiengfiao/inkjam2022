@@ -1,6 +1,6 @@
 =outsidetownfirstentry
 
-You start down the road towards the town. With any luck, your little sister Yolene will still be there.
+You start down the road towards the town. With any luck, your little sister will still be there.
 
 + Eldra can be annoyingly bossy...
 ... but she <i>is</i> the <b>town protector</b>, and in turkey form and without the Staff, she can't do much.
@@ -204,7 +204,7 @@ You know from past experience that he is very absent-minded.
 ->talksmith
 + Look around
 ->looksmith
-{cowman and talksmith} Distract the blacksmith so you can steal the <b>tongs</b>
+* {cowman and talksmith} Distract the blacksmith so you can steal the <b>tongs</b>
 ->tongs
 + Leave
 ...
