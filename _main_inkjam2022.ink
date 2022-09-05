@@ -8,6 +8,7 @@ INCLUDE ManDog_Puzzle.ink
 
 
 ///DEBUG MENU - DELETE THIS WHEN SHOWING TO PEOPLE!
+/*
 Debug Menu - delete this when showing to people!
 + Start game from beginning
 #CLEAR
@@ -26,6 +27,8 @@ Debug Menu - delete this when showing to people!
 + Start game from endgame
 #CLEAR
 -> endgamespellsstart
+
+*/
 
 ///This should be the first line of code that's run.
 -> StartSequence
