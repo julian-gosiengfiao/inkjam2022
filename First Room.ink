@@ -48,7 +48,7 @@ I’ll blast your eyeball out of sight! #CLASS: magic
 
 =GorgonEyeObliterationSunglasses
 
-+ {item_sunglasses} [Yes, wonderful. And now to put on sunglasses.] It is nighttime, but you put your sunglasses on.
++ {item_sunglasses} [Yes, wonderful. And now to put the sunglasses on.] It is nighttime, but you put your sunglasses on.
 
 Eldra finishes her brief incantation, and a beam with the force of an exploding star erupts from her staff.
 
