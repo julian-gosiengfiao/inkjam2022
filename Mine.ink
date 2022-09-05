@@ -378,7 +378,7 @@ The foreman looks up as you approach.
     
     "All I wanted was for my men not to have to work so hard in these mines."#CLASS: foreman
     
-    + + "Uh-oh. What happened?"
+    + + "Uh-oh. What happened?" #CLASS: hero
     
     "As it happens, I have shockingly accurate recall. She said:" #CLASS: foreman
     
