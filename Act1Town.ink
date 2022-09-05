@@ -1,3 +1,4 @@
+
 =outsidetownfirstentry
 
 You start down the road towards the town. With any luck, your sister will still be there.
@@ -102,7 +103,14 @@ You are in the town square. There is a dazed villager.
 ->looktownsquare
 + {looktownsquare} [Leave the town square (but which way?)] You decide to leave the town square.
 ->townsquarewhere
++ Admire the architecture
+->architecture
 
+=architecture
+#CLEAR
+#IMAGE: images/magicalVillage.png 
++ "I'm glad the Gorgon Eye never made it here." 
+->townsquare
 
 =dazedvillager
 + "What happened here?" #CLASS: hero
@@ -131,7 +139,6 @@ You are in the town square. There is a dazed villager.
 ->townsquare
 
 = looktownsquare
-#IMAGE: images/magicalVillage.png 
 You look around the town square.
 There's the local <b>tavern</b>, the Embarrassing Cucumber, which appears to have icicles on the inside of the windows. 
 There's a path onwards, towards the <b>toll bridge</b>, and you know the <b>blacksmith's</b> is that way, too. 
