@@ -1,5 +1,3 @@
-->endgamespellsstart
-
 =endgamespellsstart
 #CLEAR 
 You see a red signal flare in the sky! #CLASS: redtext
@@ -347,16 +345,69 @@ THANK YOU FOR PLAYING!
 
 =credits
 
-We made it! 
+We made this game, and we're proud of it! Thank you for coming to see who we are! 
+
+Team:
+Holly Duncan
+Julian Gosiengfiao
+Matthew Watson Jones
+Nicotupe
+
+Art:
+Holly Duncan
+Midjourney AI
 
 ->->
 
 =achievements
 
-Unlocked!
-Still to Find!
+<b>UNLOCKED:</b>
+{GorgonEyeObliterationSunglasses: ALWAYS WEAR PROTECTION (on your eyes)} 
+{panic: HYPERVENTILATOR}
+{gameover: SO BAD AT SPELLS}
+{panic and gameover and GorgonEyeObliterationSunglasses: THE WORST WITCH!!}
+
+{floodsoftears: BULLY, the TEARBRINGER}
+{WalkedAway: BULLY, the SCREAM-IGNORER}
+{floodsoftears and WalkedAway: MEAN MIDDLE SISTER SUPREME!!}
+
+{whatacow: COW ADMIRER}
+{architecture: TOWN ADMIRER}
+{dogtree_first: FOREST HOUSE ADMIRER}
+{credits: CREDITS ADMIRER}
+{whatacow and architecture and dogtree_first and credits: ADMIRER SUPREME!!}
+
+{tongsgone: SMITH DECEIVER}
+{yescoin: TROLL DECEIVER}
+{tongsgone and yescoin: MASTER OF DECEPTION!!}
+
+{eagles: "THE EAGLES ARE COMING!"}
+{nomilk: "BALROGGED"}
+{eagles and nomilk: LOTS OF LOTR!!} 
+
+
+<b>ON THIS PLAYTHROUGH YOU MISSED:</b>
+{not GorgonEyeObliterationSunglasses: ALWAYS WEAR PROTECTION (on your eyes)}
+{not panic: HYPERVENTILATOR}
+{not gameover: SO BAD AT SPELLS}
+
+{not floodsoftears: BULLY, the TEARBRINGER}
+{not WalkedAway: BULLY, the SCREAM-IGNORER}
+
+{not whatacow: Cow Admirer}
+{not architecture: Town Admirer}
+{not dogtree_first: Forest House Admirer}
+{not credits: Credits Admirer}
+
+{not tongsgone: Smith Deceiver}
+{not yescoin: Troll Deceiver}
+
+{not eagles: "THE EAGLES ARE COMING!"}
+{not nomilk: "BALROGGED"}
 
 ->->
 =restart
-BACK TO BEGINNING
+
+ACTUALLY, BEST TO REFRESH PAGE TO RESTART. THANK YOU!
+
 ->DONE
