@@ -9,7 +9,11 @@ storyContainer.style.height = contentBottomEdgeY()+"px";
 by 
 ```javascript
         setInterval(() => {
+            var needToScroll = (storyContainer.style.height !== contentBottomEdgeY()+"px");
             storyContainer.style.height = contentBottomEdgeY()+"px";
+            if (needToScroll){
+                scrollDown(contentBottomEdgeY());
+            }
         }, 2000)
 ```
 

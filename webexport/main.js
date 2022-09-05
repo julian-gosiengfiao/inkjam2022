@@ -190,7 +190,11 @@
 
         // Extend height to fit
         setInterval(() => {
+            var needToScroll = (storyContainer.style.height !== contentBottomEdgeY()+"px");
             storyContainer.style.height = contentBottomEdgeY()+"px";
+            if (needToScroll){
+                scrollDown(contentBottomEdgeY());
+            }
         }, 2000)
 
         if( !firstTime )
