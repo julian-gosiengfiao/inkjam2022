@@ -661,7 +661,7 @@ WHY IS THERE GRUNTING IN THIS SONG? The song lacks lyrics, but there are still "
 ->MineDisco
 
 =DiscoListen5
-You are a connoisseur of cacophony.
+You are already a connoisseur of cacophony.
 You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!) this song has to offer.
 + This song would be like a fine wine if wine were made from garbage.
 ...
