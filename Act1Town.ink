@@ -212,18 +212,18 @@ You know from past experience that he is very absent-minded.
 
 =talksmith
 He smiles at you, but looks a little confused. Perhaps he's trying to remember your name. 
-+ "Hi!"
++ "Hi!" #CLASS: hero
 "Hi... young lady! Good to see you! Everything OK?" #CLASS: smith
 + + "Yep, all good! You?" #CLASS: hero
 {tongs: ->tongsgone}
 {not tongs: "Yes, all good here! I hear Y... Y.... Your little sister has been causing trouble in town, but she never came in here."}#CLASS: smith
 ->talksmith
-+ "Those <b>tongs</b> are beautiful." #CLASS: hero
++ {not tongs} "Those <b>tongs</b> are beautiful." #CLASS: hero
 "Thank you. They're very strong. I'd wager they could squeeze anything." #CLASS: smith
 + + + "...Fascinating." #CLASS: hero
 ->smith
-+ {cowman} "Could you come with me? And bring your tongs?" #CLASS: hero
-"No can do! I have SO MUCH forging to do. 
++ {cowman and not tongs} "Could you come with me? And bring your tongs?" #CLASS: hero
+"No can do! I have SO MUCH forging to do. #CLASS: smith 
 And I will be using these <b>tongs</b> aaaaaaaallll day." #CLASS: smith
 "I see." #CLASS: hero
 ->talksmith
