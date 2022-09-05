@@ -122,7 +122,7 @@ You wave goodbye to the cowman.
 You are in the town square. There is a dazed villager sitting on the floor, with frost in her hair. 
 + {not dazedvillager} [Talk to dazed villager]
 ->dazedvillager
-{dazedvillager} [Talk to the dazed villager again]
++ {dazedvillager} [Talk to the dazed villager again]
 ->dazedvillager
 * Look around
 ->looktownsquare
@@ -154,7 +154,7 @@ You are in the town square. There is a dazed villager sitting on the floor, with
 ->chatdazedwhy
 + "Where did my little sister go?" #CLASS: hero
 ->chatdazedwhere
-+ You leave the villager to her dazedness[.] 
++ [Leave the villager to her dazedness] You leave the villager to her dazedness. 
 ...
 ->townsquare
 
@@ -163,7 +163,7 @@ You are in the town square. There is a dazed villager sitting on the floor, with
 "Ugh, I hate climbing." #CLASS: hero
 + "And what happened here?" #CLASS: hero
 ->chatdazedwhat
-+ You leave the villager to her dazedness[.] 
++ [Leave the villager to her dazedness] You leave the villager to her dazedness.
 ...
 ->townsquare
 
