@@ -33,7 +33,7 @@ There is a {not building_is_laundry: single <b>building</b> out} {building_is_la
 
 {not barrel_reset: You notice a wiggling <b>barrel</b> next to the building.}
 {barrel_reset && not item_laundry_room_key: There is a <b>man in a barrel</b>, eyeing you from beneath the lid.}
-{kicked_for_key && not item_clean_laundry: There is a <b>barrel with a man</b> inside here.}
+{kicked_for_key && not item_clean_laundry: There is a <b>barrel</b> with a man inside here.}
 {got_key_nicely && not item_clean_laundry: <b>Barrel-man</b> is chilling in his barrel here.}
 {item_clean_laundry: <b>Barrel-man</b> is excitedly waving at you.}
 {item_clean_laundry: "You've gotten some clean clothes!!! Bring them over here to me!"} #CLASS: barrelman
@@ -50,8 +50,8 @@ There is a {not building_is_laundry: single <b>building</b> out} {building_is_la
     ...
     ->OutsideMine
 
-+ {item_laundry_room_key && not LaundryBuilding} [Enter the building] You try to enter the {building_is_laundry: <b>laundry</b>} <b>building</b>.
-    {item_laundry_room_key: The <b>laundry room key</b> unlocks the door.}
++ {item_laundry_room_key && not LaundryBuilding} [Enter the building] You try to enter the {building_is_laundry: laundry} building.
+    {item_laundry_room_key: The laundry room key unlocks the door.}
     The radiant light floods out of the door and <b>blinds</b> you!
     + + [Get me outta here!] You quickly shut the door and it locks with a click.
     ...
@@ -120,14 +120,14 @@ There is a {not building_is_laundry: single <b>building</b> out} {building_is_la
             Why must this idiot be so whiny? #CLASS: magic
             Let everything be clean and shiny! #CLASS: magic
             + + + + "Ooh, cutting." #CLASS: hero
-            "You're telling me!" #CLASS: barrelman
+            "You're telling me." #CLASS: barrelman
             ...
             -> OutsideMine
         + + [Leave] "I'm sure you won't." #CLASS: hero
         ...
         ->OutsideMine
         
-+ [Enter the mine] You enter the <b>mine</b>.
++ [Enter the mine] You enter the mine.
 ...
 -> MineRoom1
 
@@ -162,7 +162,7 @@ VAR item_radiant_sock = 0
 =LaundrySunglassesOn
 #IMAGE: images/sunglasses-small.jpg
 In a single, effortless motion, you slide your hand into your inventory, pull your sunglasses out, and sit them on your glorious face.
-+ [Enter the laundry building] You enter the incandescent <b>laundry building</b>.
++ [Enter the laundry building] You enter the incandescent laundry building.
     ...
     ->LaundryBuilding
 

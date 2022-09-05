@@ -416,11 +416,11 @@ He hands it back.
 #CLEAR 
 #IMAGE: images/bucket-small.jpg
 + You hand the bucket to the troll.
-"Hmmm, I love the colour! And it's nice and cold! Thank you!"
-"You're... welcome, I guess?"
-"You're now free to cross the bridge. But, just so you know, if you want to cross BACK again... it's another toll."
-"What?"
-"So I recommend you do everything you want to do in town before you cross."
+"Hmmm, I love the colour! And it's nice and cold! Thank you!" #CLASS: troll
+"You're... welcome, I guess?"#CLASS: hero
+"You're now free to cross the bridge. But, just so you know, if you want to cross BACK again... it's another toll."#CLASS: troll
+"What?" #CLASS: hero
+"So I recommend you do everything you want to do in town before you cross."#CLASS: troll
 + + [Go ahead and cross] You go ahead and cross the bridge.
 ->ACT2
 + + [Stay in town a bit longer] You decide to stay in town a bit longer.
