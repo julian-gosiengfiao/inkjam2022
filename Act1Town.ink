@@ -1,16 +1,15 @@
 =outsidetownfirstentry
 
-You start down the road towards the town. With any luck, your little sister will still be there.
+You start down the road towards the town. With any luck, your little sister Yolene will still be there.
 
++ Eldra can be annoyingly bossy...
+... but she <i>is</i> the <b>town protector</b>, and in turkey form and without the Staff, she can't do much.
 ->questthoughts
 
 =questthoughts
 
 * Yolene can be a lot of work... 
 ... but you love her, and that much power could hurt someone.
-->questthoughts
-* Eldra can be annoyingly bossy...
-... but she is the town protector, and in turkey form and without the Staff, she can't do much.
 ->questthoughts
 * Rushing around after magical disasters...
 ... is not your idea of a good time. 
@@ -40,28 +39,33 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 + Look at cow {whatacow: again}
 #CLEAR
 ->whatacow
-+ {not cowman} Talk to cowman
++ {not cowman} [Talk to cowman]
 ->cowman
-+ {cowman} Get the cowman to repeat his problem to you
++ {cowman and not hotmilk} [Get the cowman to repeat his problem to you]
 ->cowman
-+ {failedudders and not tongs} Watch the cowman fail at squeezing
++ {failedudders and not tongs} [Watch the cowman fail at squeezing]
 ->failedudders
-+ {failedudders} Try to work out a solution to the overly sturdy udders
++ {failedudders and not hotmilk} [Try to work out a solution to the overly sturdy udders]
 ->uddersolutions
 * {tongs and not hotmilk} "I've got some blacksmith's tongs to squeeze the udders with!" #CLASS: hero
 ->squeeze
-* {hotmilk} "I want to squeeze the udders again!"
+* {hotmilk} "I want to squeeze the udders again!" #CLASS: hero
 ->squeeze
-+ [Go into town] You go into town.
++ {hotmilk} [Talk to happy cowman]
+->happycowman
++ [Go into town] You walk past the nearby half-ruined houses, and towards the town square.
 ...
 ->townsquare
+
+=happycowman
+"Thank you so much! Bessie thanks you too!" #CLASS: cowman
++ "You're welcome, Bessie." #CLASS: hero
+->whatacow
 
 =whatacow
 <b> What. A. Cow. </b>
 #IMAGE: images/cow-small.jpg
-+ Talk to cowman
-->cowman
-+ Head back to the road to town
++ Pull yourself away from your admiration
 ...
 ->cowencounter
 
@@ -228,7 +232,8 @@ And I will be using these <b>tongs</b> aaaaaaaallll day." #CLASS: smith
 
 =tongsgone
 "I seem to have misplaced my tongs. You don't think it was your little sister casting spells, do you?" #CLASS: smith
-+ "Probably. I'll keep my eye out, see if I can find them for you." #CLASS: hero
++ Lie
+"Probably. I'll keep my eye out, see if I can find them for you." #CLASS: hero
 ->smith
 
 =looksmith
@@ -245,17 +250,22 @@ You steal the tongs.
 
 
 =tavern 
-In the tavern, everything is very cold. There is a light dusting of snow on the floor.
-There is a shivering barman, standing next to a mysterious box that is spitting out snow. 
-+ Talk to the barman.
+"The Embarrassing Cucumber" usually has drinkers even in the morning.
+But now, everything is <b>very cold</b>. There is a light dusting of snow on the floor.
+There is a shivering barman, standing next to a {not icebox:mysterious box}{icebox:'freezer'} that is spitting out snow. 
++ {not barman} [Talk to the barman]
 ->barman
-+ Examine the mysterious box
++ {barman} [Ask the barman what happened again]
+->barman
++ {not icebox} [Examine the mysterious box]
+->icebox
++ {icebox} [Move over to the 'freezer' again]
 ->icebox
 + Leave
 ->townsquare
 
 =barman
-"H-H-H-Hello! I-I-I'm afraid I don't have any d-d-d-drinks today!" #CLASS: barman
+"H-H-H-Hello M-Midelle! I-I-I'm afraid I don't have any d-d-d-drinks today!" #CLASS: barman
 + "Why not?" #CLASS: hero
 "Well, your si-si-sister has never liked all the dr-dr-drunks, and sh-she came in here and s-s-said a spell: #CLASS: barman
 <br>
@@ -270,7 +280,6 @@ you don't need spirits to be cool! #CLASS: magic
 ...
 ->tavern
 
-
 =icebox
 You look at this mysterious box. It looks like your little sister magicked it into existence? It's a tall white container, very cold, it has a door in the side, and there's nothing inside but cold air and bits of frosted ice on the sides.
 * "I wonder if this might be a new way of keeping things cold all the time?" #CLASS: hero
@@ -279,10 +288,8 @@ You look at this mysterious box. It looks like your little sister magicked it in
 ->tavern
 * {hotmilk} You cool the hot cow's milk down in the magical 'freezer'.
 ->coldmilk
-+ "Hmmmmmm... Cold." #CLASS: hero
++ "Hmmmmmm... Cold. Still lilac, but cold." #CLASS: hero
 ->tavern
-
-
 
 =coldmilk
 You now have a bucketful of cold cow's milk in your inventory. #CLASS: getitem
@@ -291,19 +298,23 @@ You now have a bucketful of cold cow's milk in your inventory. #CLASS: getitem
 
 =tollbridge
 
-At the toll bridge, you see a big troll. He won't let you pass. 
+At the toll bridge, you see <b>a big troll</b>. {not troll: Didn't there used to be a tollman here?} He won't let you pass. 
 {milkrequest: "Hey! Did you get me a huge glass of cold cow's milk yet?" } #CLASS: troll
 There's some clanking metal noises coming from the <b>blacksmith's forge</b>, next to the toll bridge. 
-+ Talk to the troll
++ {not troll} [Talk to the troll]
 ->troll
-+ Enter the blacksmith's
++ {troll} [Talk to the troll some more]
+->trollmore
++ [Enter the blacksmith's]
 ->smith
 + Go back to the town square
 ->townsquare
 + {milkrequest and hotmilk and not coldmilk} You offer the warm bucket of fresh milk you just got to the troll.
 ->wrongmilk
--+ {milkrequest and coldmilk and not trollmilkget} You offer the big bucket of cold milk to the troll.
++ {milkrequest and coldmilk and not trollmilkget} You offer the big bucket of cold milk to the troll.
 ->trollmilkget
++ {trollmilkget} [Having done everything you want to do in town, you cross the bridge]
+->ACT2
 
 
 
@@ -316,34 +327,58 @@ They mean to pass but not to pay  #CLASS: magic
 They can’t with you standing in their way! #CLASS: magic
 <br>
 ...But it went wrong, and turned me into a troll." #CLASS: troll
++ + "Can you let me pass?" #CLASS: hero
+->milkrequest
 + + "And how does that make you feel?" #CLASS: hero
 ->trollfeelings
-+ + "Can you let me past?" #CLASS: hero
-->milkrequest
 
 =trollfeelings
 
 "Honestly? I kind of like it." #CLASS: troll
 + "You do?" #CLASS: hero
 "Yeah. Before, everyone would push me around, and barge past without paying. Even the goats would just charge me off the bridge. Now I'm a Figure of Authority." #CLASS: troll
-...
++ +"..."
+->trollmore
+
+=trollmore
++ "Can you let me pass?" #CLASS: hero
+->milkrequest
++ "How do you feel, being a troll now?" #CLASS: hero
+->trollfeelings
++ "Can you tell me what Yolene's Blessing was, again?"
+"Sure!" #CLASS: troll
+<br>
+They mean to pass but not to pay  #CLASS: magic
+They can’t with you standing in their way! #CLASS: magic
+<br>
+...But it went wrong, and turned me into a troll." #CLASS: troll
+->trollmore
++ {hotmilk and not coldmilk} [Offer the warm bucket of fresh milk you just got to the troll] You offer the warm bucket of fresh milk you just got to the troll.
+->wrongmilk
++ {coldmilk and not trollmilkget} [Offer the big bucket of cold milk to the troll] You offer the big bucket of cold milk to the troll.
+->trollmilkget
++ {trollmilkget} [Having done everything you want to do in town, you cross the bridge]
+->ACT2
++ "If I have more questions, I'll be back." #CLASS: hero
 ->tollbridge
+
+
 
 =milkrequest
 "Now that I'm a troll, I have a real craving for goat's milk. But I guess I could settle for a <b>huge glass of cold COW'S milk!</b>" #CLASS: troll
 + "But I don't have a glass of milk. Can't you just let me past and let me go after my sister?" #CLASS: hero
 ->nomilk
-+ {failedudders} "There's a big strong cow at the other side of town. If you go there, you can squeeze the teats and get as much milk as you'd like!" #CLASS: hero
++ {failedudders and not coldmilk} "There's a big strong cow at the other side of town. If you go there, you can squeeze the teats and get as much milk as you'd like!" #CLASS: hero
 ->trollstayshere
-+ {hotmilk and not coldmilk} You offer the warm bucket of fresh milk you just got to the troll.
++ {hotmilk and not coldmilk} [Offer the warm bucket of fresh milk you just got to the troll] You offer the warm bucket of fresh milk you just got to the troll.
 ->wrongmilk
-+ {coldmilk and not trollmilkget} You offer the big bucket of cold milk to the troll.
++ {coldmilk and not trollmilkget} [Offer the big bucket of cold milk to the troll] You offer the big bucket of cold milk to the troll.
 ->trollmilkget
-+ {trollmilkget} Having done everything you want to do in town, you cross the bridge.
++ {trollmilkget} [Having done everything you want to do in town, you cross the bridge]
 ->ACT2
-+ Go back to the Town Square
++ [Go back to the edge of the bridge]
 ...
-->townsquare
+->tollbridge
 
 =trollstayshere
 "Hah! You think you can trick me to leave my post? I'm honestly thinking of LIVING UNDER this bridge now! <br> And anyway, that milk wouldn't be <b> cold!</b>" #CLASS: troll
@@ -356,12 +391,12 @@ They can’t with you standing in their way! #CLASS: magic
 "Do you have coins?" #CLASS: troll
 + "No." #CLASS: hero
 ->nocoins
-+ "Yes."#CLASS: hero
++ Lie 
 ->yescoins
 
 =nocoins
 "Then no, you can't cross. A huge glass of cold milk, please!"
-->tollbridge
+->trollmore
 
 =yescoins
 "Show me the coins."
@@ -370,12 +405,11 @@ They can’t with you standing in their way! #CLASS: magic
 + "I don't have them right HERE."
 ->nocoins
 
-
 =wrongmilk
 The troll takes the bucket.
 "Ugh! This milk is warm! Can't you cool it down first?" #CLASS: troll
 He hands it back.
-->tollbridge
+->trollmore
 
 =trollmilkget
 #CLEAR 
