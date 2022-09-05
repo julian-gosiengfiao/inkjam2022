@@ -1,17 +1,32 @@
 
 =outsidetownfirstentry
 
-You start down the road towards the town. With any luck, your sister will still be there.
+You start down the road towards the town. With any luck, your little sister will still be there.
 
+->questthoughts
+
+=questthoughts
+
+* Yolene can be a lot of work... 
+... but you love her, and that much power could hurt someone.
+->questthoughts
+* Eldra can be annoyingly bossy...
+... but she is the town protector, and in turkey form and without the Staff, she can't do much.
+->questthoughts
+* Rushing around after magical disasters...
+... is not your idea of a good time. 
+But at this point? You're kind of used to being in charge of clean up. 
+Ugh. 
+->questthoughts
++ Enough reflection! You'd better get moving!
 You hear a moo sound behind you.
-
-+ That sounded like an exceptionally deep moo.
++ + That sounded like an exceptionally deep moo.
 
 A frankly enormous cow has shuffled into the middle of the path, followed by an anxious cowman.
 
 It stops right there in the middle, blocking all traffic.
 
-+ + That's fine, you didn't leave anything back at home anyway.
++ + + That's fine, you didn't leave anything back at home anyway.
 
 {not WalkedAway: Anything <i>important</i>, that is.}
 ...
