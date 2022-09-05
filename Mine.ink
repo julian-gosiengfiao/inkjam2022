@@ -29,19 +29,19 @@ VAR entered_laundry_with_shades = 0
 
 You are outside the entrance to a mine.
 
-There is a {not building_is_laundry: single building out} {building_is_laundry: laundry building} here, with intense light pouring out of every opening.
+There is a {not building_is_laundry: single <b>building</b> out} {building_is_laundry: <b>laundry building</b>} here, with intense light pouring out of every opening.
 
-{not barrel_reset: You notice a wiggling barrel next to the building.}
-{barrel_reset && not item_laundry_room_key: There is a man in a barrel, eyeing you from beneath the lid.}
-{kicked_for_key && not item_clean_laundry: There is a barrel with a man inside here.}
-{got_key_nicely && not item_clean_laundry: Barrel-man is chilling in his barrel here.}
-{item_clean_laundry: Barrel-man is excitedly waving at you.}
+{not barrel_reset: You notice a wiggling <b>barrel</b> next to the building.}
+{barrel_reset && not item_laundry_room_key: There is a <b>man in a barrel</b>, eyeing you from beneath the lid.}
+{kicked_for_key && not item_clean_laundry: There is a <b>barrel with a man</b> inside here.}
+{got_key_nicely && not item_clean_laundry: <b>Barrel-man</b> is chilling in his barrel here.}
+{item_clean_laundry: <b>Barrel-man</b> is excitedly waving at you.}
 {item_clean_laundry: "You've gotten some clean clothes!!! Bring them over here to me!"} #CLASS: barrelman
-{item_radiant_sock: The normally dressed barrel-man is standing here next to a barrel.}
+{item_radiant_sock: The normally dressed <b>barrel-man</b> is standing here next to a barrel.}
 
 
 + {not item_laundry_room_key} [Enter the building] You try to enter the {building_is_laundry: laundry} building.
-    It's locked, and you don't have a key.
+    It's locked, and you don't have a <b>key</b>.
     + + {not building_is_laundry} You note it says: "LAUNDRY STATION" in big letters on the door.
     ~building_is_laundry++
     ...
@@ -50,18 +50,15 @@ There is a {not building_is_laundry: single building out} {building_is_laundry: 
     ...
     ->OutsideMine
 
-+ {item_laundry_room_key && not LaundryBuilding} [Enter the building] You try to enter the {building_is_laundry: laundry} building.
-    {item_laundry_room_key: The laundry room key unlocks the door.}
++ {item_laundry_room_key && not LaundryBuilding} [Enter the building] You try to enter the {building_is_laundry: <b>laundry</b>} <b>building</b>.
+    {item_laundry_room_key: The <b>laundry room key</b> unlocks the door.}
     The radiant light floods out of the door and blinds you!
     + + [Get me outta here!] You quickly shut the door and it locks with a click.
     ...
     ->OutsideMine
-    + + [Check inventory] In a single, effortless motion, you slide your hand into your inventory, pull your sunglasses out, and sit them on your glorious face.
-    + + + [Enter the laundry building] You enter the incandescent laundry building.
-    ...
-    ->LaundryBuilding
+    + + [Check inventory] ->LaundrySunglassesOn
 
-+ {LaundryBuilding} [Enter the laundry building] You slip your sunglasses on and enter the laundry building.
++ {LaundryBuilding} [Enter the laundry building] You slip your sunglasses on and enter the <b>laundry building</b>.
     ...
     ->LaundryBuilding
 
@@ -130,7 +127,7 @@ There is a {not building_is_laundry: single building out} {building_is_laundry: 
         ...
         ->OutsideMine
         
-+ [Enter the mine] You enter the mine.
++ [Enter the mine] You enter the <b>mine</b>.
 ...
 -> MineRoom1
 
@@ -161,6 +158,13 @@ VAR item_radiant_sock = 0
     Oops, that last part just came out.
     ...
     ->OutsideMine    
+
+=LaundrySunglassesOn
+#IMAGE: images/sunglasses-small.jpg
+In a single, effortless motion, you slide your hand into your inventory, pull your sunglasses out, and sit them on your glorious face.
++ [Enter the laundry building] You enter the incandescent <b>laundry building</b>.
+    ...
+    ->LaundryBuilding
 
 =BarrelImage
 #IMAGE: images/barrel-small.jpg
@@ -230,7 +234,7 @@ VAR got_key_nicely = 0
 
 
 =BarrelTalk2
-"I'll give you a key to the laundry room if you help me get something to wear," he says. #CLASS: barrelman
+"I'll give you a key to the <b>laundry room</b> if you help me get something to wear from inside," he says. #CLASS: barrelman
 "But be careful - it's so bright you could be blinded! No one else can go near, for we are miners and we need our vision, especially in the dark." #CLASS: barrelman
 + "Alright." #CLASS: hero
     He gives you the key to the laundry. #CLASS: getitem
@@ -242,6 +246,7 @@ VAR got_key_nicely = 0
     + [Kick the barrel over] You kick the barrel over, and the naked man tumbles out.
     "AAAAAAAARGHHH!!!" #CLASS: barrelman
     He scrambles back into the barrel, profanities flying left and right, and snaps the lid shut.
+    ~kicked_for_key++
     + + You realize you have a terrible need to work on your self-control.
     At least he left the key outside the barrel, though.
     + + + [Pick up the key] You pick up the key to the laundry. #CLASS: getitem
@@ -254,9 +259,9 @@ VAR item_supplies_key = 0
 VAR item_detergent = 0
 
 =LaundryBuilding
-You are standing inside a room with laundry supplies and various implements for doing laundry.
+You are standing inside a room with <b>laundry supplies</b> and various implements for doing laundry.
 
-In the center of the room is a pile of clean laundry, atop which sits clean clothes of utter radiance.
+In the center of the room is a pile of <b>clean laundry</b>, atop which sits clean clothes of utter radiance.
 
 + {not item_clean_laundry && not item_radiant_sock} [Grab some clean laundry] You're momentarily tempted to grab the blindingly radiant laundry, but you like being able to see.
 
@@ -306,11 +311,11 @@ In the center of the room is a pile of clean laundry, atop which sits clean clot
 
 You are in the well-lit entry hall of the mine tunnel.
 
-An exhausted foreman is leaning against a wall.
+An exhausted <b>foreman</b> is leaning against a wall.
 
-There's a sizable crack in the wall next to the foreman.
+There's a {not mole_hole_dub: sizable <b>crack</b>} {mole_hole_dub: <b>MOLE HOLE</b>} in the wall next to the foreman.
 
-The tunnel goes on into the darkness.
+The tunnel goes on into the <b>darkness</b>.
 
 + {not TalkToForeman} [Talk to the foreman] ->TalkToForeman
 + {TalkToForeman} [Talk to the foreman again] The foreman looks up at you. ->TalkToForeman2
@@ -424,7 +429,7 @@ VAR dark_section_sunglasses = 0
 VAR dark_section_solved = 0
 
 =TunnelDarkSection
-It's really dark in here, and you can't see where you're going.
+It's really <b>dark</b> in here, and you can't see where you're going.
 + [Keep going] You keep going.
     You bang into something.
     {~"Oof!"|"Ow!"|"Ack!"|"Eep!"|"Ouch!"} #CLASS: hero
@@ -488,16 +493,16 @@ VAR disco_squeeze_attempted = 0
 
 You are {disco_listened_counter == 0:standing}{disco_listened_counter == 1: slightly bobbing your head}{disco_listened_counter == 2: swaying awkwardly}{disco_listened_counter == 3: shaking half a butt}{disco_listened_counter <= 4: aggressively two-stepping} in what seems to be a literal disco.
 
-A pumping dance beat shakes your insides, and a {not event_detergent_used: smoke machine billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
+A pumping dance beat shakes your insides, and {not event_detergent_used: a <b>smoke machine</b> billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
 
-Near the other end of the room is a solid writhing mass of partying miners{event_detergent_used: covered in FOAM!}{not event_detergent_used:.}
+Near the other end of the room is a solid writhing mass of <b>partying miners</b>{event_detergent_used: covered in FOAM!}{not event_detergent_used:.}
 
-{disco_squeeze_attempted && not event_wowed_dancer: A disco dancer has noticed you and is half-turned towards you, dancing away.}
+{disco_squeeze_attempted && not event_wowed_dancer: A <b>disco dancer</b> has noticed you and is half-turned towards you, dancing away.}
 
 + {disco_squeeze_attempted && not event_wowed_dancer} [Approach the dancer] You walk up to the dancer.
-    He is wearing a very tight white tanktop that says "SOUL".
+    He is wearing a very tight white <b>tanktop</b> that says "SOUL".
     He already doesn't seem very impressed with you.
-    + + ["How do I get through here?"] "___ __ _ ___ _____ ___?" #CLASS: hero
+    * * ["How do I get through here?"] "___ __ _ ___ _____ ___?" #CLASS: hero
     The dancer turns his nose up at you.
     "____ ____ __ ___ _____, ____." #CLASS: dancer
     + + + You can't hear a damn thing.
@@ -569,7 +574,7 @@ VAR event_detergent_used = 0
 
 =CheckOutSmokeMachine
 Looks industrial-grade.
-There's a slot in the top to put smoke fluid (or something else?) into.
+There's a <b>slot</b> in the top to put smoke fluid (or something else?) into.
 + [Okay.]
 ...
 -> MineDisco
@@ -592,7 +597,7 @@ VAR event_wowed_dancer = 0
 
 =WowedDancer
 ...
-He screams something unintelligible over the intestinal bass guitar booming over the speakers, and strips off his tight white tanktop with "SOUL" emblazoned on the front.
+He screams something unintelligible over the intestinal bass guitar booming over the speakers, and strips off his tight white <b>tanktop</b> with "SOUL" emblazoned on the front.
 
 He throws it down at your feet, tears streaming down his face, and drops to his knees.
 
@@ -670,8 +675,8 @@ You are in a room full of {looked_at_junk: useless} stuff.
 
 There are three giant moles sitting in the middle of all the junk.
 
-{looked_at_junk && not asked_about_strange_junk: One of the items in here seems out of place.}
-{asked_about_strange_junk && not item_supplies_key: A key to some kind of "...CUPBOARD" seems out of place.}
+{looked_at_junk && not asked_about_strange_junk: One of the <b>items</b> in here seems out of place.}
+{asked_about_strange_junk && not item_supplies_key: A <b>key</b> to some kind of "...CUPBOARD" seems out of place.}
 
 + {not talked_to_moles} [Talk to the moles?] "Hello?" #CLASS: hero
     The moles sniff the air.
