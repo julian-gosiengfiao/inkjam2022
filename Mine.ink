@@ -607,7 +607,7 @@ He throws it down at your feet, tears streaming down his face, and drops to his 
 
 When he finishes, he gets up, turns around, and disappears into the heaving mass of dancing disco-miners.
 
-+ + [Pick up the SOUL tanktop.] You pick up the tiny white tanktop with SOUL written in giant letters on the front. #getitem
++ + [Pick up the SOUL tanktop.] You pick up the tiny white tanktop with SOUL written in giant letters on the front. #CLASS: getitem
 
 ~item_soul_tanktop++
 ~event_wowed_dancer++
