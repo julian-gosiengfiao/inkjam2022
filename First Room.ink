@@ -19,7 +19,7 @@ Beside you, your two sisters are bickering.
 
 "It's not fair just 'cause I'm the youngest! And our hut is so FAR AWAY." says Yolene.#CLASS: littlesis
 
-+ + [Sigh.] You dream of stuffing their mouths with soft clay.
++ + [Sigh.] You imagine stuffing their mouths with soft clay.
 ...
 -> StartSequence
 
@@ -36,7 +36,7 @@ Even Yolene steps back from the most powerful witch in the land.
 Monster, cower before my might #CLASS: magic
 I’ll blast your eyeball out of sight! #CLASS: magic
 
-{item_sunglasses: ->GorgonEyeObliterationSunglasses}
+{item_sunglasses: ->GorgonEyeObliterationSunglasses} //USED FOR ACHIEVEMENTS, BEWARE CLEANUP
 {not item_sunglasses: ->GorgonEyeObliterationNoSunglasses}
 
 + {listened_to_bickering} [Go to the hut] You walk the twenty steps back to the hut where you live.
@@ -50,32 +50,36 @@ I’ll blast your eyeball out of sight! #CLASS: magic
 
 + {item_sunglasses} [Yes, wonderful. And now to put the sunglasses on.] It is nighttime, but you put your sunglasses on.
 
-Eldra finishes her brief incantation, and a beam with the force of an exploding star erupts from her staff.
-
-It obliterates the Gorgon Eye wholly.#CLASS: redtext
-
-+ + [Take your sunglasses off] You slide your sunglasses back in your pocket, vision intact.
-->GorgonEyeAfterObliteration
+    ->GorgonEyeObliterationGeneric
 
 =GorgonEyeObliterationNoSunglasses
 
 + {not item_sunglasses} [You forgot something...] You think you may have forgotten something, but you're not quite sure.
 
+    ->GorgonEyeObliterationGeneric
+
+
+=GorgonEyeObliterationGeneric
 Eldra finishes her brief incantation, and a beam with the force of an exploding star erupts from her staff.
 
++ [Watch]
+#CLEAR
+->GorgonEyeObliterationImage
+
+
+
+=GorgonEyeObliterationImage
+#IMAGE: images/Staffexplode-small.jpg
 <b>It obliterates the Gorgon Eye wholly.</b> #CLASS: redtext
++ + {item_sunglasses} [Take your sunglasses off] You slide your sunglasses back in your pocket, vision intact.
+->GorgonEyeAfterObliteration
++ + {not item_sunglasses} [Try to shield your face]
+
+"AAAARRRRGHHH," you loudly curse. #CLASS: hero
 
 The blast is totally blinding.
 
-+ + [Try to shield your face]
-
-"AAAARRRRGHHH," you loudly curse. #CLASS: hero
 -> GorgonEyeAfterObliteration
-
-=PLACEHOLDER
-"You ALWAYS think that you know best!" #CLASS: littlesis
-"For goodness’ sake, give it a REST!" #CLASS: bigsis
-->END
 
 
 =GorgonEyeAfterObliteration
