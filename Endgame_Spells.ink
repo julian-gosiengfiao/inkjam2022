@@ -1,6 +1,8 @@
-=endgamespellsstart
+->endgamespellsstart
 
-You see a red signal flare in the sky!
+=endgamespellsstart
+#CLEAR 
+You see a red signal flare in the sky! #CLASS: redtext
 + "Oh no! That means the town is under attack!" #CLASS: hero
 "You can take my horse if you want to speed back to town. It's over there!" #CLASS: manbraindog
 The dog points to a horse that is much more loosely tied to another tree. 
@@ -9,7 +11,7 @@ The dog points to a horse that is much more loosely tied to another tree.
 
 =horsetooslow
 
-You and your sister are standing in front of quite a small, feeble horse. It is eating a flower.
+You and your sister are standing in front of quite a <b>small, feeble horse</b>. It is eating a <b>flower</b>.
 "We'll never both fit on here!" #CLASS: littlesis
 "And it'll be far too slow even if we do!" #CLASS: hero
 "We won't make it back in time! The town is doomed!" #CLASS: littlesis
@@ -32,7 +34,7 @@ It does not help that Yolene is watching you hyperventilate, and telling you tha
 ->->
 
 =staybehind
-"No way! And anyway, even if I did, that horse has far too few muscles to carry you all the way home!" #CLASS: littlesis
+"No way! And anyway, even if I did, that horse has far <b>too few muscles</b> to carry you all the way home!" #CLASS: littlesis
 + Ahh!
 ->->
 
@@ -47,7 +49,6 @@ It's too early for bats.
 
 The Staff of Power! #CLASS: magic
 You hold it in your hands and feel a rush of magical power flowing through you, making your long hair billow in non-existent wind. Your eyes sparkle, and you lightly glow in a rainbow haze.
-
 + It’s all a bit much. 
 
 But what spell could you possibly use to get home quickly? You never had a brain for spellmaking... 
@@ -60,10 +61,12 @@ What spell could you chant?
 ->wrongspell ->spell1race
 + Chant the Muscular Cow spell
 ->fasthorse
++ Chant the Disco spell
+->wrongspell ->spell1race
 
 
 =wrongspell
-{&No! That spell isn't going to help here! And you're running out of time! | No! That spell isn't going to help here! And you're running out of time! |No! That spell isn't going to help here! And you're running out of time! |No! That spell isn't going to help here! And you're running out of time! |No! That spell isn't going to help here! And you're running out of time! | ->gameover }
+{&No! That spell isn't going to help here! And you're running out of time! | A second wrong spell! Eesh! And you're running out of time! |OH NO! You keep trying to cast unhelpful spell! And you're REALLY running out of time! |OH NO! ONE MORE SCREW UP AND YOU'RE TOAST! |->gameover }
 ...
 ->->
 
@@ -78,7 +81,6 @@ Restart from the Red Warning Flare?
 + NO 
 ->theend
 
-
 =fasthorse
 #CLEAR
 Ahem... I hope this works... #CLASS: hero
@@ -92,51 +94,50 @@ The horse grows and grows into A MIGHTY WARHORSE, with a broad back and calves t
 
 =racehome
 
-Your borrowed mighty warhorse gallops back through the woods, through the foamy mines, past the light-house, and rushes all the way down the road to the toll bridge. 
-The troll is standing there, looking scared but still blocking the bridge.
+Your borrowed <b>mighty warhorse</b> gallops back through the woods, through the foamy mines, past the light-house, and rushes all the way down the road to the toll bridge. 
+The troll is standing there, looking scared and anxious, but still blocking the bridge.
 + [LEAP over the troll's head!]
-You do the "Hyah!" thing with the reins, and the warhorse speeds up and LEAPS over the troll's head!
+You do the <b>"Hyah!"</b> thing with the reins, and the warhorse speeds up and LEAPS over the troll's head!
 "I'm too scared to do anything! Go save our town!" #CLASS: troll
-+ + Charge through town
-and out the other side,
-+ + + head for the border wall.
-"Hyah!" #CLASS: hero
++ + Charge through the centre of town,
+out the other side,
++ + + and head for the border wall behind your home!
+<b>"Hyah Again!"</b> #CLASS: hero
 
 ->villainarrives
 
 =villainarrives
 ...
-You burst into the clearing behind your home. 
+You <b>burst</b> into the clearing behind your home. 
 24 hours ago, a single Gorgon Eye was here, causing chaos.
 Now it's looking much...
-+ ...much...
-worse.
++ ...<b>much</b>...
+<b>worse</b>.
 
-From your hilltop viewpoint, you can see an army of goblins marching up towards the gate. 
-Behind them, a second army of GHOST GOBLINS.
+From your hilltop viewpoint, you can see an <b>army of skeletons</b> marching up towards the gate. 
+Behind them, a second army of GHOST SKELETONS!
++ + <i>(how does THAT work?)</i>
 And riding a young red dragon over their heads, 
-+ + is..
-
-INGRID EVIL, GOBLIN NECROMANCER!! (or BOOBERGHANT, I haven't decided)
-+ + + <i> who? </i>
-<i> (OK, this was never really explained. She's a goblin necromancer. She's evil and hates you. Don't worry about it) </i>
-
-+ + + + She casts a spell to amplify her voice, and it booms through the town:
++ + + is <b>KRRANDORRRR-GUZZANNA[!]</b>, THE GREAT (AND VERY EVIL) GOBLIN NECROMANCER!!
++ + + + <i> who? </i>
+<i> (OK, so this was never really explained. She's a goblin necromancer. She's very evil and hates you. Don't worry about it.) </i>
++ + + + + She casts a spell to amplify her voice, and it booms through the town:
 
 "BWAHAHAHAHAHAHA! THERE IS NOTHING YOU CAN DO TO STOP ME NOW, FEEBLE WITCHES!" #CLASS: necromancer 
+->response
 
-+ + + + + "Oh yeah? Well we beg to differ!" #CLASS: hero
+=response
++ "Oh yeah? Well <b>we</b> beg to differ!" #CLASS: hero
 ->canthear
-+ + + + + "Yeah? Well, you're a stinky poo-face and no one likes you!" #CLASS: hero
++ "Eldra beat you once, and now <b>we'll</b> take you down!" #CLASS: hero
 ->canthear
-+ + + + + "Yolene? I can't think of a comeback. Can you?" #CLASS: hero
++ "Ahhhhh! Oh noooo!!! We're dooooooomed! Someone save us!" #CLASS: hero
 ->canthear
 
 
 =canthear
-
-"I CAN'T HEAR YOU, SILLY YOUNGER WITCHES! BUT EVEN BETTER; YOU WON'T EVEN SEE YOUR END COMING! BWAHAHAHAHAHAHA!!! #CLASS: necromancer 
-Having finished her evil laugh, Ingrid Evil raises her Wand of Wickedness over her head, and chants a spell:
+"I CAN'T HEAR YOU, SILLY YOUNGER WITCHES! WITHOUT ELDRA HOLDING THE STAFF, YOU ARE POWERLESS TO STOP ME! AND NOW YOU WON'T EVEN SEE YOUR END COMING! BWAHAHAHAHAHAHA!!! #CLASS: necromancer 
+Having finished her evil laugh, Ingrid Evil raises her <b>Wand of Wickedness</b> over her head, and chants a spell:
 
 "They think their bite's worse than their bark #CLASS: magic
 Let them suffer IN THE DARK!" #CLASS: magic
@@ -145,6 +146,7 @@ Let them suffer IN THE DARK!" #CLASS: magic
 ->spell2dark 
 
 =spell2dark
+#CLEAR
 What should you do? You can hear the army getting closer!
 * Fumble for your white sock!
 ->droppedit ->spell2dark
@@ -157,19 +159,18 @@ What should you do? You can hear the army getting closer!
 
 =droppedit
 You pull out the sock, and a little of the darkness that surrounds you flees from the sock... 
-+ but not enough. You need something stronger.
++ but not enough. You need something <b>stronger</b>.
 ->->
-
 
 =lightdispell
 I think this one will fix this! #CLASS: hero
 Why must this idiot be so whiny? #CLASS: magic
 Let everything be clean and shiny! #CLASS: magic
 
-And with a burst of golden light, the magical darkness is instantly dispelled!
+And with a burst of <b>golden light</b>, the magical darkness is instantly dispelled!
 
 "WHAT?? HOW DID YOU DO THAT??" #CLASS: necromancer 
-+ "You're not the only one with magical powers!"
++ "I've been bringing light to dark spaces ALL DAY!"
 ->canthear2
 + "Honestly, it's a really lucky break! It's a coincidence!"
 ->canthear2
@@ -179,7 +180,7 @@ And with a burst of golden light, the magical darkness is instantly dispelled!
 =canthear2
 "I STILL CAN'T HEAR YOU! I HOPE WHAT YOU'RE SAYING IS JUST BEGGING FOR MERCY!" #CLASS: necromancer 
 
-And the necromancer launches a bolt of dark energy at the town gates, blowing the doors away, and leaving clear passage for her army to enter the town.
+And the necromancer launches a bolt of dark energy at the town gates, <b>blowing the gates away</b>, and leaving <b>clear passage</b> for her army to enter the town.
 
 + But wait - what's that?
 Standing in the dust and rubble of the gateway, gibblets high and defiant, is a little <b>turkey</b>!
@@ -202,27 +203,28 @@ What can you do to help?
 "They mean to pass but not to pay, #CLASS: magic
 They can’t with you standing in their way!" #CLASS: magic
 
-As you finish the spell, you see that brave little turkey get bigger...
+As you finish the spell, you see that brave little turkey get <b>bigger</b>...
 + ... and bigger...
-... until it fills the gateway with its giant brown feathers.
-+ +  Some of the stupider goblins still charge -
+... until it fills the gateway with monstrous brown feathers.
++ +  The mindless skeleton army still charges -
 - and get crushed under giant talons, and pecked by a giant beak!
-+ + + The other goblins all scream and flee!
++ + + Soon, there's just a big pile of unanimated bones, that Eldra keeps pecking at.
 
 "WHAAAATT? MY ARMY? HOW COULD YOU?" #CLASS: necromancer 
 + + + + say nothing
 ->canthear3
-+ + + + "Ahhhhh! Oh noooo!!! We're dooooooomed! Someone save us!" #CLASS: hero
++ + + + "Yolene? I can't think of a comeback. Can you?" #CLASS: hero
 ->canthear3
-
++ + + + "HONESTLY, THIS IS ALL JUST REALLY LUCKY COINCIDENCES!" #CLASS: hero
+->canthear3
 
 =canthear3
 "I'M SURE YOU'RE RESPONDING, BUT IT'S VERY WINDY UP HERE!"
 + Ugh
-"DO YOU THINK YOU'VE STOPPED ME? MY SPECTRAL GOBLIN ARMY CAN GO STRAIGHT THROUGH THE WALLS!" #CLASS: necromancer 
-
-And they do! Bursting through the wall uphill of MegaTurkey Eldra, <b>goblin sprits</b> holding spectral flaming torches emerge like smoke and CHARGE towards you! 
-+ + You only have a moment to prepare!
+"DO YOU THINK YOU'VE STOPPED ME? MY SPECTRAL SKELETON ARMY CAN GO STRAIGHT THROUGH THE WALLS!" #CLASS: necromancer 
++ + "Skeleton Ghosts still really don't make sense." #CLASS: hero 
+But they are there! Emerging like smoke through the wall uphill of MegaTurkey Eldra, <b>skeleton sprits</b> holding spectral <b>flaming torches</b> CHARGE towards you! 
++ + + You only have a moment to prepare!
 ->spell4spirits
 
 =spell4spirits
@@ -240,7 +242,7 @@ I wish these sillies / people knew this rule: #CLASS: magic
 You don’t need <b>spirits</b> to be cool! #CLASS: magic
 
 + And with a gust of chilly wind...
-The goblin spirits transform into delicate snowflakes, that flutter gracefully to the floor.
+The skeleton spirits transform into delicate snowflakes, that flutter gracefully to the floor.
 
 "WHAAAT???? MY OTHER ARMY TOO? HOW CAN THIS BE????" #CLASS: necromancer 
 
@@ -248,18 +250,15 @@ The goblin spirits transform into delicate snowflakes, that flutter gracefully t
 ->monologue
 
 =monologue
-"Well, then, witches, it is true, that your power is strong, but I!! I!!! have studied the dark goblin arts of necromancy for one hundred years! I-" #CLASS: necromancer 
-
+"Well, then, witches, it is true that your power is strong, but I!! I!!! have studied the dark goblin arts of necromancy for one hundred years! I-" #CLASS: necromancer 
 + Yolene elbows you in the back.
 You glance over at her.
 She winks at you with a big grin on her face, and then looks pointedly at the Staff of Power in your hands.
-
 ->spell5sleep
 
 =spell5sleep
 
-
-{& "... and it was prophesied by my mother that I was DESTINED to rule over ALL..." |"... my shadowy powers have grown stronger with each passing..." | "You cannot begin to comprehend the start of understanding the commencement of..."|"Soon, all the world shall be dominated by goblinkind! You shall RUE THE DAY THAT..."|"And he patted me on the head and said, "Not bad, sport", which I have always taken to mean... | ...This dragon alone cost 6000 gold coins, and it's a rental, so I have to make sure it returns..."} #CLASS: necromancer
+{& "... and it was prophesied by my mother that I was DESTINED to rule over ALL..." |"... my shadowy powers have grown stronger with each passing..." | "You cannot begin to comprehend the start of understanding the commencement of..."|"Soon, all the world shall be dominated by goblinkind! You shall RUE THE DAY THAT..."|"...and he patted me on the head and said, "Not bad, sport", which I have always taken to mean... | ...This dragon alone cost 6,000 gold coins, and it's a rental, so I have to make sure it..."} #CLASS: necromancer
 
 + Listen to the monologue a little longer
 ->spell5sleep
@@ -290,8 +289,8 @@ For goodness’ sake, give it a REST!” #CLASS: magic
 The young red dragon looks around for a second, and then decides it's done, and flies away.
 ...
 + + + ...
-The giant turkey Eldra thuds over to you, and looks down at you appreciately.
-"You did it!" #CLASS: bigsis
+<b>Monster Turkey Eldra</b> thuds over to you, and looks down at you appreciately.
+"YOU DID IT!" #CLASS: bigsis
 + + + + "WE did it." #CLASS: hero
 ->1lastspell
 + + + + "I couldn't have done it alone." #CLASS: hero
@@ -302,7 +301,7 @@ The giant turkey Eldra thuds over to you, and looks down at you appreciately.
 
 =1lastspell
 
-"... But I don't know how to undo all this magic! I don't know how to turn you back into yourself, or end any of these Blessings Gone Wrong!" #CLASS: hero
+"... But I don't know how to undo all this magic! I don't know how to turn you back into yourself, or end any of these <b>Blessings Gone Wrong</b>!" #CLASS: hero
 "But I do! I've studied for years, and I have the experience, and I can return everything to normal. I just... can't hold the Staff like this!" #CLASS: bigsis
 + Yolene nudges you again [.]
 "You can do this. And you can trust Eldra. She really is looking out for us, after all." #CLASS: littlesis
@@ -316,14 +315,14 @@ See the world through another’s eyes! #CLASS: magic
 
 Eldra's mind enters Yolene's body.
 Yolene's mind enters Eldra's body.
-And "Yolene" reaches forward to take the Staff into her hands
+And "Yolene" reaches forward to take the Staff into her hands.
 + You hand it to her [,] and she sings a beautiful chant. Onward the tune rolls, as the rainbow glow that surrounds her begins to spread like a wave...
 ... a wave that floats over a bulky cow and an icy tavern...
 + + across a lonely bridge...
 ...through a glowing house and under a disco mountain...
 ... and all the way to a distant hill where a man and dog are happily playing together...
-+ + + and just like that... [] your sisters are back in their bodies...
-... and reaching forward to pull you into a warm hug.
++ + + and just like that... [] your sisters are <b>back in their bodies</b>...
+... and reaching forward to pull you into <b>a warm hug</b>.
 ->thegoodend
 
 =thegoodend
@@ -336,7 +335,8 @@ CONGRATULATIONS!
 
 =theend
 
-THANK YOU FOR PLAYING
+THANK YOU FOR PLAYING!
+
 + Go to Credits 
 ->credits ->theend
 + Go to Achievements Menu
