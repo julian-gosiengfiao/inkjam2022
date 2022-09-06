@@ -6,35 +6,29 @@ INCLUDE Mine.ink
 INCLUDE Endgame_Spells.ink
 INCLUDE ManDog_Puzzle.ink
 
-->TitleScreen
-=TitleScreen
-Select an option. #CLASS: selection
-+ START THE ADVENTURE
-#CLEAR
-->StartSequence
-+ Chapter Select
-#CLEAR
--> ChapterSelect
 
-=ChapterSelect
-Select a chapter. #CLASS: selection
-+ Opening
+///DEBUG MENU - DELETE THIS WHEN SHOWING TO PEOPLE!
+/*
+Debug Menu - delete this when showing to people!
++ Start game from beginning
 #CLEAR
 -> StartSequence
-+ The Next Day
++ Start game from next day
 #CLEAR
 -> NextDay
-+ Act 1: The Town
++ Start game from Act1Town
 #CLEAR
 -> outsidetownfirstentry
-+ Act 2: The Mine
++ Start game from Mine
 #CLEAR
 -> TransitionToMineArea
-+ Act 3: The Man & the Dog
++ Start game from ManDog Puzzle
 ->mandogpuzzlestart
-+ The Final Act
++ Start game from endgame
 #CLEAR
 -> endgamespellsstart
-+ Cancel
-#CLEAR
-->TitleScreen
+
+*/
+
+///This should be the first line of code that's run.
+-> StartSequence
