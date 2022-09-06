@@ -1,5 +1,13 @@
 =endgamespellsstart
 #CLEAR 
+->ChapterFinal
+
+=ChapterFinal
+THE FINAL ACT #CLASS: chapterfinal
++ ...
+->endgamespellsstart2
+
+=endgamespellsstart2
 You see a red signal flare in the sky! #CLASS: redtext
 + "Oh no! That means the town is under attack!" #CLASS: hero
 "You can take my horse if you want to speed back to town. It's over there!" #CLASS: manbraindog
@@ -337,7 +345,7 @@ THANK YOU FOR PLAYING!
 
 + Go to Credits 
 ->credits ->theend
-+ Go to Achievements Menu
++ {not AchievementsDisabled} Go to Achievements Menu
 ->achievements ->theend
 + Play again from the beginning
 ->restart ->theend
@@ -347,15 +355,13 @@ THANK YOU FOR PLAYING!
 
 We made this game, and we're proud of it! Thank you for coming to see who we are! 
 
-Team:
+<b>Team:</b>
 Holly Duncan
 Julian Gosiengfiao
 Matthew Watson Jones
 Nicotupe
 
-Art:
-Holly Duncan
-Midjourney AI
+Illustrations by Holly Duncan, with additional scenery by Midjourney AI
 
 ->->
 

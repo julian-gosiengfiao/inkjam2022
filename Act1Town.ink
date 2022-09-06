@@ -25,8 +25,13 @@ A frankly enormous cow has shuffled into the middle of the path, followed by an 
 It stops right there in the middle, blocking all traffic.
 
 + + + That's fine, you didn't leave anything important back at home anyway.
+->Chapter1
 
-...
+=Chapter1
+ACT ONE: THE TOWN #CLASS: chapter1
++ ...
+->cowencounter
+
 ->cowencounter
 
 =cowencounter
@@ -429,6 +434,6 @@ He hands it back.
 
 =ACT2
 
-...
+#CLEAR
 
 -> TransitionToMineArea

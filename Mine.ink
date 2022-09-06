@@ -1,8 +1,12 @@
 =TransitionToMineArea
+->Chapter2
 
-{not item_sunglasses:
-~item_sunglasses++
-} //In case we skip our way here
+=Chapter2
+ACT TWO: THE MINE #CLASS: chapter2
++ ...
+->MineStart
+
+=MineStart
 
 The bridge is long, and overlooks craggy cliffs.
 

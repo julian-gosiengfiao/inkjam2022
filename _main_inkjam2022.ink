@@ -25,29 +25,40 @@ Select a chapter. #CLASS: selection
 + The Next Day
 #CLEAR
 ~item_sunglasses++
--> NextDay
+-> AchievementsDisabled -> NextDay
 
 + Act 1: The Town
 #CLEAR
--> outsidetownfirstentry
+~item_sunglasses++
+-> AchievementsDisabled -> outsidetownfirstentry
 
 + Act 2: The Mine
 #CLEAR
--> TransitionToMineArea
+~item_sunglasses++
+-> AchievementsDisabled -> TransitionToMineArea
 
 + Act 3: The Man & the Dog
+#CLEAR
+~item_sunglasses++
 ~item_laundry_room_key++
 ~item_radiant_sock++
 ~item_supplies_key++
-->mandogpuzzlestart
+-> AchievementsDisabled ->mandogpuzzlestart
 
 + The Final Act
 #CLEAR
--> endgamespellsstart
+~item_sunglasses++
+~item_laundry_room_key++
+~item_radiant_sock++
+~item_supplies_key++
+-> AchievementsDisabled -> endgamespellsstart
 
 + Cancel
 #CLEAR
 ->TitleScreen
 
 
-=
+=AchievementsDisabled
+Chapter skip used. Achievements disabled. #CLASS: system
+...
+->->

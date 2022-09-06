@@ -1,4 +1,12 @@
 =mandogpuzzlestart
+->Chapter3
+
+=Chapter3
+ACT THREE: THE MAN AND THE DOG #CLASS: chapter3
++ ...
+->mandogpuzzlestart2
+
+=mandogpuzzlestart2
 The sun is starting to set. It's been a long day.
 You continue down the path. In the distance, you hear a girl crying.
 
@@ -431,4 +439,5 @@ You take the Staff of Power! #CLASS: magic
 "Midelle! Look over there!" #CLASS: littlesis
 Yolene points to the horizon.
 + [Look (while holding onto the Staff tightly)]
+#CLEAR
 ->endgamespellsstart
