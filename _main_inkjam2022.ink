@@ -8,7 +8,7 @@ INCLUDE ManDog_Puzzle.ink
 
 ->TitleScreen
 =TitleScreen
-Select an option. #CLASS: selection
+Select an option! #CLASS: selection
 + START THE ADVENTURE
 #CLEAR
 ->StartSequence
@@ -30,12 +30,12 @@ Select a chapter. #CLASS: selection
 + Act 1: The Town
 #CLEAR
 ~item_sunglasses++
--> AchievementsDisabled -> outsidetownfirstentry
+-> AchievementsDisabled -> cowencounter
 
 + Act 2: The Mine
 #CLEAR
 ~item_sunglasses++
--> AchievementsDisabled -> TransitionToMineArea
+-> AchievementsDisabled -> MineStart
 
 + Act 3: The Man & the Dog
 #CLEAR
@@ -43,7 +43,7 @@ Select a chapter. #CLASS: selection
 ~item_laundry_room_key++
 ~item_radiant_sock++
 ~item_supplies_key++
--> AchievementsDisabled ->mandogpuzzlestart
+-> AchievementsDisabled ->mandogpuzzlestart2
 
 + The Final Act
 #CLEAR
@@ -51,7 +51,7 @@ Select a chapter. #CLASS: selection
 ~item_laundry_room_key++
 ~item_radiant_sock++
 ~item_supplies_key++
--> AchievementsDisabled -> endgamespellsstart
+-> AchievementsDisabled -> endgamespellsstart2
 
 + Cancel
 #CLEAR
