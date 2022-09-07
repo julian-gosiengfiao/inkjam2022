@@ -3,7 +3,8 @@
 
 =Chapter3
 ACT THREE: THE MAN AND THE DOG #CLASS: chapter3
-+ ...
++ [Begin]
+...
 ->mandogpuzzlestart2
 
 =mandogpuzzlestart2

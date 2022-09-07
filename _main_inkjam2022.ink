@@ -8,7 +8,7 @@ INCLUDE ManDog_Puzzle.ink
 
 ->TitleScreen
 =TitleScreen
-Select an option! #CLASS: selection
+Select an option #CLASS: selection
 + START THE ADVENTURE
 #CLEAR
 ->StartSequence
@@ -17,7 +17,7 @@ Select an option! #CLASS: selection
 -> ChapterSelect
 
 =ChapterSelect
-Select a chapter. #CLASS: selection
+Select a chapter #CLASS: selection
 + Opening
 #CLEAR
 -> StartSequence
@@ -59,6 +59,6 @@ Select a chapter. #CLASS: selection
 
 
 =AchievementsDisabled
-Chapter skip used. Achievements disabled. #CLASS: system
-...
+//Chapter skip used. Achievements disabled. #CLASS: system
+//...
 ->->

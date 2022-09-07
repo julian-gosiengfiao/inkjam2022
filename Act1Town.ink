@@ -30,7 +30,8 @@ It stops right there in the middle, blocking all traffic.
 
 =Chapter1
 ACT ONE: THE TOWN #CLASS: chapter1
-+ ...
++ [Begin]
+...
 ->cowencounter
 
 ->cowencounter

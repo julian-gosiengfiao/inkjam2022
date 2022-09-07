@@ -131,30 +131,30 @@
 .system {
     text-align: center;
     color: rgb(102, 255, 0);
-    font-size: 14pt;
+    font-size: 10pt;
 }
 .chapter1 {
     text-align: center;
     color: rgb(255, 253, 122);
-    font-size: 18pt;
+    font-size: 25pt;
     font-style: bold;
 }
 .chapter2 {
     text-align: center;
     color: rgb(51, 82, 255);
-    font-size: 18pt;
+    font-size: 25pt;
     font-style: bold;
 }
 .chapter3 {
     text-align: center;
     color: rgb(255, 135, 23);
-    font-size: 18pt;
+    font-size: 25pt;
     font-style: bold;
 }
 .chapterfinal {
     text-align: center;
     color: rgb(108, 0, 129);
-    font-size: 18pt;
+    font-size: 25pt;
     font-style: bold;
 }
 

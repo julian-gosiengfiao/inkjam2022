@@ -3,7 +3,8 @@
 
 =Chapter2
 ACT TWO: THE MINE #CLASS: chapter2
-+ ...
++ [Begin]
+...
 ->MineStart
 
 =MineStart
@@ -807,6 +808,7 @@ The rest of the tunnel continues to the other side of the mountains, where Yolen
 You continue until you exit the mines and are greeted by the outside world.
 + + + [Leave the mines behind you]
 ...
+#CLEAR
 ->mandogpuzzlestart
 
 ->END

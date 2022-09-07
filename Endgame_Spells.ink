@@ -4,7 +4,8 @@
 
 =ChapterFinal
 THE FINAL ACT #CLASS: chapterfinal
-+ ...
++ [Begin]
+...
 ->endgamespellsstart2
 
 =endgamespellsstart2
@@ -345,7 +346,7 @@ THANK YOU FOR PLAYING!
 
 + Go to Credits 
 ->credits ->theend
-+ {not AchievementsDisabled} Go to Achievements Menu
++ /*{not AchievementsDisabled}*/ Go to Achievements Menu
 ->achievements ->theend
 + Play again from the beginning
 ->restart ->theend
