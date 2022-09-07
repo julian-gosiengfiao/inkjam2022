@@ -1,8 +1,13 @@
 =TransitionToMineArea
+->Chapter2
 
-{not item_sunglasses:
-~item_sunglasses++
-} //In case we skip our way here
+=Chapter2
+ACT TWO: THE MINE #CLASS: chapter2
++ [Begin]
+...
+->MineStart
+
+=MineStart
 
 The bridge is long, and overlooks craggy cliffs.
 
@@ -803,6 +808,7 @@ The rest of the tunnel continues to the other side of the mountains, where Yolen
 You continue until you exit the mines and are greeted by the outside world.
 + + + [Leave the mines behind you]
 ...
+#CLEAR
 ->mandogpuzzlestart
 
 ->END

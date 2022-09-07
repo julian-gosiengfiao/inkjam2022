@@ -6,29 +6,59 @@ INCLUDE Mine.ink
 INCLUDE Endgame_Spells.ink
 INCLUDE ManDog_Puzzle.ink
 
+->TitleScreen
+=TitleScreen
+Select an option #CLASS: selection
++ START THE ADVENTURE
+#CLEAR
+->StartSequence
++ Chapter Select
+#CLEAR
+-> ChapterSelect
 
-///DEBUG MENU - DELETE THIS WHEN SHOWING TO PEOPLE!
-/*
-Debug Menu - delete this when showing to people!
-+ Start game from beginning
+=ChapterSelect
+Select a chapter #CLASS: selection
++ Opening
 #CLEAR
 -> StartSequence
-+ Start game from next day
-#CLEAR
--> NextDay
-+ Start game from Act1Town
-#CLEAR
--> outsidetownfirstentry
-+ Start game from Mine
-#CLEAR
--> TransitionToMineArea
-+ Start game from ManDog Puzzle
-->mandogpuzzlestart
-+ Start game from endgame
-#CLEAR
--> endgamespellsstart
 
-*/
++ The Next Day
+#CLEAR
+~item_sunglasses++
+-> AchievementsDisabled -> NextDay
 
-///This should be the first line of code that's run.
--> StartSequence
++ Act 1: The Town
+#CLEAR
+~item_sunglasses++
+-> AchievementsDisabled -> cowencounter
+
++ Act 2: The Mine
+#CLEAR
+~item_sunglasses++
+-> AchievementsDisabled -> MineStart
+
++ Act 3: The Man & the Dog
+#CLEAR
+~item_sunglasses++
+~item_laundry_room_key++
+~item_radiant_sock++
+~item_supplies_key++
+-> AchievementsDisabled ->mandogpuzzlestart2
+
++ The Final Act
+#CLEAR
+~item_sunglasses++
+~item_laundry_room_key++
+~item_radiant_sock++
+~item_supplies_key++
+-> AchievementsDisabled -> endgamespellsstart2
+
++ Cancel
+#CLEAR
+->TitleScreen
+
+
+=AchievementsDisabled
+//Chapter skip used. Achievements disabled. #CLASS: system
+//...
+->->
