@@ -104,7 +104,7 @@ The cowman gets the bucket ready, takes both hands and <i>squeezes squeezes sque
 ->cowencounter
 
 =cownomove
-"That's great and all, but I can't make Bessie move when she's this big, and she just loves your begonias. I'm afraid we can't move." #CLASS: cowman
+"That's great and all, but I can't make Bessie move when she's this big./*, and she just loves your begonias. I'm afraid we can't move.*/" #CLASS: cowman
 + "Hmmm... maybe we can get something stronger than our hands to squeeze the teats." #CLASS: hero
 ->cowencounter
 
@@ -127,10 +127,10 @@ You wave goodbye to the cowman.
 
 =townsquare
 You are in the town square. There is a dazed villager sitting on the floor, with frost in her hair. 
-+ {not dazedvillager} [Talk to dazed villager]
++ /*{not dazedvillager}*/ [Talk to dazed villager]
 ->dazedvillager
-+ {dazedvillager} [Talk to the dazed villager again]
-->dazedvillager
+/*+ {dazedvillager} [Talk to the dazed villager again] //Tried removing this because new options don't appear on re-talk - if that makes sense?
+->dazedvillager*/
 * Look around
 ->looktownsquare
 + {looktownsquare} [Leave the town square (but which way?)] You decide to leave the town square.
@@ -151,31 +151,36 @@ You are in the town square. There is a dazed villager sitting on the floor, with
 ->chatdazedwhere
 + "Why is there frost in your hair?" #CLASS: hero
 ->chatdazedwhy
-+ Actually, maybe don't talk to the villager just now.
++ [Leave the villager to her dazedness] You leave the villager to her dazedness.
+/*+ Actually, maybe don't talk to the villager just now.*/ //Tried making the dazed villager's conversation sit in one tree; kept the old code just in case.
 ...
 ->townsquare
 
 =chatdazedwhat
-"Midelle! It was your little sister! She came through here with the Staff of Power and changed a whole bunch of stuff! Oooh, the magic! The surprise! I didn't know what to do! I still don't! #CLASS: dazedvillager
-+ "What did she do?" #CLASS: hero
+"Midelle! It was your little sister! She came through here with the Staff of Power and changed a whole bunch of stuff!" #CLASS: dazedvillager
+"Oooh, the magic! The surprise! I didn't know what to do! I still don't!" #CLASS: dazedvillager
+->dazedvillager
+/*+ "What did she do?" #CLASS: hero 
+
 ->chatdazedwhy
 + "Where did my little sister go?" #CLASS: hero
 ->chatdazedwhere
 + [Leave the villager to her dazedness] You leave the villager to her dazedness. 
 ...
-->townsquare
+->townsquare*/
 
 =chatdazedwhere
 "She went to the toll bridge, transformed the tollman, and then crossed the bridge and headed towards the mountains! #CLASS: dazedvillager
-"Ugh, I hate climbing." #CLASS: hero
+->dazedvillager
+/*"Ugh, I hate climbing." #CLASS: hero
 + "And what happened here?" #CLASS: hero
 ->chatdazedwhat
 + [Leave the villager to her dazedness] You leave the villager to her dazedness.
 ...
-->townsquare
+->townsquare*/
 
 =chatdazedwhy
-"I was in the "Embarrassing Cucumber" when your sister barged in, pronounced she was going to make a "Blessing", and then suddenly I got all frozen over! You'll have to ask the barman what happened."
+"I was in the "Embarrassing Cucumber" when your sister barged in, pronounced she was going to make a "Blessing", and then suddenly I got all frozen over! You'll have to ask the barman what happened."#CLASS: dazedvillager
 ->dazedvillager
 
 = looktownsquare
@@ -311,7 +316,7 @@ At the toll bridge, you see <b>a big troll</b>. {not troll: Didn't there used to
 There's some clanking metal noises coming from the <b>blacksmith's forge</b>, next to the toll bridge. 
 + {not troll} [Talk to the troll]
 ->troll
-+ {troll} [Talk to the troll some more]
++ {troll} [Talk to the troll] /*some more]*/ //Also trying removing the new text here if it's only a repeat/recap - I've seen players pulled to click on old options because the option display changed.
 ->trollmore
 + [Enter the blacksmith's]
 ->smith

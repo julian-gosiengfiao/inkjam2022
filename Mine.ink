@@ -497,7 +497,7 @@ VAR disco_squeeze_attempted = 0
 
 =MineDisco
 
-You are <b>{disco_listened_counter == 0:standing}{disco_listened_counter == 1: slightly bobbing your head}{disco_listened_counter == 2: swaying awkwardly}{disco_listened_counter == 3: shaking half a butt}{disco_listened_counter >= 4: aggressively two-stepping}</b> in what seems to be a literal disco.
+You are <b>{disco_listened_counter == 0:standing like a square}{disco_listened_counter == 1: imperceptibly bobbing your head}{disco_listened_counter == 2: swaying left and right}{disco_listened_counter == 3: semi-convincingly two-stepping}{disco_listened_counter >= 4: aggressively shaking half a butt}</b> in what seems to be a literal disco.
 
 A pumping dance beat shakes your insides, and {not event_detergent_used: a <b>smoke machine</b> billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
 
@@ -511,37 +511,37 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
 
     + + [Dance]
         {disco_listened_counter <= 0:
-        Not only do you look like an ocean mollusc making sudden contact with a desert, you are completely off-beat.
+        Not only do you look like an ocean mollusc making sudden contact with a desert, <b>you are completely off-beat</b>.
         The dancer looks horrified and quickly turns away.
         + + + You tried. ->PostDanceBreak
         }
         {disco_listened_counter == 1:
-        You are a mess of flailing limbs and jerky movements, and there are maybe one or two moments when you don't look like a human blender.
+        You are a mess of flailing limbs and jerky movements, and <b>there are maybe one or two moments when your human blender impression matches the beat.</b>
         The dancer looks displeased and resumes his dancing.
         + + + At least you showed up. ->PostDanceBreak
         }
         {disco_listened_counter == 2:
-        You somehow move in a way that accentuates all the worst parts of your physique, but it's almost enchanting, and somewhat on beat.
+        You somehow move in a way that accentuates all the worst parts of your physique, but it's almost enchanting, and <b>somewhat on beat.</b>
         The dancer looks intrigued, but turns away.
         + + + It's something. ->PostDanceBreak
         }
         {disco_listened_counter == 3:
-        You move with the practiced elegance of a freshly birthed elephant, seamlessly chaining swinging elbows to flailing kicks. If it weren't for the fact that you couldn't dance, it would almost look like a new dance style.
+        You move with the practiced elegance of a freshly birthed elephant, seamlessly chaining swinging elbows to flailing kicks. If it weren't for the fact that you couldn't dance, it would almost look like a new dance style. <b>You're pretty on beat.</b>
         The dancer looks impressed, then averts his attention elsewhere.
         + + + You are a hotdog. ->PostDanceBreak
         }
         {disco_listened_counter >= 4:
-        Your rage at your lack of coordination shines through in some sort of interpretive masterpiece, every aimless flail making sweet lyrical love to each grunt, default-drum-sample-clap and looped synth note.
+        Your rage at your lack of coordination shines through in some sort of interpretive masterpiece, every aimless flail <b>not only on beat, but making sweet lyrical love to each grunt, default-drum-sample-clap and overheld maximum-velocity synth note.</b>
         You are the very image of a dancer's struggle.
         The dancer has stopped dancing and is in tears.
         + + + You are crying too. <br> ->WowedDancer
         }
 
-    + + ["How do I get through here?"] "___ __ _ ___ _____ ___?" #CLASS: hero
+    * * /*+ +*/ ["How do I get through here?"] "___ __ _ ___ _____ ___?" #CLASS: hero
     The dancer turns his nose up at you.
     "____ ____ __ ___ _____, ____." #CLASS: dancer
     + + + You can't hear a damn thing.
-    He {~grapevines|sashays|step ball-changes|rock steps|jazz squares|moonwalks} away.
+    He /*{~*/grapevines/*|sashays|step ball-changes|rock steps|jazz squares|moonwalks}*/ away.
     ...
     -> MineDisco
 
@@ -635,39 +635,39 @@ VAR disco_listened_counter = 0
 
 
 =DiscoListen1
-You are actively resisting it, but you listen to the music anyway.
-Besides being percussively incessant, it's pumping away at a manic pace that would give anyone a heart attack.
-+ Why would anyone listen to this stuff?!
-~disco_listened_counter++
-...
-->MineDisco
-
-=DiscoListen2
-The music is unrelenting, and it continues to fill your head.
+You are actively resisting it, but <b>you listen to the music</b> anyway.
 The bassline is so over-tuned it actually sounds gastric. And it runs all over the beat, like a snorting possum fallen out of a chimney into the middle of your living room.
 + Like a possum! A snorting one!
 ~disco_listened_counter++
 ...
 ->MineDisco
 
-=DiscoListen3
-The music is just impossible to ignore.
+=DiscoListen2
+<b>You listen to the music again.</b> It's unrelenting, and it continues to fill your head.
 This song sounds like someone took a synth keyboard to the recording session and then used it as a brawl weapon with the power switched on.
 + ...against their bandmates, who were also simultaneously recording this song.
 ~disco_listened_counter++
 ...
 ->MineDisco
 
-=DiscoListen4
-Your dysfunctional relationship with the music continues.
+=DiscoListen3
+<b>Your relationship with the music deepens</b>, as it is impossible to ignore.
 WHY IS THERE GRUNTING IN THIS SONG? The song lacks lyrics, but there are still "vocals" if you could call them that, which just consist of a man grunting into the microphone.
 + Against all odds, this part of the song sounds gastric, too.
 ~disco_listened_counter++
 ...
 ->MineDisco
 
+=DiscoListen4
+<b>Your totally unintentional-but-comprehensive understanding of the music is solidified.</b>
+You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!) this song has to offer.
++ This song would be like a fine wine if wine were made from garbage.
+~disco_listened_counter++
+...
+->MineDisco
+
 =DiscoListen5
-You are already a connoisseur of cacophony.
+<b>You are already a connoisseur of cacophony.</b>
 You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!) this song has to offer.
 + This song would be like a fine wine if wine were made from garbage.
 ...

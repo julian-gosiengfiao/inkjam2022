@@ -330,6 +330,7 @@ And "Yolene" reaches forward to take the Staff into her hands.
 ... and all the way to a distant hill where a man and dog are happily playing together...
 + + + and just like that... [] your sisters are <b>back in their bodies</b>...
 ... and reaching forward to pull you into <b>a warm hug</b>.
++ + + + [Hug them] //Might be nice to make hugging them a player action before popping the end...?
 ->thegoodend
 
 =thegoodend

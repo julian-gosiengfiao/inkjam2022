@@ -117,7 +117,7 @@ Eldra continues, "And she's turned me into a turkey!" #CLASS: bigsis
 
 + + "That's terrible!" #CLASS: hero
 
-"It is." Eldra replies. #CLASS: bigsis
+"It is," Eldra replies. #CLASS: bigsis
 ->NextDayExplanation2
 
 + + "That's hilarious." #CLASS: hero

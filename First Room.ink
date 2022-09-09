@@ -17,7 +17,7 @@ Beside you, your two <b>sisters</b> are bickering.
 
 "I'm the eldest sister, so I shouldn't have to fetch the staff," says Eldra.#CLASS: bigsis
 
-"It's not fair just 'cause I'm the youngest! And our hut is so FAR AWAY." says Yolene.#CLASS: littlesis
+"It's not fair just 'cause I'm the youngest! And our hut is so FAR AWAY," says Yolene.#CLASS: littlesis
 
 + + [Sigh.] You imagine stuffing their mouths with soft clay.
 ...
