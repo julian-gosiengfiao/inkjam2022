@@ -313,7 +313,7 @@ The young red dragon looks around for a second, and then decides it's done, and 
 "But I do! I've studied for years, and I have the experience, and I can return everything to normal. I just... can't hold the Staff like this!" #CLASS: bigsis
 + Yolene nudges you again [.]
 "You can do this. And you can trust Eldra. She really is looking out for us, after all." #CLASS: littlesis
-+ + [Chant one last spell... the Man/Dog Spell...]
++ + [Chant one last spell... the Man/Dog Spell./*..*/]
 ->switch
 
 =switch
@@ -346,11 +346,11 @@ CONGRATULATIONS!
 
 THANK YOU FOR PLAYING!
 
-+ Go to Credits 
++ [Go to Credits] <b>CREDITS:</b>
 ->credits ->theend
-+ /*{not AchievementsDisabled}*/ Go to Achievements Menu
++ /*{not AchievementsDisabled}*/ [Go to Achievements Menu] <b>ACHIEVEMENTS:</b>
 ->achievements ->theend
-+ Play again from the beginning
++ [Play again from the beginning]
 ->restart ->theend
 
 
@@ -417,6 +417,6 @@ Illustrations by Holly Duncan, with additional scenery by Midjourney AI
 ->->
 =restart
 
-ACTUALLY, BEST TO REFRESH PAGE TO RESTART. THANK YOU!
+ACTUALLY, BEST TO REFRESH PAGE TO RESTART.
 
-->DONE
+->theend
