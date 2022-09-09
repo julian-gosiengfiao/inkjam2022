@@ -31,7 +31,7 @@ You and your sister are standing in front of quite a <b>small, feeble horse</b>.
 ->staybehind ->choices
 * Search the sky for giant eagles
 ->eagles
-+ Check your inventory 
++ [Check your inventory] You check your inventory.
 ->emergencyinventory
 
 =panic
@@ -109,7 +109,7 @@ You do the <b>"Hyah!"</b> thing with the reins, and the warhorse speeds up and L
 + + Charge through the centre of town,
 out the other side,
 + + + and head for the border wall behind your home!
-<b>"Hyah Again!"</b> #CLASS: hero
+"<b>Hyah</b> again!" #CLASS: hero
 
 ->villainarrives
 
@@ -144,7 +144,7 @@ And riding a young red dragon over their heads,
 
 =canthear
 "I CAN'T HEAR YOU, SILLY YOUNGER WITCHES! WITHOUT ELDRA HOLDING THE STAFF, YOU ARE POWERLESS TO STOP ME! AND NOW YOU WON'T EVEN SEE YOUR END COMING! BWAHAHAHAHAHAHA!!! #CLASS: necromancer 
-Having finished her evil laugh, Ingrid Evil raises her <b>Wand of Wickedness</b> over her head, and chants a spell:
+Having finished her evil laugh, /*Ingrid Evil*/Krrandorrrr-Guzzanna raises her <b>Wand of Wickedness</b> over her head, and chants a spell:
 
 "They think their bite's worse than their bark #CLASS: magic
 Let them suffer IN THE DARK!" #CLASS: magic
@@ -218,7 +218,7 @@ As you finish the spell, you see that brave little turkey get <b>bigger</b>...
 + + + Soon, there's just a big pile of unanimated bones, that Eldra keeps pecking at.
 
 "WHAAAATT? MY ARMY? HOW COULD YOU?" #CLASS: necromancer 
-+ + + + say nothing
++ + + + [Say nothing] You say nothing.
 ->canthear3
 + + + + "Yolene? I can't think of a comeback. Can you?" #CLASS: hero
 ->canthear3
@@ -226,8 +226,9 @@ As you finish the spell, you see that brave little turkey get <b>bigger</b>...
 ->canthear3
 
 =canthear3
-"I'M SURE YOU'RE RESPONDING, BUT IT'S VERY WINDY UP HERE!"
-+ Ugh
+"I'M SURE YOU'RE RESPONDING, BUT IT'S VERY WINDY UP HERE!" #CLASS: necromancer
+/*+ Ugh*/
++ [Ugh, she just doesn't stop.]
 "DO YOU THINK YOU'VE STOPPED ME? MY SPECTRAL SKELETON ARMY CAN GO STRAIGHT THROUGH THE WALLS!" #CLASS: necromancer 
 + + "Skeleton Ghosts still really don't make sense." #CLASS: hero 
 But they are there! Emerging like smoke through the wall uphill of MegaTurkey Eldra, <b>skeleton sprits</b> holding spectral <b>flaming torches</b> CHARGE towards you! 
@@ -267,19 +268,19 @@ She winks at you with a big grin on her face, and then looks pointedly at the St
 
 {& "... and it was prophesied by my mother that I was DESTINED to rule over ALL..." |"... my shadowy powers have grown stronger with each passing..." | "You cannot begin to comprehend the start of understanding the commencement of..."|"Soon, all the world shall be dominated by goblinkind! You shall RUE THE DAY THAT..."|"...and he patted me on the head and said, "Not bad, sport", which I have always taken to mean... | ...This dragon alone cost 6,000 gold coins, and it's a rental, so I have to make sure it..."} #CLASS: necromancer
 
-+ Listen to the monologue a little longer
++ [Listen to the monologue a little longer] You listen to the monologue a little longer.
 ->spell5sleep
-* Twirl the Staff of Power impressively in your hands and ready one last mighty spell!
+* [Twirl the Staff of Power impressively] You twirl the Staff of Power impressively in your hands and ready one last mighty spell!
 ->spell5sleep
-* Hold Yolene's hand and join your powers!
+* [Hold Yolene's hand and join your powers] You hold Yolene's hand and join your powers!
 ->spell5sleep
-* Put your sunglasses on
+* [Put your sunglasses on] You put your sunglasses on.
 ->spell5sleep
-*  Chant a spell about how you wish we could all just get along
+* [Chant a spell about how you wish we could all just get along]
 ->wrongspell ->spell5sleep
-* Channel all your magical energy into the tip of the Staff...
+* [Channel all your magical energy into the tip of the Staff] You channel all your magical energy into the tip of the Staff...
 ->spell5sleep
-+ Chant the Sleep Spell your sisters accidentally invented last night!
++ [Chant the Sleep Spell your sisters accidentally invented last night!] You chant the Sleep Spell your sisters accidentally invented last night!
 ->defeat
 
 =defeat
@@ -312,7 +313,7 @@ The young red dragon looks around for a second, and then decides it's done, and 
 "But I do! I've studied for years, and I have the experience, and I can return everything to normal. I just... can't hold the Staff like this!" #CLASS: bigsis
 + Yolene nudges you again [.]
 "You can do this. And you can trust Eldra. She really is looking out for us, after all." #CLASS: littlesis
-+ + Chant one last spell... the Man/Dog Spell...
++ + [Chant one last spell... the Man/Dog Spell...]
 ->switch
 
 =switch
@@ -323,14 +324,14 @@ See the world through another’s eyes! #CLASS: magic
 Eldra's mind enters Yolene's body.
 Yolene's mind enters Eldra's body.
 And "Yolene" reaches forward to take the Staff into her hands.
-+ You hand it to her [,] and she sings a beautiful chant. Onward the tune rolls, as the rainbow glow that surrounds her begins to spread like a wave...
++ [Hand it to her] You hand it to her, and she sings a beautiful chant. Onward the tune rolls, as the rainbow glow that surrounds her begins to spread like a wave...
 ... a wave that floats over a bulky cow and an icy tavern...
 + + across a lonely bridge...
 ...through a glowing house and under a disco mountain...
 ... and all the way to a distant hill where a man and dog are happily playing together...
 + + + and just like that... [] your sisters are <b>back in their bodies</b>...
 ... and reaching forward to pull you into <b>a warm hug</b>.
-+ + + + [Hug them] //Might be nice to make hugging them a player action before popping the end...?
++ + + + [Hug them] //Might be nice to make hugging them a player action before popping the end - maybe even input-ize this more...?
 ->thegoodend
 
 =thegoodend
