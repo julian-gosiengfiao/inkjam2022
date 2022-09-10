@@ -77,7 +77,7 @@ Eldra finishes her incantation, and a beam with the force of an exploding star e
 
 "AAAARRRRGHHH," you loudly curse. #CLASS: hero
 
-The blast is totally blinding.
+The blast is totally blinding, but this is a merge test conflict line, let's see what happens.
 
 -> GorgonEyeAfterObliteration
 
