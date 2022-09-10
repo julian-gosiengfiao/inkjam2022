@@ -17,6 +17,8 @@ Beside you, your two <b>sisters</b> are bickering.
 
 "I'm the eldest sister, so I shouldn't have to fetch the staff," says Eldra.#CLASS: bigsis
 
+I am a new test line for use only in merge practice.
+
 "It's not fair just 'cause I'm the youngest! And our hut is so FAR AWAY," says Yolene.#CLASS: littlesis
 
 + + [Sigh.] You imagine stuffing their mouths with soft clay.
@@ -76,8 +78,6 @@ Eldra finishes her incantation, and a beam with the force of an exploding star e
 + + {not item_sunglasses} [Try to shield your face]
 
 "AAAARRRRGHHH," you loudly curse. #CLASS: hero
-
-The blast is totally blinding.
 
 -> GorgonEyeAfterObliteration
 
