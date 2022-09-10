@@ -712,8 +712,6 @@ There are three giant </b>moles</b> sitting in the middle of all the junk.
     "What's this?" #CLASS: hero
     {&"FROM A SHOE, SOLE. EXAMPLE OBJECT SACRED FOR MOLE."|"ANCIENT STORIED SCROLL. EXAMPLE OBJECT SACRED FOR MOLE."|"VERY NARROW POLE. EXAMPLE OBJECT SACRED FOR MOLE."|"NICE OLD COAL. EXAMPLE OBJECT SACRED FOR MOLE."|"DISCARDED BEDROLL. EXAMPLE OBJECT SACRED FOR MOLE."|"MOST ORNATE BOWL. EXAMPLE OBJECT SACRED FOR MOLE."} #CLASS: mole
     
-    
-/*    {&"FROM A SHOE, A SOLE. WHOEVER WORE IT IS NO LONGER A FOAL."|"AN ANCIENT SCROLL. IT TELLS A STORY WHOLE."|"A VERY NARROW POLE. WE FOUND IT UPON AN ATOLL."|"A PIECE OF COAL. BE CAREFUL, FOR IT MAY ROLL."|"A DISCARDED BEDROLL. DISCOVERED DURING PATROL".|"THE MOST ORNATE BOWL. UPSIDE DOWN, IT MAKES A KNOLL."}*/
     ...
 
     ~looked_at_junk++
@@ -814,8 +812,8 @@ You continue until you exit the mines and are greeted by the outside world.
 ->END
 
 /*
-
-
+TODO:
 barrelman offers sister information before you help him?
+Dancer - give more player feedback when you progress. Showcase the funny parts instead of skip them for progressing.
 
 */

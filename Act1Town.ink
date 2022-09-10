@@ -59,7 +59,7 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 ->squeeze
 + {hotmilk} [Talk to happy cowman]
 ->happycowman
-+ [Go into town] You walk past the nearby half-ruined houses, and towards the town square.
++ [Go into town] You walk past the nearby half-ruined houses, and towards the town square. //TODO: ASK MATT ABOUT IF WE CAN AVOID RUINING HOUSES? SISTERS DELAYED FOR IT, MAYBE MAKES THEM LESS LIKABLE
 ...
 ->townsquare
 
@@ -71,7 +71,7 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 =whatacow
 <b> What. A. Cow. </b>
 #IMAGE: images/cow-small.jpg
-+ Pull yourself away from your admiration
++ [Pull yourself away from your admiration] You pull yourself away from your admiration.
 ...
 ->cowencounter
 
