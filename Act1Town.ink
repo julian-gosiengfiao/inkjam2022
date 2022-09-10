@@ -280,7 +280,7 @@ There is a shivering barman, standing next to a {not icebox:mysterious box}{iceb
 + "Why not?" #CLASS: hero
 "Well, your si-si-sister has never liked all the dr-dr-drunks, and sh-she came in here and s-s-said a spell: #CLASS: barman
 <br>
-I wish these people knew this rule: #CLASS: magic
+I wish these sillies knew this rule: #CLASS: magic
 you don't need spirits to be cool! #CLASS: magic
 <br>
 + + "And did it make the people cool?" #CLASS: hero

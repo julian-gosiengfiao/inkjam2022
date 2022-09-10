@@ -246,7 +246,7 @@ Could a spell save you yet again?
 
 =spiritsbegone
 "I mean, this one takes a bit of creative license..." #CLASS: hero
-I wish these sillies / people knew this rule: #CLASS: magic
+I wish these sillies knew this rule: #CLASS: magic
 You don’t need <b>spirits</b> to be cool! #CLASS: magic
 
 + And with a gust of chilly wind...

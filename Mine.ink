@@ -38,8 +38,8 @@ There is a {not building_is_laundry: single <b>building</b> out} {building_is_la
 
 {not barrel_reset: You notice a wiggling <b>barrel</b> next to the building.}
 {barrel_reset && not item_laundry_room_key: There is a <b>man in a barrel</b>, eyeing you from beneath the lid.}
-{kicked_for_key && not item_clean_laundry: There is a <b>barrel</b> with a man inside here.}
-{got_key_nicely && not item_clean_laundry: <b>Barrel-man</b> is chilling in his barrel here.}
+{kicked_for_key && not item_clean_laundry && not item_radiant_sock: There is a <b>barrel</b> with a man inside here.}
+{got_key_nicely && not item_clean_laundry && not item_radiant_sock: <b>Barrel-man</b> is chilling in his barrel here.}
 {item_clean_laundry: <b>Barrel-man</b> is excitedly waving at you.}
 {item_clean_laundry: "You've gotten some clean clothes!!! Bring them over here to me!"} #CLASS: barrelman
 {item_radiant_sock: The normally dressed <b>barrel-man</b> is standing here next to a barrel.}
