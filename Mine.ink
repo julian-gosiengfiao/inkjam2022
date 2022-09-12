@@ -223,9 +223,9 @@ The man looks at you suspiciously.
     + + + + + + [Look at the building] You both look at the glowing {building_is_laundry: laundry} building, with radiant light erupting from every window and crack.
     + + + + + + + [Look at each other] You both look back at each other.
     + + + + + + + + [Show polite concern] You try to say something nice, but you notice your jaw is hanging completely open and you are just staring at barrel-man.
-    ->BarrelTalk2
+    ->BarrelTalkSpell
     + + + + + + + + [Show empathy] You raise your hand to shrug, but it moves of its own volition and slaps your forehead loudly.
-    ->BarrelTalk2
+    ->BarrelTalkSpell
     
 + "HAVE YOU SEEN MY SISTER?!" #CLASS: hero
     The man immediately pops back into the barrel, snapping the lid shut.
@@ -234,9 +234,15 @@ The man looks at you suspiciously.
     ...
     ->OutsideMine
 
+=BarrelTalkSpell
+He continues, "Then she cast a spell, and it went like this:" #CLASS: barrelman
+Why must this idiot be so whiny? #CLASS: magic
+Let everything be clean and shiny! #CLASS: magic
++ "Harsh." #CLASS: hero
+->BarrelTalk2
+
 VAR kicked_for_key = 0
 VAR got_key_nicely = 0
-
 
 =BarrelTalk2
 "I'll give you a <b>key to the laundry room</b> if you help me get something to wear from inside," he says. #CLASS: barrelman
@@ -540,7 +546,7 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
     * * /*+ +*/ ["How do I get through here?"] "___ __ _ ___ _____ ___?" #CLASS: hero
     The dancer turns his nose up at you.
     "____ ____ __ ___ _____, ____." #CLASS: dancer
-    + + + You can't hear a damn thing.
+    + + + You can't hear a darn thing.
     He /*{~*/grapevines/*|sashays|step ball-changes|rock steps|jazz squares|moonwalks}*/ away.
     ...
     -> MineDisco
