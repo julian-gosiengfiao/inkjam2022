@@ -119,12 +119,10 @@ There is a {not building_is_laundry: single <b>building</b> out} {building_is_la
         
     + {item_radiant_sock} [Talk to barrel-man] "I'll never complain about doing my laundry again." #CLASS: barrelman
 
-        + + "Do you recall the spell my little sister used?" #CLASS: hero
-            "Believe it or not, I can recite it word-for-word." #CLASS: barrelman
-            + + + "Let's hear it, then." #CLASS: hero
+        + + "Can you repeat the spell my little sister used?" #CLASS: hero
             Why must this idiot be so whiny? #CLASS: magic
             Let everything be clean and shiny! #CLASS: magic
-            + + + + "Ooh, cutting." #CLASS: hero
+            + + + "Ooh, cutting." #CLASS: hero
             "You're telling me." #CLASS: barrelman
             ...
             -> OutsideMine
@@ -504,7 +502,7 @@ VAR disco_squeeze_attempted = 0
 
 =MineDisco
 
-You are <b>{disco_listened_counter == 0:standing like a square}{disco_listened_counter == 1: imperceptibly bobbing your head}{disco_listened_counter == 2: swaying left and right}{disco_listened_counter == 3: semi-convincingly two-stepping}{disco_listened_counter >= 4: aggressively shaking half a butt}</b> in what seems to be a literal disco.
+You are <b>{disco_listened_counter == 0:standing like a square}{disco_listened_counter == 1: almost-perceptibly bobbing your head}{disco_listened_counter == 2: swaying left and right}{disco_listened_counter == 3: convincingly two-stepping}{disco_listened_counter >= 4: aggressively shaking half a butt}</b> in what seems to be a literal disco.
 
 A pumping dance beat shakes your insides, and {not event_detergent_used && not event_wowed_dancer: a smoke machine somewhere billows clouds into the air.}{not event_detergent_used && event_wowed_dancer: a <b>smoke machine</b> billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
 
@@ -547,8 +545,8 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
     The dancer shouts something back in reply.
     "____ ____ __ ___ _____, ____!" #CLASS: dancer
     You can't hear a darn thing.
-    + + + + [Use disco logic] Maybe he'll give you his shirt if you dance for it.
-    + + + + + [Draw disco conclusions] You're not sure why you think this, but you feel certain of it.
+    + + + [Use disco logic] Maybe he'll give you his shirt if you dance for it.
+    + + + + [Draw disco conclusions] You're not sure why you think this, but you feel certain of it.
     ...
     -> MineDisco
 
@@ -621,7 +619,7 @@ He throws it down at your feet, tears streaming down his face, and drops to his 
 
 + [Then you watch him grovel.] You watch him literally grovel at your feet.
 
-When he finishes, he gets up, turns around, and disappears into the heaving mass of dancing disco-miners.
+When he finishes, he gets up, turns around, and disappears, shirtless, into the heaving mass of dancing disco-miners.
 
 + + [Pick up the SOUL tanktop.] You pick up the tiny white tanktop with SOUL written in giant letters on the front. #CLASS: getitem
 
@@ -646,41 +644,45 @@ VAR disco_listened_counter = 0
 
 
 =DiscoListen1
-You are actively resisting it, but <b>you listen to the music</b> anyway.
+You are actively resisting it, but the music fills your head.
 The bassline is so over-tuned it actually sounds gastric. And it runs all over the beat, like a snorting possum fallen out of a chimney into the middle of your living room.
 + Like a possum! A snorting one!
+<b> You have listened to the music once. </b>
 ~disco_listened_counter++
 ...
 ->MineDisco
 
 =DiscoListen2
-<b>You listen to the music again.</b> It's unrelenting, and it continues to fill your head.
+It's unrelenting, and it continues to assail your ears.
 This song sounds like someone took a synth keyboard to the recording session and then used it as a brawl weapon with the power switched on.
 + ...against their bandmates, who were also simultaneously recording this song.
+<b> You have listened to the music twice. </b>
 ~disco_listened_counter++
 ...
 ->MineDisco
 
 =DiscoListen3
-<b>Your relationship with the music deepens</b>, as it is impossible to ignore.
+The music is impossible to ignore.
 WHY IS THERE GRUNTING IN THIS SONG? The song lacks lyrics, but there are still "vocals" if you could call them that, which just consist of a man grunting into the microphone.
 + Against all odds, this part of the song sounds gastric, too.
+<b> Your relationship with the music deepens. </b>
 ~disco_listened_counter++
 ...
 ->MineDisco
 
 =DiscoListen4
-<b>Your totally unintentional-but-comprehensive understanding of the music is solidified.</b>
+Your totally unintentional-but-comprehensive understanding of the music is solidified.
 You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!) this song has to offer.
 + This song would be like a fine wine if wine were made from garbage.
+<b> And you now have some kind of twisted love for this garbage-wine. </b>
 ~disco_listened_counter++
 ...
 ->MineDisco
 
 =DiscoListen5
-<b>You are already a connoisseur of cacophony.</b>
 You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!) this song has to offer.
 + This song would be like a fine wine if wine were made from garbage.
+<b> You are already a connoisseur of cacophany. </b>
 ...
 ->MineDisco
 
@@ -821,15 +823,3 @@ You continue until you exit the mines and are greeted by the outside world.
 ->mandogpuzzlestart
 
 ->END
-
-/*
-TODO:
-Dancer - give more player feedback when you progress. Showcase the funny parts instead of skip them for progressing.
-
-Step 1: dance
-Step 2: get in tune with the music - just listen to it a few times.
-Step 2: Get more and more feedback as you dance - form a pounding circle of peeps - more combos are unlocked the more you've listened to the music.
-Step 3: You can't keep going unless you've listened to the music the whole way.
-
-
-*/
