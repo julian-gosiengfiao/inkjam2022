@@ -126,7 +126,7 @@ Behind them, a second army of GHOST SKELETONS!
 + + <i>(how does THAT work?)</i>
 And riding a young red dragon over their heads, 
 + + + is <b>KRRANDORRRR-GUZZANNA[!]</b>, THE GREAT (AND VERY EVIL) GOBLIN NECROMANCER!!
-+ + + + <i> who? </i>
++ + + + <i> Who? </i>
 <i> (OK, so this was never really explained. She's a goblin necromancer. She's very evil and hates you. Don't worry about it.) </i>
 + + + + + She casts a spell to amplify her voice, and it booms through the town:
 
