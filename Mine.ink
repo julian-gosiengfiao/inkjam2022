@@ -504,7 +504,7 @@ VAR disco_squeeze_attempted = 0
 
 =MineDisco
 
-You are <b>{disco_listened_counter == 0:standing like a square}{disco_listened_counter == 1: imperceptibly bobbing your head}{disco_listened_counter == 2: swaying left and right}{disco_listened_counter == 3: semi-convincingly two-stepping}{disco_listened_counter >= 4: aggressively shaking half a butt}</b> in what seems to be a literal disco.
+You are <b>{disco_listened_counter == 0:standing like a square}{disco_listened_counter == 1: almost perceptibly bobbing your head}{disco_listened_counter == 2: convincingly two-stepping}{disco_listened_counter == 3: aggressively shaking half a butt}</b> in what seems to be a literal disco.
 
 A pumping dance beat shakes your insides, and {not event_detergent_used && not event_wowed_dancer: a smoke machine somewhere billows clouds into the air.}{not event_detergent_used && event_wowed_dancer: a <b>smoke machine</b> billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
 
@@ -515,8 +515,9 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
 + {disco_squeeze_attempted && not event_wowed_dancer} [Approach the dancer] You walk up to the dancer.
     He is wearing a very tight white <b>tanktop</b> that says "SOUL".
 
-    + + [Dance]
-        {disco_listened_counter <= 0:
+    + + [Dance] ->Dance1
+
+        /*{disco_listened_counter <= 0:
         Not only do you look like an ocean mollusc making sudden contact with a desert, <b>you are completely off-beat</b>.
         The dancer looks horrified and quickly turns away.
         + + + You tried. ->PostDanceBreak
@@ -541,7 +542,7 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
         You are the very image of a dancer's struggle.
         The dancer has stopped dancing and is in tears.
         + + + You are crying too. <br> ->WowedDancer
-        }
+        }*/
 
     + + ["Can I have that shirt?"] "___ __ _ ___ _____ ___?" #CLASS: hero
     The dancer shouts something back in reply.
@@ -583,6 +584,26 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
 + [Check inventory]
     -> Inventory -> MineDisco
 
+=Dance1
+    Not only do you look like an ocean mollusc making sudden contact with a desert, <b>you are completely off-beat</b>.
+    The disco dancer stares, agog.
+    + {disco_listened_counter > 0} [Dance] You continue dancing. -> Dance2
+    + {disco_listened_counter == 0} [Dance] Your confidence hits its limit, and so does your dancing.
+    
+    The disco dancer is horrified, and turns away.
+    ...
+    -> MineDisco
+    
+    + [Stop] You abruptly stop dancing in the middle of your boogie.
+    It's a very strange thing to do, and you feel very strange.
+    The disco dancer is horrified, and turns away.
+    ...
+    -> MineDisco   
+
+=Dance2
+...
+-> MineDisco
+
 =PostDanceBreak
 <br>
 ...
@@ -615,13 +636,13 @@ VAR event_wowed_dancer = 0
 
 =WowedDancer
 ...
-He screams something unintelligible over the intestinal bass guitar booming over the speakers, and strips off his tight white <b>tanktop</b> with "SOUL" emblazoned on the front.
+He screams something unintelligible over the gastric-sounding bassline, and strips off his tight white <b>tanktop</b> with "SOUL" emblazoned on the front.
 
 He throws it down at your feet, tears streaming down his face, and drops to his knees.
 
 + [Then you watch him grovel.] You watch him literally grovel at your feet.
 
-When he finishes, he gets up, turns around, and disappears into the heaving mass of dancing disco-miners.
+When he finishes, he gets up, turns around, and disappears, shirtless, into the heaving mass of dancing disco-miners.
 
 + + [Pick up the SOUL tanktop.] You pick up the tiny white tanktop with SOUL written in giant letters on the front. #CLASS: getitem
 
@@ -641,10 +662,43 @@ VAR disco_listened_counter = 0
 {disco_listened_counter == 0: ->DiscoListen1}
 {disco_listened_counter == 1: ->DiscoListen2}
 {disco_listened_counter == 2: ->DiscoListen3}
-{disco_listened_counter == 3: ->DiscoListen4}
-{disco_listened_counter <= 4: ->DiscoListen5}
+{disco_listened_counter <= 3: ->DiscoListenMax}
+/*{disco_listened_counter <= 4: ->DiscoListen5}*/
 
+=DiscoListen1
+You listen to the music.
+It is terrible.
++ [Yep.] <b> You have listened to the music once.</b>
+~disco_listened_counter++
+...
+->MineDisco
 
+=DiscoListen2
+You listen to the music again.
+Against all adds, it is still terrible.
+But it's growing on you.
++ [boom-tss-boom-tss-boom-tss-boom-tss...] <b> You have listened to the music twice.</b>
+~disco_listened_counter++
+...
+->MineDisco
+
+=DiscoListen3
+<b>Your relationship with the music deepens</b>, as it is impossible to ignore.
+WHY IS THERE GRUNTING IN THIS SONG? The song lacks lyrics, but there are still "vocals" if you could call them that, which just consist of a man grunting into the microphone.
++ Against all odds, this part of the song sounds gastric, too.
+~disco_listened_counter++
+...
+->MineDisco
+
+=DiscoListenMax
+<b>Your totally unintentional-but-comprehensive understanding of the music is solidified.</b>
+You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!) this song has to offer.
++ This song would be like a fine wine if wine were made from garbage.
+~disco_listened_counter++
+...
+->MineDisco
+
+/*
 =DiscoListen1
 You are actively resisting it, but <b>you listen to the music</b> anyway.
 The bassline is so over-tuned it actually sounds gastric. And it runs all over the beat, like a snorting possum fallen out of a chimney into the middle of your living room.
@@ -683,6 +737,7 @@ You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!
 + This song would be like a fine wine if wine were made from garbage.
 ...
 ->MineDisco
+*/
 
 VAR talked_to_moles = 0
 VAR looked_at_junk = 0
@@ -830,6 +885,8 @@ Step 1: dance
 Step 2: get in tune with the music - just listen to it a few times.
 Step 2: Get more and more feedback as you dance - form a pounding circle of peeps - more combos are unlocked the more you've listened to the music.
 Step 3: You can't keep going unless you've listened to the music the whole way.
+
+Joke - be on beat? or have confidence?
 
 
 */
