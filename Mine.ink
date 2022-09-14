@@ -15,7 +15,6 @@ The bridge is long, and overlooks craggy cliffs.
 #CLEAR
 
 #IMAGE: images/theMine-small.jpg
-You walk to the end.
 
 You see the mine-pass not far ahead, the only safe way through the mountains.
 
@@ -513,7 +512,7 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
 + {disco_squeeze_attempted && not event_wowed_dancer} [Approach the dancer] You walk up to the dancer.
     He is wearing a very tight white <b>tanktop</b> that says "SOUL".
 
-    + + [Dance]
+    + + [Dance] You dance.
         {disco_listened_counter <= 0:
         Not only do you look like an ocean mollusc making sudden contact with a desert, <b>you are completely off-beat</b>.
         The dancer looks horrified and quickly turns away.
@@ -554,7 +553,7 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
     ...
     -> MineDisco
 
-+ {disco_squeeze_attempted && not event_wowed_dancer} [Listen to the music]
++ {disco_squeeze_attempted && not event_wowed_dancer} [Listen to the music] You listen to the music.
 ->DiscoListenMain
 
 + {event_wowed_dancer} [Check out the smoke machine]
@@ -644,7 +643,6 @@ VAR disco_listened_counter = 0
 
 
 =DiscoListen1
-You are actively resisting it, but the music fills your head.
 The bassline is so over-tuned it actually sounds gastric. And it runs all over the beat, like a snorting possum fallen out of a chimney into the middle of your living room.
 + Like a possum! A snorting one!
 <b> You have listened to the music once. </b>
@@ -653,7 +651,6 @@ The bassline is so over-tuned it actually sounds gastric. And it runs all over t
 ->MineDisco
 
 =DiscoListen2
-It's unrelenting, and it continues to assail your ears.
 This song sounds like someone took a synth keyboard to the recording session and then used it as a brawl weapon with the power switched on.
 + ...against their bandmates, who were also simultaneously recording this song.
 <b> You have listened to the music twice. </b>
@@ -662,7 +659,6 @@ This song sounds like someone took a synth keyboard to the recording session and
 ->MineDisco
 
 =DiscoListen3
-The music is impossible to ignore.
 WHY IS THERE GRUNTING IN THIS SONG? The song lacks lyrics, but there are still "vocals" if you could call them that, which just consist of a man grunting into the microphone.
 + Against all odds, this part of the song sounds gastric, too.
 <b> Your relationship with the music deepens. </b>
@@ -671,10 +667,9 @@ WHY IS THERE GRUNTING IN THIS SONG? The song lacks lyrics, but there are still "
 ->MineDisco
 
 =DiscoListen4
-Your totally unintentional-but-comprehensive understanding of the music is solidified.
 You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!) this song has to offer.
 + This song would be like a fine wine if wine were made from garbage.
-<b> And you now have some kind of twisted love for this garbage-wine. </b>
+<b> And you have now become some kind of garbage-wine connoisseur. </b>
 ~disco_listened_counter++
 ...
 ->MineDisco
@@ -682,7 +677,7 @@ You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!
 =DiscoListen5
 You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!) this song has to offer.
 + This song would be like a fine wine if wine were made from garbage.
-<b> You are already a connoisseur of cacophany. </b>
+<b> You are already a garbage-wine connoisseur. What more do you want? </b>
 ...
 ->MineDisco
 
