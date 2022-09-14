@@ -68,7 +68,7 @@ What spell could you chant?
 ->wrongspell ->spell1race
 + Chant the Muscular Cow spell
 ->fasthorse
-+ Chant the Disco spell
+* Chant the Disco spell
 ->wrongspell ->spell1race
 
 
@@ -81,12 +81,26 @@ What spell could you chant?
 Unfortunately, you ran out of time. The town, Eldra, Bessie the cow... they are all doomed. 
 
 GAME OVER
+->restartprompt
 
+=restartprompt
 Restart from the Red Warning Flare? 
-+ YES
++ [YES]
 ->endgamespellsstart
-+ NO 
-->theend
++ [NO] 
+->nodontrestart
+
+=nodontrestart
+Okay, fine. I guess Krrandorrrr-Guzzanna is going to overrun the town.
+->fine
+
+=fine
++ Fine!
+{~Fine.|Fine.|Fine.|Fine?|Fine!|Fine.|Fine.|Fine.|Fine.|Fine.|Fine.|Fine.|Fine...|Fine.|Fine.|Fine.|Fine.|Fine.|Fine.|Fine.|Fine.|Fine.}
+->fine
++ Hang on, I changed my mind.
+Okay.
+->restartprompt
 
 =fasthorse
 #CLEAR
