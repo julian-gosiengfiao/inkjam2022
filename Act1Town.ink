@@ -59,7 +59,7 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 ->squeeze
 + {hotmilk} [Talk to happy cowman]
 ->happycowman
-+ [Go into town] You walk past the nearby half-ruined houses, and towards the town square. //TODO: ASK MATT ABOUT IF WE CAN AVOID RUINING HOUSES? SISTERS DELAYED FOR IT, MAYBE MAKES THEM LESS LIKABLE
++ [Go into town] You walk /*past the nearby half-ruined houses, and*/ towards the town square. //TODO: ASK MATT ABOUT IF WE CAN AVOID RUINING HOUSES? SISTERS DELAYED FOR IT, MAYBE MAKES THEM LESS LIKABLE?
 ...
 ->townsquare
 

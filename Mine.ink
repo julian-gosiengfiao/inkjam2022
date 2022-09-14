@@ -11,7 +11,7 @@ ACT TWO: THE MINE #CLASS: chapter2
 
 The bridge is long, and overlooks craggy cliffs.
 
-+ [Walk to the end] You walk to the end.
++ [Walk to the end]
 #CLEAR
 
 #IMAGE: images/theMine-small.jpg
@@ -218,7 +218,7 @@ The man looks at you suspiciously.
     "Life is just a never-ending series of chores," #CLASS: barrelman
     + + + + [Nod] You suddenly feel a kinship with the barrel-man, but you don't show it on the outside.
     "And day in, day out, I'm just washing black soot out of my work uniform." #CLASS: barrelman
-    + + + + + "Uh, huh..." #CLASS: hero
+    + + + + + "Uh-huh..." #CLASS: hero
     "So I said to her, I wish that it was LITERALLY IMPOSSIBLE for my uniform to pick up EVEN THE SMALLEST speck of dirt, and that it would ALWAYS shine RADIANTLY FOR ALL TO SEE!" #CLASS: barrelman
     + + + + + + [Look at the building] You both look at the glowing {building_is_laundry: laundry} building, with radiant light erupting from every window and crack.
     + + + + + + + [Look at each other] You both look back at each other.
@@ -235,10 +235,11 @@ The man looks at you suspiciously.
     ->OutsideMine
 
 =BarrelTalkSpell
++ [Wait for him to break the silence]
 He continues, "Then she cast a spell, and it went like this:" #CLASS: barrelman
 Why must this idiot be so whiny? #CLASS: magic
 Let everything be clean and shiny! #CLASS: magic
-+ "Harsh." #CLASS: hero
++ + "Harsh." #CLASS: hero
 ->BarrelTalk2
 
 VAR kicked_for_key = 0
@@ -505,15 +506,14 @@ VAR disco_squeeze_attempted = 0
 
 You are <b>{disco_listened_counter == 0:standing like a square}{disco_listened_counter == 1: imperceptibly bobbing your head}{disco_listened_counter == 2: swaying left and right}{disco_listened_counter == 3: semi-convincingly two-stepping}{disco_listened_counter >= 4: aggressively shaking half a butt}</b> in what seems to be a literal disco.
 
-A pumping dance beat shakes your insides, and {not event_detergent_used: a <b>smoke machine</b> billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
+A pumping dance beat shakes your insides, and {not event_detergent_used && not event_wowed_dancer: a smoke machine somewhere billows clouds into the air.}{not event_detergent_used && event_wowed_dancer: a <b>smoke machine</b> billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
 
 Near the other end of the room is a solid writhing mass of <b>partying miners</b>{event_detergent_used: covered in FOAM!}{not event_detergent_used:.}
 
-{disco_squeeze_attempted && not event_wowed_dancer: A <b>disco dancer</b> has noticed you and is half-turned towards you, dancing away.}
+{disco_squeeze_attempted && not event_wowed_dancer: You notice a <b>disco dancer</b> half-turned towards you, dancing away.}
 
 + {disco_squeeze_attempted && not event_wowed_dancer} [Approach the dancer] You walk up to the dancer.
     He is wearing a very tight white <b>tanktop</b> that says "SOUL".
-    He already doesn't seem very impressed with you.
 
     + + [Dance]
         {disco_listened_counter <= 0:
@@ -543,11 +543,16 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
         + + + You are crying too. <br> ->WowedDancer
         }
 
-    * * /*+ +*/ ["How do I get through here?"] "___ __ _ ___ _____ ___?" #CLASS: hero
-    The dancer turns his nose up at you.
-    "____ ____ __ ___ _____, ____." #CLASS: dancer
-    + + + You can't hear a darn thing.
-    He /*{~*/grapevines/*|sashays|step ball-changes|rock steps|jazz squares|moonwalks}*/ away.
+    + + ["Can I have that shirt?"] "___ __ _ ___ _____ ___?" #CLASS: hero
+    The dancer shouts something back in reply.
+    "____ ____ __ ___ _____, ____!" #CLASS: dancer
+    You can't hear a darn thing.
+    + + + + [Use disco logic] Maybe he'll give you his shirt if you dance for it.
+    + + + + + [Draw disco conclusions] You're not sure why you think this, but you feel certain of it.
+    ...
+    -> MineDisco
+
+    + + [Leave]
     ...
     -> MineDisco
 
@@ -819,7 +824,12 @@ You continue until you exit the mines and are greeted by the outside world.
 
 /*
 TODO:
-barrelman offers sister information before you help him?
 Dancer - give more player feedback when you progress. Showcase the funny parts instead of skip them for progressing.
+
+Step 1: dance
+Step 2: get in tune with the music - just listen to it a few times.
+Step 2: Get more and more feedback as you dance - form a pounding circle of peeps - more combos are unlocked the more you've listened to the music.
+Step 3: You can't keep going unless you've listened to the music the whole way.
+
 
 */
