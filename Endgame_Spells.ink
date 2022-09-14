@@ -276,10 +276,10 @@ She winks at you with a big grin on her face, and then looks pointedly at the St
 ->spell5sleep
 * [Put your sunglasses on] You put your sunglasses on.
 ->spell5sleep
+* [Channel all your magical energy into the tip of the Staff] You channel all your magical energy into the tip of the Staff... //I moved this above the two spell selections - it felt like it might be in the wrong place...?
+->spell5sleep
 * [Chant a spell about how you wish we could all just get along]
 ->wrongspell ->spell5sleep
-* [Channel all your magical energy into the tip of the Staff] You channel all your magical energy into the tip of the Staff...
-->spell5sleep
 + [Chant the Sleep Spell your sisters accidentally invented last night!] You chant the Sleep Spell your sisters accidentally invented last night!
 ->defeat
 
@@ -311,7 +311,7 @@ The young red dragon looks around for a second, and then decides it's done, and 
 
 "... But I don't know how to undo all this magic! I don't know how to turn you back into yourself, or end any of these <b>Blessings Gone Wrong</b>!" #CLASS: hero
 "But I do! I've studied for years, and I have the experience, and I can return everything to normal. I just... can't hold the Staff like this!" #CLASS: bigsis
-+ Yolene nudges you again [.]
++ [Yolene nudges you again] Yolene nudges you again.
 "You can do this. And you can trust Eldra. She really is looking out for us, after all." #CLASS: littlesis
 + + [Chant one last spell... the Man/Dog Spell./*..*/]
 ->switch
@@ -331,7 +331,7 @@ And "Yolene" reaches forward to take the Staff into her hands.
 ... and all the way to a distant hill where a man and dog are happily playing together...
 + + + and just like that... [] your sisters are <b>back in their bodies</b>...
 ... and reaching forward to pull you into <b>a warm hug</b>.
-+ + + + [Hug them] //Might be nice to make hugging them a player action before popping the end - maybe even input-ize this more...?
++ + + + [Hug them] You hug them. //Might be nice to make hugging them a player action before popping the end - maybe even input-ize this more...?
 ->thegoodend
 
 =thegoodend
