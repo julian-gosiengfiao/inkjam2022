@@ -344,7 +344,7 @@ The tunnel goes on into the <b>darkness</b>.
 
 + {dark_section_solved} [Go deeper into the tunnel] You traverse the darkness with your sunglasses and your sock.
     ...
-    ->MineDisco
+    ->MineDiscoFirstEntry
 
 
 + [Exit the mine] You go back out the way you came.
@@ -525,22 +525,23 @@ The pulsing gets louder - it is a thumping bass beat.
     You put your sock and sunglasses away, and emerge in a huge chamber in the middle of the mine.
     + + + + + + + + [Look around]
     ...
-    ->MineDisco
+    ->MineDiscoFirstEntry
 
 
-/*=MineDiscoFirstEntry
+=MineDiscoFirstEntry
 {sound_enabled == 1:
-#AUDIO: sounds/track1.mp3
+    {event_wowed_dancer > 0:
+    #AUDIO: sounds/track4.mp3
+    }
+    {event_wowed_dancer == 0:
+    #AUDIO: sounds/track1.mp3
+    }
 }
-->MineDisco*/
+->MineDisco
 
 VAR disco_squeeze_attempted = 0
 
 =MineDisco
-
-{sound_enabled == 1:
-#AUDIO: sounds/track1.mp3
-}
 
 You are <b>{disco_listened_counter == 0:standing like a square}{disco_listened_counter == 1: almost-perceptibly bobbing your head}{disco_listened_counter == 2: convincingly two-stepping}{disco_listened_counter == 3: aggressively shaking half a butt}/*{disco_listened_counter >= 4: aggressively shaking half a butt}*/</b> in what seems to be a literal disco.
 
@@ -645,8 +646,19 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
 + [Go back to the mine entrance] You go back through the dark tunnel using your sunglasses and your sock.
     ...
     -> MineRoom1
+
 + [Check inventory]
     -> Inventory -> MineDisco
+
++ {event_wowed_dancer && sound_enabled == 1} [(Disable Sound)]
+        <b>Sound disabled.</b> #CLASS: system
+        ~sound_enabled = 0
+        ->MineDisco
+    
++ {event_wowed_dancer && sound_enabled == 0} [(Enable Sound)]
+        <b>Sound enabled.</b> #CLASS: system
+        ~sound_enabled = 1
+        ->MineDisco
 
 =PostDanceBreak
 <br>
