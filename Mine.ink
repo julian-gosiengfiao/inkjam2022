@@ -525,18 +525,22 @@ The pulsing gets louder - it is a thumping bass beat.
     You put your sock and sunglasses away, and emerge in a huge chamber in the middle of the mine.
     + + + + + + + + [Look around]
     ...
-    ->MineDiscoFirstEntry
+    ->MineDisco
 
 
-=MineDiscoFirstEntry
+/*=MineDiscoFirstEntry
 {sound_enabled == 1:
 #AUDIO: sounds/track1.mp3
 }
-->MineDisco
+->MineDisco*/
 
 VAR disco_squeeze_attempted = 0
 
 =MineDisco
+
+{sound_enabled == 1:
+#AUDIO: sounds/track1.mp3
+}
 
 You are <b>{disco_listened_counter == 0:standing like a square}{disco_listened_counter == 1: almost-perceptibly bobbing your head}{disco_listened_counter == 2: convincingly two-stepping}{disco_listened_counter == 3: aggressively shaking half a butt}/*{disco_listened_counter >= 4: aggressively shaking half a butt}*/</b> in what seems to be a literal disco.
 
@@ -577,7 +581,8 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
             {sound_enabled == 1:
             #AUDIO: sounds/track3.mp3
             }
-        You move with the practiced elegance of a freshly birthed elephant, seamlessly chaining swinging elbows to flailing kicks. If it weren't for the fact that you couldn't dance, it would almost look like a new dance style. <b>You're pretty on beat.</b>
+        You move with the practiced elegance of a freshly birthed elephant, seamlessly chaining swinging elbows to flailing kicks.
+        If it weren't for the fact that you couldn't dance, it would almost look like a new dance style. <b>You're pretty on beat.</b>
         The dancer looks impressed, then averts his attention elsewhere.
         + + + You are a hotdog. ->PostDanceBreak
         }
