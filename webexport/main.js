@@ -32,6 +32,14 @@
     }
 
     var storyContainer = document.querySelector('#story');
+    // Extend height to fit
+    setInterval(() => {
+        var needToScroll = (storyContainer.style.height !== contentBottomEdgeY()+"px");
+        storyContainer.style.height = contentBottomEdgeY()+"px";
+        if (needToScroll){
+            scrollDown(contentBottomEdgeY());
+        }
+    }, 500)
     var outerScrollContainer = document.querySelector('.outerContainer');
 
     // page features setup
