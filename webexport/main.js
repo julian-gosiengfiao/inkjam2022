@@ -189,13 +189,9 @@
         });
 
         // Extend height to fit
-        setInterval(() => {
-            var needToScroll = (storyContainer.style.height !== contentBottomEdgeY()+"px");
-            storyContainer.style.height = contentBottomEdgeY()+"px";
-            if (needToScroll){
-                scrollDown(contentBottomEdgeY());
-            }
-        }, 2000)
+        // We do this manually so that removing elements and creating new ones doesn't
+        // cause the height (and therefore scroll) to jump backwards temporarily.
+        storyContainer.style.height = contentBottomEdgeY()+"px";
 
         if( !firstTime )
             scrollDown(previousBottomEdge);

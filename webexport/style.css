@@ -102,20 +102,20 @@
 
 .mole{
     font-family: 'Open Sans', sans-serif;
-    color: #775e3e;
+    color: #d8ac73;
 }
 
 .mole2{
     font-family: 'Open Sans', sans-serif;
-    color: #61773e;
+    color: #aed470;
 }
 .mole3{
     font-family: 'Open Sans', sans-serif;
-    color: #773e4f;
+    color: #da7492;
 }
 .smith{
     font-family: 'Open Sans', sans-serif;
-    color: #991a1a;
+    color: #c72626;
 }
 .manbraindog{
     font-family: 'Open Sans', sans-serif;
@@ -124,6 +124,38 @@
 .dogbrainman{
     font-family: 'Open Sans', sans-serif;
     color: #e4e4e4;
+}
+.selection {
+    text-align: center;
+}
+.system {
+    text-align: center;
+    color: rgb(102, 255, 0);
+    font-size: 10pt;
+}
+.chapter1 {
+    text-align: center;
+    color: rgb(255, 253, 122);
+    font-size: 25pt;
+    font-style: bold;
+}
+.chapter2 {
+    text-align: center;
+    color: rgb(51, 82, 255);
+    font-size: 25pt;
+    font-style: bold;
+}
+.chapter3 {
+    text-align: center;
+    color: rgb(255, 135, 23);
+    font-size: 25pt;
+    font-style: bold;
+}
+.chapterfinal {
+    text-align: center;
+    color: rgb(108, 0, 129);
+    font-size: 25pt;
+    font-style: bold;
 }
 
 /* Old Bekant1 Stuff here.
@@ -197,11 +229,11 @@
 */
 
 h1{
-    color: pink;   
+    color: rgb(110, 85, 255);   
     font-family: 'Josefin Sans' !important;
 }
 .title{
-    color: pink;   
+    color: rgb(255, 55, 88);   
     font-family: 'Josefin Sans' !important;
 }
 
@@ -445,7 +477,7 @@ body.dark {
 }
 
 .dark a {
-    color: #cc8f1a;
+    color: #d6b916;
     transition: color 0.6s;
 }
 
