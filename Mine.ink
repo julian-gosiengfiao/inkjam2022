@@ -367,7 +367,7 @@ It looks like it goes pretty deep, and you might be able to fit through it.
     ...
     + + + ...
     ...
-    + + + + You emerge through the other end.
+    + + + + [Emerge] You emerge through the other end.
     ...
     ~crack_travelled++
     -> MoleRoom
@@ -437,6 +437,7 @@ The foreman looks back down at his business.
 
 VAR dark_section_sunglasses = 0
 VAR dark_section_solved = 0
+VAR sound_enabled = 1
 
 =TunnelDarkSection
 It's really <b>dark</b> in here, and you can't see where you're going.
@@ -468,38 +469,69 @@ It's really <b>dark</b> in here, and you can't see where you're going.
     This tunnel goes on and on.
     
     + + + [Keep going] You keep going.
-    ...
-    You can hear some faint pulsing in the distance.
+    -> TunnelSound1
+    
+=TunnelSound1
+...
+You can hear some faint pulsing in the distance.
 
-    + + + + [Keep going]
+The next section contains sound. Please select an option. #CLASS: system
+
++ [Continue with sound enabled]
+~sound_enabled = 1
+<b>Sound enabled.</b> #CLASS: system
+You keep going.
+->TunnelSound2
+
+
++ [Continue with sound disabled]
+~sound_enabled = 0
+<b>Sound disabled.</b> #CLASS: system
+You keep going.
+->TunnelSound2
+
+/*->TunnelSound2
++ [Disable Sound]
+
++ {sound_enabled == 1} [(Disable Sound)]
+    <b>Sound disabled.</b> #CLASS: system
+    ->TunnelSound1
+
++ {sound_enabled == 0} [(Enable Sound)]
+    <b>Sound enabled.</b> #CLASS: system
+    ->TunnelSound1*/
+
+=TunnelSound2
+...
+The pulsing gets louder - it is a thumping bass beat.
+{sound_enabled == 1:
+#AUDIO: sounds/pulsing1.mp3
+}
++ + + + + [Keep going...]
     ...
-    The pulsing gets louder - it is a thumping bass beat.
-    #AUDIO: sounds/pulsing1.mp3
+    The closer and closer you get, the clearer and clearer the music gets.
     
-    + + + + + [Keep going]
-    ...
-    As you get closer, you can hear the music.
-    
-    + + + + + + [Keep going...]
-    ...
-    The closer and closer you get, the clearer and clearer the music is.
-    #AUDIO: sounds/pulsing2.mp3
-    
-    + + + + + + + [Keep going...!]
+    + + + + + + [Keep going...!]
     ...
     You begin to realize the music is terrible.
     And made up almost completely up of a bass drum and a hi-hat.
-    + + + + + + + + [You're there!]
+    {sound_enabled == 1:
+    #AUDIO: sounds/pulsing2.mp3
+    }
+    + + + + + + + [You're there!]
     ~dark_section_solved++
-
+    
     ...
     You put your sock and sunglasses away, and emerge in a huge chamber in the middle of the mine.
-    + + + + + + + + + [Look around]
+    + + + + + + + + [Look around]
     ...
     ->MineDiscoFirstEntry
 
+
 =MineDiscoFirstEntry
+{sound_enabled == 1:
 #AUDIO: sounds/track1.mp3
+}
 ->MineDisco
 
 VAR disco_squeeze_attempted = 0
@@ -519,7 +551,9 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
 
     + + [Dance] You dance.
         {disco_listened_counter <= 0:
-        #AUDIO: sounds/track1.mp3
+            {sound_enabled == 1:
+            #AUDIO: sounds/track1.mp3
+            }
         Not only do you look like an ocean mollusc making sudden contact with a desert, <b>you are completely off-beat</b>.
         The dancer looks horrified and quickly turns away.
         + + + You tried. ->PostDanceBreak
@@ -532,23 +566,31 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
         }*/
         
         {disco_listened_counter == 1:
-        #AUDIO: sounds/track2.mp3
+            {sound_enabled == 1:
+            #AUDIO: sounds/track2.mp3
+            }
         You somehow move in a way that accentuates all the worst parts of your physique, but it's <i>almost</i> enchanting, and <b>almost on beat.</b>
         The dancer looks <i>almost</i> intrigued, but turns away.
         + + + It's something. ->PostDanceBreak
         }
         {disco_listened_counter == 2:
-        #AUDIO: sounds/track3.mp3
+            {sound_enabled == 1:
+            #AUDIO: sounds/track3.mp3
+            }
         You move with the practiced elegance of a freshly birthed elephant, seamlessly chaining swinging elbows to flailing kicks. If it weren't for the fact that you couldn't dance, it would almost look like a new dance style. <b>You're pretty on beat.</b>
         The dancer looks impressed, then averts his attention elsewhere.
         + + + You are a hotdog. ->PostDanceBreak
         }
         {disco_listened_counter >= 3:
-        #AUDIO: sounds/track4.mp3
-        Your rage at your lack of coordination shines through in some sort of interpretive masterpiece, every aimless flail <b>not only on beat, but making sweet lyrical love to each grunt, default-drum-sample-clap and overheld maximum-velocity synth note.</b>
-        You are the very image of a dancer's struggle.
+            {sound_enabled == 1:
+            #AUDIO: sounds/track4extended.mp3
+            }
+        Your rage at your lack of coordination shines through in some sort of interpretive masterpiece.
+        
+        Every aimless flail you make is <b>not only on beat, but making sweet lyrical love to each grunt, default-drum-sample-clap and overheld maximum-velocity synth note.</b>
+        + + + You are the very image of a dancer's struggle.
         The dancer has stopped dancing and is in tears.
-        + + + You are crying too. <br> ->WowedDancer
+        + + + + You are crying too. <br> ->WowedDancer
         }
 
     + + ["Can I have that shirt?"] "___ _ ____ ____ _____?" #CLASS: hero
@@ -559,6 +601,16 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
     + + + + [Draw disco conclusions] You're not sure why you think this, but you feel certain of it.
     ...
     -> MineDisco
+
+    + + {sound_enabled == 1} [(Disable Sound)]
+        <b>Sound disabled.</b> #CLASS: system
+        ~sound_enabled = 0
+        ->MineDisco
+    
+    + + {sound_enabled == 0} [(Enable Sound)]
+        <b>Sound enabled.</b> #CLASS: system
+        ~sound_enabled = 1
+        ->MineDisco
 
     + + [Leave]
     ...
@@ -631,7 +683,7 @@ He throws it down at your feet, tears streaming down his face, and drops to his 
 
 When he finishes, he gets up, turns around, and disappears, shirtless, into the heaving mass of dancing disco-miners.
 
-+ + [Pick up the SOUL tanktop.] You pick up the tiny white tanktop with SOUL written in giant letters on the front. #CLASS: getitem
++ + [Pick up the SOUL tanktop] You pick up the tiny white tanktop with SOUL written in giant letters on the front. #CLASS: getitem
 
 ~item_soul_tanktop++
 ~event_wowed_dancer++
@@ -654,34 +706,45 @@ VAR disco_listened_counter = 0
 
 
 =DiscoListen1
+{sound_enabled == 1:
 #AUDIO: sounds/track2.mp3
+}
++ Oh my.
 The bassline is so over-tuned it actually sounds gastric. And it runs all over the beat, like a snorting possum fallen out of a chimney into the middle of your living room.
-+ Like a possum! A snorting one!
++ + Like a possum! A snorting one!
 <b> You build some kind of relationship with the music. </b>
 ~disco_listened_counter++
 ...
 ->MineDisco
 
 =DiscoListen2
+{sound_enabled == 1:
 #AUDIO: sounds/track3.mp3
+}
++ Good grief...
 This song sounds like someone took a synth keyboard to the recording session and then used it as a brawl weapon with the power switched on.
-+ ...against their bandmates, who were also simultaneously recording this song.
++ + ...against their bandmates, who were also simultaneously recording this song.
 <b> Your relationship with the music is complex, but it develops. </b>
 ~disco_listened_counter++
 ...
 ->MineDisco
 
 =DiscoListen3
+{sound_enabled == 1:
 #AUDIO: sounds/track4.mp3
+}
++ WHAT
 WHY IS THERE GRUNTING IN THIS SONG? The song lacks lyrics, but there are still "vocals" if you could call them that, which just consist of a man grunting into the microphone.
-+ Against all odds, this part of the song sounds gastric, too.
++ + Against all odds, this part of the song sounds gastric, too.
 <b> Or maybe that's just the sound of you becoming one with the music. </b>
 ~disco_listened_counter++
 ...
 ->MineDisco
 
 =DiscoListen4
+{sound_enabled == 1:
 #AUDIO: sounds/track4.mp3
+}
 You can already hear every UNCE, crash, grunt (???) and yell (?!) this song has to offer.
 + This song would be like a fine wine if wine were made from garbage.
 <b> And you have apparently become some kind of garbage-wine connoisseur. </b>
@@ -808,12 +871,12 @@ VAR mole_hole_dub = 0
     "NO. NONE OF SUCH ROLE."#CLASS: mole
     ...
     ->MoleOptions
-+ "What's all this junk?"#CLASS: hero
++ "What are you doing here?"#CLASS: hero
     "WE COLLECT OBJECTS GOOD FOR MOLE."#CLASS: mole
     "SACRED OBJECTS: THAT IS GOAL."#CLASS: mole
     ->MoleOptions
-+ "What are you doing here?" #CLASS: hero
-    "WE SIT HERE IN HOLE."#CLASS: mole
++ "What's this place?" #CLASS: hero
+    "THIS IS MOLE HOLE."#CLASS: mole
 
     ~mole_hole_dub++
     ->MoleOptions
@@ -826,6 +889,7 @@ VAR mole_hole_dub = 0
 + You did it!!!
 The rest of the tunnel continues to the other side of the mountains, where Yolene has gone.
 + + Let's go get her.
+{sound_enabled == 1: Sound-enabled section complete.} #CLASS: system
 You continue until you exit the mines and are greeted by the outside world.
 + + + [Leave the mines behind you]
 ...
