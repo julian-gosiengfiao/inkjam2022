@@ -474,6 +474,7 @@ It's really <b>dark</b> in here, and you can't see where you're going.
     + + + + [Keep going]
     ...
     The pulsing gets louder - it is a thumping bass beat.
+    #AUDIO: sounds/pulsing1.mp3
     
     + + + + + [Keep going]
     ...
@@ -482,6 +483,7 @@ It's really <b>dark</b> in here, and you can't see where you're going.
     + + + + + + [Keep going...]
     ...
     The closer and closer you get, the clearer and clearer the music is.
+    #AUDIO: sounds/pulsing2.mp3
     
     + + + + + + + [Keep going...!]
     ...
@@ -494,14 +496,17 @@ It's really <b>dark</b> in here, and you can't see where you're going.
     You put your sock and sunglasses away, and emerge in a huge chamber in the middle of the mine.
     + + + + + + + + + [Look around]
     ...
-    ->MineDisco
+    ->MineDiscoFirstEntry
 
+=MineDiscoFirstEntry
+#AUDIO: sounds/track1.mp3
+->MineDisco
 
 VAR disco_squeeze_attempted = 0
 
 =MineDisco
 
-You are <b>{disco_listened_counter == 0:standing like a square}{disco_listened_counter == 1: almost-perceptibly bobbing your head}{disco_listened_counter == 2: swaying left and right}{disco_listened_counter == 3: convincingly two-stepping}{disco_listened_counter >= 4: aggressively shaking half a butt}</b> in what seems to be a literal disco.
+You are <b>{disco_listened_counter == 0:standing like a square}{disco_listened_counter == 1: almost-perceptibly bobbing your head}{disco_listened_counter == 2: convincingly two-stepping}{disco_listened_counter == 3: aggressively shaking half a butt}/*{disco_listened_counter >= 4: aggressively shaking half a butt}*/</b> in what seems to be a literal disco.
 
 A pumping dance beat shakes your insides, and {not event_detergent_used && not event_wowed_dancer: a smoke machine somewhere billows clouds into the air.}{not event_detergent_used && event_wowed_dancer: a <b>smoke machine</b> billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
 
@@ -514,33 +519,39 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
 
     + + [Dance] You dance.
         {disco_listened_counter <= 0:
+        #AUDIO: sounds/track1.mp3
         Not only do you look like an ocean mollusc making sudden contact with a desert, <b>you are completely off-beat</b>.
         The dancer looks horrified and quickly turns away.
         + + + You tried. ->PostDanceBreak
         }
-        {disco_listened_counter == 1:
+/*        {disco_listened_counter == 1:
+        #AUDIO: sounds/track2.mp3
         You are a mess of flailing limbs and jerky movements, and <b>there are maybe one or two moments when your human blender impression matches the beat.</b>
         The dancer looks displeased and resumes his dancing.
         + + + At least you showed up. ->PostDanceBreak
-        }
-        {disco_listened_counter == 2:
-        You somehow move in a way that accentuates all the worst parts of your physique, but it's almost enchanting, and <b>somewhat on beat.</b>
-        The dancer looks intrigued, but turns away.
+        }*/
+        
+        {disco_listened_counter == 1:
+        #AUDIO: sounds/track2.mp3
+        You somehow move in a way that accentuates all the worst parts of your physique, but it's <i>almost</i> enchanting, and <b>almost on beat.</b>
+        The dancer looks <i>almost</i> intrigued, but turns away.
         + + + It's something. ->PostDanceBreak
         }
-        {disco_listened_counter == 3:
+        {disco_listened_counter == 2:
+        #AUDIO: sounds/track3.mp3
         You move with the practiced elegance of a freshly birthed elephant, seamlessly chaining swinging elbows to flailing kicks. If it weren't for the fact that you couldn't dance, it would almost look like a new dance style. <b>You're pretty on beat.</b>
         The dancer looks impressed, then averts his attention elsewhere.
         + + + You are a hotdog. ->PostDanceBreak
         }
-        {disco_listened_counter >= 4:
+        {disco_listened_counter >= 3:
+        #AUDIO: sounds/track4.mp3
         Your rage at your lack of coordination shines through in some sort of interpretive masterpiece, every aimless flail <b>not only on beat, but making sweet lyrical love to each grunt, default-drum-sample-clap and overheld maximum-velocity synth note.</b>
         You are the very image of a dancer's struggle.
         The dancer has stopped dancing and is in tears.
         + + + You are crying too. <br> ->WowedDancer
         }
 
-    + + ["Can I have that shirt?"] "___ __ _ ___ _____ ___?" #CLASS: hero
+    + + ["Can I have that shirt?"] "___ _ ____ ____ _____?" #CLASS: hero
     The dancer shouts something back in reply.
     "____ ____ __ ___ _____, ____!" #CLASS: dancer
     You can't hear a darn thing.
@@ -638,38 +649,42 @@ VAR disco_listened_counter = 0
 {disco_listened_counter == 0: ->DiscoListen1}
 {disco_listened_counter == 1: ->DiscoListen2}
 {disco_listened_counter == 2: ->DiscoListen3}
-{disco_listened_counter == 3: ->DiscoListen4}
-{disco_listened_counter <= 4: ->DiscoListen5}
+{disco_listened_counter <= 3: ->DiscoListen4}
+//{disco_listened_counter == 4: ->DiscoListen5}
 
 
 =DiscoListen1
+#AUDIO: sounds/track2.mp3
 The bassline is so over-tuned it actually sounds gastric. And it runs all over the beat, like a snorting possum fallen out of a chimney into the middle of your living room.
 + Like a possum! A snorting one!
-<b> You have listened to the music once. </b>
+<b> You build some kind of relationship with the music. </b>
 ~disco_listened_counter++
 ...
 ->MineDisco
 
 =DiscoListen2
+#AUDIO: sounds/track3.mp3
 This song sounds like someone took a synth keyboard to the recording session and then used it as a brawl weapon with the power switched on.
 + ...against their bandmates, who were also simultaneously recording this song.
-<b> You have listened to the music twice. </b>
+<b> Your relationship with the music is complex, but it develops. </b>
 ~disco_listened_counter++
 ...
 ->MineDisco
 
 =DiscoListen3
+#AUDIO: sounds/track4.mp3
 WHY IS THERE GRUNTING IN THIS SONG? The song lacks lyrics, but there are still "vocals" if you could call them that, which just consist of a man grunting into the microphone.
 + Against all odds, this part of the song sounds gastric, too.
-<b> Your relationship with the music deepens. </b>
+<b> Or maybe that's just the sound of you becoming one with the music. </b>
 ~disco_listened_counter++
 ...
 ->MineDisco
 
 =DiscoListen4
-You can hear every yell, crash, UNCE, pipipapapappopoporooot (???) and grunt (?!) this song has to offer.
+#AUDIO: sounds/track4.mp3
+You can already hear every UNCE, crash, grunt (???) and yell (?!) this song has to offer.
 + This song would be like a fine wine if wine were made from garbage.
-<b> And you have now become some kind of garbage-wine connoisseur. </b>
+<b> And you have apparently become some kind of garbage-wine connoisseur. </b>
 ~disco_listened_counter++
 ...
 ->MineDisco
