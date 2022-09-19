@@ -229,11 +229,11 @@
 */
 
 h1{
-    color: pink;   
+    color: rgb(110, 85, 255);   
     font-family: 'Josefin Sans' !important;
 }
 .title{
-    color: pink;   
+    color: rgb(255, 55, 88);   
     font-family: 'Josefin Sans' !important;
 }
 
@@ -477,7 +477,7 @@ body.dark {
 }
 
 .dark a {
-    color: #cc8f1a;
+    color: #d6b916;
     transition: color 0.6s;
 }
 
