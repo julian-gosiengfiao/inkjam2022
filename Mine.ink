@@ -152,7 +152,7 @@ VAR item_radiant_sock = 0
     Your immediate surroundings stop being mildly incandescent.
     Barrel-man is now a normally-clothed-man, and he finishes getting dressed.
     + + [Yes! You fixed this!]
-    "Thank you, traveler! I was getting sick of hiding in that barrel. #CLASS: barrelman
+    "Thank you, traveler! I was getting sick of hiding in that barrel." #CLASS: barrelman
     + + + You slightly doubt this, but sure.
     "Your sister said that she was going to the forests beyond the tunnel to finish more good deeds." #CLASS: barrelman
     "You'll have to get through the mines to get to her." #CLASS: barrelman
@@ -543,7 +543,7 @@ VAR disco_squeeze_attempted = 0
 
 =MineDisco
 
-You are <b>{disco_listened_counter == 0:standing like a square}{disco_listened_counter == 1: almost-perceptibly bobbing your head}{disco_listened_counter == 2: convincingly two-stepping}{disco_listened_counter == 3: aggressively shaking half a butt}/*{disco_listened_counter >= 4: aggressively shaking half a butt}*/</b> in what seems to be a literal disco.
+You are <b>{disco_listened_counter == 0:standing like a square}{disco_listened_counter == 1: almost-perceptibly bobbing your head}{disco_listened_counter == 2: convincingly two-stepping}{disco_listened_counter >= 3: aggressively shaking half a butt}/*{disco_listened_counter >= 4: aggressively shaking half a butt}*/</b> in what seems to be a literal disco.
 
 A pumping dance beat shakes your insides, and {not event_detergent_used && not event_wowed_dancer: a smoke machine somewhere billows clouds into the air.}{not event_detergent_used && event_wowed_dancer: a <b>smoke machine</b> billows clouds into the air.}{event_detergent_used: foam covers absolutely everything, making it slippery slick!}
 
@@ -650,7 +650,7 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
 + [Check inventory]
     -> Inventory -> MineDisco
 
-+ {event_wowed_dancer && sound_enabled == 1} [(Disable Sound)]
+/*+ {event_wowed_dancer && sound_enabled == 1} [(Disable Sound)]
         <b>Sound disabled.</b> #CLASS: system
         ~sound_enabled = 0
         ->MineDisco
@@ -658,7 +658,7 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
 + {event_wowed_dancer && sound_enabled == 0} [(Enable Sound)]
         <b>Sound enabled.</b> #CLASS: system
         ~sound_enabled = 1
-        ->MineDisco
+        ->MineDisco*/
 
 =PostDanceBreak
 <br>
@@ -718,7 +718,7 @@ VAR disco_listened_counter = 0
 {disco_listened_counter == 0: ->DiscoListen1}
 {disco_listened_counter == 1: ->DiscoListen2}
 {disco_listened_counter == 2: ->DiscoListen3}
-{disco_listened_counter <= 3: ->DiscoListen4}
+{disco_listened_counter >= 3: ->DiscoListen4}
 //{disco_listened_counter == 4: ->DiscoListen5}
 
 
@@ -765,7 +765,7 @@ WHY IS THERE GRUNTING IN THIS SONG? The song lacks lyrics, but there are still "
 You can already hear every UNCE, crash, grunt (???) and yell (?!) this song has to offer.
 + This song would be like a fine wine if wine were made from garbage.
 <b> And you have apparently become some kind of garbage-wine connoisseur. </b>
-~disco_listened_counter++
+/*~disco_listened_counter++*/
 ...
 ->MineDisco
 
