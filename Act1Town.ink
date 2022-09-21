@@ -49,13 +49,13 @@ The cow looks at an imperceptible point in the far distance, and chews on some f
 ->cowman
 + {cowman and not hotmilk} [Get the cowman to repeat his problem to you]
 ->cowman
-+ {failedudders and not tongs} [Watch the cowman fail at squeezing]
++ {failedudders and not tongs} [Watch the cowman fail at milking]
 ->failedudders
 + {failedudders and not hotmilk} [Try to work out a solution to the overly sturdy udders]
 ->uddersolutions
-* {tongs and not hotmilk} "I've got some blacksmith's tongs to squeeze the udders with!" #CLASS: hero
+* {tongs and not hotmilk} "I've got some blacksmith's tongs to milk the udders with!" #CLASS: hero
 ->squeeze
-* {hotmilk} "I want to squeeze the udders again!" #CLASS: hero
+* {hotmilk} "I want to milk the cow again!" #CLASS: hero
 ->squeeze
 + {hotmilk} [Talk to happy cowman]
 ->happycowman
@@ -90,14 +90,14 @@ Would gain a most tremendous power! #CLASS: magic
 ->failedudders
 
 =failedudders
-The cowman gets the bucket ready, takes both hands and <i>squeezes squeezes squeezes</i> Bessie's udder teats, but not a drop of <b>milk</b> comes out.
+The cowman gets the bucket ready, takes both hands and really tries to <i>squeeeeeeeze</i> Bessie's udders, but not a drop of <b>milk</b> comes out.
 ...
 -> cowencounter
 
 =uddersolutions
 + {tongs} "I've got some blacksmith's tongs! Maybe we can squeeze the udders with this!" #CLASS: hero 
 ->squeeze
-+ {tollbridge} "There´s a big strong troll the other side of town. I bet he could squeeze those udders!"#CLASS: hero
++ {tollbridge} "There´s a big strong troll the other side of town. I bet he could milk this cow!"#CLASS: hero
 ->cownomove
 + "I guess I'll walk around, see if I can find some solutions." #CLASS: hero
 ... 
@@ -109,14 +109,14 @@ The cowman gets the bucket ready, takes both hands and <i>squeezes squeezes sque
 ->cowencounter
 
 =squeeze
-You and the cowman each hold one of the handles of the blacksmith's tongs, and aim at an udder teat, which is positioned carefully above the cowman's bucket.
+You and the cowman each hold one of the handles of the blacksmith's tongs, aiming carefully at the udders, which are positioned directly above the cowman's bucket.
 "Ready?" #CLASS: cowman
 + "Ready!" #CLASS: hero
 ->hotmilk
 
 =hotmilk
 #CLEAR 
-You both squeeze together, and a stream of lilac-coloured milk comes out, straight into the waiting bucket. 
+You both apply pressure together, and a stream of lilac-coloured milk comes out, straight into the waiting bucket. 
 "You did it! Please, feel free to take that bucketful as payment. I'll just go get my other bucket!" #CLASS: cowman
 #IMAGE: images/bucket-small.jpg
 + "Thanks!" #CLASS: hero
@@ -381,7 +381,7 @@ They can’t with you standing in their way! #CLASS: magic
 "Now that I'm a troll, I have a real craving for goat's milk. But I guess I could settle for a <b>huge glass of cold COW'S milk!</b>" #CLASS: troll
 + "But I don't have a glass of milk. Can't you just let me past and let me go after my sister?" #CLASS: hero
 ->nomilk
-+ {failedudders and not coldmilk} "There's a big strong cow at the other side of town. If you go there, you can squeeze the teats and get as much milk as you'd like!" #CLASS: hero
++ {failedudders and not coldmilk} "There's a big strong cow at the other side of town. If you go there, you can milk her and get as much milk as you'd like!" #CLASS: hero
 ->trollstayshere
 + {hotmilk and not coldmilk} [Offer the warm bucket of fresh milk you just got to the troll] You offer the warm bucket of fresh milk you just got to the troll.
 ->wrongmilk
