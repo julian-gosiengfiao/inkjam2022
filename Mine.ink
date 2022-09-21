@@ -650,15 +650,6 @@ Near the other end of the room is a solid writhing mass of <b>partying miners</b
 + [Check inventory]
     -> Inventory -> MineDisco
 
-/*+ {event_wowed_dancer && sound_enabled == 1} [(Disable Sound)]
-        <b>Sound disabled.</b> #CLASS: system
-        ~sound_enabled = 0
-        ->MineDisco
-    
-+ {event_wowed_dancer && sound_enabled == 0} [(Enable Sound)]
-        <b>Sound enabled.</b> #CLASS: system
-        ~sound_enabled = 1
-        ->MineDisco*/
 
 =PostDanceBreak
 <br>
@@ -685,6 +676,16 @@ The smoke machine starts billowing out beautiful bubbles of FOAM!
 Shrieks of delight ring out across the disco as foam descends on the dancers, covering everything in a slippery, slippery, slippery cloak of foam.
 ...
 ->MineDisco
+
++ {sound_enabled == 1} [(Disable Sound)]
+        <b>Sound disabled.</b> #CLASS: system
+        ~sound_enabled = 0
+        ->MineDisco
+    
++ {sound_enabled == 0} [(Enable Sound)]
+        <b>Sound enabled.</b> #CLASS: system
+        ~sound_enabled = 1
+        ->MineDisco
 
 
 VAR item_soul_tanktop = 0
