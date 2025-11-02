@@ -378,7 +378,9 @@ Julian Gosiengfiao
 Matthew Watson Jones
 Nicotupe
 
-Illustrations by Holly Duncan, with additional scenery by Midjourney AI
+Illustrations by Holly Duncan, with additional scenery from the public domain by Alfred Sisley (1872), Thomas Addison Richards (1852) and Pierre-Auguste Renoir (1899)
+
+This work contains no AI-generated content.
 
 ->->
 
